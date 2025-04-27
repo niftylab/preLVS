@@ -1,10 +1,6 @@
 # preLVS
 Routing Connectivity Verification Module for Grid-based Layout Generator
 
-# preLVS_vectormerge (또는 원하는 프로젝트 이름)
-
-(여기에 프로젝트에 대한 간략한 설명을 추가하세요. 예: Julia를 이용한 DRC/LVS 검증을 위한 벡터 머지 및 연결성 분석 라이브러리)
-
 ## 프로젝트 구조
 
 이 프로젝트는 다음과 같은 디렉토리 구조를 가집니다.
