@@ -208,9 +208,9 @@ function mergeVector(path_runset::String)
 
     # println("Flattened metals: $(mdata.metals)")
 
-    merged_mdata, named_mvectors = sort_n_merge_MData(mdata)
+    merged_mdata, nmetals = sort_n_merge_MData(mdata)
 
-    return merged_mdata, named_mvectors
+    return merged_mdata, nmetals
 end
 
 
