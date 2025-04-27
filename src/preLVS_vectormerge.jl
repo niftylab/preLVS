@@ -1,6 +1,6 @@
 module preLVS_vectormerge
 
-export runLVS, loadDB, flatten, mergeVector
+export runLVS, runLVS_wo_print, loadDB, flatten, mergeVector, generate_graph
 # Uncomment to Download nessesary packages
 # using Pkg
 # Pkg.add("JSON")
@@ -79,6 +79,47 @@ function runLVS(path_runset::String)
     # end
     return cinfo 
 end
+
+
+function runLVS_wo_print(path_runset::String)
+    # 0. Fetch input ARG
+    input_arg   = get_yaml(path_runset)
+
+    # 1. Prepare JSON files and directories
+    libname     = input_arg["libname"] #"scan_generated"   # 라이브러리 이름
+    cellname    = input_arg["cellname"] #"scan_cell"  # cell 이름
+
+    db_dir = input_arg["db_dir"] #"db"
+    metal_dir = input_arg["metal_dir"] #"out/metal"
+    via_dir = input_arg["via_dir"] #"out/via"
+    visualized_dir = input_arg["visualized_dir"] #"out/visualized"
+    log_dir = input_arg["log_dir"] #"out/log"
+
+    config_file_path = input_arg["config_file_path"] #"config/config.yaml"
+
+    # Check if database/config file exists
+    if !isfile("$(db_dir)/$(libname)_db.json")
+        error("Database file '$(libname)_db.json' not found in $(db_dir)")
+    end
+    if !isfile(config_file_path)
+        error("Config file not found at $config_file_path")
+    end
+
+    config_data = get_config(config_file_path)
+    orientation_list = get_orientation_list(config_data)
+    outlogFile = log_dir*'/'*libname*'_'*cellname*".out"
+
+    equivalent_net_sets = config_data["equivalent_net_sets"]
+    root, cell_data, db_data = get_tree(libname, cellname, db_dir, equivalent_net_sets)
+
+    mdata, vdata = flatten_v2(libname, cellname, cell_data, db_data, orientation_list, config_data)
+    merged_mdata, nmetals = sort_n_merge_MData(mdata)
+    cgraph = connect_metals_from_via(merged_mdata, vdata, nmetals)
+    cinfo = check_and_report_connections_bfs_wo_print(cgraph, outlogFile)
+    return cinfo
+end    
+
+
 
 function loadDB(path_runset::String)
     # 0. Fetch input ARG
@@ -214,6 +255,56 @@ function mergeVector(path_runset::String)
 end
 
 
+function generate_graph(path_runset::String)
+    # 0. Fetch input ARG
+    input_arg   = get_yaml(path_runset)
+
+    # 1. Prepare JSON files and directories
+    libname     = input_arg["libname"] #"scan_generated"   # 라이브러리 이름
+    cellname    = input_arg["cellname"] #"scan_cell"  # cell 이름
+
+    db_dir = input_arg["db_dir"] #"db"
+    metal_dir = input_arg["metal_dir"] #"out/metal"
+    via_dir = input_arg["via_dir"] #"out/via"
+    visualized_dir = input_arg["visualized_dir"] #"out/visualized"
+    log_dir = input_arg["log_dir"] #"out/log"
+
+    config_file_path = input_arg["config_file_path"] #"config/config.yaml"
+
+        # Check if database/config file exists
+    if !isfile("$(db_dir)/$(libname)_db.json")
+        error("Database file '$(libname)_db.json' not found in $(db_dir)")
+    end
+    if !isfile(config_file_path)
+        error("Config file not found at $config_file_path")
+    end
+
+        # Load db_json_data
+    # db_json_path    = "$(db_dir)/$(libname)_db.json"
+    # db_json_data    = JSON.parse(read(db_json_path, String))
+    config_data     = get_config(config_file_path)
+    orientation_list = get_orientation_list(config_data)
+
+
+    # 2. Create tree structure from the target cell
+    # 2.1. set equivalent net (needed to be taken over by config.yaml)
+    # equivalent_net_sets = [("VDD", Set(["VDD", "vdd", "VDD:"])), ("VSS", Set(["VSS", "VSS:", "vss"]))]
+    equivalent_net_sets = config_data["equivalent_net_sets"]
+    root, cell_data, db_data = get_tree(libname, cellname, db_dir, equivalent_net_sets)
+    # print_tree_root(root)
+
+    # flatten all metals + primitive pins + labels + pins without merging
+    mdata, vdata = flatten_v2(libname, cellname, cell_data, db_data, orientation_list, config_data)
+
+    # println("Flattened metals: $(mdata.metals)")
+
+    merged_mdata, nmetals = sort_n_merge_MData(mdata)
+
+    cgraph = connect_metals_from_via(merged_mdata, vdata, nmetals)
+
+    return cgraph
+end
+
 # 3. Visualize(optional)
 # function visualize()
 #    visualize_metals_by_layer(merged_mdata.metals, orientation_list, "$(visualized_dir)/test_$(cellname)")
@@ -245,6 +336,8 @@ end
         println("   Running flatten precompile complete...")
         merged_mdata, named_mvectors    = mergeVector(sample_data_path)
         println("   Running mergeVector precompile complete...")
+        cgraph                          = generate_graph(sample_data_path)
+        println("   Running generate_graph precompile complete...")
         # ... 다른 핵심 함수들 호출 ...
     end
     # ### `@setup_workload` 블록의 끝은 `@compile_workload` 블록 *뒤*에 와야 합니다. ###
