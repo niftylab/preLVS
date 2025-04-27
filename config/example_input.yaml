@@ -8,7 +8,9 @@ cellname: "dff_2x" # cell 이름
 # libname: "logic_generated" # 라이브러리 이름
 # cellname: "dff_2x" # cell 이름
 
-db_dir: "db"
+db_dir: "db" # laygo 에서 export된 json db 저장 경로
+
+# in/output configuration setting 
 metal_dir: "out/metal"
 via_dir: "out/via"
 visualized_dir: "out/visualized"

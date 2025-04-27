@@ -15,6 +15,7 @@ YAML = "ddb6d928-2868-570f-bddf-ab3f9cf99eb6"
 PrecompileTools = "aea7be01-6a6a-4083-8856-8a6e6704d82a"
 
 [compat]
+# dependency 버전을 고정. 반드시 작성해야 할 필요는 없음.
 DataStructures = "0.18.22"
 JSON = "0.21.4"
 JSON3 = "1.14.2"

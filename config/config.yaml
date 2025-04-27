@@ -1,4 +1,4 @@
-db_filename: [test_generated_db.json, db_demo.json]
+db_filename: [test_generated_db.json, db_demo.json] # deprecated
 Layer:
   order: [M1, M2, M3, M4, M5]
   orientation: ['|', '-', '|', '-', '|']
