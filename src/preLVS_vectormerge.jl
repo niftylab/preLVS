@@ -319,7 +319,7 @@ end
     # sample_type_data = [1.1, 2.2]
 
     # 워크로드 내에서 사용할 임시 파일 경로 (필요하다면)
-    sample_data_path = joinpath(@__DIR__, "..", "test", "test_input.yaml")
+    sample_data_path = joinpath(@__DIR__, "..", "benchmark", "bench_input.yaml")
     println("sample data path: $(sample_data_path)")
     # @__DIR__ -> /path/to/MyProject/src
     # .. -> /path/to/MyProject
