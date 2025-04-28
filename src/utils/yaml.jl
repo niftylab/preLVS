@@ -31,25 +31,8 @@ function get_config(file_path::String)
 
     config_data["Metal"] = morien
     config_data["Via"] = data["Via"]
-    if haskey(data, "Equivalent_net_sets")
-        config_data["equivalent_net_sets"] = Vector{Tuple{String, Set{String}}}()  #equivalent_net_sets = [( "VDD", Set(["VDD", "vdd", "VDD:"]) ), ( "VSS, Set(["VSS", "VSS:", "vss"]) )]
-        for net_list in data["Equivalent_net_sets"]
-            push!(config_data["equivalent_net_sets"], (net_list[1], Set(net_list)))
-        end
-    end
+
     return config_data
-end
-
-
-function get_orientation_list(config_data::Dict)
-
-    max_idx = maximum([parse(Int, replace(lowercase(layer), r"(metal|m)" => "") |> strip) for layer in keys(config_data["Metal"])]) 
-    orientation_list = Vector{String}(undef, max_idx)
-    for (layer, orient) in config_data["Metal"]
-        idx = parse(Int, replace(lowercase(layer), r"(metal|m)" => "") |> strip)
-        orientation_list[idx] = orient == "|" ? "VERTICAL" : "HORIZONTAL"
-    end
-    return orientation_list
 end
 
 end # endif

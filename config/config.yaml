@@ -1,4 +1,4 @@
-db_filename: [test_generated_db.json, db_demo.json] # deprecated
+db_filename: [test_generated_db.json, db_demo.json]
 Layer:
   order: [M1, M2, M3, M4, M5]
   orientation: ['|', '-', '|', '-', '|']
@@ -15,10 +15,10 @@ Via:
     map: [M1, M2]
     extension: [10, 20]
   via_M2_M3_0:
-    map: [M3, M2]
+    map: [M2, M3]
     extension: [10, 10]
   via_M2_M3_1:
-    map: [M3, M2]
+    map: [M2, M3]
     extension: [10, 20]
   via_M3_M4_0:
     map: [M3, M4]
@@ -27,12 +27,8 @@ Via:
     map: [M3, M4]
     extension: [10, 20]
   via_M4_M5_0:
-    map: [M5, M4]
+    map: [M4, M5]
     extension: [10, 10]
   via_M4_M5_1:
-    map: [M5, M4]
+    map: [M4, M5]
     extension: [10, 20]
-    
-Equivalent_net_sets:
-  - ["VDD:", "VDD", "vdd", "vdd:"]
-  - ["VSS:", "VSS", "vss", "vss:", "gnd"]

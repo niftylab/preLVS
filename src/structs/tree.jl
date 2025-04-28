@@ -6,7 +6,7 @@ if !isdefined(@__MODULE__, :_STRUCT_TREE_JL_)
 using DataStructures
 
 # cell들간의 hierarchy를 나타내기 위한 tree 구조
-# NodeData: cell의 정보를 담는 struct
+# CellData: cell의 정보를 담는 struct
 # TreeNode: tree의 node를 나타내는 struct
 # Tree의 기본적인 구조는 다음과 같다.
 # Top_cell
@@ -17,7 +17,7 @@ using DataStructures
 #     ├── Sub_sub_cell3
 #     └── Sub_sub_cell4
 
-struct NodeData
+struct CellData
     libname::String
     cellname::String
     instname::String
@@ -29,7 +29,7 @@ struct NodeData
     idx::Int
 end
 
-function NodeData(
+function CellData(
     ; libname::String,
       cellname::String,
       instname::String,
@@ -40,7 +40,7 @@ function NodeData(
       height::Int,
       idx::Int
 )
-    return NodeData(libname, cellname, instname, Mname, Mtransform, net_extern, width, height, idx)
+    return CellData(libname, cellname, instname, Mname, Mtransform, net_extern, width, height, idx)
 end
 
 struct TreeNode{T}
@@ -102,7 +102,7 @@ end
 
 function node_to_str(node::TreeNode)
     # Helper function to convert node's data to a string
-    return "$(node.data.cellname) $(node.data.idx) $(node.data.Mtransform) $(node.data.net_extern)"
+    return "$(node.data.cellname)$(node.data.Mtransform)"
 end
 
 function print_tree_root(node::TreeNode)
@@ -111,6 +111,9 @@ function print_tree_root(node::TreeNode)
     println()
 end
 
+##############################################################################
+# Functions for creating the tree structure
+#############################################################################
 
 function unify_netname(netname::String, equivalent_net_sets::Vector{Tuple{String, Set{String}}})
     for (rep, net_set) in equivalent_net_sets
@@ -121,11 +124,6 @@ function unify_netname(netname::String, equivalent_net_sets::Vector{Tuple{String
 
     return netname
 end
-
-
-##############################################################################
-# Functions for creating the tree structure
-#############################################################################
 
 
 # db_dir에서 libname과 cellname에 해당하는 cell의 정보를 가져오는 함수
@@ -155,10 +153,12 @@ function get_lib_cell_db(libname::String, cellname::String, db_dir::String, memo
 end
 
 
-
-function get_tree_sub!(node::TreeNode{NodeData}, cell_data::Dict, db_dir::String, db_data::Dict, source_net_sets::Vector{Tuple{String, Set{String}}}, idx::Int)
+function get_tree_sub!(node::TreeNode{CellData}, cell_data::Dict, db_dir::String, db_data::Dict, source_net_sets::Vector{Tuple{String, Set{String}}}, cell_list::Set{Tuple{String, String}}, idx::Int)
     libname = node.data.libname
     cellname = node.data.cellname
+
+
+    push!(cell_list, (libname, cellname))
 
     get_lib_cell_db(libname, cellname, db_dir, db_data)
     inst = db_data[libname][cellname]
@@ -168,40 +168,34 @@ function get_tree_sub!(node::TreeNode{NodeData}, cell_data::Dict, db_dir::String
         for block in sub_blocks
             libname = node.data.libname
             cellname = node.data.cellname
-
-            _libname     = block["libname"]
-            _cellname    = block["cellname"]
+            _libname    = block["libname"]
+            _cellname   = block["cellname"]
 
             # Get the cell data from the database JSON
             if haskey(db_data, _libname)
                 if !haskey(db_data[_libname], _cellname)
-                    error("Cell name '$_cellname' not found in library '$_libname' at $db_dir")
+                    error("Cell name '$cellname' not found in library '$libname' at $db_json_path")
                 end
             else
                 get_lib_cell_db(_libname, _cellname, db_dir, db_data)
             end
 
+            _trans      = block["transform"]
+            _move       = Int.(block["xy"])
+            affine      = affineMat(_trans, _move)
+            transform   = node.data.Mtransform * affine # 이 순서가 맞음!! master_tr * self_tr = flatten_tr
+            _libname     = block["libname"]
+            _cellname    = block["cellname"]
             _name        = block["name"]
 
-            # println("Subblock: $_libname - $_cellname - $_name")
+            if occursin("_microtemplates_", _libname)
+                continue
+            end
 
             _w = db_data[_libname][_cellname]["bbox"][2][1] - db_data[_libname][_cellname]["bbox"][1][1]
             _h = db_data[_libname][_cellname]["bbox"][2][2] - db_data[_libname][_cellname]["bbox"][1][2]
 
-            # affine transformation
-            _trans      = block["transform"]
-            _move       = Int.(block["xy"])
-            affine      = affineMat(_trans, _move)
-            # println("For $cellname - $idx: $affine")
-            # println("node.data.Mtransform: $(node.data.Mtransform)")
-            transform   = node.data.Mtransform * affine
-            # println("Transform: $transform")
 
-            # Primitives are added in primitives field
-            if occursin("_microtemplates_", _libname)
-                continue
-            end
-            
             net_block = Dict{String, String}()
             if haskey(block, "pins")
                 pins = block["pins"]
@@ -222,33 +216,18 @@ function get_tree_sub!(node::TreeNode{NodeData}, cell_data::Dict, db_dir::String
                     end
                 end
             end
-            if haskey(db_data[_libname][_cellname], "labels")
-                labels = db_data[_libname][_cellname]["labels"]
-                for label in labels
-                    _netname = get(label, "netname", nothing)
-                    _netname = _netname === nothing ? "UNKNOWN" : unify_netname(_netname, source_net_sets)     # "netname": null인 경우 해결
-                    if !haskey(net_block, _netname)
-                        if haskey(node.data.net_extern, _netname)
-                            net_block[_netname] = node.data.net_extern[_netname]
-                        else
-                            net_block[_netname] = node.data.Mname * "__" * _netname
-                            node.data.net_extern[_netname] = node.data.Mname * "__" * _netname
-                        end
-                    end
-                end
-            end
 
             child = TreeNode(
-                NodeData(
-                    libname     = _libname,
-                    cellname    = _cellname,
-                    instname    = _name,
-                    Mname       = node.data.Mname * "__" * _name,
-                    Mtransform  = transform,
-                    net_extern  = net_block,
-                    width       = _w,
-                    height      = _h,
-                    idx         = idx
+                    CellData(
+                        libname     = _libname,
+                        cellname    = _cellname,
+                        instname    = _name,
+                        Mname       = node.data.Mname * "__" * _name,
+                        Mtransform  = transform,
+                        net_extern  = net_block,
+                        width       = _w,
+                        height      = _h,
+                        idx         = idx
                     )
             )
 
@@ -274,14 +253,15 @@ function get_tree_sub!(node::TreeNode{NodeData}, cell_data::Dict, db_dir::String
             )
             idx += 1
 
-            # println("ADDING CHILD: ", child.data.cellname, " ", child.data.idx)
 
             add_child!(node, child)
-            idx = get_tree_sub!(child, cell_data, db_dir, db_data, source_net_sets, idx)
+            idx = get_tree_sub!(child, cell_data, db_dir, db_data, source_net_sets, cell_list, idx)
         end
     end
     return idx
 end
+
+
 
 function get_tree(libname::String, cellname::String, db_dir::String, source_net_sets::Vector{Tuple{String,Set{String}}})
 
@@ -293,11 +273,12 @@ function get_tree(libname::String, cellname::String, db_dir::String, source_net_
     cell_data[libname]              = Dict()
     cell_data[libname][cellname]    = Dict{Int, Dict{String, Any}}()
 
+    
     db_data = Dict()
     get_lib_cell_db(libname, cellname, db_dir, db_data)
     inst_top = db_data[libname][cellname]
 
-    # Top Cell의 net_extern에는 internal net들까지 포함하여 저장
+    # Top Cell의 net
     net_extern_top = Dict{String, String}()
     if haskey(inst_top, "pins")
         pins = inst_top["pins"]
@@ -307,18 +288,9 @@ function get_tree(libname::String, cellname::String, db_dir::String, source_net_
             net_extern_top[_netname] = _netname
         end
     end
-    if haskey(inst_top, "labels")
-        labels = inst_top["labels"]
-        for label in labels
-            _netname = get(label, "netname", nothing)
-            _netname = _netname === nothing ? "UNKNOWN" : unify_netname(_netname, source_net_sets)     # "netname": null인 경우 해결
-            net_extern_top[_netname] = _netname
-        end
-    end
-
-    # Initialize top cell node
+    
     rootNode = TreeNode(
-        NodeData(
+        CellData(
             libname     = libname,
             cellname    = cellname,
             instname    = cellname, # top instance name -> cellname (temporal decision)
@@ -330,6 +302,7 @@ function get_tree(libname::String, cellname::String, db_dir::String, source_net_
             idx         = idx
         )
     )
+
     cell_data[libname][cellname][idx] = Dict{String, Any}(
         "libname"           => libname,
         "cellname"          => cellname,
@@ -342,7 +315,10 @@ function get_tree(libname::String, cellname::String, db_dir::String, source_net_
     )
     idx += 1
 
-    
+
+    cell_list = Set{Tuple{String, String}}() # Set of Tuple{libname, cellname}
+    push!(cell_list, (libname, cellname))
+
     # Process top level subblocks separately
     if haskey(inst_top, "subblocks")
         sub_blocks_top = inst_top["subblocks"]
@@ -360,21 +336,12 @@ function get_tree(libname::String, cellname::String, db_dir::String, source_net_
             end
 
             _name       = block["name"]
-
-            Mname = rootNode.data.Mname * "__" * _name
-            _w = db_data[_libname][_cellname]["bbox"][2][1] - db_data[_libname][_cellname]["bbox"][1][1]
-            _h = db_data[_libname][_cellname]["bbox"][2][2] - db_data[_libname][_cellname]["bbox"][1][2]
-
-            # affine transformation
             _trans      = block["transform"]
             _move       = Int.(block["xy"])
             affine      = affineMat(_trans, _move)
             transform   = rootNode.data.Mtransform * affine
-            # println("For $_cellname - $_name - $idx : w = $_w, h = $_h")
-            # println("Trans: $transform, _move: $_move")
-            # println("affine: $affine")
-            # println("node.data.Mtransform: $(rootNode.data.Mtransform)")
-            # println("Transform: $transform")
+            _w = db_data[_libname][_cellname]["bbox"][2][1] - db_data[_libname][_cellname]["bbox"][1][1]
+            _h = db_data[_libname][_cellname]["bbox"][2][2] - db_data[_libname][_cellname]["bbox"][1][2]
 
 
             net_block_top = Dict{String, String}() 
@@ -390,29 +357,14 @@ function get_tree(libname::String, cellname::String, db_dir::String, source_net_
                         net_block_top[_termname] = net_extern_top[_netname]
                     else
                         net_block_top[_termname] = _netname
-                        rootNode.data.net_extern[_netname] = _netname
-                        cell_data[rootNode.data.libname][rootNode.data.cellname][rootNode.data.idx]["net_extern"][_netname] = _netname
-                    end
-                end
-            end
-
-            if haskey(db_data[_libname][_cellname], "labels")
-                labels = db_data[_libname][_cellname]["labels"]
-                for label in labels
-                    _netname = get(label, "netname", nothing)
-                    _netname = _netname === nothing ? "UNKNOWN" : unify_netname(_netname, source_net_sets)     # "netname": null인 경우 해결
-                    if !haskey(net_block_top, _netname)
-                        net_block_top[_netname] = Mname * "__" * _netname
-                        rootNode.data.net_extern[Mname * "__" * _netname] = Mname * "__" * _netname
-                        cell_data[rootNode.data.libname][rootNode.data.cellname][rootNode.data.idx]["net_extern"][Mname * "__" * _netname] = Mname * "__" * _netname
+                        # rootNode.data.net_extern[_netname] = _netname
+                        # cell_data[rootNode.data.libname][rootNode.data.cellname][rootNode.data.idx]["net_extern"][_netname] = _netname
                     end
                 end
             end
             
-            
-            # Create child node
             child_top = TreeNode(
-                NodeData(
+                CellData(
                     libname     = _libname,
                     cellname    = _cellname,
                     instname    = _name,
@@ -434,8 +386,7 @@ function get_tree(libname::String, cellname::String, db_dir::String, source_net_
                 cell_data[_libname] = Dict()
                 cell_data[_libname][_cellname] = Dict{Int, Dict{String, Any}}()
             end
-                    
-            # Add child node info to cell_data
+
             cell_data[_libname][_cellname][idx] = Dict{String, Any}(
                 "libname"           => _libname,
                 "cellname"          => _cellname,
@@ -443,13 +394,12 @@ function get_tree(libname::String, cellname::String, db_dir::String, source_net_
                 "Mname"             => rootNode.data.Mname * "__" * _name,
                 "width"             => _w,
                 "height"            => _h,
-                "Mtransform"        => transform,
+                "Mtransform"        => affine,
                 "net_extern"        => net_block_top
             )
             idx += 1
-            
             add_child!(rootNode, child_top)
-            idx = get_tree_sub!(child_top, cell_data, db_dir, db_data, source_net_sets, idx) # Start recursive tree generation from the children of the top node
+            idx = get_tree_sub!(child_top, cell_data, db_dir, db_data, source_net_sets, cell_list, idx) # Start recursive tree generation from the children of the top node
         end
     end
 
@@ -461,58 +411,33 @@ function get_tree(libname::String, cellname::String, db_dir::String, source_net_
         end
     end
 
-    return rootNode, cell_data, db_data
+    return rootNode, cell_data, cell_list, db_data
 end
 
 
-function build_task_list(
-    node::TreeNode{NodeData},
-    tasks::Vector{Tuple{String,String}} = Vector{Tuple{String,String}}(),
-    visited::Set{Tuple{String,String}} = Set{Tuple{String,String}}()
-)
-    # Key to check if we've built this cell already:
-    key = (node.data.libname, node.data.cellname)
 
-    # If this node’s cell has already been added/built, skip it
-    if key in visited
-        return tasks
+
+function cluster_nodes_by_cellname(node::TreeNode, cell_data::Dict)
+    libname = node.data.libname
+    cellname = node.data.cellname
+
+    clusters = Dict{String, Any}()
+
+    if !haskey(cell_data, libname) || !haskey(cell_data[libname], cellname)
+        error("libname: $libname, cellname: $cellname not found in cell_data")
     end
 
-    # Otherwise, process children first (post-order)
-    for child in node.children
-        build_task_list(child, tasks, visited)
+    for (bottom_left_xy, block) in cell_data[libname][cellname]
+        if !haskey(clusters, block["libname"])
+            clusters[block["libname"]] = Dict{String, Vector{Dict{String, Any}}}()
+        end
+        if !haskey(clusters[block["libname"]], block["cellname"])
+            clusters[block["libname"]][block["cellname"]] = Vector{Dict{String, Any}}()
+        end
+        push!(clusters[block["libname"]][block["cellname"]], block)
     end
 
-    # Then push the current node’s data
-    push!(tasks, (node.data.libname, node.data.cellname))
-
-    # Mark it as visited
-    push!(visited, key)
-
-    return tasks
+    return clusters
 end
 
-end # endif
-
-# function cluster_nodes_by_cellname(node::TreeNode, cell_data::Dict)
-#     libname = node.data.libname
-#     cellname = node.data.cellname
-
-#     clusters = Dict{String, Any}()
-
-#     if !haskey(cell_data, libname) || !haskey(cell_data[libname], cellname)
-#         error("libname: $libname, cellname: $cellname not found in cell_data")
-#     end
-
-#     for (bottom_left_xy, block) in cell_data[libname][cellname]
-#         if !haskey(clusters, block["libname"])
-#             clusters[block["libname"]] = Dict{String, Vector{Dict{String, Any}}}()
-#         end
-#         if !haskey(clusters[block["libname"]], block["cellname"])
-#             clusters[block["libname"]][block["cellname"]] = Vector{Dict{String, Any}}()
-#         end
-#         push!(clusters[block["libname"]][block["cellname"]], block)
-#     end
-
-#     return clusters
-# end
+end #endif

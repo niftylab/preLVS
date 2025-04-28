@@ -1,7 +1,15 @@
-if !isdefined(@__MODULE__, :_STRUCT_STRUCT_JL_)
+if !isdefined(@__MODULE__, :_STRUCT_STRUCTURE_JL_)
     # 가드 상수를 현재 모듈 스코프에 직접 정의
     # @eval 없이 const를 직접 사용. 모듈의 top-level에서 include될 때 동작합니다.
-    const _STRUCT_STRUCT_JL_ = true
+    const _STRUCT_STRUCTURE_JL_ = true
+
+using StaticArrays
+using OrderedCollections
+const EXTENSION::Int = 35
+const FlatInstTable = Dict{String, Dict{String, Dict{Int, Dict}}}
+
+
+abstract type Rect end
 
 mutable struct Metal
     layer::String
@@ -60,83 +68,71 @@ _Mt_ = Dict(
 function affineMat(trans::String, move::Vector{Int})::Matrix{Int}
     # matrix for transformation + translation
     affine = _Mt_[trans]
-
-    # if trans == "MX"
-    #     affine += [0 0 0; 0 0 height; 0 0 0]
-    # elseif trans == "MY"
-    #     affine += [0 0 width; 0 0 0; 0 0 0]
-    # elseif trans == "R180"
-    #     affine += [0 0 width; 0 0 height; 0 0 0]
-    # end
-
     affine += [0 0 move[1]; 0 0 move[2]; 0 0 0]
-
     return affine
 end
 
+function get_bottom_left(Mtransform::Matrix{Int}, xy::Union{Vector{Int}, Tuple{Int, Int}}, width::Int, height::Int)::Tuple{Int, Int}
+    # cell_data의 key는 좌측하단 (x, y) 좌표
+    # "MX", "MY, "R180" 변환은 width, height를 바꿔줘야 함
+    # "MX"      =>  x = x,      y = y - h
+    # "MY"      =>  x = x - w,  y = y
+    # "R180"    =>  x = x - w,  y = y - h
 
-# Not used anymore. Mtransform already contains the translation info
-# function get_bottom_left(Mtransform::Matrix{Int}, xy::Union{Vector{Int}, Tuple{Int, Int}}, width::Int, height::Int)::Tuple{Int, Int}
-#     # cell_data의 key는 좌측하단 (x, y) 좌표
-#     # "MX", "MY, "R180" 변환은 width, height를 바꿔줘야 함
-#     # "MX"      =>  x = x,      y = y - h
-#     # "MY"      =>  x = x - w,  y = y
-#     # "R180"    =>  x = x - w,  y = y - h
+    mt2x2 = Mtransform[1:2, 1:2]
 
-#     mt2x2 = Mtransform[1:2, 1:2]
-
-#     if mt2x2 == [1 0; 0 1]                      # "R0"
-#         return (xy[1], xy[2])
-#     elseif mt2x2 == [1 0; 0 -1]                 # "MX"
-#         return (xy[1], xy[2] - height)
-#     elseif mt2x2 == [-1 0; 0 1]                 # "MY"
-#         return (xy[1] - width, xy[2])
-#     elseif mt2x2 == [-1 0; 0 -1]                # "R180"
-#         return (xy[1] - width, xy[2] - height)
-#     end
-# end
+    if mt2x2 == [1 0; 0 1]                      # "R0"
+        return (xy[1], xy[2])
+    elseif mt2x2 == [1 0; 0 -1]                 # "MX"
+        return (xy[1], xy[2] - height)
+    elseif mt2x2 == [-1 0; 0 1]                 # "MY"
+        return (xy[1] - width, xy[2])
+    elseif mt2x2 == [-1 0; 0 -1]                # "R180"
+        return (xy[1] - width, xy[2] - height)
+    end
+end
 
 
-# function get_bottom_left_by_transString(trans::String, xy::Union{Vector{Int}, Tuple{Int, Int}}, width::Int, height::Int)::Tuple{Int, Int}
-#     # cell_data의 key는 좌측하단 (x, y) 좌표
-#     # "MX", "MY, "R180" 변환은 width, height를 바꿔줘야 함
-#     # "MX"      =>  x = x,      y = y - h
-#     # "MY"      =>  x = x - w,  y = y
-#     # "R180"    =>  x = x - w,  y = y - h
+function get_bottom_left_by_transString(trans::String, xy::Union{Vector{Int}, Tuple{Int, Int}}, width::Int, height::Int)::Tuple{Int, Int}
+    # cell_data의 key는 좌측하단 (x, y) 좌표
+    # "MX", "MY, "R180" 변환은 width, height를 바꿔줘야 함
+    # "MX"      =>  x = x,      y = y - h
+    # "MY"      =>  x = x - w,  y = y
+    # "R180"    =>  x = x - w,  y = y - h
 
-#     # mt2x2 = Mtransform[1:2, 1:2]
+    # mt2x2 = Mtransform[1:2, 1:2]
 
-#     if trans == "R0"                      # "R0"
-#         return (xy[1], xy[2])
-#     elseif trans == "MX"                 # "MX"
-#         return (xy[1], xy[2] - height)
-#     elseif trans == "MY"                 # "MY"
-#         return (xy[1] - width, xy[2])
-#     elseif trans == "R180"                # "R180"
-#         return (xy[1] - width, xy[2] - height)
-#     end
+    if trans == "R0"                      # "R0"
+        return (xy[1], xy[2])
+    elseif trans == "MX"                 # "MX"
+        return (xy[1], xy[2] - height)
+    elseif trans == "MY"                 # "MY"
+        return (xy[1] - width, xy[2])
+    elseif trans == "R180"                # "R180"
+        return (xy[1] - width, xy[2] - height)
+    end
 
-# end
+end
 
-# function get_xy(Mtransform::Matrix{Int}, bottom_left_xy::Union{Vector{Int}, Tuple{Int, Int}}, width::Int, height::Int)::Tuple{Int, Int}
-#     # cell_data의 key는 좌측하단 (x, y) 좌표
-#     # "MX", "MY, "R180" 변환은 width, height를 바꿔줘야 함
-#     # "MX"      =>  x = x,      y = y + h
-#     # "MY"      =>  x = x + w,  y = y
-#     # "R180"    =>  x = x + w,  y = y + h
+function get_xy(Mtransform::Matrix{Int}, bottom_left_xy::Union{Vector{Int}, Tuple{Int, Int}}, width::Int, height::Int)::Tuple{Int, Int}
+    # cell_data의 key는 좌측하단 (x, y) 좌표
+    # "MX", "MY, "R180" 변환은 width, height를 바꿔줘야 함
+    # "MX"      =>  x = x,      y = y + h
+    # "MY"      =>  x = x + w,  y = y
+    # "R180"    =>  x = x + w,  y = y + h
 
-#     mt2x2 = Mtransform[1:2, 1:2]
+    mt2x2 = Mtransform[1:2, 1:2]
 
-#     if mt2x2 == [1 0; 0 1]                      # "R0"
-#         return (bottom_left_xy[1], bottom_left_xy[2])
-#     elseif mt2x2 == [1 0; 0 -1]                 # "MX"
-#         return (bottom_left_xy[1], bottom_left_xy[2] + height)
-#     elseif mt2x2 == [-1 0; 0 1]                 # "MY"
-#         return (bottom_left_xy[1] + width, bottom_left_xy[2])
-#     elseif mt2x2 == [-1 0; 0 -1]                # "R180"
-#         return (bottom_left_xy[1] + width, bottom_left_xy[2] + height)
-#     end
-# end
+    if mt2x2 == [1 0; 0 1]                      # "R0"
+        return (bottom_left_xy[1], bottom_left_xy[2])
+    elseif mt2x2 == [1 0; 0 -1]                 # "MX"
+        return (bottom_left_xy[1], bottom_left_xy[2] + height)
+    elseif mt2x2 == [-1 0; 0 1]                 # "MY"
+        return (bottom_left_xy[1] + width, bottom_left_xy[2])
+    elseif mt2x2 == [-1 0; 0 -1]                # "R180"
+        return (bottom_left_xy[1] + width, bottom_left_xy[2] + height)
+    end
+end
 
 
 metal_map = Dict(
@@ -201,12 +197,21 @@ function get_metal_xy(xy::Vector{Vector{Int}}, Mtransform::Matrix{Int})
     _bbox           = [collect(row) for row in eachrow(transpose(_bbox_affine[1:2,1:2]))]
     return _bbox
 end
+function affine_transform(bbox::SMatrix{2, 2, Int}, Mtransform::Matrix{Int})
+    _bbox_affine    = Mtransform * [[bbox[1,:];1] [ bbox[2,:];1]]
+    _bbox           = transpose(_bbox_affine[1:2,1:2])
+    return _bbox
+end
 
-
+function affine_transform(xy::SVector{2, Int}, Mtransform::Matrix{Int})
+    _xy_affine    = Mtransform * [xy; 1]
+    _xy           = transpose(_xy_affine[1:2])
+    return _xy
+end
 
 function get_via_xy(xy::Vector{Int}, Mtransform::Matrix{Int})
     _xy_affine      = Mtransform * [xy ; 1]
     return _xy_affine[1:2]
 end
 
-end # endif
+end #endif
