@@ -1,7 +1,20 @@
 using BenchmarkTools
 using preLVS_vectormerge
+using YAML
 
-println("Benchmarking preLVS_vectorMerge")
+# Set sampling parameters
+n_samples = 100             # Number of samples to run
+max_benchmark_seconds = 3   # Maximum number of seconds to run each sample
+
+input_path = "benchmark/bench_input.yaml"
+input_data = YAML.load_file(input_path)
+libname = input_data["libname"]
+cellname = input_data["cellname"]
+
+
+println("\nBenchmarking preLVS_vectorMerge\n")
+
+println("Target: $libname - $cellname\n")
 
 println("Functions:")
 println("1. loadDB ")
@@ -9,14 +22,24 @@ println("2. flatten")
 println("3. mergeVector")
 println("4. generate_graph")
 println("5. runLVS_wo_print")
+println()
 
 
 # Performance Test
-loadDB_benchmark = @benchmark loadDB("benchmark/bench_input.yaml")                    samples=100 seconds=100    
-flatten_benchmark = @benchmark flatten("benchmark/bench_input.yaml")                  samples=100 seconds=100
-mergeVector_benchmark = @benchmark mergeVector("benchmark/bench_input.yaml")          samples=100 seconds=100
-generate_graph_benchmark = @benchmark generate_graph("benchmark/bench_input.yaml")    samples=100 seconds=100
-total_benchmark = @benchmark runLVS_wo_print("benchmark/bench_input.yaml")            samples=100 seconds=100
+println("Starting benchmark: loadDB")
+loadDB_benchmark = @benchmark loadDB(input_path)                    samples=n_samples seconds=(n_samples*max_benchmark_seconds)    
+
+println("Starting benchmark: flatten")
+flatten_benchmark = @benchmark flatten(input_path)                  samples=n_samples seconds=(n_samples*max_benchmark_seconds)
+
+println("Starting benchmark: mergeVector")
+mergeVector_benchmark = @benchmark mergeVector(input_path)          samples=n_samples seconds=(n_samples*max_benchmark_seconds)
+
+println("Starting benchmark: generate_graph")
+generate_graph_benchmark = @benchmark generate_graph(input_path)    samples=n_samples seconds=(n_samples*max_benchmark_seconds)
+
+println("Starting benchmark: runLVS_wo_print")
+total_benchmark = @benchmark runLVS_wo_print(input_path)            samples=n_samples seconds=(n_samples*max_benchmark_seconds)
 
 
 # Display Results
@@ -39,3 +62,4 @@ println()
 println("Target: runLVS_wo_print")
 display(total_benchmark)
 println("-"^20)
+println()

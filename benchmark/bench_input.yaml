@@ -1,12 +1,12 @@
 # 1. Prepare JSON files and directories
-libname: "scan_generated" # 라이브러리 이름
-cellname: "scan_chain_288bit" # cell 이름
+# libname: "scan_generated" # 라이브러리 이름
+# cellname: "scan_chain_288bit" # cell 이름
 
 # libname: "scan_generated" # 라이브러리 이름
 # cellname: "scan_cell" # cell 이름
 
-# libname: "logic_generated" # 라이브러리 이름
-# cellname: "dff_2x" # cell 이름
+libname: "logic_generated" # 라이브러리 이름
+cellname: "dff_2x" # cell 이름
 
 db_dir: "db"
 metal_dir: "out/metal"
