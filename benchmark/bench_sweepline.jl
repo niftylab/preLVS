@@ -38,6 +38,8 @@ alignEvents_benchmark = @benchmark alignEvents(input_path)          samples=n_sa
 println("Starting benchmark: generate_graph")
 generate_graph_benchmark = @benchmark generate_graph(input_path)    samples=n_samples seconds=(n_samples*max_benchmark_seconds)
 
+println("Starting benchmark: runLVS")
+generate_graph_benchmark = @benchmark runLVS(input_path)    samples=n_samples seconds=(n_samples*max_benchmark_seconds)
 
 # Display Results
 println("Target: loadDB")

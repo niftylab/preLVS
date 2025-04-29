@@ -33,16 +33,16 @@ function create_events(flatten_inst::Dict, flatten_metal::Vector{MData}, flatten
 #    traverse_rect_tree!(events, hash_rect, root_cell, root_rect, config_data)
     idx = 1
     for (md, vd, ld) in zip(flatten_metal, flatten_via, flatten_label)
-        get_events!(hash_rect, md, idx)
-        get_events!(hash_rect, vd, config_data, idx)
-        get_events!(hash_rect, ld, idx)
+        get_events!(events, hash_rect, md, idx)
+        get_events!(events, hash_rect, vd, config_data, idx)
+        get_events!(events, hash_rect, ld, idx)
         idx += 1
     end
     return events, hash_rect
 end
 
-function get_events!(hash_rect::Vector{Rect}, mdata::MData, idx_inst::Int)
-    events = Vector{Event}()
+function get_events!(events::Vector{Event}, hash_rect::Vector{Rect}, mdata::MData, idx_inst::Int)
+    _events = Vector{Event}()
     libname = mdata.libname
     cellname = mdata.cellname
     for (layerNum, layer) in mdata.layers
@@ -53,15 +53,15 @@ function get_events!(hash_rect::Vector{Rect}, mdata::MData, idx_inst::Int)
             _range   = SVector{2, Int}(xy_start[2], xy_end[2])
             _start   = Event(METAL, START, layerNum, xy_start, _range, _idx, (libname, cellname, idx_inst) )
             _end     = Event(METAL, END, layerNum, xy_end, _range, _idx, (libname, cellname, idx_inst) )
-            push!(events, _start); push!(events, _end)
+            push!(_events, _start); push!(_events, _end)
             push!(hash_rect, metal)
         end
     end
-    return events    
+    append!(events, _events)  
 end
 
-function get_events!(hash_rect::Vector{Rect}, vdata::VData, config_data::Dict, idx_inst::Int)
-    events = Vector{Event}()
+function get_events!(events::Vector{Event}, hash_rect::Vector{Rect}, vdata::VData, config_data::Dict, idx_inst::Int)
+    _events = Vector{Event}()
     libname = vdata.libname
     cellname = vdata.cellname
     for (vcellname, vlist) in vdata.vlists
@@ -75,15 +75,15 @@ function get_events!(hash_rect::Vector{Rect}, vdata::VData, config_data::Dict, i
             _range   = SVector{2, Int}(xy_start[2], xy_end[2])
             _start   = Event(VIA, START, layerNum, xy_start, _range, _idx, (libname, cellname, idx_inst) )
             _end     = Event(VIA, END, layerNum, xy_end, _range, _idx, (libname, cellname, idx_inst) )
-            push!(events, _start); push!(events, _end)
+            push!(_events, _start); push!(_events, _end)
             push!(hash_rect, via)
         end
     end
-    return events
+    append!(events, _events)  
 end
 
-function get_events!(hash_rect::Vector{Rect}, ldata::LData, idx_inst::Int)
-    events = Vector{Event}()
+function get_events!(events::Vector{Event}, hash_rect::Vector{Rect}, ldata::LData, idx_inst::Int)
+    _events = Vector{Event}()
     libname = ldata.libname
     cellname = ldata.cellname
     for (layerNum, layer) in ldata.layers
@@ -94,11 +94,11 @@ function get_events!(hash_rect::Vector{Rect}, ldata::LData, idx_inst::Int)
             _range   = SVector{2, Int}(xy_start[2], xy_end[2])
             _start   = Event(LABEL, START, layerNum, xy_start, _range, _idx, (libname, cellname, idx_inst) )
             _end     = Event(LABEL, END, layerNum, xy_end, _range, _idx, (libname, cellname, idx_inst) )
-            push!(events, _start); push!(events, _end)
+            push!(_events, _start); push!(_events, _end)
             push!(hash_rect, label)
         end
     end
-    return events
+    append!(events, _events)  
 end
 
 # ---------------- OUTDATTED get_events! functions ------------------------ #
@@ -156,6 +156,7 @@ function get_events!(hash_rect::Vector{Rect}, cnode::TreeNode{CellData}, vdata::
     end
     return events
 end
+# ========================================================================================================
 
 function collect_sets(s::IntDisjointSets{T}) where T<:Integer
     # 루트를 키로, 멤버 리스트를 값으로 가지는 딕셔너리 생성
@@ -178,13 +179,40 @@ function collect_sets(s::IntDisjointSets{T}) where T<:Integer
     return groups
 end
 
+function collect_sets(s::IntDisjointSets{T}, rect_hash::Vector{Rect}) where T<:Integer
+    # 루트를 키로, 멤버 리스트를 값으로 가지는 딕셔너리 생성
+    groups = Dict{T, Vector{T}}()
+    # 라벨을 포함한 node는 따로 저장장
+    pinNodes = Dict{T, Vector{T}}()
+    # 모든 원소에 대해 반복 (1부터 length(s)까지)
+    for i in Base.OneTo(T(length(s)))
+        # 각 원소의 루트를 찾음 (경로 압축이 일어날 수 있음)
+        root = find_root!(s, i)
+        _rect = rect_hash[i]
+        if isa(_rect, Label) #typeof(_rect) == Label{String}
+            # println("label found netname: $(_rect.netname), labelID: $(i), rootID: $(root)")
+            # 해당 루트가 딕셔너리에 키로 존재하지 않으면 새로운 리스트 생성
+            if !haskey(pinNodes, root)
+                pinNodes[root] = Vector{T}()
+            end
+            push!(pinNodes[root], i)
+        end
+        if !haskey(groups, root)
+            groups[root] = Vector{T}()
+        end
+        # 해당 루트의 리스트에 현재 원소를 추가
+        push!(groups[root], i)
+    end
+    return groups, pinNodes
+end
+
 function process_events(sorted_events::Vector{Event}, rect_hash::Vector{Rect})
     # K=Int, Val=String, B=64
     layerNum  = 5
     itrees    = Dict{Int, IntervalTree{Int, Interval{Int}}}() # 트리는 간격 자체를 저장
     imaps     = Dict{Int, Dict{Tuple{Int, Int}, Set{Int}}}()
-    djs       = IntDisjointSets(length(rect_hash))
-    djs_temp  = IntDisjointSets(length(rect_hash))
+    djs       = IntDisjointSets(length(rect_hash)) # 같은 layer 끼리만 연결
+    djs_temp  = IntDisjointSets(length(rect_hash)) # VIA - METAL 연결 포함한 DJS 
     via_link  = Dict{Int, Tuple{Int, Int}}()
     error_log = Vector{ErrorEvent}()
     for i in 1:layerNum # Rect Layer
@@ -275,15 +303,15 @@ function process_events(sorted_events::Vector{Event}, rect_hash::Vector{Rect})
                 end
                 if overlap_idx1 == -1 && overlap_idx2 == -1
                     _xy = hash_rect[event_data.idx].xy
-                    push!(error_log,ErrorEvent(VIA, event_idx, -1)) # complete floating VIA
+                    push!(error_log,ErrorEvent(FLOATING, VIA, event_idx, -1)) # complete floating VIA
                 #    println("Error: Floating VIA at (M$(layer1) M$(layer2)) -> (M$(layer1) M$(layer2)) ($(_xy))")
                 elseif overlap_idx1 == -1
                     _xy = hash_rect[event_data.idx].xy
-                    push!(error_log,ErrorEvent(VIA, event_idx, overlap_idx2)) # floating VIA overlapped on rect_hash[overlap_idx2]
+                    push!(error_log,ErrorEvent(FLOATING, VIA, event_idx, overlap_idx2)) # floating VIA overlapped on rect_hash[overlap_idx2]
                 #    println("Error: Floating VIA at (M$(layer1) M$(layer2)) -> (M$(layer1)) ($(_xy))")
                 elseif overlap_idx2 == -1
                     _xy = hash_rect[event_data.idx].xy
-                    push!(error_log,ErrorEvent(VIA, event_idx, overlap_idx1)) # floating VIA overlapped on rect_hash[overlap_idx1]
+                    push!(error_log,ErrorEvent(FLOATING, VIA, event_idx, overlap_idx1)) # floating VIA overlapped on rect_hash[overlap_idx1]
                 #    println("Error: Floating VIA at (M$(layer1) M$(layer2)) -> (M$(layer2)) ($(_xy))")
                 else # normal case -> mapping two intersecting metals through VIA
                     via_link[event_idx] = (overlap_idx1, overlap_idx2)
@@ -367,9 +395,9 @@ function process_events(sorted_events::Vector{Event}, rect_hash::Vector{Rect})
             end
         end
     end 
-    overlaps = collect_sets(djs)
-    nets     = collect_sets(djs_temp)
-    return djs, overlaps, via_link, error_log, nets
+    overlaps, pinNodes = collect_sets(djs, rect_hash)
+#    nets     = collect_sets(djs_temp)
+    return djs, overlaps, via_link, error_log, pinNodes
 end
 
 end #endif

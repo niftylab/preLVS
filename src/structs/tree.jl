@@ -288,7 +288,14 @@ function get_tree(libname::String, cellname::String, db_dir::String, source_net_
             net_extern_top[_netname] = _netname
         end
     end
-    
+    if haskey(inst_top, "labels")
+        labels = inst_top["labels"]
+        for label in labels
+            _netname = get(label, "netname", nothing)
+            _netname = _netname === nothing ? "UNKNOWN" : unify_netname(_netname, source_net_sets)     # "netname": null인 경우 해결
+            net_extern_top[_netname] = _netname
+        end
+    end    
     rootNode = TreeNode(
         CellData(
             libname     = libname,
@@ -355,8 +362,8 @@ function get_tree(libname::String, cellname::String, db_dir::String, source_net_
 
                     if haskey(net_extern_top, _netname)
                         net_block_top[_termname] = net_extern_top[_netname]
-                    else
-                        net_block_top[_termname] = _netname
+                    # else
+                    #     net_block_top[_termname] = _name * "__" *_netname
                         # rootNode.data.net_extern[_netname] = _netname
                         # cell_data[rootNode.data.libname][rootNode.data.cellname][rootNode.data.idx]["net_extern"][_netname] = _netname
                     end
@@ -368,7 +375,7 @@ function get_tree(libname::String, cellname::String, db_dir::String, source_net_
                     libname     = _libname,
                     cellname    = _cellname,
                     instname    = _name,
-                    Mname       = rootNode.data.Mname * "__" * _name,
+                    Mname       = _name, # rootNode.data.Mname * "__" * _name,
                     Mtransform  = transform,
                     net_extern  = net_block_top,
                     width       = _w,

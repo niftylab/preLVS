@@ -133,13 +133,13 @@ function get_transformed_LData_V3(originlabel::LData, inst_data::Dict, equivalen
             _netname        = "UNKNOWN"
             if haskey(net_mapper, _label.netname_origin)
                 _netname    = net_mapper[_label.netname_origin]
-                continue
-            end
-            for (rep, net_set) in equivalent_net_sets
-                if _label.netname_origin in net_set
-                    _eqnet = first(intersect(net_set, keys(net_mapper)))
-                    _netname    = net_mapper[_eqnet]
-                    break
+            else
+                for (rep, net_set) in equivalent_net_sets
+                    if _label.netname_origin in net_set
+                        _eqnet = first(intersect(net_set, keys(net_mapper)))
+                        _netname    = net_mapper[_eqnet]
+                        break
+                    end
                 end
             end
             if _netname == "UNKNOWN"

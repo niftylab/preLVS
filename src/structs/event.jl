@@ -4,7 +4,8 @@ if !isdefined(@__MODULE__, :_STRUCT_EVENT_JL_)
     const _STRUCT_EVENT_JL_ = true
 
 @enum EPosition START END
-@enum EType METAL LABEL VIA
+@enum EType METAL LABEL VIA NET # NET is not used for sweepline. Only for ErrorEvents
+@enum ErrorType WARNING SHORT OPEN FLOATING
 include("structure.jl")
 include("tree.jl")
 # struct Event
@@ -27,10 +28,28 @@ struct Event
 end
 
 struct ErrorEvent
+    errorType::ErrorType
     event_type::EType
     rect_ref::Int
     rect_encounter::Int
+    msg::String
+
+    function ErrorEvent(errorType::ErrorType, event_type::EType, rect_ref::Int)
+        return new(errorType, event_type, rect_ref, -1, "")
+    end
+    
+    function ErrorEvent(errorType::ErrorType, event_type::EType, rect_ref::Int, rect_encounter::Int, msg::String)
+        return new(errorType, event_type, rect_ref, rect_encounter, msg)
+    end
+    function ErrorEvent(errorType::ErrorType, event_type::EType, rect_ref::Int, rect_encounter::Int)
+        return ErrorEvent(errorType, event_type, rect_ref, rect_encounter, "")
+    end
 end
+
+function ErrorEvent(; errorType::ErrorType, event_type::EType, rect_ref::Int, rect_encounter::Int)
+    return ErrorEvent(errorType, event_type, rect_ref, rect_encounter, "")
+end
+
 # mutable struct MRect
 #     layer::Int
 #     xy::SMatrix{2, 2, Int}
