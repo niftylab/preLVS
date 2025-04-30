@@ -302,15 +302,15 @@ function process_events(sorted_events::Vector{Event}, rect_hash::Vector{Rect})
                     # end
                 end
                 if overlap_idx1 == -1 && overlap_idx2 == -1
-                    _xy = hash_rect[event_data.idx].xy
+                    _xy = rect_hash[event_data.idx].xy
                     push!(error_log,ErrorEvent(FLOATING, VIA, event_idx, -1)) # complete floating VIA
                 #    println("Error: Floating VIA at (M$(layer1) M$(layer2)) -> (M$(layer1) M$(layer2)) ($(_xy))")
                 elseif overlap_idx1 == -1
-                    _xy = hash_rect[event_data.idx].xy
+                    _xy = rect_hash[event_data.idx].xy
                     push!(error_log,ErrorEvent(FLOATING, VIA, event_idx, overlap_idx2)) # floating VIA overlapped on rect_hash[overlap_idx2]
                 #    println("Error: Floating VIA at (M$(layer1) M$(layer2)) -> (M$(layer1)) ($(_xy))")
                 elseif overlap_idx2 == -1
-                    _xy = hash_rect[event_data.idx].xy
+                    _xy = rect_hash[event_data.idx].xy
                     push!(error_log,ErrorEvent(FLOATING, VIA, event_idx, overlap_idx1)) # floating VIA overlapped on rect_hash[overlap_idx1]
                 #    println("Error: Floating VIA at (M$(layer1) M$(layer2)) -> (M$(layer2)) ($(_xy))")
                 else # normal case -> mapping two intersecting metals through VIA
