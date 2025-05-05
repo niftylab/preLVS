@@ -14,6 +14,9 @@ Via:
   via_M1_M2_1:
     map: [M1, M2]
     extension: [10, 20]
+  via_M1_M2_2:
+    map: [M1, M2]
+    extension: [10, 20]
   via_M2_M3_0:
     map: [M3, M2]
     extension: [10, 10]

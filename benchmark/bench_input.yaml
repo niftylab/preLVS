@@ -5,8 +5,14 @@
 # libname: "scan_generated" # 라이브러리 이름
 # cellname: "scan_cell" # cell 이름
 
-libname: "logic_generated" # 라이브러리 이름
-cellname: "dff_2x" # cell 이름
+# libname: "logic_generated" # 라이브러리 이름
+# cellname: "dff_2x" # cell 이름
+
+# libname: "comp_generated" # 라이브러리 이름
+# cellname: "strongarm" # cell 이름
+
+libname: "tbadc_generated" # 라이브러리 이름
+cellname: "tdc_1bit" # cell 이름
 
 db_dir: "db"
 metal_dir: "out/metal"
@@ -16,4 +22,5 @@ log_dir: "out/log"
 
 netlog_dir: "out/label"
 
-config_file_path: "config/config.yaml"
+config_file_path: "config_tsmcN28.yaml"
+# config_file_path: "config_tsmcN45.yaml"
