@@ -182,9 +182,7 @@ function get_tree_sub!(node::TreeNode{NodeData}, cell_data::Dict, db_dir::String
             end
 
             _name        = block["name"]
-
             # println("Subblock: $_libname - $_cellname - $_name")
-
             _w = db_data[_libname][_cellname]["bbox"][2][1] - db_data[_libname][_cellname]["bbox"][1][1]
             _h = db_data[_libname][_cellname]["bbox"][2][2] - db_data[_libname][_cellname]["bbox"][1][2]
 
@@ -205,20 +203,18 @@ function get_tree_sub!(node::TreeNode{NodeData}, cell_data::Dict, db_dir::String
             net_block = Dict{String, String}()
             if haskey(block, "pins")
                 pins = block["pins"]
-                net_block = Dict{String, String}() # 명시적으로 타입을 지정합니다.
+                net_block = Dict{String, String}()
                 for pin in pins
                     _pin = pin.second
                     _netname = get(_pin, "netname", nothing)
                     _netname = _netname === nothing ? "UNKNOWN" : unify_netname(_netname, source_net_sets)     # "netname": null인 경우 해결
                     _termname = unify_netname(_pin["termname"], source_net_sets)
-
-                    # println("Pin: $_termname, Netname: $_netname")
                     
                     if haskey(node.data.net_extern, _netname)
                         net_block[_termname] = node.data.net_extern[_netname]
                     else
-                        net_block[_termname] = node.data.Mname * "__" * _netname
-                        node.data.net_extern[_netname] = node.data.Mname * "__" * _netname
+                        net_block[_termname] = node.data.Mname * "__" * _name * "__" * _netname
+                        node.data.net_extern[_netname] = node.data.Mname * "__" * _name * "__" * _netname
                     end
                 end
             end
@@ -231,8 +227,8 @@ function get_tree_sub!(node::TreeNode{NodeData}, cell_data::Dict, db_dir::String
                         if haskey(node.data.net_extern, _netname)
                             net_block[_netname] = node.data.net_extern[_netname]
                         else
-                            net_block[_netname] = node.data.Mname * "__" * _netname
-                            node.data.net_extern[_netname] = node.data.Mname * "__" * _netname
+                            net_block[_netname] = node.data.Mname * "__" * _name * "__" * _netname
+                            node.data.net_extern[node.data.Mname * "__" * _name * "__" * _netname] = node.data.Mname * "__" * _name * "__" * _netname
                         end
                     end
                 end
@@ -353,15 +349,13 @@ function get_tree(libname::String, cellname::String, db_dir::String, source_net_
             # Get the cell data from the database JSON
             if haskey(db_data, _libname)
                 if !haskey(db_data[_libname], _cellname)
-                    error("Cell name '$cellname' not found in library '$libname' at $db_json_path")
+                    error("Cell name '$_cellname' not found in library '$_libname")
                 end
             else
                 get_lib_cell_db(_libname, _cellname, db_dir, db_data)
             end
 
             _name       = block["name"]
-
-            Mname = rootNode.data.Mname * "__" * _name
             _w = db_data[_libname][_cellname]["bbox"][2][1] - db_data[_libname][_cellname]["bbox"][1][1]
             _h = db_data[_libname][_cellname]["bbox"][2][2] - db_data[_libname][_cellname]["bbox"][1][2]
 
@@ -389,9 +383,9 @@ function get_tree(libname::String, cellname::String, db_dir::String, source_net_
                     if haskey(net_extern_top, _netname)
                         net_block_top[_termname] = net_extern_top[_netname]
                     else
-                        net_block_top[_termname] = _netname
-                        rootNode.data.net_extern[_netname] = _netname
-                        cell_data[rootNode.data.libname][rootNode.data.cellname][rootNode.data.idx]["net_extern"][_netname] = _netname
+                        net_block_top[_termname] = rootNode.data.Mname * "__" * _netname
+                        rootNode.data.net_extern[_netname] = rootNode.data.Mname * "__" * _netname
+                        cell_data[rootNode.data.libname][rootNode.data.cellname][rootNode.data.idx]["net_extern"][rootNode.data.Mname * "__" * _netname] = rootNode.data.Mname * "__" * _netname
                     end
                 end
             end
@@ -402,9 +396,9 @@ function get_tree(libname::String, cellname::String, db_dir::String, source_net_
                     _netname = get(label, "netname", nothing)
                     _netname = _netname === nothing ? "UNKNOWN" : unify_netname(_netname, source_net_sets)     # "netname": null인 경우 해결
                     if !haskey(net_block_top, _netname)
-                        net_block_top[_netname] = Mname * "__" * _netname
-                        rootNode.data.net_extern[Mname * "__" * _netname] = Mname * "__" * _netname
-                        cell_data[rootNode.data.libname][rootNode.data.cellname][rootNode.data.idx]["net_extern"][Mname * "__" * _netname] = Mname * "__" * _netname
+                        net_block_top[_netname] = rootNode.data.Mname * "__" * _name * "__" * _netname
+                        rootNode.data.net_extern[rootNode.data.Mname * "__" * _name * "__" * _netname] = rootNode.data.Mname * "__" * _name * "__" * _netname
+                        cell_data[rootNode.data.libname][rootNode.data.cellname][rootNode.data.idx]["net_extern"][rootNode.data.Mname * "__" * _name * "__" * _netname] = rootNode.data.Mname * "__" * _name * "__" * _netname
                     end
                 end
             end

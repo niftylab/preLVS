@@ -22,5 +22,6 @@ log_dir: "out/log"
 
 netlog_dir: "out/label"
 
-config_file_path: "config_tsmcN28.yaml"
-# config_file_path: "config_tsmcN45.yaml"
+config_file_path: "benchmark/config_tsmcN28.yaml"
+# config_file_path: "benchmark/config_tsmcN45.yaml"
+# config_file_path: "config/config.yaml"

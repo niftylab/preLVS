@@ -1,6 +1,6 @@
 module preLVS_vectormerge
 
-export runLVS, runLVS_wo_print, loadDB, flatten, mergeVector, generate_graph
+export runLVS, loadDB, flatten, mergeVector, generate_graph #, runLVS_wo_print
 # Uncomment to Download nessesary packages
 # using Pkg
 # Pkg.add("JSON")
@@ -70,7 +70,7 @@ function runLVS(path_runset::String)
 # -----------Current Version-------------------
     merged_mdata, nmetals = sort_n_merge_MData(mdata)
     cgraph = connect_metals_from_via(merged_mdata, vdata, nmetals)
-    cinfo = check_and_report_connections_bfs(cgraph, outlogFile)
+    cinfo = check_and_report_connections_bfs(cgraph, equivalent_net_sets, outlogFile, libname, cellname)
     # for (netname, mvector_set) in groups
     #     println("Netname: $netname")
     #     for mv in mvector_set
@@ -81,43 +81,43 @@ function runLVS(path_runset::String)
 end
 
 
-function runLVS_wo_print(path_runset::String)
-    # 0. Fetch input ARG
-    input_arg   = get_yaml(path_runset)
+# function runLVS_wo_print(path_runset::String)
+#     # 0. Fetch input ARG
+#     input_arg   = get_yaml(path_runset)
 
-    # 1. Prepare JSON files and directories
-    libname     = input_arg["libname"] #"scan_generated"   # 라이브러리 이름
-    cellname    = input_arg["cellname"] #"scan_cell"  # cell 이름
+#     # 1. Prepare JSON files and directories
+#     libname     = input_arg["libname"] #"scan_generated"   # 라이브러리 이름
+#     cellname    = input_arg["cellname"] #"scan_cell"  # cell 이름
 
-    db_dir = input_arg["db_dir"] #"db"
-    metal_dir = input_arg["metal_dir"] #"out/metal"
-    via_dir = input_arg["via_dir"] #"out/via"
-    visualized_dir = input_arg["visualized_dir"] #"out/visualized"
-    log_dir = input_arg["log_dir"] #"out/log"
+#     db_dir = input_arg["db_dir"] #"db"
+#     metal_dir = input_arg["metal_dir"] #"out/metal"
+#     via_dir = input_arg["via_dir"] #"out/via"
+#     visualized_dir = input_arg["visualized_dir"] #"out/visualized"
+#     log_dir = input_arg["log_dir"] #"out/log"
 
-    config_file_path = input_arg["config_file_path"] #"config/config.yaml"
+#     config_file_path = input_arg["config_file_path"] #"config/config.yaml"
 
-    # Check if database/config file exists
-    if !isfile("$(db_dir)/$(libname)_db.json")
-        error("Database file '$(libname)_db.json' not found in $(db_dir)")
-    end
-    if !isfile(config_file_path)
-        error("Config file not found at $config_file_path")
-    end
+#     # Check if database/config file exists
+#     if !isfile("$(db_dir)/$(libname)_db.json")
+#         error("Database file '$(libname)_db.json' not found in $(db_dir)")
+#     end
+#     if !isfile(config_file_path)
+#         error("Config file not found at $config_file_path")
+#     end
 
-    config_data = get_config(config_file_path)
-    orientation_list = get_orientation_list(config_data)
-    outlogFile = log_dir*'/'*libname*'_'*cellname*".out"
+#     config_data = get_config(config_file_path)
+#     orientation_list = get_orientation_list(config_data)
+#     outlogFile = log_dir*'/'*libname*'_'*cellname*".out"
 
-    equivalent_net_sets = config_data["equivalent_net_sets"]
-    root, cell_data, db_data = get_tree(libname, cellname, db_dir, equivalent_net_sets)
+#     equivalent_net_sets = config_data["equivalent_net_sets"]
+#     root, cell_data, db_data = get_tree(libname, cellname, db_dir, equivalent_net_sets)
 
-    mdata, vdata = flatten_v2(libname, cellname, cell_data, db_data, orientation_list, config_data)
-    merged_mdata, nmetals = sort_n_merge_MData(mdata)
-    cgraph = connect_metals_from_via(merged_mdata, vdata, nmetals)
-    cinfo = check_and_report_connections_bfs_wo_print(cgraph, outlogFile)
-    return cinfo
-end    
+#     mdata, vdata = flatten_v2(libname, cellname, cell_data, db_data, orientation_list, config_data)
+#     merged_mdata, nmetals = sort_n_merge_MData(mdata)
+#     cgraph = connect_metals_from_via(merged_mdata, vdata, nmetals)
+#     cinfo = check_and_report_connections_bfs_wo_print(cgraph, outlogFile)
+#     return cinfo
+# end    
 
 
 
