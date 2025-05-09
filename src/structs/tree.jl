@@ -174,7 +174,7 @@ function get_tree_sub!(node::TreeNode{CellData}, cell_data::Dict, db_dir::String
             # Get the cell data from the database JSON
             if haskey(db_data, _libname)
                 if !haskey(db_data[_libname], _cellname)
-                    error("Cell name '$cellname' not found in library '$libname' at $db_json_path")
+                    error("Cell name '$_cellname' not found in library '$_libname' at $db_dir")
                 end
             else
                 get_lib_cell_db(_libname, _cellname, db_dir, db_data)
@@ -211,8 +211,25 @@ function get_tree_sub!(node::TreeNode{CellData}, cell_data::Dict, db_dir::String
                     if haskey(node.data.net_extern, _netname)
                         net_block[_termname] = node.data.net_extern[_netname]
                     else
-                        net_block[_termname] = node.data.Mname * "__" * _netname
-                        node.data.net_extern[_netname] = node.data.Mname * "__" * _netname
+                        net_block[_termname] = node.data.Mname * "__" * _name * "__" * _netname
+                        node.data.net_extern[_netname] = node.data.Mname * "__" * _name * "__" * _netname
+                    end
+                end
+            end
+
+            # LABELS for testing
+            if haskey(db_data[_libname][_cellname], "labels")
+                labels = db_data[_libname][_cellname]["labels"]
+                for label in labels
+                    _netname = get(label, "netname", nothing)
+                    _netname = _netname === nothing ? "UNKNOWN" : unify_netname(_netname, source_net_sets)     # "netname": null인 경우 해결
+                    if !haskey(net_block, _netname)
+                        if haskey(node.data.net_extern, _netname)
+                            net_block[_netname] = node.data.net_extern[_netname]
+                        else
+                            net_block[_netname] = node.data.Mname * "__" * _name * "__" * _netname
+                            node.data.net_extern[node.data.Mname * "__" * _name * "__" * _netname] = node.data.Mname * "__" * _name * "__" * _netname
+                        end
                     end
                 end
             end
@@ -336,7 +353,7 @@ function get_tree(libname::String, cellname::String, db_dir::String, source_net_
             # Get the cell data from the database JSON
             if haskey(db_data, _libname)
                 if !haskey(db_data[_libname], _cellname)
-                    error("Cell name '$cellname' not found in library '$libname' at $db_json_path")
+                    error("Cell name '$_cellname' not found in library '$_libname' at $db_dir")
                 end
             else
                 get_lib_cell_db(_libname, _cellname, db_dir, db_data)
@@ -362,10 +379,24 @@ function get_tree(libname::String, cellname::String, db_dir::String, source_net_
 
                     if haskey(net_extern_top, _netname)
                         net_block_top[_termname] = net_extern_top[_netname]
-                    # else
-                    #     net_block_top[_termname] = _name * "__" *_netname
-                        # rootNode.data.net_extern[_netname] = _netname
-                        # cell_data[rootNode.data.libname][rootNode.data.cellname][rootNode.data.idx]["net_extern"][_netname] = _netname
+                    else
+                        net_block_top[_termname] = rootNode.data.Mname * "__" * _netname
+                        rootNode.data.net_extern[_netname] = rootNode.data.Mname * "__" * _netname
+                        cell_data[rootNode.data.libname][rootNode.data.cellname][rootNode.data.idx]["net_extern"][rootNode.data.Mname * "__" * _netname] = rootNode.data.Mname * "__" * _netname
+                    end
+                end
+            end
+
+            # LABELS for testing
+            if haskey(db_data[_libname][_cellname], "labels")
+                labels = db_data[_libname][_cellname]["labels"]
+                for label in labels
+                    _netname = get(label, "netname", nothing)
+                    _netname = _netname === nothing ? "UNKNOWN" : unify_netname(_netname, source_net_sets)     # "netname": null인 경우 해결
+                    if !haskey(net_block_top, _netname)
+                        net_block_top[_netname] = rootNode.data.Mname * "__" * _name * "__" * _netname
+                        rootNode.data.net_extern[rootNode.data.Mname * "__" * _name * "__" * _netname] = rootNode.data.Mname * "__" * _name * "__" * _netname
+                        cell_data[rootNode.data.libname][rootNode.data.cellname][rootNode.data.idx]["net_extern"][rootNode.data.Mname * "__" * _name * "__" * _netname] = rootNode.data.Mname * "__" * _name * "__" * _netname
                     end
                 end
             end

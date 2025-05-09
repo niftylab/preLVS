@@ -1,0 +1,26 @@
+setting pin netname complete
+Short: Net colision repNet: "CK", NodeNet: "CLK" at nodeID: 1921
+Short: Net colision repNet: "CKB", NodeNet: "CLKB" at nodeID: 2017
+Short: Net colision repNet: "DI1", NodeNet: "DI<1>" at nodeID: 459
+Open: Net w/ netname: "VSS:". Node: preLVS_sweepline.MRect(2, [-75 2475; 985 2325]), preLVS_sweepline.MRect(2, [-75 -75; 985 75])
+Top level Net traverse complete
+Floating Node: 729, preLVS_sweepline.Rect[preLVS_sweepline.MRect(1, [495 830; 545 1070])]
+Floating Node: 1893, preLVS_sweepline.Rect[preLVS_sweepline.MRect(1, [11805 1570; 11855 1330])]
+Floating Node: 1867, preLVS_sweepline.Rect[preLVS_sweepline.MRect(2, [11675 1940; 11855 1890]), preLVS_sweepline.MRect(2, [11690 1940; 11970 1890])]
+Floating Node: 1868, preLVS_sweepline.Rect[preLVS_sweepline.MRect(2, [11675 1525; 11855 1475]), preLVS_sweepline.MRect(2, [11690 1525; 11970 1475])]
+Floating Node: 1880, preLVS_sweepline.Rect[preLVS_sweepline.MRect(3, [11670 1945; 11730 1470])]
+Floating Node: 727, preLVS_sweepline.Rect[preLVS_sweepline.MRect(1, [495 130; 545 370])]
+Floating Node: 741, preLVS_sweepline.Rect[preLVS_sweepline.MRect(1, [495 1570; 545 1330])]
+Floating Node: 739, preLVS_sweepline.Rect[preLVS_sweepline.MRect(1, [495 2270; 545 2030])]
+Floating Node: 1888, preLVS_sweepline.Rect[preLVS_sweepline.MRect(1, [11730 1970; 11930 1860])]
+Floating Node: 1869, preLVS_sweepline.Rect[preLVS_sweepline.MRect(2, [11675 1710; 11855 1660]), preLVS_sweepline.MRect(2, [11690 1710; 11970 1660])]
+Floating Node: 1892, preLVS_sweepline.Rect[preLVS_sweepline.MRect(1, [11730 1740; 11930 1630])]
+
+--- Connectivity Check Report ---
+Total connected components found: 2311
+
+Total Error Count: 19
+├─ Floating: 11
+├─ Open: 1
+└─ Short: 7
+--------------------------------

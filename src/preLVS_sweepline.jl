@@ -269,6 +269,7 @@ function runLVS(path_runset::String)
     metal_dir = input_arg["metal_dir"] #"out/metal"
     via_dir = input_arg["via_dir"] #"out/via"
     visualized_dir = input_arg["visualized_dir"] #"out/visualized"
+    log_dir = input_arg["log_dir"] #"out/log"
 
     netlog_dir = input_arg["netlog_dir"]
     config_file_path = input_arg["config_file_path"] #"config/config.yaml"
@@ -285,6 +286,7 @@ function runLVS(path_runset::String)
     db_json_path    = "$(db_dir)/$(libname)_db.json"
     db_json_data    = JSON.parse(read(db_json_path, String))
     config_data     = get_config(config_file_path)
+    logFileName     = input_arg["log_dir"]*"/$(libname)_$(cellname)_log.txt"
 
         # libname, cellname이 db_json_data에 있는지 확인
     if !haskey(db_json_data, libname)
@@ -318,11 +320,11 @@ function runLVS(path_runset::String)
     events, hash_rect = create_events(inst_flatten, mflat, vflat, lflat, config_data)
     events_sorted = sort(events, by=event_sort_priority)
     println("Event align complete")
-    djs, overlaps, via_link, error_log, pinNodes = process_events(events_sorted, hash_rect) 
+    djs, overlaps, via_link, error_log, pinNodes= process_events(events_sorted, hash_rect) 
     println("sweepline-based grouping complete\n")
     cgraph = generate_graph(overlaps, via_link, hash_rect, djs)
     println("connectivity graph generation complete")
-    error_log, nets_visited = check_connections_bfs(cgraph, pinNodes, hash_rect)
+    error_log, nets_visited = check_connections_bfs(cgraph, pinNodes, hash_rect, equivalent_net_sets, logFileName, libname, cellname)
     println("graph analysis using BFS complete")
 
     return error_log, cgraph, hash_rect
@@ -353,15 +355,15 @@ end
     # ### 이 부분을 수정해야 합니다: `@compile_workload`는 `@setup_workload` 블록 안에 있어야 합니다. ###
     @compile_workload begin
         println("Running preLVS_sweepline precompile workload...")
-        # 실제 함수 호출 (샘플 데이터 사용)
-        root, inst_flatten, cell_list, db_data = loadDB(sample_data_path)
-        println("   Running loadDB compile script complete")
-        mdata, vdata, ldata = flatten(sample_data_path)
-        println("   Running flatten compile script complete")
-        events_sorted, hash_rect = alignEvents(sample_data_path)
-        println("   Running alignEvents compile script complete")
-        cgraph, hash_rect = generate_graph(sample_data_path)
-        println("   Running generate_graph compile script complete")
+        # # 실제 함수 호출 (샘플 데이터 사용)
+        # root, inst_flatten, cell_list, db_data = loadDB(sample_data_path)
+        # println("   Running loadDB compile script complete")
+        # mdata, vdata, ldata = flatten(sample_data_path)
+        # println("   Running flatten compile script complete")
+        # events_sorted, hash_rect = alignEvents(sample_data_path)
+        # println("   Running alignEvents compile script complete")
+        # cgraph, hash_rect = generate_graph(sample_data_path)
+        # println("   Running generate_graph compile script complete")
         cgraph, hash_rect = runLVS(sample_data_path)
         println("   Running runLVS compile script complete")
     #    events, hash_rect = genEvents(sample_data_path)

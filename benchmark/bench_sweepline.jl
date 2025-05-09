@@ -3,8 +3,8 @@ using preLVS_sweepline
 using YAML
 
 # Set sampling parameters
-n_samples = 100             # Number of samples to run
-max_benchmark_seconds = 1   # Maximum number of seconds to run each sample
+n_samples = 3             # Number of samples to run
+max_benchmark_seconds = 5   # Maximum number of seconds to run each sample
 
 input_path = "benchmark/bench_input.yaml"
 input_data = YAML.load_file(input_path)

@@ -27,7 +27,7 @@ end
 
 function db_to_VData(db_json_data::Dict, libname::String, cellname::String, config_data::Dict)
     via_config = config_data["Via"]
-    _unsorted_vdata = VData(cellname, libname, OrderedDict{String, VList}())
+    _unsorted_vdata = VData(libname, cellname, OrderedDict{String, VList}())
     for (vcellname, viacell) in via_config
         _unsorted_vdata.vlists[vcellname] = VList(vcellname, Vector{VRect}()) 
     end

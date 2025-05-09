@@ -1,0 +1,12 @@
+setting pin netname complete
+Top level Net traverse complete
+Floating Node: 14, preLVS_sweepline.Rect[preLVS_sweepline.MRect(1, [95 660; 165 770])]
+
+--- Connectivity Check Report ---
+Total connected components found: 42
+
+Total Error Count: 1
+├─ Floating: 1
+├─ Open: 0
+└─ Short: 0
+--------------------------------

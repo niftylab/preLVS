@@ -182,7 +182,7 @@ end
 function collect_sets(s::IntDisjointSets{T}, rect_hash::Vector{Rect}) where T<:Integer
     # 루트를 키로, 멤버 리스트를 값으로 가지는 딕셔너리 생성
     groups = Dict{T, Vector{T}}()
-    # 라벨을 포함한 node는 따로 저장장
+    # 라벨을 포함한 node는 따로 저장
     pinNodes = Dict{T, Vector{T}}()
     # 모든 원소에 대해 반복 (1부터 length(s)까지)
     for i in Base.OneTo(T(length(s)))
@@ -304,16 +304,17 @@ function process_events(sorted_events::Vector{Event}, rect_hash::Vector{Rect})
                 if overlap_idx1 == -1 && overlap_idx2 == -1
                     _xy = rect_hash[event_data.idx].xy
                     push!(error_log,ErrorEvent(FLOATING, VIA, event_idx, -1)) # complete floating VIA
-                #    println("Error: Floating VIA at (M$(layer1) M$(layer2)) -> (M$(layer1) M$(layer2)) ($(_xy))")
+                    println("Error: Floating VIA at (M$(layer1) M$(layer2)) -> (M$(layer1) M$(layer2)) ($(_xy))")
                 elseif overlap_idx1 == -1
                     _xy = rect_hash[event_data.idx].xy
                     push!(error_log,ErrorEvent(FLOATING, VIA, event_idx, overlap_idx2)) # floating VIA overlapped on rect_hash[overlap_idx2]
-                #    println("Error: Floating VIA at (M$(layer1) M$(layer2)) -> (M$(layer1)) ($(_xy))")
+                    println("Error: Floating VIA at (M$(layer1) M$(layer2)) -> (M$(layer1)) ($(_xy))")
                 elseif overlap_idx2 == -1
                     _xy = rect_hash[event_data.idx].xy
                     push!(error_log,ErrorEvent(FLOATING, VIA, event_idx, overlap_idx1)) # floating VIA overlapped on rect_hash[overlap_idx1]
-                #    println("Error: Floating VIA at (M$(layer1) M$(layer2)) -> (M$(layer2)) ($(_xy))")
+                    println("Error: Floating VIA at (M$(layer1) M$(layer2)) -> (M$(layer2)) ($(_xy))")
                 else # normal case -> mapping two intersecting metals through VIA
+                    # println("VIA NORMAL CASE")
                     via_link[event_idx] = (overlap_idx1, overlap_idx2)
                     # djs_temp(cross-layer union for DEBUG)
                     union!(djs_temp, overlap_idx1, overlap_idx2)
@@ -369,10 +370,16 @@ function process_events(sorted_events::Vector{Event}, rect_hash::Vector{Rect})
                     push!(imaps[layer][range_interval], event_idx)
                 else # case2: searching Interval TREE
                     overlap_iter    = intersect(itrees[layer], range_interval)
-                    first_overlap   = iterate(overlap_iter) 
-                    # Note: iterate(overlap iterator) returns Tuple{Interval, value(nothing)}
-                    if first_overlap !== nothing # overlap FOUND -> union
-                        _range = (first_overlap[1].first, first_overlap[1].last)
+                    # first_overlap = iterate(overlap_iter)
+                    # if first_overlap !== nothing
+                    #     _range = (first_overlap[1].first, first_overlap[1].last)
+                    #     _idx = first(imaps[layer][_range])
+                    #     union!(djs, _idx, event_idx)
+                    #     union!(djs_temp, _idx, event_idx) # (cross-layer union for DEBUG)
+                    # end
+
+                    for interval_obj in overlap_iter
+                        _range = (interval_obj.first, interval_obj.last)
                         _idx = first(imaps[layer][_range])
                         union!(djs, _idx, event_idx)
                         union!(djs_temp, _idx, event_idx) # (cross-layer union for DEBUG)
@@ -396,8 +403,8 @@ function process_events(sorted_events::Vector{Event}, rect_hash::Vector{Rect})
         end
     end 
     overlaps, pinNodes = collect_sets(djs, rect_hash)
-#    nets     = collect_sets(djs_temp)
-    return djs, overlaps, via_link, error_log, pinNodes
+    #nets     = collect_sets(djs_temp)
+    return djs, overlaps, via_link, error_log, pinNodes#, nets
 end
 
 end #endif

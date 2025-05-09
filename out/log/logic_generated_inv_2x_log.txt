@@ -1,0 +1,2 @@
+setting pin netname complete
+Top level Net traverse complete

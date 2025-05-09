@@ -1,0 +1,4 @@
+setting pin netname complete
+Open: Net w/ netname: "VDD:". Node: preLVS_sweepline.MRect(2, [-75 75; 2155 -75]), preLVS_sweepline.MRect(2, [-75 2325; 855 2475])
+Open: Net w/ netname: "VSS:". Node: preLVS_sweepline.MRect(2, [-75 3675; 2155 3525]), preLVS_sweepline.MRect(2, [-75 1275; 2155 1125])
+Top level Net traverse complete

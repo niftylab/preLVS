@@ -1,0 +1,11 @@
+setting pin netname complete
+Top level Net traverse complete
+
+--- Connectivity Check Report ---
+Total connected components found: 88
+
+Total Error Count: 0
+├─ Floating: 0
+├─ Open: 0
+└─ Short: 0
+--------------------------------

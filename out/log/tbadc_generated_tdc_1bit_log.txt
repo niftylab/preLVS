@@ -1,0 +1,22 @@
+setting pin netname complete
+Open: Net w/ netname: "VSS:". Node: preLVS_sweepline.MRect(2, [17280 3875; 17560 3925]), preLVS_sweepline.MRect(2, [7920 5725; 8200 5675])
+Open: Net w/ netname: "VSS:". Node: preLVS_sweepline.MRect(2, [9205 1660; 9385 1710]), preLVS_sweepline.MRect(2, [7920 5725; 8200 5675])
+Open: Net w/ netname: "VDD:". Node: preLVS_sweepline.MRect(2, [-75 7125; 25035 7275]), preLVS_sweepline.MRect(2, [-75 4725; 855 4875])
+Open: Net w/ netname: "itcomp0_srp:". Node: preLVS_sweepline.MRect(2, [9220 1475; 9500 1525]), preLVS_sweepline.MRect(3, [8680 1170; 8740 2130])
+Open: Net w/ netname: "itcomp0_srp:". Node: preLVS_sweepline.MRect(2, [7775 2075; 8345 2125]), preLVS_sweepline.MRect(3, [8680 1170; 8740 2130])
+Open: Net w/ netname: "itcomp0_srp:". Node: preLVS_sweepline.MRect(2, [7775 1475; 8345 1525]), preLVS_sweepline.MRect(3, [8680 1170; 8740 2130])
+Open: Net w/ netname: "itcomp0_srn:". Node: preLVS_sweepline.MRect(2, [9220 925; 9500 875]), preLVS_sweepline.MRect(3, [9850 270; 9910 630])
+Open: Net w/ netname: "itcomp0_srn:". Node: preLVS_sweepline.MRect(2, [7775 325; 8345 275]), preLVS_sweepline.MRect(3, [9850 270; 9910 630])
+Open: Net w/ netname: "itcomp0_srn:". Node: preLVS_sweepline.MRect(2, [7775 925; 8345 875]), preLVS_sweepline.MRect(3, [9850 270; 9910 630])
+Open: Net w/ netname: "VDD:". Node: preLVS_sweepline.MRect(2, [9205 460; 9385 510]), preLVS_sweepline.MRect(2, [-75 4725; 855 4875])
+Open: Net w/ netname: "VDD:". Node: preLVS_sweepline.MRect(2, [-75 2325; 25035 2475]), preLVS_sweepline.MRect(2, [-75 4725; 855 4875])
+Top level Net traverse complete
+
+--- Connectivity Check Report ---
+Total connected components found: 11619
+
+Total Error Count: 11
+├─ Floating: 0
+├─ Open: 11
+└─ Short: 0
+--------------------------------

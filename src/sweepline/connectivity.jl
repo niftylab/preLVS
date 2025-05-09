@@ -75,146 +75,218 @@ end
 end #endif
 
 function check_connections_bfs(cgraph::Dict{Int, GraphNode}, pinNodes::Dict{Int, Vector{Int}},
-                                            hash_rect::Vector{Rect}) # ::Vector{ErrorEvent} # ::Vector{ComponentInfo}
+                                            hash_rect::Vector{Rect}, source_net_sets::Vector{Tuple{String, Set{String}}}, logFileName::String, libname::String, cellname::String) # ::Vector{ErrorEvent} # ::Vector{ComponentInfo}
     nets_visited = Dict{String, Vector{Int}}() # for tracing open error
     error_log = Vector{ErrorEvent}()
-    # merge labels and determine representive netname for each pin node
-    for (pnode_id, labels) in pinNodes
-        # declare main variables
-        pnode = cgraph[pnode_id]
-        source_net = Set{String}()
-        repNet = ""
-        # initialize reference pin net
-        for label_id in labels
-            _label = hash_rect[label_id]
-            _netname = _label.netname
-            if _netname !== nothing || _netname !== ""
-                push!(source_net, _netname)
-            end
-        end
-        if length(source_net) == 0  # no named labels
-            push!(error_log, ErrorEvent(errorType=WARNING, event_type=LABEL, rect_ref=labels[1], rect_encounter=pnode_id))
-            # pnode.netname = Union{String, Nothing}(nothing) # -> pnode.netname == nothing
-            continue # KEEP pnode.netname == Nothing
-        elseif length(source_net) > 1 # short error due to the overlap of labels w/ different netnames
-            push!(error_log, ErrorEvent(errorType=SHORT, event_type=LABEL, rect_ref=pnode_id, rect_encounter=pnode_id)) # self short === label conlision at pnode
-            # get Representive Netname. If top level net included, pick it
-            repNet = first(source_net)
-            for nname in source_net
-                if !occursin("__", nname) # '__' not included in nname <=> Top level Net
-                    repNet = nname
-                    break
+    error_cnt = Dict{String, Int}(
+        "short" => 0,
+        "open" => 0,
+        "floating" => 0,
+        "total" => 0
+    )
+
+    open(logFileName, "w") do io
+            
+        # merge labels and determine representive netname for each pin node
+        for (pnode_id, labels) in pinNodes
+            # declare main variables
+            pnode = cgraph[pnode_id]
+            source_net = Set{String}()
+            repNet = ""
+            # initialize reference pin net
+            for label_id in labels
+                _label = hash_rect[label_id]
+                _netname = _label.netname
+                if _netname !== nothing && _netname !== ""
+                    push!(source_net, _netname)
                 end
             end
-        else
-            repNet = first(source_net)
+            if length(source_net) == 0  # no named labels
+                push!(error_log, ErrorEvent(errorType=WARNING, event_type=LABEL, rect_ref=labels[1], rect_encounter=pnode_id))
+                println(io, "WARNING: No named labels at pin node: $(hash_rect[pnode_id])")
+                error_cnt["label"] += 1; error_cnt["total"] += 1
+                # pnode.netname = Union{String, Nothing}(nothing) # -> pnode.netname == nothing
+                continue # KEEP pnode.netname == Nothing
+            elseif length(source_net) > 1 # short error due to the overlap of labels w/ different netnames
+                push!(error_log, ErrorEvent(errorType=SHORT, event_type=LABEL, rect_ref=pnode_id, rect_encounter=pnode_id)) # self short === label conlision at pnode
+                # println(io, "Short: Net colision repNet: \"$(repNet)\", NodeNet: \"$(pnode_id)\" at nodeID: $(edge.to)")
+                error_cnt["short"] += 1; error_cnt["total"] += 1
+                # get Representive Netname. If top level net included, pick it
+                repNet = first(source_net)
+                for nname in source_net
+                    if !occursin("__", nname) # '__' not included in nname <=> Top level Net
+                        repNet = nname
+                        break
+                    end
+                end
+            else
+                repNet = first(source_net)
+                # println("repNet = $(repNet) for pnode_id = $(pnode_id)")
+            end
+            pnode.netname = repNet # set representive netname
         end
-        pnode.netname = repNet # set representive netname
-    end
-    println("setting pin netname complete")
-    # Now every node containing labels has its netname.
-    # First, checking Netnames w/o '__' ie, pass internal net this time
-    label_passed = Vector{Int}()
-    for (pnode_id, labels) in pinNodes
-        pnode = cgraph[pnode_id]
-        if pnode.visited || pnode.netname == nothing
-            continue
-        elseif occursin("__", pnode.netname)
-    #        println("Pass: Internal Net \"$(pnode.netname)\" will be checked later")
-            push!(label_passed, pnode_id)
-            continue
-        end
-        # declare main variables
-        repNet::String = pnode.netname
-#        println("Current repNet: $(repNet)")
-        queue = Queue{GraphEdge}()
-        if haskey(nets_visited, repNet)
-    #        println("Open: Net w/ netname: \"$(repNet)\". Node: $(pnode_id), $(nets_visited[repNet][1])")
-            push!(error_log, ErrorEvent(errorType=OPEN, event_type=NET, rect_ref=pnode_id, rect_encounter=nets_visited[repNet][1]))
-        else
-            nets_visited[repNet] = Vector{Int}()
-        end
-        push!(nets_visited[repNet], pnode_id)  # add source net to visited net list
-        # add pnode id to netname table
-        # if !haskey(group_pins, repNet)
-        #     group_pins[repNet] = Vector{Int}()
-        # end
-        # push!(group_pins[repNet], pnode_id)
-        # START BFS -> PUSH EDGES into Q
-        for _edge in pnode.edges
-            enqueue!(queue, _edge)
-        end
-        pnode.visited = true
-        while !isempty(queue)
-            edge = dequeue!(queue)
-            neighbor = cgraph[edge.to]
-            if neighbor.visited
+        println(io, "setting pin netname complete")
+
+        # Now every node containing labels has its netname.
+        # First, checking Netnames w/o '__' ie, pass internal net this time
+        label_passed = Vector{Int}()
+        for (pnode_id, labels) in pinNodes
+            pnode = cgraph[pnode_id]
+            if pnode.visited || pnode.netname isa Nothing
+                continue
+            elseif occursin("__", pnode.netname)
+        #        println("Pass: Internal Net \"$(pnode.netname)\" will be checked later")
+                push!(label_passed, pnode_id)
                 continue
             end
-            if neighbor.netname == nothing # check netname
-                neighbor.netname = repNet
-            elseif neighbor.netname != repNet
-        #        println("Short: Net colision repNet: \"$(repNet)\", NodeNet: \"$(neighbor.netname)\" at nodeID: $(edge.to)")
-                push!(error_log, ErrorEvent(errorType=SHORT, event_type=METAL, rect_ref=edge.to, rect_encounter=pnode_id))
+            # declare main variables
+            repNet::String = pnode.netname
+    #        println("Current repNet: $(repNet)")
+            queue = Queue{GraphEdge}()
+            if haskey(nets_visited, repNet)
+                # if !(repNet in source_net_sets[1][2]) && !(repNet in source_net_sets[2][2])
+                #     if check_coloned_netname(repNet, nets_visited)
+                #         println(io, "Open: Net w/ netname: \"$(repNet)\". Node: $(hash_rect[pnode_id]), $(hash_rect[nets_visited[repNet][1]])")
+                #         push!(error_log, ErrorEvent(errorType=OPEN, event_type=NET, rect_ref=pnode_id, rect_encounter=nets_visited[repNet][1]))
+                #         error_cnt["open"] += 1; error_cnt["total"] += 1
+                #     end
+                # end
+                println(io, "Open: Net w/ netname: \"$(repNet)\". Node: $(hash_rect[pnode_id]), $(hash_rect[nets_visited[repNet][1]])")
+                push!(error_log, ErrorEvent(errorType=OPEN, event_type=NET, rect_ref=pnode_id, rect_encounter=nets_visited[repNet][1]))
+                error_cnt["open"] += 1; error_cnt["total"] += 1
+            else
+                nets_visited[repNet] = Vector{Int}()
             end
-            for _edge in neighbor.edges
+            push!(nets_visited[repNet], pnode_id)  # add source net to visited net list
+            # START BFS -> PUSH EDGES into Q
+            for _edge in pnode.edges
                 enqueue!(queue, _edge)
             end
-            neighbor.visited = true
+            pnode.visited = true
+            while !isempty(queue)
+                edge = dequeue!(queue)
+                neighbor = cgraph[edge.to]
+                if neighbor.visited
+                    continue
+                end
+                if neighbor.netname isa Nothing # check netname
+                    neighbor.netname = repNet
+                elseif neighbor.netname != repNet
+                    println(io, "Short: Net colision repNet: \"$(repNet)\", NodeNet: \"$(neighbor.netname)\" at nodeID: $(edge.to)")
+                    push!(error_log, ErrorEvent(errorType=SHORT, event_type=METAL, rect_ref=edge.to, rect_encounter=pnode_id))
+                    error_cnt["short"] += 1; error_cnt["total"] += 1
+                end
+                for _edge in neighbor.edges
+                    enqueue!(queue, _edge)
+                end
+                neighbor.visited = true
+            end
         end
-    end
-    println("Top level Net traverse complete")
-    # traverse Internal Pin Nodes
-    for pint_id in label_passed
-        pnode = cgraph[pint_id]
-        if pnode.visited
-            continue
-        end
-        # declare main variables
-        repNet = pnode.netname
-#        println("Current repNet: $(repNet)")
-        queue = Queue{GraphEdge}()
-        if haskey(nets_visited, repNet)
-            push!(error_log, ErrorEvent(errorType=OPEN, event_type=NET, rect_ref=pint_id, rect_encounter=nets_visited[repNet][1]))
-        else
-            nets_visited[repNet] = Vector{Int}()
-        end
-        push!(nets_visited[repNet], pint_id)  # add source net to visited net list
-        # add pnode id to netname table
-        # if !haskey(group_pins, repNet)
-        #     group_pins[repNet] = Vector{Int}()
-        # end
-        # push!(group_pins[repNet], pnode_id)
-        # START BFS -> PUSH EDGES into Q
-        for _edge in pnode.edges
-            enqueue!(queue, _edge)
-        end
-        pnode.visited = true
-        while !isempty(queue)
-            edge = dequeue!(queue)
-            neighbor = cgraph[edge.to]
-            if neighbor.visited
+        println(io, "Top level Net traverse complete")
+        # traverse Internal Pin Nodes
+        for pint_id in label_passed
+            pnode = cgraph[pint_id]
+            if pnode.visited
                 continue
             end
-            if neighbor.netname == nothing # check netname
-                neighbor.netname = repNet
-            elseif neighbor.netname != repNet
-                push!(error_log, ErrorEvent(errorType=SHORT, event_type=METAL, rect_ref=edge.to, rect_encounter=pint_id))
+            # declare main variables
+            repNet = pnode.netname
+    #        println("Current repNet: $(repNet)")
+            queue = Queue{GraphEdge}()
+            if haskey(nets_visited, repNet)
+                # if !(repNet in source_net_sets[1][2]) && !(repNet in source_net_sets[2][2])
+                #     if check_coloned_netname(repNet, nets_visited)
+                #         println(io, "Open: Net w/ netname: \"$(repNet)\". Node: $(hash_rect[pint_id]), $(hash_rect[nets_visited[repNet][1]])")
+                #         push!(error_log, ErrorEvent(errorType=OPEN, event_type=NET, rect_ref=pint_id, rect_encounter=nets_visited[repNet][1]))
+                #         error_cnt["open"] += 1; error_cnt["total"] += 1
+                #     end
+                # end
+                println(io, "Open: Net w/ netname: \"$(repNet)\". Node: $(hash_rect[pint_id]), $(hash_rect[nets_visited[repNet][1]])")
+                push!(error_log, ErrorEvent(errorType=OPEN, event_type=NET, rect_ref=pint_id, rect_encounter=nets_visited[repNet][1]))
+                error_cnt["open"] += 1; error_cnt["total"] += 1
+            else
+                nets_visited[repNet] = Vector{Int}()
             end
-            for _edge in neighbor.edges
+            push!(nets_visited[repNet], pint_id)  # add source net to visited net list
+            # add pnode id to netname table
+            # if !haskey(group_pins, repNet)
+            #     group_pins[repNet] = Vector{Int}()
+            # end
+            # push!(group_pins[repNet], pnode_id)
+            # START BFS -> PUSH EDGES into Q
+            for _edge in pnode.edges
                 enqueue!(queue, _edge)
             end
-            neighbor.visited = true
+            pnode.visited = true
+            while !isempty(queue)
+                edge = dequeue!(queue)
+                neighbor = cgraph[edge.to]
+                if neighbor.visited
+                    continue
+                end
+                if neighbor.netname isa Nothing # check netname
+                    neighbor.netname = repNet
+                elseif neighbor.netname != repNet
+                    println(io, "Short: Net colision repNet: \"$(repNet)\", NodeNet: \"$(neighbor.netname)\" at nodeID: $(edge.to)")
+                    push!(error_log, ErrorEvent(errorType=SHORT, event_type=METAL, rect_ref=edge.to, rect_encounter=pint_id))
+                    error_cnt["short"] += 1; error_cnt["total"] += 1
+                end
+                for _edge in neighbor.edges
+                    enqueue!(queue, _edge)
+                end
+                neighbor.visited = true
+            end
         end
-    end
-    # check Floating Node
-    for (node_id, node) in cgraph
-        if node.netname == nothing
-            push!(error_log, ErrorEvent(FLOATING, METAL, node_id))
+        # check Floating Node
+        noname_cnt = 0
+        for (node_id, node) in cgraph
+            if node.netname isa Nothing
+                push!(error_log, ErrorEvent(FLOATING, METAL, node_id))
+                println(io, "Floating Node: $node_id, $(hash_rect[node.rect_ref])")
+                error_cnt["floating"] += 1; error_cnt["total"] += 1
+            end
         end
-    end
+        println(io, "\n--- Connectivity Check Report ---")
+        println(io, "Total connected components found: $(length(keys(hash_rect)))")
+        println(io, "\nTotal Error Count: $(error_cnt["total"])")
+        println(io, "├─ Floating: $(error_cnt["floating"])")
+        println(io, "├─ Open: $(error_cnt["open"])")
+        println(io, "└─ Short: $(error_cnt["short"])")
+        println(io, "--------------------------------")
+
+
+            
+    end #end io
     return error_log, nets_visited
 end
+
+function check_coloned_netname(netname::String, net_sets::Vector{String})
+    # netname이 : 으로 끝나면 open무시
+    #
+    # 자신 netname 혹은 다른 netname이 : 으로 끝나면 false
+    # 그 외는 true
+
+    is_colon = endswith(netname, ":")
+    if is_colon
+        return false
+    end
+    for net in net_sets
+        is_colon_set = endswith(net, ":")
+        if is_colon_set
+            net = net[1:end-1]
+        end
+        if net == netname
+            if is_colon_set
+                return false
+            else
+                return true
+            end
+        end
+    end
+    return true
+end
+
+
 
 # struct GraphEdge
 #     ref_via::Int
