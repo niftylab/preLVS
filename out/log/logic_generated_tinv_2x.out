@@ -1,0 +1,79 @@
+Total unique nodes found in graph: 30
+
+Starting Connectivity and Netname Consistency Check...
+Starting BFS for new component from node (idx=14)...
+Starting BFS for new component from node (idx=8)...
+Starting BFS for new component from node (idx=20)...
+Starting BFS for new component from node (idx=7)...
+Starting BFS for new component from node (idx=19)...
+Starting BFS for new component from node (idx=12)...
+Starting BFS for new component from node (idx=28)...
+Starting BFS for new component from node (idx=6)...
+
+--- Connectivity Check Report ---
+Total connected components found: 8
+
+--- Component 1 ---
+Representative Net Name: O
+Netname Consistency: Passed
+Metal Indices (5): [11, 14, 18, 25, 29]
+
+--- Component 2 ---
+Representative Net Name: VDD:
+Netname Consistency: Passed
+Metal Indices (3): [2, 8, 26]
+
+--- Component 3 ---
+Representative Net Name: I
+Netname Consistency: Passed
+Metal Indices (5): [4, 5, 20, 22, 27]
+
+--- Component 4 ---
+Representative Net Name: VSS:
+Netname Consistency: Passed
+Metal Indices (3): [1, 7, 17]
+
+--- Component 5 ---
+Representative Net Name: Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [3, 9, 15, 19]
+
+--- Component 6 ---
+Representative Net Name: EN
+Netname Consistency: Passed
+Metal Indices (3): [12, 21, 30]
+
+--- Component 7 ---
+Representative Net Name: ENB
+Netname Consistency: Passed
+Metal Indices (3): [13, 23, 28]
+
+--- Component 8 ---
+Representative Net Name: Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [6, 10, 16, 24]
+
+------------------------------------------------------------------
+
+Library: logic_generated
+Cell: tinv_2x
+
+   _ (`-.   ('-.      .-')     .-')      ('-.  _ .-') _   
+  ( (OO  ) ( OO ).-. ( OO ).  ( OO ).  _(  OO)( (  OO) )  
+ _.`     | / . --. /(_)---|_)(_)---|_)(,------.|     .'_  
+(__...--'' | |-.   |/    _ | /    _ |  |  .---',`'--..._) 
+ |  /  | | | |  |  ||  (` `  |  (` `   |  |    |  |   | ' 
+ |  |_.' | | |_.'  | '..`''.  '..`''.  |  '--. |  |   ' | 
+ |  .___.' |  .-.  |.-._)   |.-._)   | |  .--' |  |   / : 
+ |  |      |  | |  ||       /|       / |  `---.|  '--'  / 
+ `--'      `--' `--' `-----'  `-----'  `------'`-------'    
+        
+Overall Graph Netname Consistency: PASSED ✔️
+
+Total Error Count: 0
+├─ Floating: 0
+├─ Open: 0
+└─ Short: 0
+
+------------------------------------------------------------------
+

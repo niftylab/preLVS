@@ -1,0 +1,67 @@
+Total unique nodes found in graph: 18
+
+Starting Connectivity and Netname Consistency Check...
+Starting BFS for new component from node (idx=5)...
+Starting BFS for new component from node (idx=8)...
+Starting BFS for new component from node (idx=13)...
+Starting BFS for new component from node (idx=12)...
+Starting BFS for new component from node (idx=2)...
+Starting BFS for new component from node (idx=14)...
+
+--- Connectivity Check Report ---
+Total connected components found: 6
+
+--- Component 1 ---
+Representative Net Name: EN
+Netname Consistency: Passed
+Metal Indices (3): [5, 10, 18]
+
+--- Component 2 ---
+Representative Net Name: VSS:
+Netname Consistency: Passed
+Metal Indices (2): [1, 8]
+
+--- Component 3 ---
+Representative Net Name: O
+Netname Consistency: Passed
+Metal Indices (5): [4, 7, 9, 13, 17]
+
+--- Component 4 ---
+Representative Net Name: ENB
+Netname Consistency: Passed
+Metal Indices (3): [6, 12, 16]
+
+--- Component 5 ---
+Representative Net Name: I
+Netname Consistency: Passed
+Metal Indices (3): [2, 11, 15]
+
+--- Component 6 ---
+Representative Net Name: VDD:
+Netname Consistency: Passed
+Metal Indices (2): [3, 14]
+
+------------------------------------------------------------------
+
+Library: logic_generated
+Cell: tinv_small_1x
+
+   _ (`-.   ('-.      .-')     .-')      ('-.  _ .-') _   
+  ( (OO  ) ( OO ).-. ( OO ).  ( OO ).  _(  OO)( (  OO) )  
+ _.`     | / . --. /(_)---|_)(_)---|_)(,------.|     .'_  
+(__...--'' | |-.   |/    _ | /    _ |  |  .---',`'--..._) 
+ |  /  | | | |  |  ||  (` `  |  (` `   |  |    |  |   | ' 
+ |  |_.' | | |_.'  | '..`''.  '..`''.  |  '--. |  |   ' | 
+ |  .___.' |  .-.  |.-._)   |.-._)   | |  .--' |  |   / : 
+ |  |      |  | |  ||       /|       / |  `---.|  '--'  / 
+ `--'      `--' `--' `-----'  `-----'  `------'`-------'    
+        
+Overall Graph Netname Consistency: PASSED ✔️
+
+Total Error Count: 0
+├─ Floating: 0
+├─ Open: 0
+└─ Short: 0
+
+------------------------------------------------------------------
+

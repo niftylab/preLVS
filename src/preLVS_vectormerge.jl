@@ -157,9 +157,9 @@ function loadDB(path_runset::String)
     # equivalent_net_sets = [("VDD", Set(["VDD", "vdd", "VDD:"])), ("VSS", Set(["VSS", "VSS:", "vss"]))]
     equivalent_net_sets = config_data["equivalent_net_sets"]
     root, cell_data, db_data = get_tree(libname, cellname, db_dir, equivalent_net_sets)
-    # print_tree_root(root)
+    print_tree_root(root)
 
-    return root, cell_data, db_data 
+    return root, cell_data, db_data
 end
 
 function flatten(path_runset::String)

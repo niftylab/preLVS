@@ -1,0 +1,97 @@
+Total unique nodes found in graph: 75
+
+Starting Connectivity and Netname Consistency Check...
+Starting BFS for new component from node (idx=54)...
+Starting BFS for new component from node (idx=64)...
+Starting BFS for new component from node (idx=13)...
+Starting BFS for new component from node (idx=2)...
+Starting BFS for new component from node (idx=62)...
+Starting BFS for new component from node (idx=7)...
+Starting BFS for new component from node (idx=6)...
+Starting BFS for new component from node (idx=28)...
+Starting BFS for new component from node (idx=43)...
+Starting BFS for new component from node (idx=38)...
+Starting BFS for new component from node (idx=3)...
+
+--- Connectivity Check Report ---
+Total connected components found: 11
+
+--- Component 1 ---
+Representative Net Name: CLK
+Netname Consistency: Passed
+Metal Indices (7): [12, 22, 47, 54, 65, 67, 74]
+
+--- Component 2 ---
+Representative Net Name: MEM
+Netname Consistency: Passed
+Metal Indices (16): [11, 14, 20, 23, 35, 36, 41, 42, 50, 56, 59, 60, 64, 68, 71, 75]
+
+--- Component 3 ---
+Representative Net Name: CLKB
+Netname Consistency: Passed
+Metal Indices (7): [13, 21, 48, 53, 63, 69, 73]
+
+--- Component 4 ---
+Representative Net Name: VDD:
+Netname Consistency: Passed
+Metal Indices (8): [2, 8, 19, 25, 31, 33, 39, 61]
+
+--- Component 5 ---
+Representative Net Name: I
+Netname Consistency: Passed
+Metal Indices (5): [4, 5, 46, 52, 62]
+
+--- Component 6 ---
+Representative Net Name: VSS:
+Netname Consistency: Passed
+Metal Indices (6): [1, 7, 17, 24, 30, 40]
+
+--- Component 7 ---
+Representative Net Name: latch_2ck_rstbh_2x__I0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [6, 10, 16, 57]
+
+--- Component 8 ---
+Representative Net Name: RSTB
+Netname Consistency: Passed
+Metal Indices (5): [27, 28, 49, 55, 70]
+
+--- Component 9 ---
+Representative Net Name: O
+Netname Consistency: Passed
+Metal Indices (9): [18, 29, 34, 37, 43, 51, 58, 66, 72]
+
+--- Component 10 ---
+Representative Net Name: latch_2ck_rstbh_2x__I2__Nint
+Netname Consistency: Passed
+Metal Indices (4): [26, 32, 38, 45]
+
+--- Component 11 ---
+Representative Net Name: latch_2ck_rstbh_2x__I0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [3, 9, 15, 44]
+
+------------------------------------------------------------------
+
+Library: serializer_generated
+Cell: latch_2ck_rstbh_2x
+
+   _ (`-.   ('-.      .-')     .-')      ('-.  _ .-') _   
+  ( (OO  ) ( OO ).-. ( OO ).  ( OO ).  _(  OO)( (  OO) )  
+ _.`     | / . --. /(_)---|_)(_)---|_)(,------.|     .'_  
+(__...--'' | |-.   |/    _ | /    _ |  |  .---',`'--..._) 
+ |  /  | | | |  |  ||  (` `  |  (` `   |  |    |  |   | ' 
+ |  |_.' | | |_.'  | '..`''.  '..`''.  |  '--. |  |   ' | 
+ |  .___.' |  .-.  |.-._)   |.-._)   | |  .--' |  |   / : 
+ |  |      |  | |  ||       /|       / |  `---.|  '--'  / 
+ `--'      `--' `--' `-----'  `-----'  `------'`-------'    
+        
+Overall Graph Netname Consistency: PASSED ✔️
+
+Total Error Count: 0
+├─ Floating: 0
+├─ Open: 0
+└─ Short: 0
+
+------------------------------------------------------------------
+

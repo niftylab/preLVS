@@ -1,0 +1,139 @@
+Total unique nodes found in graph: 171
+
+Starting Connectivity and Netname Consistency Check...
+Starting BFS for new component from node (idx=133)...
+Starting BFS for new component from node (idx=146)...
+Starting BFS for new component from node (idx=60)...
+Starting BFS for new component from node (idx=27)...
+Starting BFS for new component from node (idx=23)...
+Starting BFS for new component from node (idx=117)...
+Starting BFS for new component from node (idx=71)...
+Starting BFS for new component from node (idx=48)...
+Starting BFS for new component from node (idx=89)...
+Starting BFS for new component from node (idx=96)...
+Starting BFS for new component from node (idx=32)...
+Starting BFS for new component from node (idx=21)...
+Starting BFS for new component from node (idx=10)...
+Starting BFS for new component from node (idx=83)...
+Starting BFS for new component from node (idx=122)...
+Starting BFS for new component from node (idx=99)...
+Starting BFS for new component from node (idx=109)...
+Starting BFS for new component from node (idx=81)...
+
+--- Connectivity Check Report ---
+Total connected components found: 18
+
+--- Component 1 ---
+Representative Net Name: MEM2
+Netname Consistency: Passed
+Metal Indices (14): [66, 69, 75, 78, 90, 91, 100, 106, 119, 133, 137, 160, 164, 167]
+
+--- Component 2 ---
+Representative Net Name: ICLK
+Netname Consistency: Passed
+Metal Indices (18): [11, 14, 29, 37, 67, 77, 103, 112, 116, 125, 131, 135, 146, 148, 154, 161, 163, 169]
+
+--- Component 3 ---
+Representative Net Name: LATCH
+Netname Consistency: Passed
+Metal Indices (14): [34, 45, 50, 53, 59, 60, 105, 115, 120, 129, 139, 151, 157, 158]
+
+--- Component 4 ---
+Representative Net Name: MEM1
+Netname Consistency: Passed
+Metal Indices (14): [27, 30, 36, 39, 51, 52, 97, 104, 114, 128, 136, 149, 153, 156]
+
+--- Component 5 ---
+Representative Net Name: VSS:
+Netname Consistency: Passed
+Metal Indices (15): [1, 7, 9, 15, 17, 23, 33, 40, 46, 56, 62, 72, 79, 85, 95]
+
+--- Component 6 ---
+Representative Net Name: ICLKB
+Netname Consistency: Passed
+Metal Indices (18): [3, 6, 28, 38, 68, 76, 102, 111, 117, 126, 130, 134, 144, 150, 152, 159, 165, 170]
+
+--- Component 7 ---
+Representative Net Name: dff_2ck_rstbh_2x__tinv1__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [61, 65, 71, 140]
+
+--- Component 8 ---
+Representative Net Name: dff_2ck_rstbh_2x__nand0__Nint
+Netname Consistency: Passed
+Metal Indices (4): [42, 48, 54, 98]
+
+--- Component 9 ---
+Representative Net Name: O
+Netname Consistency: Passed
+Metal Indices (9): [73, 84, 89, 92, 107, 121, 141, 162, 168]
+
+--- Component 10 ---
+Representative Net Name: dff_2ck_rstbh_2x__tinv0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [19, 25, 31, 96]
+
+--- Component 11 ---
+Representative Net Name: dff_2ck_rstbh_2x__tinv0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [22, 26, 32, 138]
+
+--- Component 12 ---
+Representative Net Name: I
+Netname Consistency: Passed
+Metal Indices (5): [20, 21, 110, 124, 147]
+
+--- Component 13 ---
+Representative Net Name: VDD:
+Netname Consistency: Passed
+Metal Indices (19): [2, 8, 10, 16, 18, 24, 35, 41, 47, 49, 55, 57, 63, 74, 80, 86, 88, 94, 142]
+
+--- Component 14 ---
+Representative Net Name: RSTB
+Netname Consistency: Passed
+Metal Indices (11): [43, 44, 82, 83, 113, 118, 127, 132, 155, 166, 171]
+
+--- Component 15 ---
+Representative Net Name: CLK
+Netname Consistency: Passed
+Metal Indices (5): [4, 5, 108, 122, 143]
+
+--- Component 16 ---
+Representative Net Name: dff_2ck_rstbh_2x__tinv1__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [58, 64, 70, 99]
+
+--- Component 17 ---
+Representative Net Name: CLKB
+Netname Consistency: Passed
+Metal Indices (5): [12, 13, 109, 123, 145]
+
+--- Component 18 ---
+Representative Net Name: dff_2ck_rstbh_2x__nand1__Nint
+Netname Consistency: Passed
+Metal Indices (4): [81, 87, 93, 101]
+
+------------------------------------------------------------------
+
+Library: serializer_generated
+Cell: dff_2ck_rstbh_2x
+
+   _ (`-.   ('-.      .-')     .-')      ('-.  _ .-') _   
+  ( (OO  ) ( OO ).-. ( OO ).  ( OO ).  _(  OO)( (  OO) )  
+ _.`     | / . --. /(_)---|_)(_)---|_)(,------.|     .'_  
+(__...--'' | |-.   |/    _ | /    _ |  |  .---',`'--..._) 
+ |  /  | | | |  |  ||  (` `  |  (` `   |  |    |  |   | ' 
+ |  |_.' | | |_.'  | '..`''.  '..`''.  |  '--. |  |   ' | 
+ |  .___.' |  .-.  |.-._)   |.-._)   | |  .--' |  |   / : 
+ |  |      |  | |  ||       /|       / |  `---.|  '--'  / 
+ `--'      `--' `--' `-----'  `-----'  `------'`-------'    
+        
+Overall Graph Netname Consistency: PASSED ✔️
+
+Total Error Count: 0
+├─ Floating: 0
+├─ Open: 0
+└─ Short: 0
+
+------------------------------------------------------------------
+

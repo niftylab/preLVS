@@ -5,16 +5,19 @@
 # libname: "scan_generated" # 라이브러리 이름
 # cellname: "scan_cell" # cell 이름
 
+libname: "serializer_generated" # 라이브러리 이름
+cellname: "ser_8to4_2x" # cell 이름
+
 # libname: "logic_generated" # 라이브러리 이름
-# cellname: "dff_2x" # cell 이름
+# cellname: "tinv_small_1x" # cell 이름
 
 # libname: "comp_generated" # 라이브러리 이름
 # cellname: "strongarm" # cell 이름
 
-libname: "tbadc_generated" # 라이브러리 이름
-cellname: "tdc_1bit" # cell 이름
+# libname: "tbadc_generated" # 라이브러리 이름
+# cellname: "zero_inj" # cell 이름
 
-db_dir: "db"
+db_dir: "db_test"
 metal_dir: "out/metal"
 via_dir: "out/via"
 visualized_dir: "out/visualized"

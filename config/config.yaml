@@ -39,3 +39,5 @@ Via:
 Equivalent_net_sets:
   - ["VDD:", "VDD", "vdd", "vdd:"]
   - ["VSS:", "VSS", "vss", "vss:", "gnd"]
+  - ["CLK", "CLK"]
+  - ["CLKB", "CKB"]

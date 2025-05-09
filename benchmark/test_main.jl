@@ -8,5 +8,6 @@ input_data = YAML.load_file(input_path)
 libname = input_data["libname"]
 cellname = input_data["cellname"]
 
+root, cell_data, db_data = loadDB(input_path)
 
 cinfo = runLVS(input_path)

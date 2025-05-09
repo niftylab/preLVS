@@ -1,0 +1,384 @@
+Total unique nodes found in graph: 707
+
+Starting Connectivity and Netname Consistency Check...
+Starting BFS for new component from node (idx=352)...
+Starting BFS for new component from node (idx=550)...
+Starting BFS for new component from node (idx=659)...
+Starting BFS for new component from node (idx=370)...
+SHORT: Netname inconsistency! Node (idx=675) has netname 'net15', but expected 'data_out' for this component.
+Starting BFS for new component from node (idx=237)...
+Starting BFS for new component from node (idx=560)...
+Starting BFS for new component from node (idx=541)...
+Starting BFS for new component from node (idx=136)...
+Starting BFS for new component from node (idx=377)...
+Starting BFS for new component from node (idx=151)...
+Starting BFS for new component from node (idx=193)...
+Starting BFS for new component from node (idx=406)...
+Starting BFS for new component from node (idx=201)...
+Starting BFS for new component from node (idx=433)...
+Starting BFS for new component from node (idx=620)...
+Starting BFS for new component from node (idx=551)...
+Starting BFS for new component from node (idx=310)...
+Starting BFS for new component from node (idx=512)...
+Starting BFS for new component from node (idx=22)...
+Starting BFS for new component from node (idx=34)...
+Starting BFS for new component from node (idx=631)...
+Starting BFS for new component from node (idx=423)...
+Starting BFS for new component from node (idx=203)...
+Starting BFS for new component from node (idx=555)...
+FLOATING: No netname found metals. Start node = 2, 3170, 15805 - 16395
+Starting BFS for new component from node (idx=463)...
+Starting BFS for new component from node (idx=252)...
+Starting BFS for new component from node (idx=654)...
+Starting BFS for new component from node (idx=102)...
+Starting BFS for new component from node (idx=72)...
+FLOATING: No netname found metals. Start node = 1, 3960, 335 - 615
+Starting BFS for new component from node (idx=211)...
+Starting BFS for new component from node (idx=473)...
+Starting BFS for new component from node (idx=416)...
+Starting BFS for new component from node (idx=504)...
+Starting BFS for new component from node (idx=66)...
+FLOATING: No netname found metals. Start node = 1, 3420, 1310 - 1660
+Starting BFS for new component from node (idx=132)...
+Starting BFS for new component from node (idx=238)...
+FLOATING: No netname found metals. Start node = 1, 12600, 2260 - 2610
+Starting BFS for new component from node (idx=291)...
+Starting BFS for new component from node (idx=346)...
+Starting BFS for new component from node (idx=61)...
+Starting BFS for new component from node (idx=401)...
+Starting BFS for new component from node (idx=159)...
+Starting BFS for new component from node (idx=182)...
+Starting BFS for new component from node (idx=212)...
+Starting BFS for new component from node (idx=582)...
+Starting BFS for new component from node (idx=119)...
+Starting BFS for new component from node (idx=668)...
+Starting BFS for new component from node (idx=508)...
+FLOATING: No netname found metals. Start node = 2, 2505, 14565 - 15675
+Starting BFS for new component from node (idx=475)...
+Starting BFS for new component from node (idx=241)...
+FLOATING: No netname found metals. Start node = 1, 12600, 3305 - 3585
+Starting BFS for new component from node (idx=63)...
+Starting BFS for new component from node (idx=33)...
+FLOATING: No netname found metals. Start node = 1, 1800, 335 - 615
+Starting BFS for new component from node (idx=36)...
+FLOATING: No netname found metals. Start node = 1, 1800, 1310 - 1660
+Starting BFS for new component from node (idx=19)...
+Starting BFS for new component from node (idx=75)...
+FLOATING: No netname found metals. Start node = 1, 3960, 1310 - 1660
+Starting BFS for new component from node (idx=131)...
+Starting BFS for new component from node (idx=295)...
+FLOATING: No netname found metals. Start node = 1, 15480, 3305 - 3585
+Starting BFS for new component from node (idx=564)...
+
+--- Connectivity Check Report ---
+Total connected components found: 57
+
+--- Component 1 ---
+Representative Net Name: SCAN_DATA_OUT
+Netname Consistency: Passed
+Metal Indices (19): [320, 323, 331, 334, 338, 341, 349, 352, 360, 363, 371, 374, 382, 385, 389, 392, 510, 573, 671]
+
+--- Component 2 ---
+Representative Net Name: SCAN_GATE
+Netname Consistency: Passed
+Metal Indices (11): [226, 227, 254, 279, 526, 528, 550, 553, 645, 657, 706]
+
+--- Component 3 ---
+Representative Net Name: net4
+Netname Consistency: Passed
+Metal Indices (11): [263, 266, 274, 275, 413, 437, 462, 478, 656, 659, 684]
+
+--- Component 4 ---
+Representative Net Name: data_out
+Netname Consistency: Failed
+Metal Indices (31): [321, 322, 332, 333, 339, 340, 345, 348, 350, 351, 356, 359, 361, 362, 367, 370, 372, 373, 378, 381, 383, 384, 390, 391, 418, 483, 532, 556, 674, 675, 698]
+
+--- Component 5 ---
+Representative Net Name: net1
+Netname Consistency: Passed
+Metal Indices (22): [105, 106, 216, 234, 237, 250, 251, 411, 435, 443, 460, 476, 518, 542, 606, 642, 648, 650, 652, 676, 683, 705]
+
+--- Component 6 ---
+Representative Net Name: net6
+Netname Consistency: Passed
+Metal Indices (11): [38, 39, 47, 50, 498, 513, 537, 560, 588, 591, 700]
+
+--- Component 7 ---
+Representative Net Name: scan_cell__I20__ICLKB
+Netname Consistency: Passed
+Metal Indices (23): [76, 79, 91, 92, 120, 139, 181, 198, 500, 517, 519, 524, 541, 544, 547, 562, 599, 601, 611, 614, 628, 636, 695]
+
+--- Component 8 ---
+Representative Net Name: VSS:
+Netname Consistency: Passed
+Metal Indices (54): [2, 13, 16, 27, 31, 43, 45, 51, 55, 67, 70, 81, 84, 95, 98, 109, 112, 124, 128, 136, 149, 157, 163, 169, 172, 184, 188, 196, 209, 217, 223, 229, 232, 243, 246, 258, 262, 268, 270, 282, 286, 297, 300, 311, 314, 325, 336, 343, 354, 365, 376, 387, 393, 489]
+
+--- Component 9 ---
+Representative Net Name: VDD:
+Netname Consistency: Passed
+Metal Indices (42): [3, 14, 17, 28, 32, 44, 46, 52, 56, 68, 71, 82, 85, 96, 99, 110, 130, 150, 158, 164, 170, 190, 210, 218, 224, 230, 233, 244, 287, 298, 301, 312, 315, 326, 337, 344, 355, 366, 377, 388, 394, 579]
+
+--- Component 10 ---
+Representative Net Name: scan_cell__I20__LATCH
+Netname Consistency: Passed
+Metal Indices (14): [129, 151, 154, 166, 167, 503, 522, 533, 546, 565, 612, 621, 626, 702]
+
+--- Component 11 ---
+Representative Net Name: scan_cell__I2__LATCH
+Netname Consistency: Passed
+Metal Indices (14): [156, 175, 178, 192, 193, 409, 431, 442, 456, 474, 622, 629, 633, 682]
+
+--- Component 12 ---
+Representative Net Name: scan_cell__I2__ICLKB
+Netname Consistency: Passed
+Metal Indices (23): [100, 103, 116, 117, 145, 160, 204, 221, 406, 426, 429, 432, 451, 453, 458, 471, 605, 607, 619, 623, 637, 646, 690]
+
+--- Component 13 ---
+Representative Net Name: scan_cell__I2__MEM2
+Netname Consistency: Passed
+Metal Indices (18): [201, 202, 207, 208, 219, 222, 235, 236, 399, 400, 434, 459, 487, 488, 638, 644, 649, 689]
+
+--- Component 14 ---
+Representative Net Name: scan_cell__I2__ICLK
+Netname Consistency: Passed
+Metal Indices (18): [115, 118, 144, 161, 205, 220, 407, 428, 433, 454, 457, 472, 609, 617, 625, 639, 643, 692]
+
+--- Component 15 ---
+Representative Net Name: scan_cell__I20__MEM1
+Netname Consistency: Passed
+Metal Indices (18): [113, 114, 125, 126, 137, 140, 152, 153, 490, 491, 521, 545, 574, 575, 610, 615, 620, 696]
+
+--- Component 16 ---
+Representative Net Name: SCAN_GATE_VALUE
+Netname Consistency: Passed
+Metal Indices (5): [239, 240, 527, 551, 651]
+
+--- Component 17 ---
+Representative Net Name: VDD:
+Netname Consistency: Passed
+Metal Indices (41): [1, 12, 15, 26, 69, 80, 83, 94, 97, 108, 111, 123, 127, 135, 155, 171, 183, 187, 195, 215, 231, 242, 245, 257, 261, 267, 269, 281, 285, 296, 299, 310, 313, 324, 335, 342, 353, 364, 375, 386, 395]
+
+--- Component 18 ---
+Representative Net Name: net7
+Netname Consistency: Passed
+Metal Indices (11): [23, 24, 37, 40, 497, 512, 536, 559, 586, 587, 704]
+
+--- Component 19 ---
+Representative Net Name: net8
+Netname Consistency: Passed
+Metal Indices (11): [9, 10, 22, 25, 496, 511, 535, 558, 583, 585, 699]
+
+--- Component 20 ---
+Representative Net Name: SCAN_LOAD
+Netname Consistency: Passed
+Metal Indices (13): [5, 6, 34, 59, 403, 419, 421, 444, 447, 580, 589, 593, 680]
+
+--- Component 21 ---
+Representative Net Name: scan_cell__I20__ICLK
+Netname Consistency: Passed
+Metal Indices (18): [90, 93, 121, 138, 180, 199, 501, 520, 523, 543, 548, 563, 603, 608, 616, 631, 634, 693]
+
+--- Component 22 ---
+Representative Net Name: SCAN_DATA_IN
+Netname Consistency: Passed
+Metal Indices (5): [73, 74, 423, 448, 598]
+
+--- Component 23 ---
+Representative Net Name: scan_cell__I2__I3__Pinternal
+Netname Consistency: Passed
+Metal Indices (3): [191, 203, 410]
+
+--- Component 24 ---
+Representative Net Name: None (all nodes had 'nothing' netname or component is empty)
+Netname Consistency: Passed
+Metal Indices (16): [247, 248, 259, 260, 271, 272, 283, 284, 307, 308, 494, 531, 555, 578, 661, 666]
+
+--- Component 25 ---
+Representative Net Name: net5
+Netname Consistency: Passed
+Metal Indices (11): [273, 276, 289, 290, 414, 438, 463, 479, 660, 662, 678]
+
+--- Component 26 ---
+Representative Net Name: net3
+Netname Consistency: Passed
+Metal Indices (11): [249, 252, 264, 265, 412, 436, 461, 477, 653, 655, 677]
+
+--- Component 27 ---
+Representative Net Name: SCAN_GATE_bar
+Netname Consistency: Passed
+Metal Indices (13): [225, 228, 255, 278, 506, 529, 552, 568, 570, 647, 654, 658, 707]
+
+--- Component 28 ---
+Representative Net Name: SCAN_CLK
+Netname Consistency: Passed
+Metal Indices (11): [48, 49, 101, 102, 425, 450, 514, 538, 592, 604, 691]
+
+--- Component 29 ---
+Representative Net Name: None (all nodes had 'nothing' netname or component is empty)
+Netname Consistency: Passed
+Metal Indices (3): [57, 72, 404]
+
+--- Component 30 ---
+Representative Net Name: net2
+Netname Consistency: Passed
+Metal Indices (14): [189, 211, 214, 293, 294, 505, 530, 534, 554, 567, 632, 641, 664, 703]
+
+--- Component 31 ---
+Representative Net Name: scan_cell__I2__I0__Ninternal
+Netname Consistency: Passed
+Metal Indices (3): [134, 146, 473]
+
+--- Component 32 ---
+Representative Net Name: net9
+Netname Consistency: Passed
+Metal Indices (13): [302, 305, 317, 318, 328, 329, 416, 440, 465, 481, 667, 670, 679]
+
+--- Component 33 ---
+Representative Net Name: scan_cell__I20__I3__Ninternal
+Netname Consistency: Passed
+Metal Indices (3): [165, 179, 504]
+
+--- Component 34 ---
+Representative Net Name: None (all nodes had 'nothing' netname or component is empty)
+Netname Consistency: Passed
+Metal Indices (16): [29, 30, 41, 42, 53, 54, 65, 66, 87, 88, 396, 424, 449, 484, 596, 600]
+
+--- Component 35 ---
+Representative Net Name: mux_out
+Netname Consistency: Passed
+Metal Indices (11): [86, 89, 132, 133, 405, 427, 452, 470, 602, 613, 681]
+
+--- Component 36 ---
+Representative Net Name: None (all nodes had 'nothing' netname or component is empty)
+Netname Consistency: Passed
+Metal Indices (3): [238, 253, 507]
+
+--- Component 37 ---
+Representative Net Name: SCAN_OUT
+Netname Consistency: Passed
+Metal Indices (5): [288, 291, 415, 480, 663]
+
+--- Component 38 ---
+Representative Net Name: net10
+Netname Consistency: Passed
+Metal Indices (19): [316, 319, 327, 330, 346, 347, 357, 358, 368, 369, 379, 380, 417, 441, 466, 482, 672, 673, 686]
+
+--- Component 39 ---
+Representative Net Name: SCAN_EN_bar
+Netname Consistency: Passed
+Metal Indices (11): [61, 64, 77, 78, 499, 516, 540, 561, 595, 597, 701]
+
+--- Component 40 ---
+Representative Net Name: SCAN_LOAD_bar
+Netname Consistency: Passed
+Metal Indices (11): [4, 7, 35, 58, 401, 422, 446, 467, 581, 590, 687]
+
+--- Component 41 ---
+Representative Net Name: scan_cell__I2__MEM1
+Netname Consistency: Passed
+Metal Indices (18): [141, 142, 147, 148, 159, 162, 176, 177, 397, 398, 430, 455, 485, 486, 618, 624, 627, 688]
+
+--- Component 42 ---
+Representative Net Name: scan_cell__I20__I3__Pinternal
+Netname Consistency: Passed
+Metal Indices (3): [168, 182, 566]
+
+--- Component 43 ---
+Representative Net Name: scan_cell__I20__MEM2
+Netname Consistency: Passed
+Metal Indices (18): [173, 174, 185, 186, 197, 200, 212, 213, 492, 493, 525, 549, 576, 577, 630, 635, 640, 697]
+
+--- Component 44 ---
+Representative Net Name: SCAN_CLK_OUT
+Netname Consistency: Passed
+Metal Indices (5): [8, 11, 495, 557, 582]
+
+--- Component 45 ---
+Representative Net Name: scan_cell__I20__I0__Ninternal
+Netname Consistency: Passed
+Metal Indices (3): [104, 119, 502]
+
+--- Component 46 ---
+Representative Net Name: mux_out2
+Netname Consistency: Passed
+Metal Indices (13): [303, 304, 306, 309, 439, 464, 509, 572, 665, 668, 669, 685, 694]
+
+--- Component 47 ---
+Representative Net Name: None (all nodes had 'nothing' netname or component is empty)
+Netname Consistency: Passed
+Metal Indices (3): [277, 292, 508]
+
+--- Component 48 ---
+Representative Net Name: scan_cell__I2__I3__Ninternal
+Netname Consistency: Passed
+Metal Indices (3): [194, 206, 475]
+
+--- Component 49 ---
+Representative Net Name: None (all nodes had 'nothing' netname or component is empty)
+Netname Consistency: Passed
+Metal Indices (3): [241, 256, 569]
+
+--- Component 50 ---
+Representative Net Name: SCAN_EN
+Netname Consistency: Passed
+Metal Indices (5): [62, 63, 515, 539, 594]
+
+--- Component 51 ---
+Representative Net Name: None (all nodes had 'nothing' netname or component is empty)
+Netname Consistency: Passed
+Metal Indices (3): [18, 33, 402]
+
+--- Component 52 ---
+Representative Net Name: None (all nodes had 'nothing' netname or component is empty)
+Netname Consistency: Passed
+Metal Indices (3): [21, 36, 468]
+
+--- Component 53 ---
+Representative Net Name: SCAN_IN
+Netname Consistency: Passed
+Metal Indices (5): [19, 20, 420, 445, 584]
+
+--- Component 54 ---
+Representative Net Name: None (all nodes had 'nothing' netname or component is empty)
+Netname Consistency: Passed
+Metal Indices (3): [60, 75, 469]
+
+--- Component 55 ---
+Representative Net Name: scan_cell__I2__I0__Pinternal
+Netname Consistency: Passed
+Metal Indices (3): [131, 143, 408]
+
+--- Component 56 ---
+Representative Net Name: None (all nodes had 'nothing' netname or component is empty)
+Netname Consistency: Passed
+Metal Indices (3): [280, 295, 571]
+
+--- Component 57 ---
+Representative Net Name: scan_cell__I20__I0__Pinternal
+Netname Consistency: Passed
+Metal Indices (3): [107, 122, 564]
+
+------------------------------------------------------------------
+
+Library: scan_generated
+Cell: scan_cell
+
+            ('-.                          ('-.  _ .-') _   
+           ( OO ).-.                    _(  OO)( (  OO) )  
+   ,------./ . --. /  ,-.-')  ,--.     (,------.|     .'_  
+('-| _.---'| |-.  |   |  |OO) |  |.-')  |  .---',`'--..._) 
+(OO|(_|  . | |  |  |  |  |  | |  | OO ) |  |    |  |   | ' 
+/  |  '--. | |_.'  |  |  |(_/ |  |`-' |(|  '--. |  |   ' | 
+|_)|  .--' |  .-.  | ,|  |_.'(|  '---.' |  .--' |  |   / : 
+  ||  |    |  | |  |(_|  |    |      |  |  `---.|  '--'  / 
+   `--'    `--' `--'  `--'    `------'  `------'`-------'  
+        
+Overall Graph Netname Consistency: FAILED ❌
+
+Total Error Count: 11
+├─ Floating: 10
+├─ Open: 0
+└─ Short: 1
+
+------------------------------------------------------------------
+
