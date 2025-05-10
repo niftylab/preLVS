@@ -82,6 +82,7 @@ function check_connections_bfs(cgraph::Dict{Int, GraphNode}, pinNodes::Dict{Int,
         "short" => 0,
         "open" => 0,
         "floating" => 0,
+        "label" => 0,
         "total" => 0
     )
 
@@ -102,7 +103,7 @@ function check_connections_bfs(cgraph::Dict{Int, GraphNode}, pinNodes::Dict{Int,
         end
         if length(source_net) == 0  # no named labels
             push!(error_log, ErrorEvent(errorType=WARNING, event_type=LABEL, rect_ref=labels[1], rect_encounter=pnode_id))
-            println("WARNING: No named labels at pin node: $(hash_rect[pnode_id])")
+            # println("WARNING: No named labels at pin node: $(hash_rect[pnode_id])")
             error_cnt["label"] += 1; error_cnt["total"] += 1
             # pnode.netname = Union{String, Nothing}(nothing) # -> pnode.netname == nothing
             continue # KEEP pnode.netname == Nothing
@@ -173,7 +174,7 @@ function check_connections_bfs(cgraph::Dict{Int, GraphNode}, pinNodes::Dict{Int,
             if neighbor.netname isa Nothing # check netname
                 neighbor.netname = repNet
             elseif neighbor.netname != repNet
-                println("Short: Net colision repNet: \"$(repNet)\", NodeNet: \"$(neighbor.netname)\" at nodeID: $(edge.to)")
+                # println("Short: Net colision repNet: \"$(repNet)\", NodeNet: \"$(neighbor.netname)\" at nodeID: $(edge.to)")
                 push!(error_log, ErrorEvent(errorType=SHORT, event_type=METAL, rect_ref=edge.to, rect_encounter=pnode_id))
                 error_cnt["short"] += 1; error_cnt["total"] += 1
             end
@@ -230,7 +231,7 @@ function check_connections_bfs(cgraph::Dict{Int, GraphNode}, pinNodes::Dict{Int,
             if neighbor.netname isa Nothing # check netname
                 neighbor.netname = repNet
             elseif neighbor.netname != repNet
-                println("Short: Net colision repNet: \"$(repNet)\", NodeNet: \"$(neighbor.netname)\" at nodeID: $(edge.to)")
+                # println("Short: Net colision repNet: \"$(repNet)\", NodeNet: \"$(neighbor.netname)\" at nodeID: $(edge.to)")
                 push!(error_log, ErrorEvent(errorType=SHORT, event_type=METAL, rect_ref=edge.to, rect_encounter=pint_id))
                 error_cnt["short"] += 1; error_cnt["total"] += 1
             end
@@ -241,11 +242,10 @@ function check_connections_bfs(cgraph::Dict{Int, GraphNode}, pinNodes::Dict{Int,
         end
     end
     # check Floating Node
-    noname_cnt = 0
     for (node_id, node) in cgraph
         if node.netname isa Nothing
             push!(error_log, ErrorEvent(FLOATING, METAL, node_id))
-            println("Floating Node: $node_id, $(hash_rect[node.rect_ref])")
+            # println("Floating Node: $node_id, $(hash_rect[node.rect_ref])")
             error_cnt["floating"] += 1; error_cnt["total"] += 1
         end
     end
@@ -254,7 +254,8 @@ function check_connections_bfs(cgraph::Dict{Int, GraphNode}, pinNodes::Dict{Int,
     println("\nTotal Error Count: $(error_cnt["total"])")
     println("├─ Floating: $(error_cnt["floating"])")
     println("├─ Open: $(error_cnt["open"])")
-    println("└─ Short: $(error_cnt["short"])")
+    println("├─ Short: $(error_cnt["short"])")
+    println("└─ Label: $(error_cnt["label"])")
     println("--------------------------------")
            
     return error_log, error_cnt, hash_rect, nets_visited
@@ -338,7 +339,8 @@ function create_error_log_file(error_log::Vector{ErrorEvent}, error_cnt::Dict{St
         println(io, "\nTotal Error Count: $(error_cnt["total"])")
         println(io, "├─ Floating: $(error_cnt["floating"])")
         println(io, "├─ Open: $(error_cnt["open"])")
-        println(io, "└─ Short: $(error_cnt["short"])")
+        println(io, "├─ Short: $(error_cnt["short"])")
+        println(io, "└─ Label: $(error_cnt["label"])")
         println(io, "\n------------------------------------------------------------------\n")
     end
 end

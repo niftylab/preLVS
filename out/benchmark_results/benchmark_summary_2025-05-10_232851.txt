@@ -1,0 +1,184 @@
+Cell: logic_generated - dff_2x
+  Function: loadDB
+    Mean Time: 2.2229e7 ns
+    Std Time: 7.530293620437386e6 ns
+    Median Time: 1.79861e7 ns
+    Min Time: 1.77775e7 ns
+    Max Time: 3.09234e7 ns
+    Allocations: 378124
+    Memory: 30383376 bytes
+    Samples Run: 3
+  Function: flatten
+    Mean Time: 2.1486966666666668e7 ns
+    Std Time: 2.727488387387439e6 ns
+    Median Time: 2.01455e7 ns
+    Min Time: 1.969e7 ns
+    Max Time: 2.46254e7 ns
+    Allocations: 398023
+    Memory: 31156072 bytes
+    Samples Run: 3
+  Function: alignEvents
+    Mean Time: 3.05696e7 ns
+    Std Time: 7.325214953842652e6 ns
+    Median Time: 3.08794e7 ns
+    Min Time: 2.30944e7 ns
+    Max Time: 3.7735e7 ns
+    Allocations: 515872
+    Memory: 44432744 bytes
+    Samples Run: 3
+  Function: generate_graph
+    Mean Time: 3.7274433333333336e7 ns
+    Std Time: 4.857752406549076e6 ns
+    Median Time: 3.8631e7 ns
+    Min Time: 3.18826e7 ns
+    Max Time: 4.13097e7 ns
+    Allocations: 521202
+    Memory: 44825368 bytes
+    Samples Run: 3
+  Function: runLVS
+    Mean Time: 3.78074e7 ns
+    Std Time: 1.000057556493625e7 ns
+    Median Time: 3.79465e7 ns
+    Min Time: 2.7738e7 ns
+    Max Time: 4.77377e7 ns
+    Allocations: 532398
+    Memory: 45517392 bytes
+    Samples Run: 3
+Cell: scan_generated - scan_cell
+  Function: loadDB
+    Mean Time: 7.62823e7 ns
+    Std Time: 3.958081731306215e7 ns
+    Median Time: 5.79506e7 ns
+    Min Time: 4.91907e7 ns
+    Max Time: 1.217056e8 ns
+    Allocations: 956931
+    Memory: 76042536 bytes
+    Samples Run: 3
+  Function: flatten
+    Mean Time: 8.30748e7 ns
+    Std Time: 1.792457852754145e7 ns
+    Median Time: 9.31721e7 ns
+    Min Time: 6.23793e7 ns
+    Max Time: 9.3673e7 ns
+    Allocations: 1018995
+    Memory: 78503992 bytes
+    Samples Run: 3
+  Function: alignEvents
+    Mean Time: 1.4818106666666666e8 ns
+    Std Time: 2.4841017046476446e7 ns
+    Median Time: 1.453121e8 ns
+    Min Time: 1.248991e8 ns
+    Max Time: 1.74332e8 ns
+    Allocations: 1681889
+    Memory: 152587864 bytes
+    Samples Run: 3
+  Function: generate_graph
+    Mean Time: 1.5231356666666666e8 ns
+    Std Time: 2.8973335313065585e7 ns
+    Median Time: 1.490435e8 ns
+    Min Time: 1.25114e8 ns
+    Max Time: 1.827832e8 ns
+    Allocations: 1712616
+    Memory: 154631288 bytes
+    Samples Run: 3
+  Function: runLVS
+    Mean Time: 1.6968496666666666e8 ns
+    Std Time: 2.946867295490812e7 ns
+    Median Time: 1.68891e8 ns
+    Min Time: 1.406213e8 ns
+    Max Time: 1.995426e8 ns
+    Allocations: 2125834
+    Memory: 165839528 bytes
+    Samples Run: 3
+Cell: scan_generated - scan_chain_17bit
+  Function: loadDB
+    Mean Time: 8.835056666666667e7 ns
+    Std Time: 4.266443707648483e7 ns
+    Median Time: 7.03075e7 ns
+    Min Time: 5.76721e7 ns
+    Max Time: 1.370721e8 ns
+    Allocations: 1004886
+    Memory: 78498584 bytes
+    Samples Run: 3
+  Function: flatten
+    Mean Time: 1.3862256666666666e8 ns
+    Std Time: 3.4548586709782116e7 ns
+    Median Time: 1.348505e8 ns
+    Min Time: 1.061148e8 ns
+    Max Time: 1.749024e8 ns
+    Allocations: 1508636
+    Memory: 101715776 bytes
+    Samples Run: 3
+  Function: alignEvents
+    Mean Time: 8.933138333333334e8 ns
+    Std Time: 6.358440815202524e7 ns
+    Median Time: 9.08484e8 ns
+    Min Time: 8.235164e8 ns
+    Max Time: 9.479411e8 ns
+    Allocations: 17240475
+    Memory: 1858541520 bytes
+    Samples Run: 3
+  Function: generate_graph
+    Mean Time: 9.633596333333334e8 ns
+    Std Time: 9.621993168207578e7 ns
+    Median Time: 1.0159435e9 ns
+    Min Time: 8.523064e8 ns
+    Max Time: 1.021829e9 ns
+    Allocations: 17878114
+    Memory: 1895793280 bytes
+    Samples Run: 3
+  Function: runLVS
+    Mean Time: 4.6568716e9 ns
+    Std Time: NaN ns
+    Median Time: 4.6568716e9 ns
+    Min Time: 4.6568716e9 ns
+    Max Time: 4.6568716e9 ns
+    Allocations: 108698614
+    Memory: 3737935440 bytes
+    Samples Run: 1
+Cell: scan_generated - scan_chain_33bit
+  Function: loadDB
+    Mean Time: 9.05841e7 ns
+    Std Time: 2.68103849526634e7 ns
+    Median Time: 9.39426e7 ns
+    Min Time: 6.22527e7 ns
+    Max Time: 1.15557e8 ns
+    Allocations: 1048268
+    Memory: 80727016 bytes
+    Samples Run: 3
+  Function: flatten
+    Mean Time: 1.6071653333333334e8 ns
+    Std Time: 2.8874384795755103e7 ns
+    Median Time: 1.664052e8 ns
+    Min Time: 1.294212e8 ns
+    Max Time: 1.863232e8 ns
+    Allocations: 1941548
+    Memory: 122221216 bytes
+    Samples Run: 3
+  Function: alignEvents
+    Mean Time: 1.5034424e9 ns
+    Std Time: 1.6715464220894376e7 ns
+    Median Time: 1.4990978e9 ns
+    Min Time: 1.4893282e9 ns
+    Max Time: 1.5219012e9 ns
+    Allocations: 32295079
+    Memory: 3516697360 bytes
+    Samples Run: 3
+  Function: generate_graph
+    Mean Time: 1.6438834e9 ns
+    Std Time: 2.8179902286558766e7 ns
+    Median Time: 1.6438834e9 ns
+    Min Time: 1.6239572e9 ns
+    Max Time: 1.6638096e9 ns
+    Allocations: 33497375
+    Memory: 3585944032 bytes
+    Samples Run: 2
+  Function: runLVS
+    Mean Time: 1.34213489e10 ns
+    Std Time: NaN ns
+    Median Time: 1.34213489e10 ns
+    Min Time: 1.34213489e10 ns
+    Max Time: 1.34213489e10 ns
+    Allocations: 327971649
+    Memory: 9521097416 bytes
+    Samples Run: 1

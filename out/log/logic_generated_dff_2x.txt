@@ -1,81 +1,83 @@
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.LABEL, 103, 103, "")
 
 --- Component 1 ---
 Representive Net Name: MEM2
-Metal Indices (3): [182, 189, 222]
+Metal Indices (5): [417, 451, 475, 527, 545]
 
 --- Component 2 ---
 Representive Net Name: LATCH
-Metal Indices (2): [90, 124]
+Metal Indices (5): [56, 90, 477, 518, 547]
 
 --- Component 3 ---
-Representive Net Name: dff_2x__I3__Ninternal
-Metal Indices (5): [372, 376, 385, 434, 441]
+Representive Net Name: CLK:
+Metal Indices (3): [91, 95, 129]
 
 --- Component 4 ---
-Representive Net Name: ICLKB
-Metal Indices (5): [45, 81, 465, 523, 539]
+Representive Net Name: O
+Metal Indices (6): [418, 452, 480, 528, 550, 553]
 
 --- Component 5 ---
-Representive Net Name: VSS:
-Metal Indices (48): [19, 41, 61, 83, 87, 91, 92, 125, 129, 135, 139, 140, 173, 177, 183, 187, 188, 221, 225, 231, 235, 236, 269, 273, 285, 289, 290, 298, 347, 354, 359, 373, 377, 378, 386, 435, 442, 447, 453, 555, 557, 559, 561, 563, 565, 567, 569, 570]
+Representive Net Name: dff_2x__I3__Ninternal
+Metal Indices (5): [236, 240, 249, 298, 305]
 
 --- Component 6 ---
-Representive Net Name: dff_2x__I0__Pinternal
-Metal Indices (5): [283, 292, 301, 349, 357]
+Representive Net Name: ICLKB
+Metal Indices (3): [234, 251, 307]
 
 --- Component 7 ---
-Representive Net Name: dff_2x__I3__Pinternal
-Metal Indices (5): [371, 380, 389, 437, 445]
+Representive Net Name: VSS:
+Metal Indices (48): [23, 41, 45, 49, 50, 83, 87, 93, 97, 98, 131, 135, 141, 145, 146, 179, 183, 209, 227, 237, 241, 242, 250, 299, 306, 311, 325, 329, 330, 338, 387, 394, 399, 407, 411, 412, 445, 449, 453, 555, 557, 559, 561, 563, 565, 567, 569, 574]
 
 --- Component 8 ---
-Representive Net Name: ICLK
-Metal Indices (2): [234, 268]
+Representive Net Name: dff_2x__I0__Pinternal
+Metal Indices (5): [323, 332, 341, 389, 397]
 
 --- Component 9 ---
-Representive Net Name: MEM1
-Metal Indices (3): [86, 93, 126]
+Representive Net Name: dff_2x__I3__Pinternal
+Metal Indices (5): [235, 244, 253, 301, 309]
 
 --- Component 10 ---
-Representive Net Name: I
-Metal Indices (4): [277, 361, 511, 551]
+Representive Net Name: ICLK
+Metal Indices (5): [320, 403, 460, 510, 530]
 
 --- Component 11 ---
-Representive Net Name: CLK
-Metal Indices (4): [145, 179, 505, 552]
+Representive Net Name: MEM1
+Metal Indices (5): [55, 89, 472, 517, 542]
 
 --- Component 12 ---
-Representive Net Name: OUT
-Metal Indices (2): [186, 220]
+Representive Net Name: I
+Metal Indices (2): [327, 385]
 
 --- Component 13 ---
 Representive Net Name: VDD:
-Metal Indices (48): [20, 42, 62, 84, 88, 95, 96, 128, 130, 136, 143, 144, 176, 178, 184, 191, 192, 224, 226, 232, 239, 240, 272, 274, 286, 293, 294, 302, 350, 358, 360, 374, 381, 382, 390, 438, 446, 448, 454, 554, 556, 558, 560, 562, 564, 566, 568, 571]
+Metal Indices (48): [24, 42, 46, 53, 54, 86, 88, 94, 101, 102, 134, 136, 142, 149, 150, 182, 184, 210, 228, 238, 245, 246, 254, 302, 310, 312, 326, 333, 334, 342, 390, 398, 400, 408, 415, 416, 448, 450, 454, 554, 556, 558, 560, 562, 564, 566, 568, 575]
 
 --- Component 14 ---
 Representive Net Name: dff_2x__I0__Ninternal
-Metal Indices (5): [284, 288, 297, 346, 353]
+Metal Indices (5): [324, 328, 337, 386, 393]
 
 ------------------------------------------------------------------
 
 Library: logic_generated
 Cell: dff_2x
 
-   _ (`-.   ('-.      .-')     .-')      ('-.  _ .-') _   
-  ( (OO  ) ( OO ).-. ( OO ).  ( OO ).  _(  OO)( (  OO) )  
- _.`     | / . --. /(_)---|_)(_)---|_)(,------.|     .'_  
-(__...--'' | |-.   |/    _ | /    _ |  |  .---',`'--..._) 
- |  /  | | | |  |  ||  (` `  |  (` `   |  |    |  |   | ' 
- |  |_.' | | |_.'  | '..`''.  '..`''.  |  '--. |  |   ' | 
- |  .___.' |  .-.  |.-._)   |.-._)   | |  .--' |  |   / : 
- |  |      |  | |  ||       /|       / |  `---.|  '--'  / 
- `--'      `--' `--' `-----'  `-----'  `------'`-------'    
+            ('-.                          ('-.  _ .-') _   
+           ( OO ).-.                    _(  OO)( (  OO) )  
+   ,------./ . --. /  ,-.-')  ,--.     (,------.|     .'_  
+('-| _.---'| |-.  |   |  |OO) |  |.-')  |  .---',`'--..._) 
+(OO|(_|  . | |  |  |  |  |  | |  | OO ) |  |    |  |   | ' 
+/  |  '--. | |_.'  |  |  |(_/ |  |`-' |(|  '--. |  |   ' | 
+|_)|  .--' |  .-.  | ,|  |_.'(|  '---.' |  .--' |  |   / : 
+  ||  |    |  | |  |(_|  |    |      |  |  `---.|  '--'  / 
+   `--'    `--' `--'  `--'    `------'  `------'`-------'  
         
-Overall Graph Netname Consistency: PASSED ✔️
+Overall Graph Netname Consistency: FAILED ❌
 
-Total Error Count: 0
+Total Error Count: 1
 ├─ Floating: 0
 ├─ Open: 0
-└─ Short: 0
+├─ Short: 1
+└─ Label: 0
 
 ------------------------------------------------------------------
 
