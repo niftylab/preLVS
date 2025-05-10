@@ -2,27 +2,48 @@ cells_to_benchmark:
   1:
     libname: "logic_generated"
     cellname: "dff_2x"
-    config_file_path: "config/config_tsmcN45.yaml"
+    config_file_path: "config/config_tsmcN28.yaml"
     n_samples: 3
     max_benchmark_seconds: 1
   2:
-    libname: "tbadc_generated"
-    cellname: "tdc_1bit"
+    libname: "scan_generated"
+    cellname: "scan_cell"
     config_file_path: "config/config_tsmcN28.yaml"
     n_samples: 3
     max_benchmark_seconds: 1
   3:
     libname: "scan_generated"
-    cellname: "scan_cell"
-    config_file_path: "config/config_tsmcN45.yaml"
-    n_samples: 3
-    max_benchmark_seconds: 1
-  4:
-    libname: "comp_generated"
-    cellname: "strongarm"
+    cellname: "scan_chain_17bit"
     config_file_path: "config/config_tsmcN28.yaml"
     n_samples: 3
     max_benchmark_seconds: 1
+  4:
+    libname: "scan_generated"
+    cellname: "scan_chain_33bit"
+    config_file_path: "config/config_tsmcN28.yaml"
+    n_samples: 3
+    max_benchmark_seconds: 1
+  5:
+    libname: "scan_generated"
+    cellname: "scan_chain_65bit"
+    config_file_path: "config/config_tsmcN28.yaml"
+    n_samples: 3
+    max_benchmark_seconds: 1
+  6:
+    libname: "scan_generated"
+    cellname: "scan_chain_129bit"
+    config_file_path: "config/config_tsmcN28.yaml"
+    n_samples: 3
+    max_benchmark_seconds: 1
+  7:
+    libname: "scan_generated"
+    cellname: "scan_chain_288bit"
+    config_file_path: "config/config_tsmcN28.yaml"
+    n_samples: 3
+    max_benchmark_seconds: 1
+
+
+
 
 
 file_paths:

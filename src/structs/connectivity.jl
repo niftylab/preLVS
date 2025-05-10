@@ -37,63 +37,6 @@ end
 
 
 
-# function check_all_connections_bfs(g::MGraph)::Bool
-#     visited_metals = Set{MOVector}() # 방문한 MOVector 저장
-#     overall_consistent = true
-
-#     # 모든 노드를 어떻게 순회할 것인가? adj의 키들을 사용하거나,
-#     # 별도의 노드 리스트가 있다면 그것을 사용. 여기서는 키 사용.
-#     all_nodes = keys(g.adj) # 또는 모든 값을 순회하며 유니크한 노드를 모을 수도 있음
-
-#     for start_node in all_nodes
-#         if !(start_node in visited_metals)
-#             println("Starting BFS check for component from node $(start_node)...") # 노드 정보 출력 방식 수정 필요할 수 있음
-#             expected_netname_ref = Ref{Union{String, Nothing}}(nothing)
-#             component_consistent = Ref(true)
-
-#             q = Vector{MOVector}() # Queue of MOVector objects
-
-#             push!(q, start_node)
-#             push!(visited_metals, start_node)
-
-#             while !isempty(q)
-#                 u_node::MOVector = popfirst!(q) # Dequeue MOVector
-
-#                 # --- 노드 처리 로직 ---
-#                 current_netname = nothing
-#                 try
-#                     current_netname = u_node.netname # MOVector에서 직접 netname 접근
-#                 catch e
-#                     # ... 에러 처리 ...
-#                     component_consistent[] = false
-#                 end
-
-#                 if current_netname !== nothing
-#                     # ... (netname 비교 및 expected_netname_ref 설정 로직은 동일) ...
-#                 end
-#                 # --- 노드 처리 끝 ---
-
-#                 # --- 이웃 탐색 및 Enqueue ---
-#                 if haskey(g.adj, u_node) # 현재 노드가 adj에 키로 있는지 확인
-#                     for v_node in g.adj[u_node] # v_node는 이웃 MOVector 객체
-#                         if !(v_node in visited_metals)
-#                             push!(visited_metals, v_node)
-#                             push!(q, v_node) # 이웃 MOVector 객체를 큐에 추가
-#                         end
-#                     end
-#                 end
-#                 # --- 이웃 탐색 끝 ---
-#             end
-#             # --- BFS 종료 & 결과 처리 ---
-#             # ... (component_consistent 결과 처리 로직 동일) ...
-#         end
-#     end
-#     println("Overall connectivity check result: $overall_consistent")
-#     return overall_consistent
-# end
-
-
-
 # --- 각 컴포넌트 정보를 저장하기 위한 구조체 (선택사항, NamedTuple도 가능) ---
 struct ComponentInfo
     nodes::Set{MOVector}            # 컴포넌트에 속한 노드(MOVector)들의 Set
@@ -174,9 +117,9 @@ function check_and_report_connections_bfs(g::MGraph, source_net_sets::Vector{Tup
                                 if !(current_netname in source_net_sets[1][2]) && !(current_netname in source_net_sets[2][2])
                                     # 같은 이름이지만, 콜론이 있는 경우 무시
                                     if check_coloned_netname(current_netname, visited_netnames)
-                                        @warn " OPEN! : netname $current_netname is already visited
-                                        $(u_node.netname) : layer=$(u_node.layer), p_coord=$(u_node.p_coord), s_coord=$(u_node.points[1].s_coord) - $(u_node.points[2].s_coord)
-                                        $(start_node.netname) : layer=$(start_node.layer), p_coord=$(start_node.p_coord), s_coord=$(start_node.points[1].s_coord) - $(start_node.points[2].s_coord)"
+                                        # @warn " OPEN! : netname $current_netname is already visited
+                                        # $(u_node.netname) : layer=$(u_node.layer), p_coord=$(u_node.p_coord), s_coord=$(u_node.points[1].s_coord) - $(u_node.points[2].s_coord)
+                                        # $(start_node.netname) : layer=$(start_node.layer), p_coord=$(start_node.p_coord), s_coord=$(start_node.points[1].s_coord) - $(start_node.points[2].s_coord)"
                                         println(io, "OPEN: netname $current_netname is already visited\n$(u_node.netname) : layer=$(u_node.layer), p_coord=$(u_node.p_coord), s_coord=$(u_node.points[1].s_coord) - $(u_node.points[2].s_coord)\n$(start_node.netname) : layer=$(start_node.layer), p_coord=$(start_node.p_coord), s_coord=$(start_node.points[1].s_coord) - $(start_node.points[2].s_coord)")
                                         error_cnt["open"] += 1; error_cnt["total"] += 1;
                                     end
@@ -186,7 +129,7 @@ function check_and_report_connections_bfs(g::MGraph, source_net_sets::Vector{Tup
                         elseif current_netname != expected_netname_ref[]
                             if component_consistent[] # 첫 불일치 시 로그
                                 node_id_str = hasproperty(u_node, :idx) ? " (idx=$(u_node.idx))" : ""
-                                @warn "  Netname inconsistency! Node$(node_id_str) has netname '$current_netname', but expected '$(expected_netname_ref[])' for this component."
+                                # @warn "  Netname inconsistency! Node$(node_id_str) has netname '$current_netname', but expected '$(expected_netname_ref[])' for this component."
                                 println(io, "SHORT: Netname inconsistency! Node$(node_id_str) has netname '$current_netname', but expected '$(expected_netname_ref[])' for this component.")
                                 error_cnt["short"] += 1; error_cnt["total"] += 1;
                             end
@@ -211,7 +154,7 @@ function check_and_report_connections_bfs(g::MGraph, source_net_sets::Vector{Tup
                 # --- BFS 종료 ---
 
                 if expected_netname_ref[] === nothing
-                    @warn "  FLOATING! : No netname found metals. Start node = $(start_node.layer), $(start_node.p_coord), $(start_node.points[1].s_coord) - $(start_node.points[2].s_coord)"
+                    # @warn "  FLOATING! : No netname found metals. Start node = $(start_node.layer), $(start_node.p_coord), $(start_node.points[1].s_coord) - $(start_node.points[2].s_coord)"
                     println(io, "FLOATING: No netname found metals. Start node = $(start_node.layer), $(start_node.p_coord), $(start_node.points[1].s_coord) - $(start_node.points[2].s_coord)")
                     error_cnt["floating"] += 1; error_cnt["total"] += 1;
                 end
