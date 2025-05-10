@@ -1,0 +1,184 @@
+Cell: logic_generated - dff_2x
+  Function: loadDB
+    Mean Time: 4.376733333333333e6 ns
+    Std Time: 317330.77905134467 ns
+    Median Time: 4.2169e6 ns
+    Min Time: 4.1711e6 ns
+    Max Time: 4.7422e6 ns
+    Allocations: 88096
+    Memory: 6962488 bytes
+    Samples Run: 3
+  Function: flatten
+    Mean Time: 5.105466666666667e6 ns
+    Std Time: 214385.03523644866 ns
+    Median Time: 5.2107e6 ns
+    Min Time: 4.8588e6 ns
+    Max Time: 5.2469e6 ns
+    Allocations: 104047
+    Memory: 7684032 bytes
+    Samples Run: 3
+  Function: mergeVector
+    Mean Time: 5.203533333333333e6 ns
+    Std Time: 196093.76158698503 ns
+    Median Time: 5.1141e6 ns
+    Min Time: 5.0681e6 ns
+    Max Time: 5.4284e6 ns
+    Allocations: 105405
+    Memory: 7786720 bytes
+    Samples Run: 3
+  Function: generate_graph
+    Mean Time: 5.497133333333333e6 ns
+    Std Time: 338203.8487855118 ns
+    Median Time: 5.4017e6 ns
+    Min Time: 5.2169e6 ns
+    Max Time: 5.8728e6 ns
+    Allocations: 107093
+    Memory: 7874768 bytes
+    Samples Run: 3
+  Function: runLVS
+    Mean Time: 1.3042133333333334e7 ns
+    Std Time: 4.98944155425568e6 ns
+    Median Time: 1.42441e7 ns
+    Min Time: 7.5615e6 ns
+    Max Time: 1.73208e7 ns
+    Allocations: 108026
+    Memory: 7928184 bytes
+    Samples Run: 3
+Cell: tbadc_generated - tdc_1bit
+  Function: loadDB
+    Mean Time: 7.763166666666667e6 ns
+    Std Time: 260311.39685640606 ns
+    Median Time: 7.779e6 ns
+    Min Time: 7.4953e6 ns
+    Max Time: 8.0152e6 ns
+    Allocations: 116002
+    Memory: 8633048 bytes
+    Samples Run: 3
+  Function: flatten
+    Mean Time: 1.9340166666666668e7 ns
+    Std Time: 267744.67937446176 ns
+    Median Time: 1.94459e7 ns
+    Min Time: 1.90357e7 ns
+    Max Time: 1.95389e7 ns
+    Allocations: 379839
+    Memory: 20237328 bytes
+    Samples Run: 3
+  Function: mergeVector
+    Mean Time: 1.9932e7 ns
+    Std Time: 530008.264086514 ns
+    Median Time: 1.98154e7 ns
+    Min Time: 1.947e7 ns
+    Max Time: 2.05106e7 ns
+    Allocations: 391512
+    Memory: 21521008 bytes
+    Samples Run: 3
+  Function: generate_graph
+    Mean Time: 2.1011633333333332e7 ns
+    Std Time: 1.0362940525417161e6 ns
+    Median Time: 2.06877e7 ns
+    Min Time: 2.0176e7 ns
+    Max Time: 2.21712e7 ns
+    Allocations: 423598
+    Memory: 23167824 bytes
+    Samples Run: 3
+  Function: runLVS
+    Mean Time: 2.4950933333333332e7 ns
+    Std Time: 905129.8378317519 ns
+    Median Time: 2.49301e7 ns
+    Min Time: 2.40564e7 ns
+    Max Time: 2.58663e7 ns
+    Allocations: 434199
+    Memory: 23825640 bytes
+    Samples Run: 3
+Cell: scan_generated - scan_cell
+  Function: loadDB
+    Mean Time: 5.5022566666666664e7 ns
+    Std Time: 6.848445826852494e6 ns
+    Median Time: 5.39118e7 ns
+    Min Time: 4.87974e7 ns
+    Max Time: 6.23585e7 ns
+    Allocations: 958601
+    Memory: 76854192 bytes
+    Samples Run: 3
+  Function: flatten
+    Mean Time: 5.2578966666666664e7 ns
+    Std Time: 2.6470004331947765e6 ns
+    Median Time: 5.15819e7 ns
+    Min Time: 5.05753e7 ns
+    Max Time: 5.55797e7 ns
+    Allocations: 1022926
+    Memory: 79634040 bytes
+    Samples Run: 3
+  Function: mergeVector
+    Mean Time: 5.735e7 ns
+    Std Time: 5.979417331981436e6 ns
+    Median Time: 5.45801e7 ns
+    Min Time: 5.32578e7 ns
+    Max Time: 6.42121e7 ns
+    Allocations: 1027722
+    Memory: 80028536 bytes
+    Samples Run: 3
+  Function: generate_graph
+    Mean Time: 5.47386e7 ns
+    Std Time: 5.798881294698142e6 ns
+    Median Time: 5.42592e7 ns
+    Min Time: 4.91943e7 ns
+    Max Time: 6.07623e7 ns
+    Allocations: 1035963
+    Memory: 80521192 bytes
+    Samples Run: 3
+  Function: runLVS
+    Mean Time: 5.9212633333333336e7 ns
+    Std Time: 2.537248470949058e6 ns
+    Median Time: 5.8024e7 ns
+    Min Time: 5.74879e7 ns
+    Max Time: 6.2126e7 ns
+    Allocations: 1042101
+    Memory: 80953920 bytes
+    Samples Run: 3
+Cell: comp_generated - strongarm
+  Function: loadDB
+    Mean Time: 2.6006066666666668e7 ns
+    Std Time: 8.794907760933785e6 ns
+    Median Time: 2.19159e7 ns
+    Min Time: 2.00011e7 ns
+    Max Time: 3.61012e7 ns
+    Allocations: 484838
+    Memory: 37533056 bytes
+    Samples Run: 3
+  Function: flatten
+    Mean Time: 6.4547466666666664e7 ns
+    Std Time: 4.49113124539167e6 ns
+    Median Time: 6.2466e7 ns
+    Min Time: 6.14747e7 ns
+    Max Time: 6.97017e7 ns
+    Allocations: 959742
+    Memory: 55004464 bytes
+    Samples Run: 3
+  Function: mergeVector
+    Mean Time: 6.4906366666666664e7 ns
+    Std Time: 3.5434220780670955e6 ns
+    Median Time: 6.50022e7 ns
+    Min Time: 6.1316e7 ns
+    Max Time: 6.84009e7 ns
+    Allocations: 961533
+    Memory: 55760400 bytes
+    Samples Run: 3
+  Function: generate_graph
+    Mean Time: 6.5547133333333336e7 ns
+    Std Time: 3.092618625587923e6 ns
+    Median Time: 6.51585e7 ns
+    Min Time: 6.26672e7 ns
+    Max Time: 6.88157e7 ns
+    Allocations: 1015826
+    Memory: 58346384 bytes
+    Samples Run: 3
+  Function: runLVS
+    Mean Time: 7.12714e7 ns
+    Std Time: 5.5484163479320835e6 ns
+    Median Time: 7.20366e7 ns
+    Min Time: 6.53801e7 ns
+    Max Time: 7.63975e7 ns
+    Allocations: 1016850
+    Memory: 58422112 bytes
+    Samples Run: 3

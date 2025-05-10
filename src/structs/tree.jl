@@ -112,8 +112,8 @@ function print_tree_root(node::TreeNode)
 end
 
 
-function unify_netname(netname::String, equivalent_net_sets::Vector{Tuple{String, Set{String}}})
-    for (rep, net_set) in equivalent_net_sets
+function unify_netname(netname::String, equiv_net_sets::Vector{Tuple{String, Set{String}}})
+    for (rep, net_set) in equiv_net_sets
         if netname in net_set
             return rep
         end

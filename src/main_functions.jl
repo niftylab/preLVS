@@ -23,13 +23,13 @@ include("utils/yaml.jl")
 # 1-2. Transform {Labels}, {Pins} using node.data.Mtransform and update netname using node.data.net_extern
 # 2.   Transform {Vias} using node.data.Mtransform
 function flatten_v2(
-    # rootNode::TreeNode{NodeData},
     libname::String,
     cellname::String,
     cell_data::Dict,
     db_data::Dict,
     orientation_list::Vector{String},
-    config_data::Dict
+    config_data::Dict,
+    equiv_net_sets::Vector{Tuple{String, Set{String}}}
 )::Tuple{MData, VData}
 
     # Get top cell name
@@ -56,7 +56,7 @@ function flatten_v2(
         # METALS
         # unnamed_metals : metals + pins of primitives
         # named_metals : labels + pins
-        unnamed_metals, named_metals = db_to_MData(lib, cell, db_data, orientation_list, config_data["equivalent_net_sets"])
+        unnamed_metals, named_metals = db_to_MData(lib, cell, db_data, orientation_list, equiv_net_sets)
         # println("Named Metals: $(named_metals.metals)")
 
         # VIAS
@@ -70,7 +70,7 @@ function flatten_v2(
 
             # For Transform + Netname update metals
             # println("Transforming Metals: $(cell) - $(idx)")
-            transformed_MData = transform_MData(unnamed_metals, named_metals, Mtransform, net_mapper, orientation_list, config_data["equivalent_net_sets"])
+            transformed_MData = transform_MData(unnamed_metals, named_metals, Mtransform, net_mapper, orientation_list, equiv_net_sets)
             for (layer, mlayer) in transformed_MData.metals
                 if !haskey(out_metals, layer)
                     out_metals[layer] = mlayer

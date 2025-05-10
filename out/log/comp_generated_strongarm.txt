@@ -1,0 +1,121 @@
+Total unique nodes found in graph: 176
+
+Starting Connectivity and Netname Consistency Check...
+Starting BFS for new component from node (idx=103)...
+Starting BFS for new component from node (idx=119)...
+Starting BFS for new component from node (idx=140)...
+Starting BFS for new component from node (idx=156)...
+Starting BFS for new component from node (idx=7)...
+Starting BFS for new component from node (idx=2)...
+Starting BFS for new component from node (idx=125)...
+Starting BFS for new component from node (idx=43)...
+Starting BFS for new component from node (idx=107)...
+Starting BFS for new component from node (idx=63)...
+Starting BFS for new component from node (idx=68)...
+Starting BFS for new component from node (idx=50)...
+Starting BFS for new component from node (idx=127)...
+Starting BFS for new component from node (idx=12)...
+Starting BFS for new component from node (idx=109)...
+
+--- Connectivity Check Report ---
+Total connected components found: 15
+
+--- Component 1 ---
+Representative Net Name: TAIL
+Netname Consistency: Passed
+Metal Indices (34): [1, 4, 5, 8, 11, 14, 21, 31, 34, 45, 48, 57, 61, 64, 73, 76, 87, 96, 103, 108, 111, 114, 115, 118, 120, 128, 150, 153, 157, 160, 163, 166, 170, 173]
+
+--- Component 2 ---
+Representative Net Name: VSS:
+Netname Consistency: Passed
+Metal Indices (7): [30, 44, 56, 60, 72, 86, 119]
+
+--- Component 3 ---
+Representative Net Name: OUTN
+Netname Consistency: Passed
+Metal Indices (24): [17, 20, 26, 29, 38, 41, 54, 81, 82, 93, 94, 100, 101, 134, 137, 139, 140, 145, 148, 151, 154, 158, 161, 169]
+
+--- Component 4 ---
+Representative Net Name: OUTP
+Netname Consistency: Passed
+Metal Indices (24): [18, 19, 27, 28, 39, 40, 70, 80, 83, 92, 95, 99, 102, 135, 136, 138, 141, 146, 156, 164, 167, 171, 174, 176]
+
+--- Component 5 ---
+Representative Net Name: INTN
+Netname Consistency: Passed
+Metal Indices (19): [3, 7, 10, 13, 15, 22, 25, 32, 37, 42, 46, 51, 129, 132, 143, 149, 152, 155, 159]
+
+--- Component 6 ---
+Representative Net Name: OSP
+Netname Consistency: Passed
+Metal Indices (2): [2, 122]
+
+--- Component 7 ---
+Representative Net Name: INN
+Netname Consistency: Passed
+Metal Indices (4): [66, 78, 90, 125]
+
+--- Component 8 ---
+Representative Net Name: CLK:
+Netname Consistency: Passed
+Metal Indices (11): [35, 43, 49, 55, 65, 71, 77, 85, 121, 147, 162]
+
+--- Component 9 ---
+Representative Net Name: INTP
+Netname Consistency: Passed
+Metal Indices (19): [67, 74, 79, 84, 88, 91, 97, 104, 107, 110, 113, 117, 130, 133, 144, 165, 168, 172, 175]
+
+--- Component 10 ---
+Representative Net Name: VDD:
+Netname Consistency: Passed
+Metal Indices (13): [16, 23, 33, 47, 53, 59, 63, 69, 75, 89, 98, 105, 142]
+
+--- Component 11 ---
+Representative Net Name: VSS:
+Netname Consistency: Passed
+Metal Indices (5): [52, 58, 62, 68, 131]
+
+--- Component 12 ---
+Representative Net Name: INP
+Netname Consistency: Passed
+Metal Indices (4): [24, 36, 50, 124]
+
+--- Component 13 ---
+Representative Net Name: OSN
+Netname Consistency: Passed
+Metal Indices (2): [116, 127]
+
+--- Component 14 ---
+Representative Net Name: THP
+Netname Consistency: Passed
+Metal Indices (4): [6, 9, 12, 123]
+
+--- Component 15 ---
+Representative Net Name: THN
+Netname Consistency: Passed
+Metal Indices (4): [106, 109, 112, 126]
+
+------------------------------------------------------------------
+
+Library: comp_generated
+Cell: strongarm
+
+   _ (`-.   ('-.      .-')     .-')      ('-.  _ .-') _   
+  ( (OO  ) ( OO ).-. ( OO ).  ( OO ).  _(  OO)( (  OO) )  
+ _.`     | / . --. /(_)---|_)(_)---|_)(,------.|     .'_  
+(__...--'' | |-.   |/    _ | /    _ |  |  .---',`'--..._) 
+ |  /  | | | |  |  ||  (` `  |  (` `   |  |    |  |   | ' 
+ |  |_.' | | |_.'  | '..`''.  '..`''.  |  '--. |  |   ' | 
+ |  .___.' |  .-.  |.-._)   |.-._)   | |  .--' |  |   / : 
+ |  |      |  | |  ||       /|       / |  `---.|  '--'  / 
+ `--'      `--' `--' `-----'  `-----'  `------'`-------'    
+        
+Overall Graph Netname Consistency: PASSED ✔️
+
+Total Error Count: 0
+├─ Floating: 0
+├─ Open: 0
+└─ Short: 0
+
+------------------------------------------------------------------
+
