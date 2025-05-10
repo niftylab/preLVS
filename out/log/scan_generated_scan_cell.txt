@@ -1,0 +1,268 @@
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.METAL, 37, 2228, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.METAL, 1717, 2228, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.METAL, 1713, 2228, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1438, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1199, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1466, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1374, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1251, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1255, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1282, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1448, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1259, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1395, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1208, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1458, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1268, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1360, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1452, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1256, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1442, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1469, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1391, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1260, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1404, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1173, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1204, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1286, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1267, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1269, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1386, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1264, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1271, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1450, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1361, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1473, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1265, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1257, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1462, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1279, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1263, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1187, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1400, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1455, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1188, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1213, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1382, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1275, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1446, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1443, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1454, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1447, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1444, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1195, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1456, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1174, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1261, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1451, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1375, -1, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1217, -1, "")
+
+--- Component 1 ---
+Representive Net Name: I20__I0__Pinternal
+Metal Indices (5): [1898, 1907, 1916, 1964, 1972]
+
+--- Component 2 ---
+Representive Net Name: I2__I3__Ninternal
+Metal Indices (5): [2075, 2079, 2088, 2137, 2144]
+
+--- Component 3 ---
+Representive Net Name: scan_cell__I20__MEM2
+Metal Indices (2): [1823, 1879]
+
+--- Component 4 ---
+Representive Net Name: net5
+Metal Indices (2): [983, 1016]
+
+--- Component 5 ---
+Representive Net Name: scan_cell__I2__MEM1
+Metal Indices (3): [687, 694, 727]
+
+--- Component 6 ---
+Representive Net Name: SCAN_DATA_IN
+Metal Indices (4): [113, 155, 1354, 1536]
+
+--- Component 7 ---
+Representive Net Name: scan_cell__I20__MEM1
+Metal Indices (3): [734, 738, 772]
+
+--- Component 8 ---
+Representive Net Name: I20__I0__Ninternal
+Metal Indices (5): [1899, 1903, 1912, 1961, 1968]
+
+--- Component 9 ---
+Representive Net Name: mux_out2
+Metal Indices (3): [495, 502, 535]
+
+--- Component 10 ---
+Representive Net Name: SCAN_LOAD
+Metal Indices (5): [1, 108, 163, 1082, 1116]
+
+--- Component 11 ---
+Representive Net Name: SCAN_EN_bar
+Metal Indices (4): [23, 141, 843, 877]
+
+--- Component 12 ---
+Representive Net Name: net7
+Metal Indices (2): [551, 584]
+
+--- Component 13 ---
+Representive Net Name: SCAN_DATA_OUT
+Metal Indices (2): [2229, 2374]
+
+--- Component 14 ---
+Representive Net Name: I20__I3__Ninternal
+Metal Indices (5): [1811, 1815, 1824, 1873, 1880]
+
+--- Component 15 ---
+Representive Net Name: net10
+Metal Indices (4): [35, 129, 2169, 2219]
+
+--- Component 16 ---
+Representive Net Name: SCAN_CLK
+Metal Indices (3): [207, 214, 247]
+
+--- Component 17 ---
+Representive Net Name: SCAN_GATE_VALUE
+Metal Indices (4): [149, 159, 1166, 1348]
+
+--- Component 18 ---
+Representive Net Name: SCAN_LOAD_bar
+Metal Indices (2): [1075, 1109]
+
+--- Component 19 ---
+Representive Net Name: net9
+Metal Indices (4): [33, 127, 507, 541]
+
+--- Component 20 ---
+Representive Net Name: SCAN_CLK_OUT
+Metal Indices (2): [1027, 1061]
+
+--- Component 21 ---
+Representive Net Name: net4
+Metal Indices (3): [974, 978, 1012]
+
+--- Component 22 ---
+Representive Net Name: scan_cell__I2__MEM2
+Metal Indices (2): [2091, 2147]
+
+--- Component 23 ---
+Representive Net Name: mux_out
+Metal Indices (4): [5, 114, 1355, 1539]
+
+--- Component 24 ---
+Representive Net Name: SCAN_GATE
+Metal Indices (3): [303, 310, 343]
+
+--- Component 25 ---
+Representive Net Name: net6
+Metal Indices (4): [18, 136, 554, 588]
+
+--- Component 26 ---
+Representive Net Name: SCAN_EN
+Metal Indices (3): [831, 838, 871]
+
+--- Component 27 ---
+Representive Net Name: net15
+Metal Indices (3): [2221, 2228, 2373]
+
+--- Component 28 ---
+Representive Net Name: scan_cell__I20__LATCH
+Metal Indices (2): [1814, 1872]
+
+--- Component 29 ---
+Representive Net Name: I2__I0__Ninternal
+Metal Indices (5): [1987, 1991, 2000, 2049, 2056]
+
+--- Component 30 ---
+Representive Net Name: I2__I0__Pinternal
+Metal Indices (5): [1986, 1995, 2004, 2052, 2060]
+
+--- Component 31 ---
+Representive Net Name: net1
+Metal Indices (2): [1906, 1963]
+
+--- Component 32 ---
+Representive Net Name: net2
+Metal Indices (3): [55, 2534, 2629]
+
+--- Component 33 ---
+Representive Net Name: I2__I3__Pinternal
+Metal Indices (5): [2074, 2083, 2092, 2140, 2148]
+
+--- Component 34 ---
+Representive Net Name: SCAN_OUT
+Metal Indices (2): [263, 296]
+
+--- Component 35 ---
+Representive Net Name: scan_cell__I2__ICLKB
+Metal Indices (2): [215, 248]
+
+--- Component 36 ---
+Representive Net Name: net3
+Metal Indices (4): [12, 120, 794, 828]
+
+--- Component 37 ---
+Representive Net Name: SCAN_GATE_bar
+Metal Indices (4): [26, 146, 315, 349]
+
+--- Component 38 ---
+Representive Net Name: scan_cell__I2__LATCH
+Metal Indices (5): [699, 733, 2400, 2445, 2474]
+
+--- Component 39 ---
+Representive Net Name: I20__I3__Pinternal
+Metal Indices (5): [1810, 1819, 1828, 1876, 1884]
+
+--- Component 40 ---
+Representive Net Name: VSS:
+Metal Indices (214): [61, 165, 167, 168, 171, 173, 175, 177, 179, 181, 183, 185, 187, 189, 191, 193, 194, 197, 199, 201, 202, 208, 212, 213, 246, 250, 256, 260, 261, 294, 298, 304, 308, 309, 342, 346, 352, 356, 357, 390, 394, 400, 404, 405, 438, 442, 448, 452, 453, 486, 490, 496, 500, 501, 534, 538, 544, 548, 549, 582, 586, 592, 596, 597, 630, 634, 640, 644, 645, 678, 682, 688, 692, 693, 726, 730, 736, 740, 741, 774, 778, 784, 788, 789, 822, 826, 832, 836, 837, 870, 874, 880, 884, 885, 918, 922, 928, 932, 933, 966, 970, 976, 980, 981, 1014, 1018, 1024, 1028, 1029, 1062, 1066, 1072, 1076, 1077, 1110, 1114, 1120, 1124, 1125, 1158, 1162, 1192, 1196, 1197, 1205, 1210, 1215, 1222, 1223, 1230, 1231, 1346, 1379, 1383, 1384, 1392, 1397, 1402, 1409, 1410, 1417, 1418, 1533, 1558, 1580, 1600, 1622, 1642, 1664, 1684, 1706, 1710, 1714, 1715, 1796, 1800, 1812, 1816, 1817, 1825, 1874, 1881, 1886, 1900, 1904, 1905, 1913, 1962, 1969, 1974, 1988, 1992, 1993, 2001, 2050, 2057, 2062, 2076, 2080, 2081, 2089, 2138, 2145, 2150, 2158, 2162, 2163, 2212, 2216, 2222, 2226, 2227, 2372, 2376, 2380, 2482, 2484, 2486, 2488, 2490, 2492, 2494, 2496, 2497, 2505, 2607, 2609, 2611, 2613, 2615, 2617, 2619, 2621, 2622]
+
+--- Component 41 ---
+Representive Net Name: SCAN_IN
+Metal Indices (4): [112, 154, 1353, 1535]
+
+--- Component 42 ---
+Representive Net Name: net8
+Metal Indices (4): [22, 132, 1034, 1068]
+
+--- Component 43 ---
+Representive Net Name: scan_cell__I20__ICLKB
+Metal Indices (2): [1123, 1157]
+
+--- Component 44 ---
+Representive Net Name: scan_cell__I2__ICLK
+Metal Indices (5): [2070, 2153, 2385, 2446, 2459]
+
+--- Component 45 ---
+Representive Net Name: scan_cell__I20__ICLK
+Metal Indices (3): [1897, 1914, 1970]
+
+--- Component 46 ---
+Representive Net Name: VDD:
+Metal Indices (105): [63, 184, 186, 188, 190, 192, 195, 196, 198, 200, 204, 305, 312, 313, 345, 347, 401, 408, 409, 441, 443, 449, 456, 457, 489, 491, 545, 552, 553, 585, 587, 593, 600, 601, 633, 635, 737, 744, 745, 777, 779, 833, 840, 841, 873, 875, 881, 888, 889, 921, 923, 1025, 1032, 1033, 1065, 1067, 1121, 1128, 1129, 1161, 1163, 1193, 1200, 1201, 1209, 1211, 1219, 1226, 1227, 1234, 1235, 1347, 1559, 1581, 1643, 1665, 1813, 1820, 1821, 1829, 1877, 1885, 1887, 1901, 1908, 1909, 1917, 1965, 1973, 1975, 2223, 2230, 2231, 2375, 2377, 2506, 2606, 2608, 2610, 2612, 2614, 2616, 2618, 2620, 2623]
+
+------------------------------------------------------------------
+
+Library: scan_generated
+Cell: scan_cell
+
+            ('-.                          ('-.  _ .-') _   
+           ( OO ).-.                    _(  OO)( (  OO) )  
+   ,------./ . --. /  ,-.-')  ,--.     (,------.|     .'_  
+('-| _.---'| |-.  |   |  |OO) |  |.-')  |  .---',`'--..._) 
+(OO|(_|  . | |  |  |  |  |  | |  | OO ) |  |    |  |   | ' 
+/  |  '--. | |_.'  |  |  |(_/ |  |`-' |(|  '--. |  |   ' | 
+|_)|  .--' |  .-.  | ,|  |_.'(|  '---.' |  .--' |  |   / : 
+  ||  |    |  | |  |(_|  |    |      |  |  `---.|  '--'  / 
+   `--'    `--' `--'  `--'    `------'  `------'`-------'  
+        
+Overall Graph Netname Consistency: FAILED ❌
+
+Total Error Count: 59
+├─ Floating: 56
+├─ Open: 0
+└─ Short: 3
+
+------------------------------------------------------------------
+

@@ -324,8 +324,10 @@ function runLVS(path_runset::String)
     println("sweepline-based grouping complete\n")
     cgraph = generate_graph(overlaps, via_link, hash_rect, djs)
     println("connectivity graph generation complete")
-    error_log, nets_visited = check_connections_bfs(cgraph, pinNodes, hash_rect, equivalent_net_sets, logFileName, libname, cellname)
+    error_log, error_cnt, hash_rect, nets_visited = check_connections_bfs(cgraph, pinNodes, hash_rect, equivalent_net_sets)
     println("graph analysis using BFS complete")
+    create_error_log_file(error_log, error_cnt, log_dir, libname, cellname, hash_rect, nets_visited, djs)
+    println("error log file created")
 
     return error_log, cgraph, hash_rect
 end

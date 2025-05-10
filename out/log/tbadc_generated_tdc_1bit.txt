@@ -1,0 +1,618 @@
+
+--- Component 1 ---
+Representive Net Name: IDCDL0__IDCDLP_PN__cplus4<0>
+Metal Indices (2): [2546, 2565]
+
+--- Component 2 ---
+Representive Net Name: OMUX0__I0__N0
+Metal Indices (6): [10677, 10686, 10696, 10790, 10796, 10803]
+
+--- Component 3 ---
+Representive Net Name: es_pn
+Metal Indices (9): [3628, 3673, 3718, 4449, 4462, 8608, 8625, 11559, 11619]
+
+--- Component 4 ---
+Representive Net Name: tdc_1bit__IZINJ0__en
+Metal Indices (4): [4336, 4382, 8468, 8573]
+
+--- Component 5 ---
+Representive Net Name: idcdl0_intn_np<0>
+Metal Indices (3): [6331, 6335, 6397]
+
+--- Component 6 ---
+Representive Net Name: IDCDL0__IDCDLN_PN__cplus3<3>
+Metal Indices (2): [1437, 1457]
+
+--- Component 7 ---
+Representive Net Name: SHORT
+Metal Indices (3): [3077, 3081, 3127]
+
+--- Component 8 ---
+Representive Net Name: dn_pn
+Metal Indices (8): [9815, 9866, 9875, 10171, 10187, 11093, 11195, 11206]
+
+--- Component 9 ---
+Representive Net Name: IDCDL0__IDCDLN_NP__cplus3<0>
+Metal Indices (2): [2690, 2709]
+
+--- Component 10 ---
+Representive Net Name: IESEL0__IOR0__I2__N1
+Metal Indices (6): [3153, 3158, 3171, 3334, 3350, 3354]
+
+--- Component 11 ---
+Representive Net Name: IZINJ0__INR0__net1
+Metal Indices (5): [10525, 10536, 10545, 10660, 10667]
+
+--- Component 12 ---
+Representive Net Name: IDCDL0__IDCDLN_NP__cplus4<0>
+Metal Indices (3): [893, 940, 7237]
+
+--- Component 13 ---
+Representive Net Name: itcomp0_cmp_outp_pre
+Metal Indices (4): [9637, 9654, 9769, 9781]
+
+--- Component 14 ---
+Representive Net Name: itcomp0_cmp_outn
+Metal Indices (8): [9464, 9468, 9475, 9590, 9607, 9611, 9616, 10100]
+
+--- Component 15 ---
+Representive Net Name: IDCDL0__IDCDLN_PN__cplus0
+Metal Indices (4): [6704, 9998, 10016, 10022]
+
+--- Component 16 ---
+Representive Net Name: IESEL0__IAND0__I0__N0
+Metal Indices (6): [10963, 10972, 10978, 11060, 11066, 11073]
+
+--- Component 17 ---
+Representive Net Name: idcdl0_intp_np<1>
+Metal Indices (3): [6484, 6492, 6552]
+
+--- Component 18 ---
+Representive Net Name: IDCDL0__IDCDLN_NP__cplus3<3>
+Metal Indices (3): [2813, 2860, 7243]
+
+--- Component 19 ---
+Representive Net Name: IDCDL0__IDCDLN_PN__cplus4<1>
+Metal Indices (3): [2237, 2284, 6803]
+
+--- Component 20 ---
+Representive Net Name: idcdl0_intn_np<4>
+Metal Indices (3): [4584, 4592, 4652]
+
+--- Component 21 ---
+Representive Net Name: dp_np
+Metal Indices (9): [3634, 3694, 3724, 4205, 4230, 5130, 5190, 7035, 7066]
+
+--- Component 22 ---
+Representive Net Name: idcdl0_intp_np<4>
+Metal Indices (5): [5129, 5189, 6872, 7034, 7045]
+
+--- Component 23 ---
+Representive Net Name: IESEL0__IAND0__I1__N0
+Metal Indices (6): [11090, 11099, 11105, 11187, 11193, 11200]
+
+--- Component 24 ---
+Representive Net Name: IESEL0__IAND0__I2__N1
+Metal Indices (6): [3386, 3391, 3404, 3567, 3583, 3587]
+
+--- Component 25 ---
+Representive Net Name: idcdl0_intn_pn<1>
+Metal Indices (9): [3786, 4114, 4252, 4317, 6417, 6477, 6638, 6765, 6775]
+
+--- Component 26 ---
+Representive Net Name: itcomp0_pd
+Metal Indices (4): [353, 354, 458, 459]
+
+--- Component 27 ---
+Representive Net Name: dn_np
+Metal Indices (8): [9816, 9854, 9876, 10225, 10246, 11216, 11319, 11332]
+
+--- Component 28 ---
+Representive Net Name: izinj0_norp
+Metal Indices (2): [10279, 10309]
+
+--- Component 29 ---
+Representive Net Name: OR_OUT
+Metal Indices (4): [3157, 3174, 3337, 3353]
+
+--- Component 30 ---
+Representive Net Name: idcdl0_intn_pn<3>
+Metal Indices (3): [5343, 5347, 5409]
+
+--- Component 31 ---
+Representive Net Name: INP
+Metal Indices (2): [9535, 9624]
+
+--- Component 32 ---
+Representive Net Name: dp_pn
+Metal Indices (6): [3637, 3706, 3727, 9825, 9845, 9849]
+
+--- Component 33 ---
+Representive Net Name: IESEL0__IOR0__I0__N0
+Metal Indices (6): [11217, 11226, 11232, 11314, 11320, 11327]
+
+--- Component 34 ---
+Representive Net Name: C_POS<3>
+Metal Indices (14): [762, 769, 788, 2058, 2065, 2084, 2202, 2209, 2228, 2442, 2449, 2468, 7293, 7420]
+
+--- Component 35 ---
+Representive Net Name: dp
+Metal Indices (3): [4888, 4896, 4956]
+
+--- Component 36 ---
+Representive Net Name: IDCDL0__IDCDLP_NP__cplus4<4>
+Metal Indices (2): [477, 497]
+
+--- Component 37 ---
+Representive Net Name: C_POS<1>
+Metal Indices (18): [702, 747, 1662, 1707, 3686, 3741, 4132, 4193, 4200, 4221, 6874, 7000, 7047, 7062, 7306, 7432, 7479, 7494]
+
+--- Component 38 ---
+Representive Net Name: OMUX0__I2__N0
+Metal Indices (6): [7581, 7586, 7606, 7769, 7779, 7783]
+
+--- Component 39 ---
+Representive Net Name: C_POS<2>
+Metal Indices (8): [666, 673, 692, 1770, 1777, 1796, 6860, 6987]
+
+--- Component 40 ---
+Representive Net Name: idcdl0_intn_pn<4>
+Metal Indices (3): [5496, 5504, 5564]
+
+--- Component 41 ---
+Representive Net Name: IDCDL0__IDCDLP_NP__cplus0
+Metal Indices (4): [6920, 9908, 9926, 9932]
+
+--- Component 42 ---
+Representive Net Name: idcdl0_intn_pn<2>
+Metal Indices (3): [4659, 4663, 4725]
+
+--- Component 43 ---
+Representive Net Name: idcdl0_intn_np<1>
+Metal Indices (3): [5192, 5200, 5260]
+
+--- Component 44 ---
+Representive Net Name: iomux0_mid0
+Metal Indices (4): [7596, 7601, 7764, 7792]
+
+--- Component 45 ---
+Representive Net Name: idcdl0_intn_np<3>
+Metal Indices (2): [5272, 5334]
+
+--- Component 46 ---
+Representive Net Name: IDCDL0__IDCDLN_PN__cplus4<2>
+Metal Indices (2): [962, 981]
+
+--- Component 47 ---
+Representive Net Name: idcdl0_intp_pn<3>
+Metal Indices (5): [6193, 6253, 7302, 7456, 7475]
+
+--- Component 48 ---
+Representive Net Name: itcomp0_srp:
+Metal Indices (8): [3679, 3753, 4393, 4399, 4454, 4460, 8613, 8623]
+
+--- Component 49 ---
+Representive Net Name: IDCDL0__IDCDLP_PN__cplus1
+Metal Indices (3): [1661, 1708, 7433]
+
+--- Component 50 ---
+Representive Net Name: IDCDL0__IDCDLN_NP__cplus4<1>
+Metal Indices (2): [1634, 1653]
+
+--- Component 51 ---
+Representive Net Name: AND_OUT
+Metal Indices (4): [3382, 3406, 3569, 3579]
+
+--- Component 52 ---
+Representive Net Name: idcdl0_intp_pn<1>
+Metal Indices (5): [6118, 6178, 7297, 7439, 7470]
+
+--- Component 53 ---
+Representive Net Name: iesel0_mid1_and
+Metal Indices (19): [3812, 4119, 9871, 9881, 10146, 10172, 10179, 10189, 11094, 11102, 11106, 11107, 11109, 11188, 11189, 11191, 11196, 11203, 11209]
+
+--- Component 54 ---
+Representive Net Name: C_NEG<2>
+Metal Indices (18): [510, 555, 558, 603, 3682, 3747, 4138, 4180, 4187, 4227, 6659, 6786, 6832, 6847, 7091, 7218, 7264, 7279]
+
+--- Component 55 ---
+Representive Net Name: iesel0_mid1_or
+Metal Indices (2): [11405, 11466]
+
+--- Component 56 ---
+Representive Net Name: IDCDL0__IDCDLN_PN__cplus3<1>
+Metal Indices (2): [2397, 2417]
+
+--- Component 57 ---
+Representive Net Name: tdc_1bit__OMUX0__en0
+Metal Indices (4): [10680, 10695, 10789, 10798]
+
+--- Component 58 ---
+Representive Net Name: IDCDL0__IDCDLN_PN__cplus4<5>
+Metal Indices (3): [1373, 1420, 6795]
+
+--- Component 59 ---
+Representive Net Name: IDCDL0__IDCDLN_PN__cplus2<0>
+Metal Indices (2): [2114, 2133]
+
+--- Component 60 ---
+Representive Net Name: C_NEG<0>
+Metal Indices (18): [3680, 3745, 4136, 4178, 4185, 4225, 6657, 6783, 6830, 6845, 7089, 7215, 7262, 7277, 10001, 10023, 10046, 10068]
+
+--- Component 61 ---
+Representive Net Name: idcdl0_intp_np<0>
+Metal Indices (5): [5586, 5646, 6863, 6998, 7036]
+
+--- Component 62 ---
+Representive Net Name: IESEL0__IOR0__I1__N0
+Metal Indices (6): [11344, 11353, 11359, 11441, 11447, 11454]
+
+--- Component 63 ---
+Representive Net Name: IDCDL0__IDCDLN_PN__cplus4<3>
+Metal Indices (2): [1010, 1029]
+
+--- Component 64 ---
+Representive Net Name: IDCDL0__IDCDLN_NP__cplus4<4>
+Metal Indices (3): [1133, 1180, 7229]
+
+--- Component 65 ---
+Representive Net Name: tdc_1bit__IDCDL0__dnb
+Metal Indices (5): [4147, 4174, 4212, 4749, 4809]
+
+--- Component 66 ---
+Representive Net Name: IDCDL0__IDCDLP_NP__cplus2<1>
+Metal Indices (3): [1757, 1804, 7003]
+
+--- Component 67 ---
+Representive Net Name: IDCDL0__IDCDLP_NP__cplus3<2>
+Metal Indices (2): [2493, 2513]
+
+--- Component 68 ---
+Representive Net Name: es_np
+Metal Indices (9): [3631, 3672, 3721, 4451, 4463, 8607, 8626, 11483, 11543]
+
+--- Component 69 ---
+Representive Net Name: izinj0_norn
+Metal Indices (5): [8476, 8509, 8533, 10383, 10443]
+
+--- Component 70 ---
+Representive Net Name: idcdl0_intp_pn<0>
+Metal Indices (2): [5804, 5866]
+
+--- Component 71 ---
+Representive Net Name: C_NEG<3>
+Metal Indices (5): [2382, 2427, 6663, 6814, 6836]
+
+--- Component 72 ---
+Representive Net Name: IDCDL0__IDCDLP_PN__cplus4<1>
+Metal Indices (2): [1058, 1077]
+
+--- Component 73 ---
+Representive Net Name: IDCDL0__IDCDLN_NP__cplus4<2>
+Metal Indices (2): [861, 881]
+
+--- Component 74 ---
+Representive Net Name: IDCDL0__IDCDLN_NP__cplus0
+Metal Indices (4): [7136, 10043, 10061, 10067]
+
+--- Component 75 ---
+Representive Net Name: tdc_1bit__IDCDL0__dpb
+Metal Indices (4): [4156, 4302, 4892, 4954]
+
+--- Component 76 ---
+Representive Net Name: C_POS<4>
+Metal Indices (5): [1278, 1323, 6885, 7018, 7058]
+
+--- Component 77 ---
+Representive Net Name: C_NEG<4>
+Metal Indices (5): [1326, 1371, 6670, 6804, 6843]
+
+--- Component 78 ---
+Representive Net Name: itcomp0_srn:
+Metal Indices (4): [4392, 4448, 11558, 11618]
+
+--- Component 79 ---
+Representive Net Name: INN
+Metal Indices (2): [9644, 9787]
+
+--- Component 80 ---
+Representive Net Name: C_POS<0>
+Metal Indices (18): [3685, 3740, 4131, 4192, 4199, 4220, 6873, 6999, 7046, 7061, 7305, 7431, 7478, 7493, 9911, 9933, 9956, 9978]
+
+--- Component 81 ---
+Representive Net Name: IDCDL0__IDCDLN_PN__cplus2<1>
+Metal Indices (2): [525, 545]
+
+--- Component 82 ---
+Representive Net Name: IDCDL0__IDCDLP_PN__cplus4<5>
+Metal Indices (3): [2141, 2188, 7443]
+
+--- Component 83 ---
+Representive Net Name: IDCDL0__IDCDLP_PN__cplus3<2>
+Metal Indices (2): [2450, 2469]
+
+--- Component 84 ---
+Representive Net Name: tdc_1bit__OMUX0__en1bb
+Metal Indices (2): [3022, 3068]
+
+--- Component 85 ---
+Representive Net Name: IDCDL0__IDCDLN_NP__cplus4<3>
+Metal Indices (3): [2765, 2812, 7231]
+
+--- Component 86 ---
+Representive Net Name: IDCDL0__IDCDLN_NP__cplus1
+Metal Indices (2): [2013, 2033]
+
+--- Component 87 ---
+Representive Net Name: iomux0_mid1
+Metal Indices (6): [7508, 7532, 7535, 7694, 7800, 7804]
+
+--- Component 88 ---
+Representive Net Name: C_NEG<1>
+Metal Indices (5): [1482, 1489, 1508, 6643, 6770]
+
+--- Component 89 ---
+Representive Net Name: IDCDL0__IDCDLP_PN__cplus2<1>
+Metal Indices (2): [2354, 2373]
+
+--- Component 90 ---
+Representive Net Name: itcomp0_cmp_outp_pre2
+Metal Indices (15): [3773, 4092, 8633, 8652, 9638, 9641, 9646, 9657, 9772, 9782, 9785, 9789, 9801, 10116, 10129]
+
+--- Component 91 ---
+Representive Net Name: IDCDL0__IDCDLN_NP__cplus4<5>
+Metal Indices (2): [2301, 2321]
+
+--- Component 92 ---
+Representive Net Name: IDCDL0__IDCDLP_PN__cplus3<3>
+Metal Indices (2): [770, 789]
+
+--- Component 93 ---
+Representive Net Name: IDCDL0__IDCDLN_NP__cplus3<1>
+Metal Indices (2): [1538, 1557]
+
+--- Component 94 ---
+Representive Net Name: IDCDL0__IDCDLP_NP__cplus4<5>
+Metal Indices (3): [797, 844, 7011]
+
+--- Component 95 ---
+Representive Net Name: IDCDL0__IDCDLP_PN__cplus3<1>
+Metal Indices (2): [2061, 2081]
+
+--- Component 96 ---
+Representive Net Name: IDCDL0__IDCDLN_PN__cplus4<4>
+Metal Indices (2): [626, 645]
+
+--- Component 97 ---
+Representive Net Name: CLKREF
+Metal Indices (3): [7809, 7817, 7939]
+
+--- Component 98 ---
+Representive Net Name: idcdl0_intn_np<2>
+Metal Indices (3): [5268, 5276, 5336]
+
+--- Component 99 ---
+Representive Net Name: IDCDL0__IDCDLP_NP__cplus4<3>
+Metal Indices (3): [1565, 1612, 7015]
+
+--- Component 100 ---
+Representive Net Name: IZINJ0__INR1__net1
+Metal Indices (5): [7811, 7822, 7831, 7943, 7950]
+
+--- Component 101 ---
+Representive Net Name: itcomp0_nd
+Metal Indices (4): [123, 124, 228, 229]
+
+--- Component 102 ---
+Representive Net Name: IDCDL0__IDCDLP_PN__cplus4<4>
+Metal Indices (2): [1245, 1265]
+
+--- Component 103 ---
+Representive Net Name: iesel0_mid0_or
+Metal Indices (2): [11279, 11340]
+
+--- Component 104 ---
+Representive Net Name: idcdl0_intn_pn<0>
+Metal Indices (5): [4522, 4582, 6647, 6782, 6820]
+
+--- Component 105 ---
+Representive Net Name: itcomp0_cmp_outpb
+Metal Indices (4): [20, 40, 190, 205]
+
+--- Component 106 ---
+Representive Net Name: itcomp0_cmp_outnb
+Metal Indices (8): [233, 238, 268, 269, 418, 419, 423, 426]
+
+--- Component 107 ---
+Representive Net Name: itcomp0_cmp_outn_pre
+Metal Indices (4): [9456, 9473, 9588, 9600]
+
+--- Component 108 ---
+Representive Net Name: idcdl0_intp_pn<4>
+Metal Indices (3): [5952, 5960, 6020]
+
+--- Component 109 ---
+Representive Net Name: IDCDL0__IDCDLP_NP__cplus4<2>
+Metal Indices (3): [1085, 1132, 7017]
+
+--- Component 110 ---
+Representive Net Name: IDCDL0__IDCDLP_PN__cplus4<2>
+Metal Indices (3): [2861, 2908, 7449]
+
+--- Component 111 ---
+Representive Net Name: RSTB
+Metal Indices (9): [34, 214, 224, 3763, 4089, 4475, 4503, 8638, 8655]
+
+--- Component 112 ---
+Representive Net Name: IDCDL0__IDCDLP_PN__cplus4<3>
+Metal Indices (3): [2621, 2668, 7447]
+
+--- Component 113 ---
+Representive Net Name: SEL_BOUT
+Metal Indices (3): [2957, 2961, 3007]
+
+--- Component 114 ---
+Representive Net Name: idcdl0_intp_np<2>
+Metal Indices (3): [6255, 6259, 6321]
+
+--- Component 115 ---
+Representive Net Name: IDCDL0__IDCDLP_NP__cplus1
+Metal Indices (2): [717, 737]
+
+--- Component 116 ---
+Representive Net Name: IDCDL0__IDCDLP_NP__cplus3<0>
+Metal Indices (2): [1965, 1985]
+
+--- Component 117 ---
+Representive Net Name: OMUX0__I2__N1
+Metal Indices (6): [7589, 7594, 7607, 7770, 7786, 7790]
+
+--- Component 118 ---
+Representive Net Name: idcdl0_dp_pre
+Metal Indices (8): [3697, 3756, 4143, 4177, 4208, 4218, 5890, 5950]
+
+--- Component 119 ---
+Representive Net Name: RST
+Metal Indices (9): [246, 432, 453, 3762, 4088, 4464, 4502, 8637, 8654]
+
+--- Component 120 ---
+Representive Net Name: IDCDL0__IDCDLN_PN__cplus4<0>
+Metal Indices (2): [1341, 1361]
+
+--- Component 121 ---
+Representive Net Name: IDCDL0__IDCDLN_NP__cplus2<1>
+Metal Indices (3): [557, 604, 7219]
+
+--- Component 122 ---
+Representive Net Name: IESEL0__IAND0__I2__N0
+Metal Indices (6): [3378, 3383, 3403, 3566, 3576, 3580]
+
+--- Component 123 ---
+Representive Net Name: IDCDL0__IDCDLP_PN__cplus3<0>
+Metal Indices (2): [2205, 2225]
+
+--- Component 124 ---
+Representive Net Name: IDCDL0__IDCDLN_NP__cplus2<0>
+Metal Indices (2): [2738, 2757]
+
+--- Component 125 ---
+Representive Net Name: IDCDL0__IDCDLN_NP__cplus3<2>
+Metal Indices (2): [1922, 1941]
+
+--- Component 126 ---
+Representive Net Name: IDCDL0__IDCDLP_PN__cplus2<0>
+Metal Indices (3): [2573, 2620, 7437]
+
+--- Component 127 ---
+Representive Net Name: OMUX0__I1__N0
+Metal Indices (6): [10820, 10829, 10839, 10933, 10939, 10946]
+
+--- Component 128 ---
+Representive Net Name: itcomp0_cmp_outp
+Metal Indices (10): [9645, 9649, 9656, 9771, 9788, 9792, 9797, 10080, 10110, 10125]
+
+--- Component 129 ---
+Representive Net Name: tdc_1bit__IZINJ0__enb
+Metal Indices (11): [4332, 4340, 4384, 8469, 8574, 10270, 10277, 10307, 10322, 10329, 10359]
+
+--- Component 130 ---
+Representive Net Name: VSS:
+Metal Indices (2): [2350, 2370]
+
+--- Component 131 ---
+Representive Net Name: IDCDL0__IDCDLP_NP__cplus4<0>
+Metal Indices (2): [1725, 1745]
+
+--- Component 132 ---
+Representive Net Name: idcdl0_dn_pre
+Metal Indices (3): [4811, 4815, 4877]
+
+--- Component 133 ---
+Representive Net Name: dn
+Metal Indices (7): [3622, 3667, 3712, 8510, 8553, 10384, 10444]
+
+--- Component 134 ---
+Representive Net Name: IESEL0__IOR0__I2__N0
+Metal Indices (6): [3145, 3150, 3170, 3333, 3343, 3347]
+
+--- Component 135 ---
+Representive Net Name: IDCDL0__IDCDLP_NP__cplus4<1>
+Metal Indices (2): [1298, 1317]
+
+--- Component 136 ---
+Representive Net Name: idcdl0_intp_pn<2>
+Metal Indices (5): [6573, 6633, 7300, 7454, 7473]
+
+--- Component 137 ---
+Representive Net Name: IDCDL0__IDCDLP_NP__cplus3<1>
+Metal Indices (2): [2925, 2945]
+
+--- Component 138 ---
+Representive Net Name: IDCDL0__IDCDLN_PN__cplus3<0>
+Metal Indices (3): [1853, 1900, 6817]
+
+--- Component 139 ---
+Representive Net Name: IDCDL0__IDCDLP_NP__cplus2<0>
+Metal Indices (2): [669, 689]
+
+--- Component 140 ---
+Representive Net Name: IDCDL0__IDCDLP_NP__cplus3<3>
+Metal Indices (2): [1821, 1841]
+
+--- Component 141 ---
+Representive Net Name: itcomp0_cmp_outn_pre2
+Metal Indices (15): [3769, 4093, 8631, 8653, 9457, 9460, 9465, 9476, 9591, 9601, 9604, 9608, 9620, 10106, 10128]
+
+--- Component 142 ---
+Representive Net Name: IDCDL0__IDCDLN_PN__cplus1
+Metal Indices (3): [1469, 1516, 6785]
+
+--- Component 143 ---
+Representive Net Name: IDCDL0__IDCDLN_PN__cplus3<2>
+Metal Indices (2): [1197, 1217]
+
+--- Component 144 ---
+Representive Net Name: idcdl0_intp_np<3>
+Metal Indices (9): [3793, 4101, 4268, 4309, 6265, 6325, 6856, 6983, 6993]
+
+--- Component 145 ---
+Representive Net Name: IDCDL0__IDCDLP_PN__cplus0
+Metal Indices (4): [7352, 9953, 9971, 9977]
+
+--- Component 146 ---
+Representive Net Name: VDD:
+Metal Indices (440): [524, 532, 551, 553, 620, 628, 647, 649, 764, 772, 791, 793, 956, 964, 983, 985, 1004, 1012, 1031, 1033, 1052, 1060, 1079, 1081, 1196, 1204, 1223, 1225, 1244, 1252, 1271, 1273, 1340, 1348, 1367, 1369, 1388, 1396, 1415, 1417, 1436, 1444, 1463, 1465, 1484, 1492, 1511, 1513, 1676, 1684, 1703, 1705, 1868, 1876, 1895, 1897, 2060, 2068, 2087, 2089, 2108, 2116, 2135, 2137, 2156, 2164, 2183, 2185, 2204, 2212, 2231, 2233, 2252, 2260, 2279, 2281, 2348, 2356, 2375, 2377, 2396, 2404, 2423, 2425, 2444, 2452, 2471, 2473, 2540, 2548, 2567, 2569, 2588, 2596, 2615, 2617, 2636, 2644, 2663, 2665, 2876, 2884, 2903, 2905, 3080, 3088, 3089, 3090, 3132, 3134, 3139, 3162, 3163, 3358, 3361, 3372, 3395, 3396, 3591, 3594, 3607, 3759, 3776, 3806, 4024, 4026, 4028, 4030, 4032, 4034, 4036, 4038, 4040, 4042, 4128, 4153, 4236, 4240, 4249, 4256, 4270, 4272, 4274, 4276, 4278, 4280, 4282, 4284, 4328, 4334, 4342, 4343, 4344, 4386, 4388, 4510, 4518, 4519, 4520, 4578, 4580, 4662, 4670, 4671, 4672, 4730, 4732, 4890, 4898, 4899, 4900, 4958, 4960, 5042, 5050, 5051, 5052, 5110, 5112, 5346, 5354, 5355, 5356, 5414, 5416, 5498, 5506, 5507, 5508, 5566, 5568, 5726, 5734, 5735, 5736, 5794, 5796, 5802, 5810, 5811, 5812, 5870, 5872, 5878, 5886, 5887, 5888, 5946, 5948, 5954, 5962, 5963, 5964, 6022, 6024, 6106, 6114, 6115, 6116, 6174, 6176, 6182, 6190, 6191, 6192, 6250, 6252, 6410, 6418, 6419, 6420, 6478, 6480, 6562, 6570, 6571, 6572, 6630, 6632, 6636, 6695, 6697, 6699, 6702, 6706, 6709, 6712, 6714, 6716, 6718, 6720, 6723, 6726, 6729, 6732, 6735, 6738, 6740, 6742, 6744, 6746, 6749, 6752, 6755, 6758, 6760, 6762, 6780, 7284, 7343, 7345, 7347, 7350, 7354, 7357, 7360, 7362, 7364, 7366, 7368, 7371, 7374, 7377, 7380, 7383, 7386, 7388, 7390, 7392, 7394, 7397, 7400, 7403, 7406, 7408, 7410, 7428, 7982, 7984, 7992, 8000, 8002, 8010, 8018, 8020, 8028, 8090, 8092, 8100, 8180, 8182, 8190, 8198, 8200, 8208, 8234, 8236, 8244, 8270, 8272, 8280, 8288, 8290, 8298, 8306, 8308, 8316, 8342, 8344, 8352, 8360, 8362, 8370, 8414, 8416, 8424, 8450, 8452, 8460, 8463, 8558, 8560, 8562, 8564, 8566, 8568, 8578, 8858, 8860, 8870, 8872, 8930, 8932, 9058, 9060, 9094, 9096, 9102, 9104, 9130, 9132, 9146, 9148, 9158, 9160, 9162, 9164, 9210, 9212, 9318, 9320, 9358, 9360, 9366, 9368, 9402, 9404, 9422, 9424, 9426, 9428, 9434, 9436, 9809, 9859, 9868, 9886, 9947, 9955, 9973, 9975, 9992, 10000, 10018, 10020, 10144, 10173, 10176, 10192, 10206, 10235, 10238, 10254, 10272, 10280, 10310, 10312, 10324, 10332, 10362, 10364, 10448, 10456, 10457, 10458, 10516, 10518, 10530, 10537, 10538, 10546, 10661, 10668, 10670, 11088, 11095, 11096, 11103, 11104, 11197, 11204, 11211, 11342, 11349, 11350, 11357, 11358, 11451, 11458, 11465]
+
+--- Component 147 ---
+Representive Net Name: BOUT
+Metal Indices (4): [7593, 7610, 7773, 7789]
+
+--- Component 148 ---
+Representive Net Name: iesel0_mid0_and
+Metal Indices (2): [11025, 11086]
+
+------------------------------------------------------------------
+
+Library: tbadc_generated
+Cell: tdc_1bit
+
+   _ (`-.   ('-.      .-')     .-')      ('-.  _ .-') _   
+  ( (OO  ) ( OO ).-. ( OO ).  ( OO ).  _(  OO)( (  OO) )  
+ _.`     | / . --. /(_)---|_)(_)---|_)(,------.|     .'_  
+(__...--'' | |-.   |/    _ | /    _ |  |  .---',`'--..._) 
+ |  /  | | | |  |  ||  (` `  |  (` `   |  |    |  |   | ' 
+ |  |_.' | | |_.'  | '..`''.  '..`''.  |  '--. |  |   ' | 
+ |  .___.' |  .-.  |.-._)   |.-._)   | |  .--' |  |   / : 
+ |  |      |  | |  ||       /|       / |  `---.|  '--'  / 
+ `--'      `--' `--' `-----'  `-----'  `------'`-------'    
+        
+Overall Graph Netname Consistency: PASSED ✔️
+Total connected components found: 11619
+
+Total Error Count: 0
+├─ Floating: 0
+├─ Open: 0
+└─ Short: 0
+
+------------------------------------------------------------------
+
