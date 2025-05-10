@@ -1,6 +1,6 @@
 preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.METAL, 37, 2228, "")
-preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.METAL, 1717, 2228, "")
 preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.METAL, 1713, 2228, "")
+preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.METAL, 1717, 2228, "")
 preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1438, -1, "")
 preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1199, -1, "")
 preLVS_sweepline.ErrorEvent(preLVS_sweepline.FLOATING, preLVS_sweepline.METAL, 1466, -1, "")

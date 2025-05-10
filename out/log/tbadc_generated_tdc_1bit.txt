@@ -607,7 +607,6 @@ Cell: tdc_1bit
  `--'      `--' `--' `-----'  `-----'  `------'`-------'    
         
 Overall Graph Netname Consistency: PASSED ✔️
-Total connected components found: 11619
 
 Total Error Count: 0
 ├─ Floating: 0

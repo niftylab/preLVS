@@ -135,22 +135,24 @@ function get_transformed_LData_V3(originlabel::LData, inst_data::Dict, equivalen
                 _netname    = net_mapper[_label.netname_origin]
             else
                 for (rep, net_set) in equivalent_net_sets
+                    # if _label.netname_origin in net_set
+                    #     _eqnet = first(intersect(net_set, keys(net_mapper)))
+                    #     _netname    = net_mapper[_eqnet]
+                    #     break
+                    # end
                     if _label.netname_origin in net_set
-                        _eqnet = first(intersect(net_set, keys(net_mapper)))
-                        _netname    = net_mapper[_eqnet]
-                        break
+                        common_nets_in_mapper = intersect(net_set, keys(net_mapper))
+                        if !isempty(common_nets_in_mapper)
+                            _eqnet = first(common_nets_in_mapper)
+                            _netname = net_mapper[_eqnet]
+                            break
+                        end
                     end
                 end
             end
             if _netname == "UNKNOWN"
                 _netname    = Mname * "__" * _label.netname_origin
             end
-            # println("xy = ", xy)
-            # println("typeof(xy) = ", typeof(xy))
-            # println("xy[1] = ", xy[1])
-            # println("xy[2] = ", xy[2])
-            # println("xy[3] = ", xy[3])
-            # println("xy[4] = ", xy[4])
             push!(newLData.layers[_layerNum].labels, Label(_label.netname_origin, _netname, SMatrix{2,2,Int}([xy[1] xy[3]; xy[2] xy[4]]), _label.layer, _label.is_pin))
         end
     end

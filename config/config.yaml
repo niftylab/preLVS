@@ -32,3 +32,16 @@ Via:
   via_M4_M5_1:
     map: [M4, M5]
     extension: [10, 20]
+
+Equivalent_net_sets:
+  "VDD:":
+    - "VDD:"
+    - "VDD"
+    - "vdd"
+    - "vdd:"
+  "VSS:":
+    - "VSS:"
+    - "VSS"
+    - "vss"
+    - "vss:"
+    - "gnd"

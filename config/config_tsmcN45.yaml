@@ -34,5 +34,15 @@ Via:
     extension: [10, 20]
 
 Equivalent_net_sets:
-  - ["VDD:", "VDD", "vdd", "vdd:"]
-  - ["VSS:", "VSS", "vss", "vss:", "gnd"]
+  "VDD:":
+    - "VDD:"
+    - "VDD"
+    - "vdd"
+    - "vdd:"
+  "VSS:":
+    - "VSS:"
+    - "VSS"
+    - "vss"
+    - "vss:"
+    - "gnd"
+  
