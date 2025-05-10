@@ -364,27 +364,3 @@ function get_elements_for_root(ds::IntDisjointSets{Int}, known_root::Int)
     return elements_in_set
 end
 
-
-
-# struct GraphEdge
-#     ref_via::Int
-#     from::Int
-#     to::Int
-# end
-
-# struct GraphNode
-# #    layerType::EType # LABEL is not used, only METAL & VIA
-#     layerNum::Int
-#     rect_ref::Vector{Int}
-#     netname::Union{String, Nothing} # 컴포넌트의 대표 netname
-#     edges::Vector{GraphEdge}
-#     isvisited::Bool
-# end
-
-
-# struct ErrorEvent
-#     errorType::ErrorType
-#     event_type::EType
-#     rect_ref::Int
-#     rect_encounter::Int
-# end
