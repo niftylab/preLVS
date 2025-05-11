@@ -4,7 +4,7 @@ using YAML
 
 # Set sampling parameters
 n_samples = 100             # Number of samples to run
-max_benchmark_seconds = 1   # Maximum number of seconds to run each sample
+max_benchmark_seconds = 0.3   # Maximum number of seconds to run each sample
 
 input_path = "benchmark/bench_input.yaml"
 input_data = YAML.load_file(input_path)
@@ -22,7 +22,7 @@ println("2. flatten")
 println("3. mergeVector")
 println("4. generate_graph")
 println("5. runLVS")
-println()
+println("6. runLVS_wo_log")
 
 
 # Performance Test
@@ -41,6 +41,8 @@ generate_graph_benchmark = @benchmark generate_graph(input_path)    samples=n_sa
 println("Starting benchmark: runLVS")
 total_benchmark = @benchmark runLVS(input_path)            samples=n_samples seconds=(n_samples*max_benchmark_seconds)
 
+println("Starting benchmark: runLVS_wo_log")
+total_benchmark_wo_log = @benchmark runLVS_wo_log(input_path)            samples=n_samples seconds=(n_samples*max_benchmark_seconds)
 
 # Display Results
 println("Target: loadDB")
@@ -63,3 +65,8 @@ println("Target: runLVS")
 display(total_benchmark)
 println("-"^20)
 println()
+println("Target: runLVS_wo_log")
+display(total_benchmark_wo_log)
+println("-"^20)
+println()
+

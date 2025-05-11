@@ -1,653 +1,495 @@
-Total unique nodes found in graph: 2301
+Total unique nodes found in graph: 159
 
 Starting Connectivity and Netname Consistency Check...
-Starting BFS for new component from node (idx=452)...
-Starting BFS for new component from node (idx=1672)...
-Starting BFS for new component from node (idx=2117)...
-Starting BFS for new component from node (idx=1415)...
-Starting BFS for new component from node (idx=131)...
-Starting BFS for new component from node (idx=2101)...
-Starting BFS for new component from node (idx=572)...
-Starting BFS for new component from node (idx=2086)...
-Starting BFS for new component from node (idx=695)...
-Starting BFS for new component from node (idx=1678)...
-Starting BFS for new component from node (idx=184)...
-Starting BFS for new component from node (idx=932)...
-Starting BFS for new component from node (idx=1095)...
-Starting BFS for new component from node (idx=2198)...
-Starting BFS for new component from node (idx=107)...
-Starting BFS for new component from node (idx=1177)...
-Starting BFS for new component from node (idx=740)...
-Starting BFS for new component from node (idx=2254)...
-Starting BFS for new component from node (idx=772)...
-Starting BFS for new component from node (idx=861)...
-Starting BFS for new component from node (idx=609)...
-Starting BFS for new component from node (idx=2294)...
-Starting BFS for new component from node (idx=2128)...
-Starting BFS for new component from node (idx=2125)...
-Starting BFS for new component from node (idx=156)...
-Starting BFS for new component from node (idx=1131)...
-Starting BFS for new component from node (idx=1378)...
-Starting BFS for new component from node (idx=1681)...
-Starting BFS for new component from node (idx=2074)...
-Starting BFS for new component from node (idx=649)...
-Starting BFS for new component from node (idx=1138)...
-Starting BFS for new component from node (idx=312)...
-Starting BFS for new component from node (idx=1139)...
-Starting BFS for new component from node (idx=1362)...
-Starting BFS for new component from node (idx=2234)...
-Starting BFS for new component from node (idx=329)...
-Starting BFS for new component from node (idx=1673)...
-Starting BFS for new component from node (idx=2259)...
-Starting BFS for new component from node (idx=647)...
-Starting BFS for new component from node (idx=1891)...
-Starting BFS for new component from node (idx=1878)...
-Starting BFS for new component from node (idx=1377)...
-Starting BFS for new component from node (idx=1972)...
-Starting BFS for new component from node (idx=1268)...
-Starting BFS for new component from node (idx=1962)...
-Starting BFS for new component from node (idx=840)...
-Starting BFS for new component from node (idx=860)...
-Starting BFS for new component from node (idx=1812)...
-Starting BFS for new component from node (idx=2216)...
-Starting BFS for new component from node (idx=477)...
-Starting BFS for new component from node (idx=643)...
-Starting BFS for new component from node (idx=775)...
-Starting BFS for new component from node (idx=738)...
-Starting BFS for new component from node (idx=1704)...
-Starting BFS for new component from node (idx=1082)...
-Starting BFS for new component from node (idx=2041)...
-Starting BFS for new component from node (idx=502)...
-Starting BFS for new component from node (idx=1159)...
-Starting BFS for new component from node (idx=604)...
-Starting BFS for new component from node (idx=2063)...
-Starting BFS for new component from node (idx=1368)...
-Starting BFS for new component from node (idx=2096)...
-Starting BFS for new component from node (idx=2017)...
-Starting BFS for new component from node (idx=1934)...
-Starting BFS for new component from node (idx=1667)...
-Starting BFS for new component from node (idx=1628)...
-Starting BFS for new component from node (idx=832)...
-Starting BFS for new component from node (idx=241)...
-Starting BFS for new component from node (idx=1700)...
-Starting BFS for new component from node (idx=1973)...
-Starting BFS for new component from node (idx=810)...
-Starting BFS for new component from node (idx=1025)...
-Starting BFS for new component from node (idx=2279)...
-Starting BFS for new component from node (idx=1942)...
-Starting BFS for new component from node (idx=1279)...
-Starting BFS for new component from node (idx=1603)...
-Starting BFS for new component from node (idx=1949)...
-Starting BFS for new component from node (idx=872)...
-Starting BFS for new component from node (idx=578)...
-Starting BFS for new component from node (idx=1636)...
-Starting BFS for new component from node (idx=448)...
-Starting BFS for new component from node (idx=1696)...
-Starting BFS for new component from node (idx=1328)...
-Starting BFS for new component from node (idx=1283)...
-Starting BFS for new component from node (idx=1841)...
-Starting BFS for new component from node (idx=79)...
-Starting BFS for new component from node (idx=1856)...
-Starting BFS for new component from node (idx=1963)...
-Starting BFS for new component from node (idx=1650)...
-Starting BFS for new component from node (idx=1591)...
-Starting BFS for new component from node (idx=2011)...
-Starting BFS for new component from node (idx=1975)...
-Starting BFS for new component from node (idx=714)...
-Starting BFS for new component from node (idx=510)...
-Starting BFS for new component from node (idx=2235)...
-Starting BFS for new component from node (idx=1884)...
-Starting BFS for new component from node (idx=2164)...
-Starting BFS for new component from node (idx=410)...
-Starting BFS for new component from node (idx=2003)...
-Starting BFS for new component from node (idx=1556)...
-Starting BFS for new component from node (idx=1259)...
-Starting BFS for new component from node (idx=940)...
-Starting BFS for new component from node (idx=286)...
-Starting BFS for new component from node (idx=95)...
-Starting BFS for new component from node (idx=192)...
-Starting BFS for new component from node (idx=288)...
-Starting BFS for new component from node (idx=1482)...
-Starting BFS for new component from node (idx=2048)...
-Starting BFS for new component from node (idx=58)...
-Starting BFS for new component from node (idx=28)...
-Starting BFS for new component from node (idx=1734)...
-Starting BFS for new component from node (idx=2180)...
-Starting BFS for new component from node (idx=2024)...
-Starting BFS for new component from node (idx=1460)...
-Starting BFS for new component from node (idx=475)...
-Starting BFS for new component from node (idx=2085)...
-Starting BFS for new component from node (idx=1606)...
-Starting BFS for new component from node (idx=1799)...
-Starting BFS for new component from node (idx=1618)...
-Starting BFS for new component from node (idx=2230)...
-Starting BFS for new component from node (idx=1191)...
-Starting BFS for new component from node (idx=191)...
-Starting BFS for new component from node (idx=509)...
-Starting BFS for new component from node (idx=2172)...
-Starting BFS for new component from node (idx=883)...
-Starting BFS for new component from node (idx=1804)...
-Starting BFS for new component from node (idx=2124)...
-Starting BFS for new component from node (idx=881)...
-Starting BFS for new component from node (idx=2228)...
-Starting BFS for new component from node (idx=2009)...
-Starting BFS for new component from node (idx=1940)...
-Starting BFS for new component from node (idx=888)...
-Starting BFS for new component from node (idx=1479)...
-Starting BFS for new component from node (idx=2047)...
-Starting BFS for new component from node (idx=561)...
-Starting BFS for new component from node (idx=1732)...
-Starting BFS for new component from node (idx=1509)...
-Starting BFS for new component from node (idx=1566)...
-Starting BFS for new component from node (idx=523)...
-Starting BFS for new component from node (idx=803)...
-Starting BFS for new component from node (idx=1077)...
-Starting BFS for new component from node (idx=2054)...
-Starting BFS for new component from node (idx=2203)...
-Starting BFS for new component from node (idx=1767)...
-Starting BFS for new component from node (idx=1814)...
-Starting BFS for new component from node (idx=1929)...
-Starting BFS for new component from node (idx=608)...
-Starting BFS for new component from node (idx=1806)...
-Starting BFS for new component from node (idx=1653)...
-Starting BFS for new component from node (idx=1655)...
-Starting BFS for new component from node (idx=435)...
-Starting BFS for new component from node (idx=1829)...
-Starting BFS for new component from node (idx=444)...
-Starting BFS for new component from node (idx=1699)...
-Starting BFS for new component from node (idx=1081)...
-Starting BFS for new component from node (idx=1854)...
-Starting BFS for new component from node (idx=1669)...
-Starting BFS for new component from node (idx=1872)...
-Starting BFS for new component from node (idx=1647)...
+Error Info:
 
 --- Connectivity Check Report ---
 Total connected components found: 159
 
 --- Component 1 ---
-Representative Net Name: VSS:
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus4<5>
 Netname Consistency: Passed
-Metal Indices (153): [4, 18, 34, 46, 53, 70, 82, 96, 106, 110, 116, 134, 146, 153, 165, 172, 190, 212, 223, 231, 239, 259, 283, 294, 303, 310, 317, 324, 337, 366, 392, 399, 406, 416, 425, 442, 452, 464, 476, 487, 504, 524, 535, 552, 564, 575, 590, 595, 602, 633, 656, 663, 670, 683, 690, 703, 710, 731, 752, 757, 762, 767, 773, 785, 793, 799, 811, 819, 825, 837, 845, 851, 863, 871, 877, 889, 897, 903, 915, 923, 928, 933, 938, 959, 980, 985, 990, 995, 1000, 1005, 1010, 1031, 1052, 1057, 1062, 1067, 1073, 1085, 1093, 1099, 1111, 1119, 1125, 1137, 1145, 1151, 1163, 1171, 1176, 1181, 1186, 1207, 1228, 1233, 1238, 1243, 1250, 1276, 1307, 1386, 1398, 1422, 1923, 1950, 1951, 1952, 1953, 1956, 1957, 1958, 1959, 1960, 1961, 1964, 1965, 1966, 1967, 1974, 1978, 1979, 1980, 1981, 1984, 1985, 1986, 1987, 1988, 1989, 1992, 1993, 1994, 1995, 2000]
+Metal Indices (5): [782, 784, 1876, 1929, 2165]
 
 --- Component 2 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus4<3>
-Netname Consistency: Passed
-Metal Indices (5): [827, 829, 1672, 1725, 2179]
-
---- Component 3 ---
-Representative Net Name: C_POS<1>
-Netname Consistency: Passed
-Metal Indices (5): [474, 478, 1905, 2025, 2117]
-
---- Component 4 ---
-Representative Net Name: AND_OUT
-Netname Consistency: Passed
-Metal Indices (17): [1408, 1415, 1436, 1439, 1466, 1469, 1470, 1473, 1492, 1495, 1496, 1499, 1887, 1970, 1998, 2058, 2297]
-
---- Component 5 ---
 Representative Net Name: izinj0_norn
 Netname Consistency: Passed
 Metal Indices (31): [8, 22, 38, 54, 57, 71, 74, 83, 86, 97, 100, 113, 114, 118, 119, 131, 132, 136, 137, 1665, 1694, 1713, 1765, 1771, 1775, 1843, 1853, 2068, 2072, 2073, 2076]
 
---- Component 6 ---
-Representative Net Name: itcomp0_cmp_outn
-Netname Consistency: Passed
-Metal Indices (25): [217, 232, 233, 243, 252, 253, 265, 266, 276, 277, 289, 290, 296, 297, 327, 328, 359, 1560, 1574, 1588, 1607, 1626, 1642, 2098, 2101]
-
---- Component 7 ---
-Representative Net Name: VSS:
-Netname Consistency: Passed
-Metal Indices (155): [2, 9, 16, 32, 44, 47, 50, 67, 80, 92, 102, 108, 112, 130, 144, 151, 163, 170, 188, 210, 221, 229, 237, 257, 281, 292, 301, 308, 315, 322, 335, 364, 390, 397, 404, 414, 422, 437, 449, 461, 469, 484, 501, 517, 532, 549, 557, 572, 588, 593, 600, 631, 654, 661, 668, 681, 688, 701, 708, 729, 750, 755, 760, 765, 770, 778, 790, 796, 804, 816, 822, 830, 842, 848, 856, 868, 874, 882, 894, 900, 908, 920, 926, 931, 936, 957, 978, 983, 988, 993, 998, 1003, 1008, 1029, 1050, 1055, 1060, 1065, 1070, 1078, 1090, 1096, 1104, 1116, 1122, 1130, 1142, 1148, 1156, 1168, 1174, 1179, 1184, 1205, 1226, 1231, 1236, 1241, 1248, 1274, 1305, 1385, 1396, 1420, 1717, 1744, 1745, 1746, 1747, 1750, 1751, 1752, 1753, 1754, 1755, 1758, 1759, 1760, 1761, 1768, 1778, 1779, 1780, 1781, 1784, 1785, 1786, 1787, 1788, 1789, 1792, 1793, 1794, 1795, 1803]
-
---- Component 8 ---
-Representative Net Name: dp
-Netname Consistency: Passed
-Metal Indices (14): [125, 128, 139, 142, 182, 183, 204, 205, 1889, 1901, 1920, 1946, 2079, 2086]
-
---- Component 9 ---
-Representative Net Name: es_pn
-Netname Consistency: Passed
-Metal Indices (27): [672, 675, 692, 695, 1321, 1322, 1325, 1326, 1354, 1355, 1358, 1359, 1425, 1426, 1451, 1452, 1568, 1582, 1595, 1604, 1823, 1840, 1915, 1943, 2151, 2270, 2285]
-
---- Component 10 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus3<1>
-Netname Consistency: Passed
-Metal Indices (5): [1127, 1129, 1678, 1733, 2241]
-
---- Component 11 ---
-Representative Net Name: tdc_1bit__IDCDL0__dpb
-Netname Consistency: Passed
-Metal Indices (14): [181, 184, 203, 206, 249, 250, 273, 274, 1890, 1902, 1921, 1947, 2090, 2094]
-
---- Component 12 ---
-Representative Net Name: VDD:
-Netname Consistency: Passed
-Metal Indices (86): [3, 10, 17, 33, 45, 48, 51, 68, 105, 109, 115, 133, 145, 152, 164, 171, 189, 211, 222, 230, 238, 258, 282, 293, 302, 309, 316, 323, 336, 365, 391, 398, 405, 415, 589, 594, 601, 632, 655, 662, 669, 682, 689, 702, 709, 730, 751, 756, 761, 766, 927, 932, 937, 958, 979, 984, 989, 994, 999, 1004, 1009, 1030, 1051, 1056, 1061, 1066, 1175, 1180, 1185, 1206, 1227, 1232, 1237, 1242, 1249, 1275, 1306, 1312, 1337, 1370, 1397, 1421, 1446, 1480, 1504, 1870]
-
---- Component 13 ---
-Representative Net Name: idcdl0_intn_np<4>
-Netname Consistency: Passed
-Metal Indices (22): [1012, 1015, 1033, 1036, 1069, 1089, 1095, 1115, 1121, 1141, 1147, 1167, 1189, 1190, 1210, 1211, 1690, 1707, 1735, 1757, 2219, 2253]
-
---- Component 14 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus4<1>
-Netname Consistency: Passed
-Metal Indices (5): [890, 892, 2010, 2051, 2198]
-
---- Component 15 ---
-Representative Net Name: VDD:
-Netname Consistency: Passed
-Metal Indices (101): [1, 15, 31, 43, 101, 107, 111, 129, 143, 150, 162, 169, 187, 209, 220, 228, 236, 256, 267, 280, 291, 300, 307, 314, 321, 334, 341, 363, 370, 389, 396, 403, 413, 420, 447, 456, 459, 482, 499, 530, 547, 570, 587, 592, 599, 630, 653, 660, 667, 680, 687, 700, 707, 728, 749, 754, 759, 764, 925, 930, 935, 956, 977, 982, 987, 992, 997, 1002, 1007, 1028, 1049, 1054, 1059, 1064, 1173, 1178, 1183, 1204, 1225, 1230, 1235, 1240, 1247, 1254, 1273, 1304, 1309, 1334, 1367, 1384, 1395, 1419, 1443, 1477, 1501, 1514, 1525, 1533, 1545, 1557, 1664]
-
---- Component 16 ---
-Representative Net Name: VDD:
-Netname Consistency: Passed
-Metal Indices (63): [295, 304, 311, 318, 325, 338, 367, 393, 400, 407, 417, 591, 596, 603, 634, 657, 664, 671, 684, 691, 704, 711, 732, 753, 758, 763, 768, 929, 934, 939, 960, 981, 986, 991, 996, 1001, 1006, 1011, 1032, 1053, 1058, 1063, 1068, 1177, 1182, 1187, 1208, 1229, 1234, 1239, 1244, 1251, 1277, 1308, 1315, 1340, 1373, 1399, 1423, 1449, 1483, 1507, 2059]
-
---- Component 17 ---
-Representative Net Name: idcdl0_intn_pn<2>
-Netname Consistency: Passed
-Metal Indices (26): [716, 719, 737, 740, 771, 791, 797, 817, 823, 843, 849, 869, 875, 895, 901, 921, 945, 946, 966, 967, 1783, 1815, 1835, 1847, 2158, 2208]
-
---- Component 18 ---
-Representative Net Name: idcdl0_intn_pn<4>
-Netname Consistency: Passed
-Metal Indices (22): [1016, 1019, 1037, 1040, 1071, 1091, 1097, 1117, 1123, 1143, 1149, 1169, 1193, 1194, 1214, 1215, 1791, 1821, 1838, 1849, 2220, 2254]
-
---- Component 19 ---
-Representative Net Name: idcdl0_intp_pn<2>
-Netname Consistency: Passed
-Metal Indices (26): [720, 723, 741, 744, 772, 792, 798, 818, 824, 844, 850, 870, 876, 896, 902, 922, 949, 950, 970, 971, 1894, 1910, 1935, 1955, 2159, 2209]
-
---- Component 20 ---
-Representative Net Name: C_POS<4>
-Netname Consistency: Passed
-Metal Indices (25): [783, 787, 809, 813, 835, 839, 861, 865, 887, 891, 913, 917, 1909, 2029, 2162, 2169, 2170, 2177, 2178, 2185, 2186, 2193, 2194, 2201, 2202]
-
---- Component 21 ---
-Representative Net Name: VSS:
-Netname Consistency: Passed
-Metal Indices (45): [148, 167, 186, 208, 218, 306, 313, 320, 340, 360, 369, 388, 395, 402, 419, 446, 455, 458, 481, 498, 529, 546, 569, 586, 598, 609, 629, 652, 659, 666, 686, 706, 1246, 1253, 1272, 1303, 1333, 1366, 1383, 1500, 1513, 1524, 1611, 1630, 2144]
-
---- Component 22 ---
-Representative Net Name: iomux0_mid1
-Netname Consistency: Passed
-Metal Indices (23): [1348, 1381, 1428, 1431, 1454, 1457, 1511, 1516, 1520, 1527, 1535, 1536, 1547, 1548, 1583, 1597, 1623, 1635, 1662, 2288, 2294, 2298, 2299]
-
---- Component 23 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus2<1>
-Netname Consistency: Passed
-Metal Indices (5): [525, 527, 2002, 2045, 2128]
-
---- Component 24 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus2<1>
-Netname Consistency: Passed
-Metal Indices (5): [514, 516, 1668, 1719, 2125]
-
---- Component 25 ---
-Representative Net Name: INP
-Netname Consistency: Passed
-Metal Indices (23): [63, 64, 76, 77, 88, 89, 155, 156, 173, 193, 197, 213, 225, 1570, 1572, 1586, 1640, 1899, 1918, 2065, 2083, 2088, 2091]
-
---- Component 26 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus3<1>
-Netname Consistency: Passed
-Metal Indices (5): [1131, 1133, 1819, 1866, 2242]
-
---- Component 27 ---
-Representative Net Name: tdc_1bit__OMUX0__I1__N0
-Netname Consistency: Passed
-Metal Indices (6): [1345, 1378, 1418, 1442, 1476, 1614]
-
---- Component 28 ---
-Representative Net Name: OR_OUT
-Netname Consistency: Passed
-Metal Indices (17): [1400, 1407, 1432, 1435, 1458, 1461, 1462, 1465, 1484, 1487, 1488, 1491, 1681, 1764, 1798, 1869, 2296]
-
---- Component 29 ---
-Representative Net Name: izinj0_norp
-Netname Consistency: Passed
-Metal Indices (31): [14, 30, 42, 62, 65, 75, 78, 87, 90, 93, 94, 103, 104, 121, 124, 126, 127, 140, 141, 1770, 1776, 1844, 1852, 1871, 1900, 1919, 1971, 2070, 2071, 2074, 2075]
-
---- Component 30 ---
-Representative Net Name: idcdl0_intp_np<0>
-Netname Consistency: Passed
-Metal Indices (22): [354, 357, 383, 386, 426, 453, 465, 488, 505, 536, 553, 576, 625, 626, 648, 649, 1977, 2004, 2027, 2037, 2108, 2142]
-
---- Component 31 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus3<1>
-Netname Consistency: Passed
-Metal Indices (5): [1138, 1140, 2016, 2055, 2244]
-
---- Component 32 ---
-Representative Net Name: VDD:
-Netname Consistency: Passed
-Metal Indices (49): [185, 207, 260, 284, 305, 312, 319, 339, 368, 387, 394, 401, 408, 418, 445, 454, 457, 480, 497, 528, 545, 568, 585, 597, 605, 628, 651, 658, 665, 685, 705, 1245, 1252, 1271, 1302, 1332, 1365, 1382, 1416, 1440, 1474, 1512, 1523, 1530, 1542, 1554, 1558, 1578, 2143]
-
---- Component 33 ---
-Representative Net Name: C_POS<3>
-Netname Consistency: Passed
-Metal Indices (17): [1083, 1087, 1109, 1113, 1135, 1139, 1161, 1165, 1912, 2032, 2224, 2231, 2232, 2239, 2240, 2247, 2248]
-
---- Component 34 ---
+--- Component 3 ---
 Representative Net Name: es_np
 Netname Consistency: Passed
 Metal Indices (27): [676, 679, 696, 699, 1317, 1318, 1329, 1330, 1350, 1351, 1362, 1363, 1429, 1430, 1455, 1456, 1622, 1634, 1651, 1657, 1709, 1737, 2020, 2035, 2152, 2269, 2286]
 
---- Component 35 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus3<2>
-Netname Consistency: Passed
-Metal Indices (5): [1105, 1107, 1818, 1865, 2234]
-
---- Component 36 ---
-Representative Net Name: itcomp0_cmp_outnb
-Netname Consistency: Passed
-Metal Indices (16): [326, 329, 358, 409, 428, 429, 491, 508, 539, 1565, 1575, 1584, 1589, 1599, 2103, 2109]
-
---- Component 37 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus4<2>
-Netname Consistency: Passed
-Metal Indices (5): [853, 855, 1673, 1726, 2187]
-
---- Component 38 ---
-Representative Net Name: dp_pn
-Netname Consistency: Passed
-Metal Indices (14): [1196, 1199, 1217, 1220, 1260, 1261, 1291, 1292, 1822, 1839, 1897, 1968, 2259, 2261]
-
---- Component 39 ---
-Representative Net Name: idcdl0_intp_np<1>
-Netname Consistency: Passed
-Metal Indices (14): [624, 627, 647, 650, 725, 726, 746, 747, 1982, 2005, 2028, 2038, 2148, 2156]
-
---- Component 40 ---
-Representative Net Name: idcdl0_dp_pre
-Netname Consistency: Passed
-Metal Indices (20): [248, 251, 272, 275, 351, 352, 355, 356, 380, 381, 384, 385, 1891, 1903, 1922, 1948, 1999, 2023, 2097, 2100]
-
---- Component 41 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus4<3>
-Netname Consistency: Passed
-Metal Indices (5): [834, 836, 1878, 1931, 2181]
-
---- Component 42 ---
-Representative Net Name: tdc_1bit__OMUX0__I0__N0
-Netname Consistency: Passed
-Metal Indices (6): [1344, 1377, 1417, 1441, 1475, 1609]
-
---- Component 43 ---
-Representative Net Name: tdc_1bit__IESEL0__IAND0__I1__N0
-Netname Consistency: Passed
-Metal Indices (6): [1266, 1297, 1313, 1338, 1371, 1972]
-
---- Component 44 ---
-Representative Net Name: dp_np
-Netname Consistency: Passed
-Metal Indices (14): [1200, 1203, 1221, 1224, 1268, 1269, 1299, 1300, 1996, 2019, 2034, 2042, 2260, 2262]
-
---- Component 45 ---
-Representative Net Name: idcdl0_intp_pn<3>
-Netname Consistency: Passed
-Metal Indices (14): [948, 951, 969, 972, 1021, 1022, 1042, 1043, 1895, 1911, 1936, 1962, 2213, 2217]
-
---- Component 46 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus4<3>
-Netname Consistency: Passed
-Metal Indices (5): [838, 840, 2008, 2049, 2182]
-
---- Component 47 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus4<2>
-Netname Consistency: Passed
-Metal Indices (5): [860, 862, 1879, 1932, 2189]
-
---- Component 48 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus4<2>
-Netname Consistency: Passed
-Metal Indices (5): [857, 859, 1812, 1861, 2188]
-
---- Component 49 ---
+--- Component 4 ---
 Representative Net Name: idcdl0_intn_pn<3>
 Netname Consistency: Passed
 Metal Indices (14): [944, 947, 965, 968, 1017, 1018, 1038, 1039, 1790, 1816, 1836, 1848, 2212, 2216]
 
---- Component 50 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus1
+--- Component 5 ---
+Representative Net Name: VSS:
 Netname Consistency: Passed
-Metal Indices (5): [477, 479, 2001, 2044, 2122]
+Metal Indices (45): [148, 167, 186, 208, 218, 306, 313, 320, 340, 360, 369, 388, 395, 402, 419, 446, 455, 458, 481, 498, 529, 546, 569, 586, 598, 609, 629, 652, 659, 666, 686, 706, 1246, 1253, 1272, 1303, 1333, 1366, 1383, 1500, 1513, 1524, 1611, 1630, 2144]
 
---- Component 51 ---
-Representative Net Name: idcdl0_intp_pn<1>
+--- Component 6 ---
+Representative Net Name: VSS:
 Netname Consistency: Passed
-Metal Indices (14): [620, 623, 643, 646, 721, 722, 742, 743, 1893, 1908, 1928, 1954, 2147, 2155]
+Metal Indices (155): [2, 9, 16, 32, 44, 47, 50, 67, 80, 92, 102, 108, 112, 130, 144, 151, 163, 170, 188, 210, 221, 229, 237, 257, 281, 292, 301, 308, 315, 322, 335, 364, 390, 397, 404, 414, 422, 437, 449, 461, 469, 484, 501, 517, 532, 549, 557, 572, 588, 593, 600, 631, 654, 661, 668, 681, 688, 701, 708, 729, 750, 755, 760, 765, 770, 778, 790, 796, 804, 816, 822, 830, 842, 848, 856, 868, 874, 882, 894, 900, 908, 920, 926, 931, 936, 957, 978, 983, 988, 993, 998, 1003, 1008, 1029, 1050, 1055, 1060, 1065, 1070, 1078, 1090, 1096, 1104, 1116, 1122, 1130, 1142, 1148, 1156, 1168, 1174, 1179, 1184, 1205, 1226, 1231, 1236, 1241, 1248, 1274, 1305, 1385, 1396, 1420, 1717, 1744, 1745, 1746, 1747, 1750, 1751, 1752, 1753, 1754, 1755, 1758, 1759, 1760, 1761, 1768, 1778, 1779, 1780, 1781, 1784, 1785, 1786, 1787, 1788, 1789, 1792, 1793, 1794, 1795, 1803]
 
---- Component 52 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus4<5>
-Netname Consistency: Passed
-Metal Indices (5): [775, 777, 1670, 1723, 2163]
-
---- Component 53 ---
-Representative Net Name: idcdl0_intn_pn<1>
-Netname Consistency: Passed
-Metal Indices (14): [616, 619, 639, 642, 717, 718, 738, 739, 1782, 1808, 1833, 1846, 2146, 2154]
-
---- Component 54 ---
-Representative Net Name: idcdl0_intn_np<2>
-Netname Consistency: Passed
-Metal Indices (26): [712, 715, 733, 736, 769, 789, 795, 815, 821, 841, 847, 867, 873, 893, 899, 919, 941, 942, 962, 963, 1688, 1704, 1729, 1749, 2157, 2207]
-
---- Component 55 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus3<3>
-Netname Consistency: Passed
-Metal Indices (5): [1082, 1084, 1882, 1937, 2227]
-
---- Component 56 ---
-Representative Net Name: idcdl0_intp_np<4>
-Netname Consistency: Passed
-Metal Indices (22): [1024, 1027, 1045, 1048, 1074, 1094, 1100, 1120, 1126, 1146, 1152, 1172, 1201, 1202, 1222, 1223, 1991, 2018, 2033, 2041, 2222, 2256]
-
---- Component 57 ---
-Representative Net Name: idcdl0_intn_pn<0>
-Netname Consistency: Passed
-Metal Indices (22): [346, 349, 375, 378, 423, 450, 462, 485, 502, 533, 550, 573, 617, 618, 640, 641, 1777, 1807, 1832, 1845, 2106, 2140]
-
---- Component 58 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus3<0>
-Netname Consistency: Passed
-Metal Indices (5): [1157, 1159, 1820, 1867, 2250]
-
---- Component 59 ---
-Representative Net Name: itcomp0_srn:
-Netname Consistency: Passed
-Metal Indices (18): [577, 580, 582, 583, 604, 673, 674, 693, 694, 1567, 1579, 1585, 1592, 1602, 1629, 1646, 2138, 2149]
-
---- Component 60 ---
+--- Component 7 ---
 Representative Net Name: tdc_1bit__IZINJ0__enb
 Netname Consistency: Passed
 Metal Indices (14): [23, 26, 59, 60, 99, 123, 1769, 1800, 1827, 1851, 2061, 2063, 2069, 2078]
 
---- Component 61 ---
+--- Component 8 ---
+Representative Net Name: VSS:
+Netname Consistency: Passed
+Metal Indices (153): [4, 18, 34, 46, 53, 70, 82, 96, 106, 110, 116, 134, 146, 153, 165, 172, 190, 212, 223, 231, 239, 259, 283, 294, 303, 310, 317, 324, 337, 366, 392, 399, 406, 416, 425, 442, 452, 464, 476, 487, 504, 524, 535, 552, 564, 575, 590, 595, 602, 633, 656, 663, 670, 683, 690, 703, 710, 731, 752, 757, 762, 767, 773, 785, 793, 799, 811, 819, 825, 837, 845, 851, 863, 871, 877, 889, 897, 903, 915, 923, 928, 933, 938, 959, 980, 985, 990, 995, 1000, 1005, 1010, 1031, 1052, 1057, 1062, 1067, 1073, 1085, 1093, 1099, 1111, 1119, 1125, 1137, 1145, 1151, 1163, 1171, 1176, 1181, 1186, 1207, 1228, 1233, 1238, 1243, 1250, 1276, 1307, 1386, 1398, 1422, 1923, 1950, 1951, 1952, 1953, 1956, 1957, 1958, 1959, 1960, 1961, 1964, 1965, 1966, 1967, 1974, 1978, 1979, 1980, 1981, 1984, 1985, 1986, 1987, 1988, 1989, 1992, 1993, 1994, 1995, 2000]
+
+--- Component 9 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus4<0>
+Netname Consistency: Passed
+Metal Indices (5): [905, 907, 1675, 1728, 2203]
+
+--- Component 10 ---
+Representative Net Name: C_POS<0>
+Netname Consistency: Passed
+Metal Indices (5): [441, 443, 1904, 2024, 2112]
+
+--- Component 11 ---
 Representative Net Name: tdc_1bit__IESEL0__IOR0__I0__N0
 Netname Consistency: Passed
 Metal Indices (6): [1258, 1289, 1310, 1335, 1368, 1766]
 
---- Component 62 ---
-Representative Net Name: idcdl0_dn_pre
+--- Component 12 ---
+Representative Net Name: tdc_1bit__IESEL0__IOR0__I2__N0
 Netname Consistency: Passed
-Metal Indices (20): [244, 247, 268, 271, 343, 344, 347, 348, 372, 373, 376, 377, 1685, 1697, 1716, 1742, 1802, 1828, 2096, 2099]
+Metal Indices (6): [1388, 1403, 1444, 1478, 1502, 1767]
 
---- Component 63 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus3<0>
+--- Component 13 ---
+Representative Net Name: AND_OUT
 Netname Consistency: Passed
-Metal Indices (5): [1164, 1166, 2017, 2056, 2252]
+Metal Indices (17): [1408, 1415, 1436, 1439, 1466, 1469, 1470, 1473, 1492, 1495, 1496, 1499, 1887, 1970, 1998, 2058, 2297]
 
---- Component 64 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus4<0>
+--- Component 14 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus4<4>
 Netname Consistency: Passed
-Metal Indices (5): [912, 914, 1881, 1934, 2205]
+Metal Indices (5): [812, 814, 2007, 2048, 2174]
 
---- Component 65 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus1
+--- Component 15 ---
+Representative Net Name: VDD:
 Netname Consistency: Passed
-Metal Indices (5): [466, 468, 1667, 1718, 2119]
+Metal Indices (86): [3, 10, 17, 33, 45, 48, 51, 68, 105, 109, 115, 133, 145, 152, 164, 171, 189, 211, 222, 230, 238, 258, 282, 293, 302, 309, 316, 323, 336, 365, 391, 398, 405, 415, 589, 594, 601, 632, 655, 662, 669, 682, 689, 702, 709, 730, 751, 756, 761, 766, 927, 932, 937, 958, 979, 984, 989, 994, 999, 1004, 1009, 1030, 1051, 1056, 1061, 1066, 1175, 1180, 1185, 1206, 1227, 1232, 1237, 1242, 1249, 1275, 1306, 1312, 1337, 1370, 1397, 1421, 1446, 1480, 1504, 1870]
 
---- Component 66 ---
-Representative Net Name: itcomp0_cmp_outpb
-Netname Consistency: Passed
-Metal Indices (16): [330, 333, 362, 412, 432, 433, 494, 511, 542, 1617, 1628, 1637, 1644, 1654, 2104, 2110]
-
---- Component 67 ---
-Representative Net Name: C_NEG<4>
-Netname Consistency: Passed
-Metal Indices (25): [776, 780, 802, 806, 828, 832, 854, 858, 880, 884, 906, 910, 1703, 1834, 2161, 2167, 2168, 2175, 2176, 2183, 2184, 2191, 2192, 2199, 2200]
-
---- Component 68 ---
-Representative Net Name: itcomp0_cmp_outn_pre
-Netname Consistency: Passed
-Metal Indices (12): [147, 157, 166, 174, 194, 214, 241, 263, 287, 1559, 1598, 2081]
-
---- Component 69 ---
-Representative Net Name: C_NEG<2>
-Netname Consistency: Passed
-Metal Indices (9): [515, 519, 555, 559, 1700, 1831, 2123, 2129, 2130]
-
---- Component 70 ---
-Representative Net Name: tdc_1bit__IESEL0__IAND0__I2__N1
-Netname Consistency: Passed
-Metal Indices (6): [1392, 1411, 1447, 1481, 1505, 1973]
-
---- Component 71 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus4<4>
-Netname Consistency: Passed
-Metal Indices (5): [808, 810, 1877, 1930, 2173]
-
---- Component 72 ---
-Representative Net Name: idcdl0_intp_np<3>
-Netname Consistency: Passed
-Metal Indices (14): [952, 955, 973, 976, 1025, 1026, 1046, 1047, 1990, 2013, 2031, 2040, 2214, 2218]
-
---- Component 73 ---
-Representative Net Name: iesel0_mid1_and
-Netname Consistency: Passed
-Metal Indices (23): [1263, 1294, 1324, 1327, 1357, 1360, 1391, 1410, 1414, 1438, 1471, 1472, 1497, 1498, 1886, 1944, 1969, 2022, 2036, 2275, 2279, 2284, 2292]
-
---- Component 74 ---
-Representative Net Name: dn_pn
-Netname Consistency: Passed
-Metal Indices (14): [1192, 1195, 1213, 1216, 1264, 1265, 1295, 1296, 1796, 1850, 1914, 1942, 2258, 2264]
-
---- Component 75 ---
-Representative Net Name: SEL_BOUT
-Netname Consistency: Passed
-Metal Indices (5): [1279, 1280, 1580, 1593, 2265]
-
---- Component 76 ---
-Representative Net Name: itcomp0_srn:
-Netname Consistency: Passed
-Metal Indices (2): [607, 1603]
-
---- Component 77 ---
-Representative Net Name: idcdl0_intp_pn<0>
-Netname Consistency: Passed
-Metal Indices (22): [350, 353, 379, 382, 424, 451, 463, 486, 503, 534, 551, 574, 621, 622, 644, 645, 1892, 1907, 1927, 1949, 2107, 2141]
-
---- Component 78 ---
-Representative Net Name: idcdl0_intp_np<2>
-Netname Consistency: Passed
-Metal Indices (26): [724, 727, 745, 748, 774, 794, 800, 820, 826, 846, 852, 872, 878, 898, 904, 924, 953, 954, 974, 975, 1983, 2012, 2030, 2039, 2160, 2210]
-
---- Component 79 ---
-Representative Net Name: itcomp0_srp:
-Netname Consistency: Passed
-Metal Indices (18): [578, 579, 581, 584, 611, 677, 678, 697, 698, 1577, 1590, 1620, 1631, 1638, 1648, 1656, 2137, 2150]
-
---- Component 80 ---
-Representative Net Name: iomux0_mid0
-Netname Consistency: Passed
-Metal Indices (23): [1341, 1374, 1424, 1427, 1450, 1453, 1508, 1517, 1521, 1528, 1539, 1540, 1551, 1552, 1562, 1596, 1605, 1636, 1652, 2287, 2293, 2295, 2300]
-
---- Component 81 ---
-Representative Net Name: idcdl0_intn_np<0>
-Netname Consistency: Passed
-Metal Indices (22): [342, 345, 371, 374, 421, 448, 460, 483, 500, 531, 548, 571, 613, 614, 636, 637, 1686, 1701, 1721, 1743, 2105, 2139]
-
---- Component 82 ---
-Representative Net Name: tdc_1bit__IDCDL0__dnb
-Netname Consistency: Passed
-Metal Indices (14): [177, 180, 199, 202, 245, 246, 269, 270, 1684, 1696, 1715, 1741, 2089, 2093]
-
---- Component 83 ---
-Representative Net Name: iesel0_mid0_and
-Netname Consistency: Passed
-Metal Indices (23): [1270, 1301, 1328, 1331, 1361, 1364, 1394, 1409, 1413, 1437, 1467, 1468, 1493, 1494, 1916, 1945, 1997, 2021, 2057, 2276, 2280, 2282, 2291]
-
---- Component 84 ---
-Representative Net Name: tdc_1bit__OMUX0__en0
-Netname Consistency: Passed
-Metal Indices (17): [1278, 1281, 1283, 1284, 1342, 1343, 1375, 1376, 1569, 1581, 1594, 1608, 1632, 1649, 2266, 2267, 2271]
-
---- Component 85 ---
-Representative Net Name: iesel0_mid0_or
-Netname Consistency: Passed
-Metal Indices (23): [1255, 1286, 1316, 1319, 1349, 1352, 1387, 1402, 1406, 1434, 1463, 1464, 1489, 1490, 1680, 1738, 1763, 1825, 1841, 2273, 2277, 2281, 2290]
-
---- Component 86 ---
-Representative Net Name: tdc_1bit__IZINJ0__INR1__net1
-Netname Consistency: Passed
-Metal Indices (8): [5, 19, 35, 49, 66, 79, 91, 1682]
-
---- Component 87 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus2<1>
-Netname Consistency: Passed
-Metal Indices (5): [518, 520, 1805, 1856, 2126]
-
---- Component 88 ---
-Representative Net Name: idcdl0_intp_pn<4>
-Netname Consistency: Passed
-Metal Indices (22): [1020, 1023, 1041, 1044, 1072, 1092, 1098, 1118, 1124, 1144, 1150, 1170, 1197, 1198, 1218, 1219, 1896, 1913, 1941, 1963, 2221, 2255]
-
---- Component 89 ---
-Representative Net Name: tdc_1bit__OMUX0__en1bb
-Netname Consistency: Passed
-Metal Indices (12): [1282, 1285, 1346, 1347, 1379, 1380, 1613, 1633, 1650, 1658, 2268, 2272]
-
---- Component 90 ---
-Representative Net Name: RST
-Netname Consistency: Passed
-Metal Indices (2): [606, 1591]
-
---- Component 91 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus4<0>
-Netname Consistency: Passed
-Metal Indices (5): [916, 918, 2011, 2052, 2206]
-
---- Component 92 ---
-Representative Net Name: tdc_1bit__IESEL0__IAND0__I0__N0
-Netname Consistency: Passed
-Metal Indices (6): [1267, 1298, 1314, 1339, 1372, 1975]
-
---- Component 93 ---
-Representative Net Name: idcdl0_intn_np<1>
-Netname Consistency: Passed
-Metal Indices (14): [612, 615, 635, 638, 713, 714, 734, 735, 1687, 1702, 1722, 1748, 2145, 2153]
-
---- Component 94 ---
-Representative Net Name: itcomp0_srp:
-Netname Consistency: Passed
-Metal Indices (4): [493, 510, 541, 1619]
-
---- Component 95 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus3<2>
-Netname Consistency: Passed
-Metal Indices (5): [1108, 1110, 1883, 1938, 2235]
-
---- Component 96 ---
+--- Component 16 ---
 Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus3<1>
 Netname Consistency: Passed
 Metal Indices (5): [1134, 1136, 1884, 1939, 2243]
 
---- Component 97 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus4<5>
+--- Component 17 ---
+Representative Net Name: idcdl0_intp_pn<3>
 Netname Consistency: Passed
-Metal Indices (5): [779, 781, 1809, 1858, 2164]
+Metal Indices (14): [948, 951, 969, 972, 1021, 1022, 1042, 1043, 1895, 1911, 1936, 1962, 2213, 2217]
+
+--- Component 18 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus4<2>
+Netname Consistency: Passed
+Metal Indices (5): [860, 862, 1879, 1932, 2189]
+
+--- Component 19 ---
+Representative Net Name: idcdl0_intn_pn<4>
+Netname Consistency: Passed
+Metal Indices (22): [1016, 1019, 1037, 1040, 1071, 1091, 1097, 1117, 1123, 1143, 1149, 1169, 1193, 1194, 1214, 1215, 1791, 1821, 1838, 1849, 2220, 2254]
+
+--- Component 20 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus4<1>
+Netname Consistency: Passed
+Metal Indices (5): [879, 881, 1674, 1727, 2195]
+
+--- Component 21 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus2<1>
+Netname Consistency: Passed
+Metal Indices (5): [514, 516, 1668, 1719, 2125]
+
+--- Component 22 ---
+Representative Net Name: iomux0_mid0
+Netname Consistency: Passed
+Metal Indices (23): [1341, 1374, 1424, 1427, 1450, 1453, 1508, 1517, 1521, 1528, 1539, 1540, 1551, 1552, 1562, 1596, 1605, 1636, 1652, 2287, 2293, 2295, 2300]
+
+--- Component 23 ---
+Representative Net Name: idcdl0_intn_pn<0>
+Netname Consistency: Passed
+Metal Indices (22): [346, 349, 375, 378, 423, 450, 462, 485, 502, 533, 550, 573, 617, 618, 640, 641, 1777, 1807, 1832, 1845, 2106, 2140]
+
+--- Component 24 ---
+Representative Net Name: izinj0_norp
+Netname Consistency: Passed
+Metal Indices (31): [14, 30, 42, 62, 65, 75, 78, 87, 90, 93, 94, 103, 104, 121, 124, 126, 127, 140, 141, 1770, 1776, 1844, 1852, 1871, 1900, 1919, 1971, 2070, 2071, 2074, 2075]
+
+--- Component 25 ---
+Representative Net Name: idcdl0_intp_np<2>
+Netname Consistency: Passed
+Metal Indices (26): [724, 727, 745, 748, 774, 794, 800, 820, 826, 846, 852, 872, 878, 898, 904, 924, 953, 954, 974, 975, 1983, 2012, 2030, 2039, 2160, 2210]
+
+--- Component 26 ---
+Representative Net Name: tdc_1bit__IZINJ0__INR1__net1
+Netname Consistency: Passed
+Metal Indices (8): [5, 19, 35, 49, 66, 79, 91, 1682]
+
+--- Component 27 ---
+Representative Net Name: idcdl0_intn_np<1>
+Netname Consistency: Passed
+Metal Indices (14): [612, 615, 635, 638, 713, 714, 734, 735, 1687, 1702, 1722, 1748, 2145, 2153]
+
+--- Component 28 ---
+Representative Net Name: tdc_1bit__IESEL0__IOR0__I1__N0
+Netname Consistency: Passed
+Metal Indices (6): [1259, 1290, 1311, 1336, 1369, 1772]
+
+--- Component 29 ---
+Representative Net Name: itcomp0_cmp_outp_pre
+Netname Consistency: Passed
+Metal Indices (12): [149, 158, 168, 175, 195, 215, 242, 264, 288, 1616, 1659, 2082]
+
+--- Component 30 ---
+Representative Net Name: CLKREF
+Netname Consistency: Passed
+Metal Indices (17): [6, 7, 12, 13, 20, 21, 28, 29, 36, 37, 40, 41, 1692, 1711, 1898, 1917, 2062]
+
+--- Component 31 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus1
+Netname Consistency: Passed
+Metal Indices (5): [473, 475, 1873, 1924, 2121]
+
+--- Component 32 ---
+Representative Net Name: idcdl0_intp_pn<0>
+Netname Consistency: Passed
+Metal Indices (22): [350, 353, 379, 382, 424, 451, 463, 486, 503, 534, 551, 574, 621, 622, 644, 645, 1892, 1907, 1927, 1949, 2107, 2141]
+
+--- Component 33 ---
+Representative Net Name: itcomp0_srn:
+Netname Consistency: Passed
+Metal Indices (18): [577, 580, 582, 583, 604, 673, 674, 693, 694, 1567, 1579, 1585, 1592, 1602, 1629, 1646, 2138, 2149]
+
+--- Component 34 ---
+Representative Net Name: tdc_1bit__OMUX0__en1bb
+Netname Consistency: Passed
+Metal Indices (12): [1282, 1285, 1346, 1347, 1379, 1380, 1613, 1633, 1650, 1658, 2268, 2272]
+
+--- Component 35 ---
+Representative Net Name: idcdl0_intp_pn<4>
+Netname Consistency: Passed
+Metal Indices (22): [1020, 1023, 1041, 1044, 1072, 1092, 1098, 1118, 1124, 1144, 1150, 1170, 1197, 1198, 1218, 1219, 1896, 1913, 1941, 1963, 2221, 2255]
+
+--- Component 36 ---
+Representative Net Name: VDD:
+Netname Consistency: Passed
+Metal Indices (101): [1, 15, 31, 43, 101, 107, 111, 129, 143, 150, 162, 169, 187, 209, 220, 228, 236, 256, 267, 280, 291, 300, 307, 314, 321, 334, 341, 363, 370, 389, 396, 403, 413, 420, 447, 456, 459, 482, 499, 530, 547, 570, 587, 592, 599, 630, 653, 660, 667, 680, 687, 700, 707, 728, 749, 754, 759, 764, 925, 930, 935, 956, 977, 982, 987, 992, 997, 1002, 1007, 1028, 1049, 1054, 1059, 1064, 1173, 1178, 1183, 1204, 1225, 1230, 1235, 1240, 1247, 1254, 1273, 1304, 1309, 1334, 1367, 1384, 1395, 1419, 1443, 1477, 1501, 1514, 1525, 1533, 1545, 1557, 1664]
+
+--- Component 37 ---
+Representative Net Name: dp_pn
+Netname Consistency: Passed
+Metal Indices (14): [1196, 1199, 1217, 1220, 1260, 1261, 1291, 1292, 1822, 1839, 1897, 1968, 2259, 2261]
+
+--- Component 38 ---
+Representative Net Name: idcdl0_dn_pre
+Netname Consistency: Passed
+Metal Indices (20): [244, 247, 268, 271, 343, 344, 347, 348, 372, 373, 376, 377, 1685, 1697, 1716, 1742, 1802, 1828, 2096, 2099]
+
+--- Component 39 ---
+Representative Net Name: idcdl0_intp_np<0>
+Netname Consistency: Passed
+Metal Indices (22): [354, 357, 383, 386, 426, 453, 465, 488, 505, 536, 553, 576, 625, 626, 648, 649, 1977, 2004, 2027, 2037, 2108, 2142]
+
+--- Component 40 ---
+Representative Net Name: idcdl0_intp_np<4>
+Netname Consistency: Passed
+Metal Indices (22): [1024, 1027, 1045, 1048, 1074, 1094, 1100, 1120, 1126, 1146, 1152, 1172, 1201, 1202, 1222, 1223, 1991, 2018, 2033, 2041, 2222, 2256]
+
+--- Component 41 ---
+Representative Net Name: idcdl0_intn_pn<2>
+Netname Consistency: Passed
+Metal Indices (26): [716, 719, 737, 740, 771, 791, 797, 817, 823, 843, 849, 869, 875, 895, 901, 921, 945, 946, 966, 967, 1783, 1815, 1835, 1847, 2158, 2208]
+
+--- Component 42 ---
+Representative Net Name: es_pn
+Netname Consistency: Passed
+Metal Indices (27): [672, 675, 692, 695, 1321, 1322, 1325, 1326, 1354, 1355, 1358, 1359, 1425, 1426, 1451, 1452, 1568, 1582, 1595, 1604, 1823, 1840, 1915, 1943, 2151, 2270, 2285]
+
+--- Component 43 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus4<4>
+Netname Consistency: Passed
+Metal Indices (5): [801, 803, 1671, 1724, 2171]
+
+--- Component 44 ---
+Representative Net Name: RST
+Netname Consistency: Passed
+Metal Indices (2): [606, 1591]
+
+--- Component 45 ---
+Representative Net Name: tdc_1bit__OMUX0__I1__N0
+Netname Consistency: Passed
+Metal Indices (6): [1345, 1378, 1418, 1442, 1476, 1614]
+
+--- Component 46 ---
+Representative Net Name: tdc_1bit__IESEL0__IOR0__I2__N1
+Netname Consistency: Passed
+Metal Indices (6): [1389, 1404, 1445, 1479, 1503, 1773]
+
+--- Component 47 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus4<0>
+Netname Consistency: Passed
+Metal Indices (5): [909, 911, 1814, 1863, 2204]
+
+--- Component 48 ---
+Representative Net Name: dn_pn
+Netname Consistency: Passed
+Metal Indices (14): [1192, 1195, 1213, 1216, 1264, 1265, 1295, 1296, 1796, 1850, 1914, 1942, 2258, 2264]
+
+--- Component 49 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus3<3>
+Netname Consistency: Passed
+Metal Indices (5): [1082, 1084, 1882, 1937, 2227]
+
+--- Component 50 ---
+Representative Net Name: idcdl0_intn_np<2>
+Netname Consistency: Passed
+Metal Indices (26): [712, 715, 733, 736, 769, 789, 795, 815, 821, 841, 847, 867, 873, 893, 899, 919, 941, 942, 962, 963, 1688, 1704, 1729, 1749, 2157, 2207]
+
+--- Component 51 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus4<5>
+Netname Consistency: Passed
+Metal Indices (5): [786, 788, 2006, 2047, 2166]
+
+--- Component 52 ---
+Representative Net Name: idcdl0_intp_np<1>
+Netname Consistency: Passed
+Metal Indices (14): [624, 627, 647, 650, 725, 726, 746, 747, 1982, 2005, 2028, 2038, 2148, 2156]
+
+--- Component 53 ---
+Representative Net Name: itcomp0_cmp_outp
+Netname Consistency: Passed
+Metal Indices (25): [219, 234, 235, 240, 254, 255, 261, 262, 278, 279, 285, 286, 298, 299, 331, 332, 361, 1573, 1587, 1612, 1627, 1643, 1660, 2095, 2102]
+
+--- Component 54 ---
+Representative Net Name: BOUT
+Netname Consistency: Passed
+Metal Indices (17): [1515, 1522, 1526, 1529, 1534, 1537, 1538, 1541, 1546, 1549, 1550, 1553, 1563, 1606, 1624, 1663, 2301]
+
+--- Component 55 ---
+Representative Net Name: itcomp0_srp:
+Netname Consistency: Passed
+Metal Indices (18): [578, 579, 581, 584, 611, 677, 678, 697, 698, 1577, 1590, 1620, 1631, 1638, 1648, 1656, 2137, 2150]
+
+--- Component 56 ---
+Representative Net Name: VDD:
+Netname Consistency: Passed
+Metal Indices (63): [295, 304, 311, 318, 325, 338, 367, 393, 400, 407, 417, 591, 596, 603, 634, 657, 664, 671, 684, 691, 704, 711, 732, 753, 758, 763, 768, 929, 934, 939, 960, 981, 986, 991, 996, 1001, 1006, 1011, 1032, 1053, 1058, 1063, 1068, 1177, 1182, 1187, 1208, 1229, 1234, 1239, 1244, 1251, 1277, 1308, 1315, 1340, 1373, 1399, 1423, 1449, 1483, 1507, 2059]
+
+--- Component 57 ---
+Representative Net Name: idcdl0_intn_np<0>
+Netname Consistency: Passed
+Metal Indices (22): [342, 345, 371, 374, 421, 448, 460, 483, 500, 531, 548, 571, 613, 614, 636, 637, 1686, 1701, 1721, 1743, 2105, 2139]
+
+--- Component 58 ---
+Representative Net Name: iomux0_mid1
+Netname Consistency: Passed
+Metal Indices (23): [1348, 1381, 1428, 1431, 1454, 1457, 1511, 1516, 1520, 1527, 1535, 1536, 1547, 1548, 1583, 1597, 1623, 1635, 1662, 2288, 2294, 2298, 2299]
+
+--- Component 59 ---
+Representative Net Name: idcdl0_dp_pre
+Netname Consistency: Passed
+Metal Indices (20): [248, 251, 272, 275, 351, 352, 355, 356, 380, 381, 384, 385, 1891, 1903, 1922, 1948, 1999, 2023, 2097, 2100]
+
+--- Component 60 ---
+Representative Net Name: iesel0_mid1_and
+Netname Consistency: Passed
+Metal Indices (23): [1263, 1294, 1324, 1327, 1357, 1360, 1391, 1410, 1414, 1438, 1471, 1472, 1497, 1498, 1886, 1944, 1969, 2022, 2036, 2275, 2279, 2284, 2292]
+
+--- Component 61 ---
+Representative Net Name: tdc_1bit__OMUX0__I2__N0
+Netname Consistency: Passed
+Metal Indices (6): [1509, 1518, 1531, 1543, 1555, 1610]
+
+--- Component 62 ---
+Representative Net Name: C_NEG<4>
+Netname Consistency: Passed
+Metal Indices (25): [776, 780, 802, 806, 828, 832, 854, 858, 880, 884, 906, 910, 1703, 1834, 2161, 2167, 2168, 2175, 2176, 2183, 2184, 2191, 2192, 2199, 2200]
+
+--- Component 63 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus2<0>
+Netname Consistency: Passed
+Metal Indices (5): [558, 560, 1806, 1857, 2134]
+
+--- Component 64 ---
+Representative Net Name: itcomp0_cmp_outnb
+Netname Consistency: Passed
+Metal Indices (16): [326, 329, 358, 409, 428, 429, 491, 508, 539, 1565, 1575, 1584, 1589, 1599, 2103, 2109]
+
+--- Component 65 ---
+Representative Net Name: VDD:
+Netname Consistency: Passed
+Metal Indices (49): [185, 207, 260, 284, 305, 312, 319, 339, 368, 387, 394, 401, 408, 418, 445, 454, 457, 480, 497, 528, 545, 568, 585, 597, 605, 628, 651, 658, 665, 685, 705, 1245, 1252, 1271, 1302, 1332, 1365, 1382, 1416, 1440, 1474, 1512, 1523, 1530, 1542, 1554, 1558, 1578, 2143]
+
+--- Component 66 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus3<2>
+Netname Consistency: Passed
+Metal Indices (5): [1105, 1107, 1818, 1865, 2234]
+
+--- Component 67 ---
+Representative Net Name: C_POS<3>
+Netname Consistency: Passed
+Metal Indices (17): [1083, 1087, 1109, 1113, 1135, 1139, 1161, 1165, 1912, 2032, 2224, 2231, 2232, 2239, 2240, 2247, 2248]
+
+--- Component 68 ---
+Representative Net Name: dn
+Netname Consistency: Passed
+Metal Indices (14): [117, 120, 135, 138, 178, 179, 200, 201, 1683, 1695, 1714, 1740, 2077, 2085]
+
+--- Component 69 ---
+Representative Net Name: iesel0_mid0_and
+Netname Consistency: Passed
+Metal Indices (23): [1270, 1301, 1328, 1331, 1361, 1364, 1394, 1409, 1413, 1437, 1467, 1468, 1493, 1494, 1916, 1945, 1997, 2021, 2057, 2276, 2280, 2282, 2291]
+
+--- Component 70 ---
+Representative Net Name: idcdl0_intp_np<3>
+Netname Consistency: Passed
+Metal Indices (14): [952, 955, 973, 976, 1025, 1026, 1046, 1047, 1990, 2013, 2031, 2040, 2214, 2218]
+
+--- Component 71 ---
+Representative Net Name: iesel0_mid0_or
+Netname Consistency: Passed
+Metal Indices (23): [1255, 1286, 1316, 1319, 1349, 1352, 1387, 1402, 1406, 1434, 1463, 1464, 1489, 1490, 1680, 1738, 1763, 1825, 1841, 2273, 2277, 2281, 2290]
+
+--- Component 72 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus4<2>
+Netname Consistency: Passed
+Metal Indices (5): [864, 866, 2009, 2050, 2190]
+
+--- Component 73 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus3<1>
+Netname Consistency: Passed
+Metal Indices (5): [1131, 1133, 1819, 1866, 2242]
+
+--- Component 74 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus3<1>
+Netname Consistency: Passed
+Metal Indices (5): [1138, 1140, 2016, 2055, 2244]
+
+--- Component 75 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus3<0>
+Netname Consistency: Passed
+Metal Indices (5): [1153, 1155, 1679, 1734, 2249]
+
+--- Component 76 ---
+Representative Net Name: itcomp0_cmp_outpb
+Netname Consistency: Passed
+Metal Indices (16): [330, 333, 362, 412, 432, 433, 494, 511, 542, 1617, 1628, 1637, 1644, 1654, 2104, 2110]
+
+--- Component 77 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus4<3>
+Netname Consistency: Passed
+Metal Indices (5): [827, 829, 1672, 1725, 2179]
+
+--- Component 78 ---
+Representative Net Name: itcomp0_cmp_outn
+Netname Consistency: Passed
+Metal Indices (25): [217, 232, 233, 243, 252, 253, 265, 266, 276, 277, 289, 290, 296, 297, 327, 328, 359, 1560, 1574, 1588, 1607, 1626, 1642, 2098, 2101]
+
+--- Component 79 ---
+Representative Net Name: INN
+Netname Consistency: Passed
+Metal Indices (23): [55, 56, 72, 73, 84, 85, 159, 160, 176, 192, 196, 216, 226, 1571, 1625, 1639, 1641, 1693, 1712, 2066, 2084, 2087, 2092]
+
+--- Component 80 ---
+Representative Net Name: idcdl0_intp_pn<1>
+Netname Consistency: Passed
+Metal Indices (14): [620, 623, 643, 646, 721, 722, 742, 743, 1893, 1908, 1928, 1954, 2147, 2155]
+
+--- Component 81 ---
+Representative Net Name: tdc_1bit__OMUX0__en0
+Netname Consistency: Passed
+Metal Indices (17): [1278, 1281, 1283, 1284, 1342, 1343, 1375, 1376, 1569, 1581, 1594, 1608, 1632, 1649, 2266, 2267, 2271]
+
+--- Component 82 ---
+Representative Net Name: tdc_1bit__OMUX0__I2__N1
+Netname Consistency: Passed
+Metal Indices (6): [1510, 1519, 1532, 1544, 1556, 1615]
+
+--- Component 83 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus4<3>
+Netname Consistency: Passed
+Metal Indices (5): [838, 840, 2008, 2049, 2182]
+
+--- Component 84 ---
+Representative Net Name: tdc_1bit__IESEL0__IAND0__I1__N0
+Netname Consistency: Passed
+Metal Indices (6): [1266, 1297, 1313, 1338, 1371, 1972]
+
+--- Component 85 ---
+Representative Net Name: C_NEG<3>
+Netname Consistency: Passed
+Metal Indices (17): [1076, 1080, 1102, 1106, 1128, 1132, 1154, 1158, 1706, 1837, 2223, 2229, 2230, 2237, 2238, 2245, 2246]
+
+--- Component 86 ---
+Representative Net Name: INP
+Netname Consistency: Passed
+Metal Indices (23): [63, 64, 76, 77, 88, 89, 155, 156, 173, 193, 197, 213, 225, 1570, 1572, 1586, 1640, 1899, 1918, 2065, 2083, 2088, 2091]
+
+--- Component 87 ---
+Representative Net Name: tdc_1bit__IDCDL0__dnb
+Netname Consistency: Passed
+Metal Indices (14): [177, 180, 199, 202, 245, 246, 269, 270, 1684, 1696, 1715, 1741, 2089, 2093]
+
+--- Component 88 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus2<0>
+Netname Consistency: Passed
+Metal Indices (5): [554, 556, 1669, 1720, 2133]
+
+--- Component 89 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus3<3>
+Netname Consistency: Passed
+Metal Indices (5): [1079, 1081, 1817, 1864, 2226]
+
+--- Component 90 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus2<1>
+Netname Consistency: Passed
+Metal Indices (5): [518, 520, 1805, 1856, 2126]
+
+--- Component 91 ---
+Representative Net Name: C_POS<2>
+Netname Consistency: Passed
+Metal Indices (9): [522, 526, 562, 566, 1906, 2026, 2124, 2131, 2132]
+
+--- Component 92 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus4<2>
+Netname Consistency: Passed
+Metal Indices (5): [853, 855, 1673, 1726, 2187]
+
+--- Component 93 ---
+Representative Net Name: tdc_1bit__OMUX0__I0__N0
+Netname Consistency: Passed
+Metal Indices (6): [1344, 1377, 1417, 1441, 1475, 1609]
+
+--- Component 94 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus4<1>
+Netname Consistency: Passed
+Metal Indices (5): [886, 888, 1880, 1933, 2197]
+
+--- Component 95 ---
+Representative Net Name: idcdl0_intn_np<3>
+Netname Consistency: Passed
+Metal Indices (14): [940, 943, 961, 964, 1013, 1014, 1034, 1035, 1689, 1705, 1730, 1756, 2211, 2215]
+
+--- Component 96 ---
+Representative Net Name: itcomp0_cmp_outn_pre2
+Netname Consistency: Passed
+Metal Indices (4): [154, 191, 224, 1564]
+
+--- Component 97 ---
+Representative Net Name: tdc_1bit__IZINJ0__en
+Netname Consistency: Passed
+Metal Indices (10): [58, 61, 98, 122, 1774, 1801, 1842, 2064, 2067, 2080]
 
 --- Component 98 ---
 Representative Net Name: itcomp0_pd
@@ -660,194 +502,194 @@ Netname Consistency: Passed
 Metal Indices (5): [565, 567, 2003, 2046, 2136]
 
 --- Component 100 ---
-Representative Net Name: tdc_1bit__OMUX0__I2__N1
+Representative Net Name: itcomp0_cmp_outn_pre
 Netname Consistency: Passed
-Metal Indices (6): [1510, 1519, 1532, 1544, 1556, 1615]
+Metal Indices (12): [147, 157, 166, 174, 194, 214, 241, 263, 287, 1559, 1598, 2081]
 
 --- Component 101 ---
-Representative Net Name: tdc_1bit__IESEL0__IOR0__I1__N0
-Netname Consistency: Passed
-Metal Indices (6): [1259, 1290, 1311, 1336, 1369, 1772]
-
---- Component 102 ---
-Representative Net Name: idcdl0_intn_np<3>
-Netname Consistency: Passed
-Metal Indices (14): [940, 943, 961, 964, 1013, 1014, 1034, 1035, 1689, 1705, 1730, 1756, 2211, 2215]
-
---- Component 103 ---
-Representative Net Name: itcomp0_cmp_outp
-Netname Consistency: Passed
-Metal Indices (25): [219, 234, 235, 240, 254, 255, 261, 262, 278, 279, 285, 286, 298, 299, 331, 332, 361, 1573, 1587, 1612, 1627, 1643, 1660, 2095, 2102]
-
---- Component 104 ---
-Representative Net Name: tdc_1bit__IZINJ0__INR0__net1
-Netname Consistency: Passed
-Metal Indices (8): [11, 27, 39, 52, 69, 81, 95, 1888]
-
---- Component 105 ---
-Representative Net Name: INN
-Netname Consistency: Passed
-Metal Indices (23): [55, 56, 72, 73, 84, 85, 159, 160, 176, 192, 196, 216, 226, 1571, 1625, 1639, 1641, 1693, 1712, 2066, 2084, 2087, 2092]
-
---- Component 106 ---
-Representative Net Name: itcomp0_cmp_outp_pre
-Netname Consistency: Passed
-Metal Indices (12): [149, 158, 168, 175, 195, 215, 242, 264, 288, 1616, 1659, 2082]
-
---- Component 107 ---
-Representative Net Name: tdc_1bit__IESEL0__IAND0__I2__N0
-Netname Consistency: Passed
-Metal Indices (6): [1393, 1412, 1448, 1482, 1506, 1976]
-
---- Component 108 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus4<4>
-Netname Consistency: Passed
-Metal Indices (5): [812, 814, 2007, 2048, 2174]
-
---- Component 109 ---
-Representative Net Name: tdc_1bit__IZINJ0__en
-Netname Consistency: Passed
-Metal Indices (10): [58, 61, 98, 122, 1774, 1801, 1842, 2064, 2067, 2080]
-
---- Component 110 ---
-Representative Net Name: CLKREF
-Netname Consistency: Passed
-Metal Indices (17): [6, 7, 12, 13, 20, 21, 28, 29, 36, 37, 40, 41, 1692, 1711, 1898, 1917, 2062]
-
---- Component 111 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus3<0>
-Netname Consistency: Passed
-Metal Indices (5): [1153, 1155, 1679, 1734, 2249]
-
---- Component 112 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus4<3>
-Netname Consistency: Passed
-Metal Indices (5): [831, 833, 1811, 1860, 2180]
-
---- Component 113 ---
-Representative Net Name: C_POS<0>
-Netname Consistency: Passed
-Metal Indices (5): [441, 443, 1904, 2024, 2112]
-
---- Component 114 ---
-Representative Net Name: iesel0_mid1_or
-Netname Consistency: Passed
-Metal Indices (23): [1262, 1293, 1320, 1323, 1353, 1356, 1390, 1401, 1405, 1433, 1459, 1460, 1485, 1486, 1710, 1739, 1797, 1824, 1868, 2274, 2278, 2283, 2289]
-
---- Component 115 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus1
-Netname Consistency: Passed
-Metal Indices (5): [473, 475, 1873, 1924, 2121]
-
---- Component 116 ---
-Representative Net Name: dn
-Netname Consistency: Passed
-Metal Indices (14): [117, 120, 135, 138, 178, 179, 200, 201, 1683, 1695, 1714, 1740, 2077, 2085]
-
---- Component 117 ---
-Representative Net Name: BOUT
-Netname Consistency: Passed
-Metal Indices (17): [1515, 1522, 1526, 1529, 1534, 1537, 1538, 1541, 1546, 1549, 1550, 1553, 1563, 1606, 1624, 1663, 2301]
-
---- Component 118 ---
-Representative Net Name: SHORT
-Netname Consistency: Passed
-Metal Indices (5): [24, 25, 1799, 1826, 2060]
-
---- Component 119 ---
-Representative Net Name: itcomp0_nd
-Netname Consistency: Passed
-Metal Indices (11): [411, 431, 434, 490, 507, 538, 1576, 1618, 1661, 2114, 2118]
-
---- Component 120 ---
-Representative Net Name: C_NEG<3>
-Netname Consistency: Passed
-Metal Indices (17): [1076, 1080, 1102, 1106, 1128, 1132, 1154, 1158, 1706, 1837, 2223, 2229, 2230, 2237, 2238, 2245, 2246]
-
---- Component 121 ---
-Representative Net Name: dn_np
-Netname Consistency: Passed
-Metal Indices (14): [1188, 1191, 1209, 1212, 1256, 1257, 1287, 1288, 1691, 1708, 1736, 1762, 2257, 2263]
-
---- Component 122 ---
-Representative Net Name: itcomp0_cmp_outn_pre2
-Netname Consistency: Passed
-Metal Indices (4): [154, 191, 224, 1564]
-
---- Component 123 ---
-Representative Net Name: itcomp0_srn:
-Netname Consistency: Passed
-Metal Indices (4): [492, 509, 540, 1601]
-
---- Component 124 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus4<4>
-Netname Consistency: Passed
-Metal Indices (5): [805, 807, 1810, 1859, 2172]
-
---- Component 125 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus4<1>
-Netname Consistency: Passed
-Metal Indices (5): [883, 885, 1813, 1862, 2196]
-
---- Component 126 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus1
-Netname Consistency: Passed
-Metal Indices (5): [470, 472, 1804, 1855, 2120]
-
---- Component 127 ---
-Representative Net Name: C_POS<2>
-Netname Consistency: Passed
-Metal Indices (9): [522, 526, 562, 566, 1906, 2026, 2124, 2131, 2132]
-
---- Component 128 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus4<1>
-Netname Consistency: Passed
-Metal Indices (5): [879, 881, 1674, 1727, 2195]
-
---- Component 129 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus3<3>
-Netname Consistency: Passed
-Metal Indices (5): [1086, 1088, 2014, 2053, 2228]
-
---- Component 130 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus4<2>
-Netname Consistency: Passed
-Metal Indices (5): [864, 866, 2009, 2050, 2190]
-
---- Component 131 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus3<0>
-Netname Consistency: Passed
-Metal Indices (5): [1160, 1162, 1885, 1940, 2251]
-
---- Component 132 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus4<1>
-Netname Consistency: Passed
-Metal Indices (5): [886, 888, 1880, 1933, 2197]
-
---- Component 133 ---
-Representative Net Name: tdc_1bit__IESEL0__IOR0__I2__N1
-Netname Consistency: Passed
-Metal Indices (6): [1389, 1404, 1445, 1479, 1503, 1773]
-
---- Component 134 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus4<5>
-Netname Consistency: Passed
-Metal Indices (5): [786, 788, 2006, 2047, 2166]
-
---- Component 135 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus2<0>
-Netname Consistency: Passed
-Metal Indices (5): [561, 563, 1875, 1926, 2135]
-
---- Component 136 ---
 Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus3<2>
 Netname Consistency: Passed
 Metal Indices (5): [1101, 1103, 1677, 1732, 2233]
 
---- Component 137 ---
-Representative Net Name: tdc_1bit__OMUX0__I2__N0
+--- Component 102 ---
+Representative Net Name: C_POS<4>
 Netname Consistency: Passed
-Metal Indices (6): [1509, 1518, 1531, 1543, 1555, 1610]
+Metal Indices (25): [783, 787, 809, 813, 835, 839, 861, 865, 887, 891, 913, 917, 1909, 2029, 2162, 2169, 2170, 2177, 2178, 2185, 2186, 2193, 2194, 2201, 2202]
+
+--- Component 103 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus3<3>
+Netname Consistency: Passed
+Metal Indices (5): [1075, 1077, 1676, 1731, 2225]
+
+--- Component 104 ---
+Representative Net Name: C_NEG<1>
+Netname Consistency: Passed
+Metal Indices (5): [467, 471, 1699, 1830, 2116]
+
+--- Component 105 ---
+Representative Net Name: dp_np
+Netname Consistency: Passed
+Metal Indices (14): [1200, 1203, 1221, 1224, 1268, 1269, 1299, 1300, 1996, 2019, 2034, 2042, 2260, 2262]
+
+--- Component 106 ---
+Representative Net Name: idcdl0_intp_pn<2>
+Netname Consistency: Passed
+Metal Indices (26): [720, 723, 741, 744, 772, 792, 798, 818, 824, 844, 850, 870, 876, 896, 902, 922, 949, 950, 970, 971, 1894, 1910, 1935, 1955, 2159, 2209]
+
+--- Component 107 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus0
+Netname Consistency: Passed
+Metal Indices (2): [439, 1854]
+
+--- Component 108 ---
+Representative Net Name: iesel0_mid1_or
+Netname Consistency: Passed
+Metal Indices (23): [1262, 1293, 1320, 1323, 1353, 1356, 1390, 1401, 1405, 1433, 1459, 1460, 1485, 1486, 1710, 1739, 1797, 1824, 1868, 2274, 2278, 2283, 2289]
+
+--- Component 109 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus4<1>
+Netname Consistency: Passed
+Metal Indices (5): [890, 892, 2010, 2051, 2198]
+
+--- Component 110 ---
+Representative Net Name: tdc_1bit__IESEL0__IAND0__I2__N1
+Netname Consistency: Passed
+Metal Indices (6): [1392, 1411, 1447, 1481, 1505, 1973]
+
+--- Component 111 ---
+Representative Net Name: dp
+Netname Consistency: Passed
+Metal Indices (14): [125, 128, 139, 142, 182, 183, 204, 205, 1889, 1901, 1920, 1946, 2079, 2086]
+
+--- Component 112 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus0
+Netname Consistency: Passed
+Metal Indices (2): [440, 1872]
+
+--- Component 113 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus4<5>
+Netname Consistency: Passed
+Metal Indices (5): [775, 777, 1670, 1723, 2163]
+
+--- Component 114 ---
+Representative Net Name: itcomp0_nd
+Netname Consistency: Passed
+Metal Indices (11): [411, 431, 434, 490, 507, 538, 1576, 1618, 1661, 2114, 2118]
+
+--- Component 115 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus4<3>
+Netname Consistency: Passed
+Metal Indices (5): [834, 836, 1878, 1931, 2181]
+
+--- Component 116 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus2<0>
+Netname Consistency: Passed
+Metal Indices (5): [561, 563, 1875, 1926, 2135]
+
+--- Component 117 ---
+Representative Net Name: itcomp0_srp:
+Netname Consistency: Passed
+Metal Indices (4): [493, 510, 541, 1619]
+
+--- Component 118 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus4<3>
+Netname Consistency: Passed
+Metal Indices (5): [831, 833, 1811, 1860, 2180]
+
+--- Component 119 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus4<4>
+Netname Consistency: Passed
+Metal Indices (5): [808, 810, 1877, 1930, 2173]
+
+--- Component 120 ---
+Representative Net Name: dn_np
+Netname Consistency: Passed
+Metal Indices (14): [1188, 1191, 1209, 1212, 1256, 1257, 1287, 1288, 1691, 1708, 1736, 1762, 2257, 2263]
+
+--- Component 121 ---
+Representative Net Name: SEL_BOUT
+Netname Consistency: Passed
+Metal Indices (5): [1279, 1280, 1580, 1593, 2265]
+
+--- Component 122 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus4<0>
+Netname Consistency: Passed
+Metal Indices (5): [916, 918, 2011, 2052, 2206]
+
+--- Component 123 ---
+Representative Net Name: idcdl0_intn_np<4>
+Netname Consistency: Passed
+Metal Indices (22): [1012, 1015, 1033, 1036, 1069, 1089, 1095, 1115, 1121, 1141, 1147, 1167, 1189, 1190, 1210, 1211, 1690, 1707, 1735, 1757, 2219, 2253]
+
+--- Component 124 ---
+Representative Net Name: C_NEG<2>
+Netname Consistency: Passed
+Metal Indices (9): [515, 519, 555, 559, 1700, 1831, 2123, 2129, 2130]
+
+--- Component 125 ---
+Representative Net Name: tdc_1bit__IZINJ0__INR0__net1
+Netname Consistency: Passed
+Metal Indices (8): [11, 27, 39, 52, 69, 81, 95, 1888]
+
+--- Component 126 ---
+Representative Net Name: SHORT
+Netname Consistency: Passed
+Metal Indices (5): [24, 25, 1799, 1826, 2060]
+
+--- Component 127 ---
+Representative Net Name: itcomp0_cmp_outp_pre2
+Netname Consistency: Passed
+Metal Indices (4): [161, 198, 227, 1653]
+
+--- Component 128 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus4<5>
+Netname Consistency: Passed
+Metal Indices (5): [779, 781, 1809, 1858, 2164]
+
+--- Component 129 ---
+Representative Net Name: itcomp0_srp:
+Netname Consistency: Passed
+Metal Indices (4): [496, 513, 544, 1655]
+
+--- Component 130 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus4<4>
+Netname Consistency: Passed
+Metal Indices (5): [805, 807, 1810, 1859, 2172]
+
+--- Component 131 ---
+Representative Net Name: idcdl0_intn_pn<1>
+Netname Consistency: Passed
+Metal Indices (14): [616, 619, 639, 642, 717, 718, 738, 739, 1782, 1808, 1833, 1846, 2146, 2154]
+
+--- Component 132 ---
+Representative Net Name: C_NEG<0>
+Netname Consistency: Passed
+Metal Indices (5): [436, 438, 1698, 1829, 2111]
+
+--- Component 133 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus3<2>
+Netname Consistency: Passed
+Metal Indices (5): [1108, 1110, 1883, 1938, 2235]
+
+--- Component 134 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus1
+Netname Consistency: Passed
+Metal Indices (5): [477, 479, 2001, 2044, 2122]
+
+--- Component 135 ---
+Representative Net Name: tdc_1bit__IESEL0__IAND0__I0__N0
+Netname Consistency: Passed
+Metal Indices (6): [1267, 1298, 1314, 1339, 1372, 1975]
+
+--- Component 136 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus2<1>
+Netname Consistency: Passed
+Metal Indices (5): [525, 527, 2002, 2045, 2128]
+
+--- Component 137 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus4<2>
+Netname Consistency: Passed
+Metal Indices (5): [857, 859, 1812, 1861, 2188]
 
 --- Component 138 ---
 Representative Net Name: itcomp0_srn:
@@ -855,104 +697,104 @@ Netname Consistency: Passed
 Metal Indices (4): [489, 506, 537, 1566]
 
 --- Component 139 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus3<0>
+Netname Consistency: Passed
+Metal Indices (5): [1157, 1159, 1820, 1867, 2250]
+
+--- Component 140 ---
+Representative Net Name: tdc_1bit__IESEL0__IAND0__I2__N0
+Netname Consistency: Passed
+Metal Indices (6): [1393, 1412, 1448, 1482, 1506, 1976]
+
+--- Component 141 ---
 Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus2<1>
 Netname Consistency: Passed
 Metal Indices (5): [521, 523, 1874, 1925, 2127]
 
---- Component 140 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus4<4>
-Netname Consistency: Passed
-Metal Indices (5): [801, 803, 1671, 1724, 2171]
-
---- Component 141 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus3<3>
-Netname Consistency: Passed
-Metal Indices (5): [1075, 1077, 1676, 1731, 2225]
-
 --- Component 142 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus3<2>
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus3<3>
 Netname Consistency: Passed
-Metal Indices (5): [1112, 1114, 2015, 2054, 2236]
+Metal Indices (5): [1086, 1088, 2014, 2053, 2228]
 
 --- Component 143 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus4<0>
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus3<0>
 Netname Consistency: Passed
-Metal Indices (5): [905, 907, 1675, 1728, 2203]
+Metal Indices (5): [1164, 1166, 2017, 2056, 2252]
 
 --- Component 144 ---
-Representative Net Name: tdc_1bit__IESEL0__IOR0__I2__N0
-Netname Consistency: Passed
-Metal Indices (6): [1388, 1403, 1444, 1478, 1502, 1767]
-
---- Component 145 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus4<0>
-Netname Consistency: Passed
-Metal Indices (5): [909, 911, 1814, 1863, 2204]
-
---- Component 146 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus4<5>
-Netname Consistency: Passed
-Metal Indices (5): [782, 784, 1876, 1929, 2165]
-
---- Component 147 ---
-Representative Net Name: itcomp0_srp:
-Netname Consistency: Passed
-Metal Indices (2): [608, 1621]
-
---- Component 148 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus2<0>
-Netname Consistency: Passed
-Metal Indices (5): [558, 560, 1806, 1857, 2134]
-
---- Component 149 ---
-Representative Net Name: itcomp0_cmp_outp_pre2
-Netname Consistency: Passed
-Metal Indices (4): [161, 198, 227, 1653]
-
---- Component 150 ---
-Representative Net Name: itcomp0_srp:
-Netname Consistency: Passed
-Metal Indices (4): [496, 513, 544, 1655]
-
---- Component 151 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus0
-Netname Consistency: Passed
-Metal Indices (2): [435, 1666]
-
---- Component 152 ---
-Representative Net Name: C_NEG<0>
-Netname Consistency: Passed
-Metal Indices (5): [436, 438, 1698, 1829, 2111]
-
---- Component 153 ---
 Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus0
 Netname Consistency: Passed
 Metal Indices (2): [444, 2043]
 
---- Component 154 ---
-Representative Net Name: C_NEG<1>
+--- Component 145 ---
+Representative Net Name: OR_OUT
 Netname Consistency: Passed
-Metal Indices (5): [467, 471, 1699, 1830, 2116]
+Metal Indices (17): [1400, 1407, 1432, 1435, 1458, 1461, 1462, 1465, 1484, 1487, 1488, 1491, 1681, 1764, 1798, 1869, 2296]
+
+--- Component 146 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus1
+Netname Consistency: Passed
+Metal Indices (5): [466, 468, 1667, 1718, 2119]
+
+--- Component 147 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus1
+Netname Consistency: Passed
+Metal Indices (5): [470, 472, 1804, 1855, 2120]
+
+--- Component 148 ---
+Representative Net Name: itcomp0_srn:
+Netname Consistency: Passed
+Metal Indices (2): [607, 1603]
+
+--- Component 149 ---
+Representative Net Name: itcomp0_srp:
+Netname Consistency: Passed
+Metal Indices (2): [608, 1621]
+
+--- Component 150 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus4<1>
+Netname Consistency: Passed
+Metal Indices (5): [883, 885, 1813, 1862, 2196]
+
+--- Component 151 ---
+Representative Net Name: itcomp0_srn:
+Netname Consistency: Passed
+Metal Indices (4): [492, 509, 540, 1601]
+
+--- Component 152 ---
+Representative Net Name: C_POS<1>
+Netname Consistency: Passed
+Metal Indices (5): [474, 478, 1905, 2025, 2117]
+
+--- Component 153 ---
+Representative Net Name: tdc_1bit__IDCDL0__dpb
+Netname Consistency: Passed
+Metal Indices (14): [181, 184, 203, 206, 249, 250, 273, 274, 1890, 1902, 1921, 1947, 2090, 2094]
+
+--- Component 154 ---
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_NP__cplus3<2>
+Netname Consistency: Passed
+Metal Indices (5): [1112, 1114, 2015, 2054, 2236]
 
 --- Component 155 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus3<3>
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus3<0>
 Netname Consistency: Passed
-Metal Indices (5): [1079, 1081, 1817, 1864, 2226]
+Metal Indices (5): [1160, 1162, 1885, 1940, 2251]
 
 --- Component 156 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_PN__cplus0
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus4<0>
 Netname Consistency: Passed
-Metal Indices (2): [439, 1854]
+Metal Indices (5): [912, 914, 1881, 1934, 2205]
 
 --- Component 157 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus2<0>
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus3<1>
 Netname Consistency: Passed
-Metal Indices (5): [554, 556, 1669, 1720, 2133]
+Metal Indices (5): [1127, 1129, 1678, 1733, 2241]
 
 --- Component 158 ---
-Representative Net Name: tdc_1bit__IDCDL0__IDCDLP_PN__cplus0
+Representative Net Name: tdc_1bit__IDCDL0__IDCDLN_NP__cplus0
 Netname Consistency: Passed
-Metal Indices (2): [440, 1872]
+Metal Indices (2): [435, 1666]
 
 --- Component 159 ---
 Representative Net Name: RSTB

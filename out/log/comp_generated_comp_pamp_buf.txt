@@ -1,59 +1,37 @@
-Total unique nodes found in graph: 288
+Total unique nodes found in graph: 23
 
 Starting Connectivity and Netname Consistency Check...
-Starting BFS for new component from node (idx=238)...
-Starting BFS for new component from node (idx=123)...
-Starting BFS for new component from node (idx=74)...
-Starting BFS for new component from node (idx=150)...
-Starting BFS for new component from node (idx=190)...
-SHORT: Netname inconsistency! Node (idx=268) has netname 'OUTNG', but expected 'OUTN' for this component.
-Starting BFS for new component from node (idx=127)...
-Starting BFS for new component from node (idx=263)...
-Starting BFS for new component from node (idx=87)...
-SHORT: Netname inconsistency! Node (idx=275) has netname 'CLK:', but expected 'VDD:' for this component.
-Starting BFS for new component from node (idx=258)...
-SHORT: Netname inconsistency! Node (idx=247) has netname 'OUTP', but expected 'OUTPG' for this component.
-Starting BFS for new component from node (idx=141)...
-Starting BFS for new component from node (idx=250)...
-Starting BFS for new component from node (idx=135)...
-Starting BFS for new component from node (idx=11)...
-Starting BFS for new component from node (idx=65)...
-Starting BFS for new component from node (idx=259)...
-Starting BFS for new component from node (idx=145)...
-Starting BFS for new component from node (idx=215)...
-Starting BFS for new component from node (idx=212)...
-Starting BFS for new component from node (idx=4)...
-Starting BFS for new component from node (idx=66)...
-Starting BFS for new component from node (idx=16)...
+Error Info:
+SHORT: Netname inconsistency! NodeVDD: has netname 'VDD:', but expected 'nothing' for this component.
+SHORT: Netname inconsistency! NodeOUTPG has netname 'OUTPG', but expected 'nothing' for this component.
+SHORT: Netname inconsistency! NodeOUTNG has netname 'OUTNG', but expected 'nothing' for this component.
 OPEN: netname OSP is already visited
-OSP : layer=2, p_coord=715, s_coord=755 - 1325
-nothing : layer=1, p_coord=780, s_coord=660 - 770
-Starting BFS for new component from node (idx=185)...
+OSP : layer=2, p_coord=715, s_coord=120 - 400
+nothing : layer=1, p_coord=260, s_coord=660 - 770
 OPEN: netname OSN is already visited
-OSN : layer=2, p_coord=715, s_coord=3875 - 4445
-nothing : layer=1, p_coord=4160, s_coord=660 - 770
-Starting BFS for new component from node (idx=8)...
+OSN : layer=2, p_coord=715, s_coord=4800 - 5080
+OSN : layer=2, p_coord=715, s_coord=4800 - 5080
 OPEN: netname VSSG is already visited
-VSSG : layer=2, p_coord=3115, s_coord=120 - 400
-nothing : layer=1, p_coord=260, s_coord=3060 - 3170
+VSSG : layer=2, p_coord=3115, s_coord=4800 - 5080
+nothing : layer=1, p_coord=4940, s_coord=3060 - 3170
 
 --- Connectivity Check Report ---
 Total connected components found: 23
 
 --- Component 1 ---
-Representative Net Name: INTN
-Netname Consistency: Passed
-Metal Indices (23): [5, 17, 28, 30, 43, 45, 67, 68, 71, 80, 81, 84, 97, 98, 101, 231, 236, 238, 243, 267, 270, 272, 274]
+Representative Net Name: CLK:
+Netname Consistency: Failed
+Metal Indices (25): [31, 46, 69, 70, 82, 83, 87, 99, 100, 104, 121, 122, 126, 138, 139, 143, 155, 156, 174, 189, 239, 241, 257, 275, 277]
 
 --- Component 2 ---
+Representative Net Name: VDD:
+Netname Consistency: Passed
+Metal Indices (21): [2, 11, 24, 39, 54, 57, 62, 75, 92, 109, 114, 131, 148, 161, 163, 167, 182, 197, 210, 219, 246]
+
+--- Component 3 ---
 Representative Net Name: INTP
 Netname Consistency: Passed
 Metal Indices (23): [119, 120, 123, 136, 137, 140, 153, 154, 157, 171, 173, 186, 188, 201, 213, 232, 237, 240, 244, 278, 280, 282, 285]
-
---- Component 3 ---
-Representative Net Name: VSS:
-Netname Consistency: Passed
-Metal Indices (15): [23, 38, 53, 61, 74, 91, 108, 113, 130, 147, 160, 166, 181, 196, 233]
 
 --- Component 4 ---
 Representative Net Name: TAIL
@@ -61,59 +39,59 @@ Netname Consistency: Passed
 Metal Indices (34): [1, 10, 13, 22, 37, 52, 60, 64, 73, 77, 90, 94, 107, 112, 116, 129, 133, 146, 150, 159, 165, 180, 195, 206, 209, 218, 222, 230, 269, 271, 273, 279, 281, 283]
 
 --- Component 5 ---
-Representative Net Name: OUTN
-Netname Consistency: Failed
-Metal Indices (26): [19, 20, 34, 35, 49, 50, 172, 175, 176, 179, 187, 190, 191, 194, 202, 205, 235, 245, 248, 251, 256, 262, 268, 286, 287, 288]
-
---- Component 6 ---
-Representative Net Name: TAILDN
-Netname Consistency: Passed
-Metal Indices (15): [9, 15, 26, 41, 56, 88, 105, 127, 144, 169, 184, 199, 208, 217, 260]
-
---- Component 7 ---
 Representative Net Name: VSS:
 Netname Consistency: Passed
-Metal Indices (15): [3, 12, 58, 63, 76, 93, 110, 115, 132, 149, 162, 164, 211, 220, 263]
+Metal Indices (15): [23, 38, 53, 61, 74, 91, 108, 113, 130, 147, 160, 166, 181, 196, 233]
 
---- Component 8 ---
-Representative Net Name: VDD:
-Netname Consistency: Failed
-Metal Indices (25): [31, 46, 69, 70, 82, 83, 87, 99, 100, 104, 121, 122, 126, 138, 139, 143, 155, 156, 174, 189, 239, 241, 257, 275, 277]
-
---- Component 9 ---
-Representative Net Name: OUTPG
-Netname Consistency: Failed
-Metal Indices (26): [18, 21, 29, 32, 33, 36, 44, 47, 48, 51, 177, 178, 192, 193, 203, 204, 234, 242, 247, 253, 258, 261, 264, 265, 266, 284]
-
---- Component 10 ---
-Representative Net Name: TAILUP
-Netname Consistency: Passed
-Metal Indices (15): [6, 14, 25, 40, 55, 85, 102, 124, 141, 168, 183, 198, 207, 214, 249]
-
---- Component 11 ---
+--- Component 6 ---
 Representative Net Name: VSS:
 Netname Consistency: Passed
 Metal Indices (2): [7, 250]
 
---- Component 12 ---
-Representative Net Name: INN
+--- Component 7 ---
+Representative Net Name: TAILDN
 Netname Consistency: Passed
-Metal Indices (4): [118, 135, 152, 227]
+Metal Indices (15): [9, 15, 26, 41, 56, 88, 105, 127, 144, 169, 184, 199, 208, 217, 260]
 
---- Component 13 ---
-Representative Net Name: VDD:
+--- Component 8 ---
+Representative Net Name: TAILUP
 Netname Consistency: Passed
-Metal Indices (21): [2, 11, 24, 39, 54, 57, 62, 75, 92, 109, 114, 131, 148, 161, 163, 167, 182, 197, 210, 219, 246]
+Metal Indices (15): [6, 14, 25, 40, 55, 85, 102, 124, 141, 168, 183, 198, 207, 214, 249]
 
---- Component 14 ---
+--- Component 9 ---
+Representative Net Name: VSS:
+Netname Consistency: Passed
+Metal Indices (15): [3, 12, 58, 63, 76, 93, 110, 115, 132, 149, 162, 164, 211, 220, 263]
+
+--- Component 10 ---
 Representative Net Name: CLKB:
 Netname Consistency: Passed
 Metal Indices (13): [65, 78, 86, 95, 103, 117, 125, 134, 142, 151, 223, 252, 276]
 
---- Component 15 ---
+--- Component 11 ---
+Representative Net Name: OUTP
+Netname Consistency: Failed
+Metal Indices (26): [18, 21, 29, 32, 33, 36, 44, 47, 48, 51, 177, 178, 192, 193, 203, 204, 234, 242, 247, 253, 258, 261, 264, 265, 266, 284]
+
+--- Component 12 ---
+Representative Net Name: OUTN
+Netname Consistency: Failed
+Metal Indices (26): [19, 20, 34, 35, 49, 50, 172, 175, 176, 179, 187, 190, 191, 194, 202, 205, 235, 245, 248, 251, 256, 262, 268, 286, 287, 288]
+
+--- Component 13 ---
+Representative Net Name: INTN
+Netname Consistency: Passed
+Metal Indices (23): [5, 17, 28, 30, 43, 45, 67, 68, 71, 80, 81, 84, 97, 98, 101, 231, 236, 238, 243, 267, 270, 272, 274]
+
+--- Component 14 ---
 Representative Net Name: VSSG
 Netname Consistency: Passed
-Metal Indices (2): [216, 259]
+Metal Indices (2): [8, 255]
+
+--- Component 15 ---
+Representative Net Name: OSN
+Netname Consistency: Passed
+Metal Indices (4): [170, 185, 200, 228]
 
 --- Component 16 ---
 Representative Net Name: VSS:
@@ -121,14 +99,14 @@ Netname Consistency: Passed
 Metal Indices (9): [59, 72, 89, 106, 111, 128, 145, 158, 221]
 
 --- Component 17 ---
-Representative Net Name: VSS:
+Representative Net Name: OSP
 Netname Consistency: Passed
-Metal Indices (2): [215, 254]
+Metal Indices (4): [16, 27, 42, 225]
 
 --- Component 18 ---
-Representative Net Name: OSN
+Representative Net Name: THP
 Netname Consistency: Passed
-Metal Indices (2): [212, 229]
+Metal Indices (4): [66, 79, 96, 226]
 
 --- Component 19 ---
 Representative Net Name: OSP
@@ -136,24 +114,24 @@ Netname Consistency: Passed
 Metal Indices (2): [4, 224]
 
 --- Component 20 ---
-Representative Net Name: THP
+Representative Net Name: INN
 Netname Consistency: Passed
-Metal Indices (4): [66, 79, 96, 226]
+Metal Indices (4): [118, 135, 152, 227]
 
 --- Component 21 ---
-Representative Net Name: OSP
+Representative Net Name: VSS:
 Netname Consistency: Passed
-Metal Indices (4): [16, 27, 42, 225]
+Metal Indices (2): [215, 254]
 
 --- Component 22 ---
 Representative Net Name: OSN
 Netname Consistency: Passed
-Metal Indices (4): [170, 185, 200, 228]
+Metal Indices (2): [212, 229]
 
 --- Component 23 ---
 Representative Net Name: VSSG
 Netname Consistency: Passed
-Metal Indices (2): [8, 255]
+Metal Indices (2): [216, 259]
 
 ------------------------------------------------------------------
 

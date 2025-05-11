@@ -3,8 +3,8 @@ using preLVS_vectormerge
 using YAML
 
 
-libname = "scan_generated"
-cellname = "scan_chain_17bit"
+libname = "comp_generated"
+cellname = "comp_pamp_buf_rtap"
 config_file_path = "config/config_tsmcN28.yaml"
 db_dir = "db"
 metal_dir = "out/metal"
@@ -30,4 +30,4 @@ println("Target: $libname - $cellname\n")
 
 
 # Performance Test
-cinfo = runLVS(runset)
+cinfo, error_info, error_cnt = runLVS(runset)
