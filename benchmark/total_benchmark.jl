@@ -23,7 +23,7 @@ function run_benchmarks()
         ("flatten", preLVS_sweepline.flatten),
         ("alignEvents", preLVS_sweepline.alignEvents),
         ("generate_graph", preLVS_sweepline.generate_graph),
-        ("runLVS", preLVS_sweepline.runLVS)
+        ("runLVS_wo_log", preLVS_sweepline.runLVS_wo_log),
     ]
             
     for i in 1:n_cells

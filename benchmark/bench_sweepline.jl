@@ -23,6 +23,7 @@ println("2. flatten")
 println("3. alignEvents")
 println("4. generate_graph")
 println("5. runLVS")
+println("6. runLVS_wo_log")
 println()
 
 
@@ -40,7 +41,10 @@ println("Starting benchmark: generate_graph")
 generate_graph_benchmark = @benchmark generate_graph(input_path)    samples=n_samples seconds=(n_samples*max_benchmark_seconds)
 
 println("Starting benchmark: runLVS")
-runLVS_benchmark = @benchmark runLVS(input_path)    samples=n_samples seconds=(n_samples*max_benchmark_seconds)
+runLVS_benchmark = @benchmark runLVS(input_path)                    samples=n_samples seconds=(n_samples*max_benchmark_seconds)
+
+println("Starting benchmark: runLVS_wo_log")
+runLVS_wo_log_benchmark = @benchmark runLVS_wo_log(input_path)      samples=n_samples seconds=(n_samples*max_benchmark_seconds)
 
 # Display Results
 println("Target: loadDB")
@@ -63,5 +67,8 @@ println("Target: runLVS")
 display(runLVS_benchmark)
 println("-"^20)
 println()
-
+println("Target: runLVS_wo_log")
+display(runLVS_wo_log_benchmark)
+println("-"^20)
+println()
 
