@@ -98,61 +98,50 @@ function get_transformed_LData_V3(originlabel::LData, inst_data::Dict, equivalen
     Mname               = inst_data["Mname"]
     Mtransform          = inst_data["Mtransform"]
 
-    # newLData            = deepcopy(originlabel)
-    # newLData.instname   = instname
-    # for (_layerNum, _layer) in newLData.layers
-    #     for _label in _layer.labels
-    #         # Determine transformed coordinates
-    #         _label.xy = affine_transform(_label.xy, Mtransform)
-    #         _netname        = "UNKNOWN"
-    #         if haskey(net_mapper, _label.netname_origin)
-    #             _label.netname    = net_mapper[_label.netname_origin]
-    #             continue
-    #         end
-    #         for (rep, net_set) in equivalent_net_sets
-    #             if _label.netname_origin in net_set
-    #                 _eqnet = first(intersect(net_set, keys(net_mapper)))
-    #                 _netname    = net_mapper[_eqnet]
-    #                 break
-    #             end
-    #         end
-    #         if _netname == "UNKNOWN"
-    #             _netname    = Mname * "__" * _label.netname_origin
-    #         end
-    #         _label.netname  = _netname
-    #     end
-    # end
-    # return newLData
-
     newLData = LData(originlabel.libname, originlabel.cellname, instname, OrderedDict{Int, LLayer{String}}())
     for (_layerNum, _layer) in originlabel.layers
         newLData.layers[_layerNum] = LLayer(_layerNum, Vector{Label{String}}())
         for _label in _layer.labels
             # Determine transformed coordinates
             xy = affine_transform(_label.xy, Mtransform)
-            _netname        = "UNKNOWN"
-            if haskey(net_mapper, _label.netname_origin)
-                _netname    = net_mapper[_label.netname_origin]
+
+            if _label.netname_origin in Set(["UNKNOWN", "OBSTACLE"])
+                _netname = "UNKNOWN"
             else
-                for (rep, net_set) in equivalent_net_sets
-                    # if _label.netname_origin in net_set
-                    #     _eqnet = first(intersect(net_set, keys(net_mapper)))
-                    #     _netname    = net_mapper[_eqnet]
-                    #     break
-                    # end
-                    if _label.netname_origin in net_set
-                        common_nets_in_mapper = intersect(net_set, keys(net_mapper))
-                        if !isempty(common_nets_in_mapper)
-                            _eqnet = first(common_nets_in_mapper)
-                            _netname = net_mapper[_eqnet]
-                            break
-                        end
-                    end
-                end
+                _netname = net_mapper[unify_netname(_label.netname_origin, equivalent_net_sets)]
             end
-            if _netname == "UNKNOWN"
-                _netname    = Mname * "__" * _label.netname_origin
-            end
+
+            # _netname        = "UNKNOWN"
+            # if haskey(net_mapper, _label.netname_origin)
+            #     _netname    = net_mapper[_label.netname_origin]
+            # else
+            #     for (rep, net_set) in equivalent_net_sets
+            #         # if _label.netname_origin in net_set
+            #         #     _eqnet = first(intersect(net_set, keys(net_mapper)))
+            #         #     _netname    = net_mapper[_eqnet]
+            #         #     break
+            #         # end
+            #         if _label.netname_origin in net_set
+            #             common_nets_in_mapper = intersect(net_set, keys(net_mapper))
+            #             if !isempty(common_nets_in_mapper)
+            #                 _eqnet = first(common_nets_in_mapper)
+            #                 _netname = net_mapper[_eqnet]
+            #                 break
+            #             end
+            #         end
+            #     end
+            # end
+            # if _netname == "UNKNOWN"
+            #     _netname    = Mname * "__" * _label.netname_origin
+                
+
+            #     # DEBUG
+            #     if _netname == "dff_2x__CLK"
+            #         println("DEBUG: _netname = $(_netname)")
+            #         println("_label.netname_origin = $(_label.netname_origin)")
+            #         println("net_mapper = $(net_mapper)")
+            #     end
+            # end
             push!(newLData.layers[_layerNum].labels, Label(_label.netname_origin, _netname, SMatrix{2,2,Int}([xy[1] xy[3]; xy[2] xy[4]]), _label.layer, _label.is_pin))
         end
     end

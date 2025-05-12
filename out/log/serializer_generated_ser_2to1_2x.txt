@@ -1,0 +1,238 @@
+
+--- Component 1 ---
+Representive Net Name: ser_2to1_2x__tinv1__Pinternal
+Metal Indices (5): [937, 946, 955, 1003, 1011]
+
+--- Component 2 ---
+Representive Net Name: dff1__tinv1__Pinternal
+Metal Indices (5): [553, 562, 571, 619, 627]
+
+--- Component 3 ---
+Representive Net Name: ser_2to1_2x__latch0__MEM
+Metal Indices (3): [1651, 1665, 1726]
+
+--- Component 4 ---
+Representive Net Name: latch0__I2__Nint
+Metal Indices (5): [1654, 1658, 1667, 1721, 1728]
+
+--- Component 5 ---
+Representive Net Name: ser_2to1_2x__tinv0__Ninternal
+Metal Indices (5): [850, 854, 863, 912, 919]
+
+--- Component 6 ---
+Representive Net Name: CLK:
+Metal Indices (3): [2164, 2171, 2204]
+
+--- Component 7 ---
+Representive Net Name: dff0__tinv1__Pinternal
+Metal Indices (5): [641, 650, 659, 707, 715]
+
+--- Component 8 ---
+Representive Net Name: dff0__tinv1__Ninternal
+Metal Indices (5): [642, 646, 655, 704, 711]
+
+--- Component 9 ---
+Representive Net Name: DO
+Metal Indices (4): [2032, 2066, 2328, 2365]
+
+--- Component 10 ---
+Representive Net Name: ser_2to1_2x__latch1__MEM
+Metal Indices (4): [276, 304, 1759, 1821]
+
+--- Component 11 ---
+Representive Net Name: ser_2to1_2x__dff1__MEM2
+Metal Indices (5): [23, 78, 98, 1158, 1202]
+
+--- Component 12 ---
+Representive Net Name: ser_2to1_2x__dff1__LATCH
+Metal Indices (5): [26, 70, 101, 1503, 1564]
+
+--- Component 13 ---
+Representive Net Name: DI<0>:
+Metal Indices (2): [381, 439]
+
+--- Component 14 ---
+Representive Net Name: dddi<1>
+Metal Indices (2): [945, 1002]
+
+--- Component 15 ---
+Representive Net Name: latch1__I2__Nint
+Metal Indices (5): [1740, 1744, 1753, 1807, 1814]
+
+--- Component 16 ---
+Representive Net Name: latch0__I0__Ninternal
+Metal Indices (5): [762, 766, 775, 824, 831]
+
+--- Component 17 ---
+Representive Net Name: dff1__nand1__Nint
+Metal Indices (5): [1568, 1572, 1581, 1635, 1642]
+
+--- Component 18 ---
+Representive Net Name: ddi<1>
+Metal Indices (2): [1033, 1090]
+
+--- Component 19 ---
+Representive Net Name: FT
+Metal Indices (5): [1877, 1882, 1886, 1910, 1914]
+
+--- Component 20 ---
+Representive Net Name: dff0__tinv0__Pinternal
+Metal Indices (5): [377, 386, 395, 443, 451]
+
+--- Component 21 ---
+Representive Net Name: dff1__tinv0__Ninternal
+Metal Indices (5): [466, 470, 479, 528, 535]
+
+--- Component 22 ---
+Representive Net Name: CLKB:
+Metal Indices (3): [847, 861, 917]
+
+--- Component 23 ---
+Representive Net Name: EN
+Metal Indices (2): [1743, 1806]
+
+--- Component 24 ---
+Representive Net Name: ser_2to1_2x__dff0__MEM1
+Metal Indices (3): [1393, 1407, 1468]
+
+--- Component 25 ---
+Representive Net Name: ser_2to1_2x__tie0__tie
+Metal Indices (3): [1924, 1933, 1966]
+
+--- Component 26 ---
+Representive Net Name: ser_2to1_2x__dff1__ICLK
+Metal Indices (2): [2076, 2109]
+
+--- Component 27 ---
+Representive Net Name: ser_2to1_2x__dff0__LATCH
+Metal Indices (5): [1261, 1266, 1270, 1294, 1298]
+
+--- Component 28 ---
+Representive Net Name: ser_2to1_2x__TAP0__PTAP1
+Metal Indices (2): [729, 736]
+
+--- Component 29 ---
+Representive Net Name: ser_2to1_2x__dff1__MEM1
+Metal Indices (5): [3, 126, 482, 538, 1226]
+
+--- Component 30 ---
+Representive Net Name: dff0__nand0__Nint
+Metal Indices (5): [1396, 1400, 1409, 1463, 1470]
+
+--- Component 31 ---
+Representive Net Name: latch1__I0__Ninternal
+Metal Indices (5): [1026, 1030, 1039, 1088, 1095]
+
+--- Component 32 ---
+Representive Net Name: ser_2to1_2x__TAP1__NTAP1
+Metal Indices (2): [743, 750]
+
+--- Component 33 ---
+Representive Net Name: TIE
+Metal Indices (7): [349, 358, 755, 839, 2218, 2316, 2334]
+
+--- Component 34 ---
+Representive Net Name: ddi<0>
+Metal Indices (2): [857, 914]
+
+--- Component 35 ---
+Representive Net Name: ser_2to1_2x__tinv0__Pinternal
+Metal Indices (5): [849, 858, 867, 915, 923]
+
+--- Component 36 ---
+Representive Net Name: ser_2to1_2x__dff0__MEM2
+Metal Indices (2): [1117, 1143]
+
+--- Component 37 ---
+Representive Net Name: dff1__tinv1__Ninternal
+Metal Indices (5): [554, 558, 567, 616, 623]
+
+--- Component 38 ---
+Representive Net Name: ser_2to1_2x__dff0__ICLK
+Metal Indices (3): [376, 393, 449]
+
+--- Component 39 ---
+Representive Net Name: dff1__tinv0__Pinternal
+Metal Indices (5): [465, 474, 483, 531, 539]
+
+--- Component 40 ---
+Representive Net Name: OB
+Metal Indices (2): [862, 918]
+
+--- Component 41 ---
+Representive Net Name: latch0__I0__Pinternal
+Metal Indices (5): [761, 770, 779, 827, 835]
+
+--- Component 42 ---
+Representive Net Name: ser_2to1_2x__TAP0__NTAP1
+Metal Indices (2): [727, 734]
+
+--- Component 43 ---
+Representive Net Name: ser_2to1_2x__dff0__ICLKB
+Metal Indices (2): [2168, 2202]
+
+--- Component 44 ---
+Representive Net Name: DI<1>:
+Metal Indices (2): [469, 527]
+
+--- Component 45 ---
+Representive Net Name: dff0__nand1__Nint
+Metal Indices (5): [1310, 1314, 1323, 1377, 1384]
+
+--- Component 46 ---
+Representive Net Name: ser_2to1_2x__dff1__ICLKB
+Metal Indices (5): [12, 57, 87, 1984, 2018]
+
+--- Component 47 ---
+Representive Net Name: dff1__nand0__Nint
+Metal Indices (5): [1482, 1486, 1495, 1549, 1556]
+
+--- Component 48 ---
+Representive Net Name: VSS:
+Metal Indices (3): [1828, 1830, 1862]
+
+--- Component 49 ---
+Representive Net Name: dff0__tinv0__Ninternal
+Metal Indices (5): [378, 382, 391, 440, 447]
+
+--- Component 50 ---
+Representive Net Name: ser_2to1_2x__TAP1__PTAP1
+Metal Indices (2): [745, 752]
+
+--- Component 51 ---
+Representive Net Name: latch1__I0__Pinternal
+Metal Indices (5): [1025, 1034, 1043, 1091, 1099]
+
+--- Component 52 ---
+Representive Net Name: ser_2to1_2x__tinv1__Ninternal
+Metal Indices (5): [938, 942, 951, 1000, 1007]
+
+--- Component 53 ---
+Representive Net Name: VDD:
+Metal Indices (6): [1113, 1118, 1150, 1163, 1168, 1200]
+
+------------------------------------------------------------------
+
+Library: serializer_generated
+Cell: ser_2to1_2x
+
+   _ (`-.   ('-.      .-')     .-')      ('-.  _ .-') _   
+  ( (OO  ) ( OO ).-. ( OO ).  ( OO ).  _(  OO)( (  OO) )  
+ _.`     | / . --. /(_)---|_)(_)---|_)(,------.|     .'_  
+(__...--'' | |-.   |/    _ | /    _ |  |  .---',`'--..._) 
+ |  /  | | | |  |  ||  (` `  |  (` `   |  |    |  |   | ' 
+ |  |_.' | | |_.'  | '..`''.  '..`''.  |  '--. |  |   ' | 
+ |  .___.' |  .-.  |.-._)   |.-._)   | |  .--' |  |   / : 
+ |  |      |  | |  ||       /|       / |  `---.|  '--'  / 
+ `--'      `--' `--' `-----'  `-----'  `------'`-------'    
+        
+Overall Graph Netname Consistency: PASSED ✔️
+
+Total Error Count: 0
+├─ Floating: 0
+├─ Open: 0
+├─ Short: 0
+└─ Label: 0
+
+------------------------------------------------------------------
+

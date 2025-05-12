@@ -102,7 +102,7 @@ end
 
 function node_to_str(node::TreeNode)
     # Helper function to convert node's data to a string
-    return "$(node.data.cellname)$(node.data.Mtransform)"
+    return "$(node.data.cellname) $(node.data.Mtransform) $(node.data.net_extern)"
 end
 
 function print_tree_root(node::TreeNode)

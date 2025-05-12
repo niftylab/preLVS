@@ -1,82 +1,81 @@
-preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.LABEL, 103, 103, "")
 
 --- Component 1 ---
 Representive Net Name: MEM2
-Metal Indices (5): [417, 451, 475, 527, 545]
+Metal Indices (5): [214, 268, 324, 472, 587]
 
 --- Component 2 ---
 Representive Net Name: LATCH
-Metal Indices (5): [56, 90, 477, 518, 547]
+Metal Indices (2): [60, 93]
 
 --- Component 3 ---
 Representive Net Name: CLK:
-Metal Indices (3): [91, 95, 129]
+Metal Indices (4): [111, 145, 521, 568]
 
 --- Component 4 ---
 Representive Net Name: O
-Metal Indices (6): [418, 452, 480, 528, 550, 553]
+Metal Indices (2): [430, 463]
 
 --- Component 5 ---
 Representive Net Name: dff_2x__I3__Ninternal
-Metal Indices (5): [236, 240, 249, 298, 305]
+Metal Indices (5): [252, 256, 265, 314, 321]
 
 --- Component 6 ---
 Representive Net Name: ICLKB
-Metal Indices (3): [234, 251, 307]
+Metal Indices (5): [197, 241, 485, 539, 555]
 
 --- Component 7 ---
 Representive Net Name: VSS:
-Metal Indices (48): [23, 41, 45, 49, 50, 83, 87, 93, 97, 98, 131, 135, 141, 145, 146, 179, 183, 209, 227, 237, 241, 242, 250, 299, 306, 311, 325, 329, 330, 338, 387, 394, 399, 407, 411, 412, 445, 449, 453, 555, 557, 559, 561, 563, 565, 567, 569, 574]
+Metal Indices (3): [6, 8, 40]
 
 --- Component 8 ---
 Representive Net Name: dff_2x__I0__Pinternal
-Metal Indices (5): [323, 332, 341, 389, 397]
+Metal Indices (5): [339, 348, 357, 405, 413]
 
 --- Component 9 ---
 Representive Net Name: dff_2x__I3__Pinternal
-Metal Indices (5): [235, 244, 253, 301, 309]
+Metal Indices (5): [251, 260, 269, 317, 325]
 
 --- Component 10 ---
 Representive Net Name: ICLK
-Metal Indices (5): [320, 403, 460, 510, 530]
+Metal Indices (2): [497, 592]
 
 --- Component 11 ---
 Representive Net Name: MEM1
-Metal Indices (5): [55, 89, 472, 517, 542]
+Metal Indices (5): [63, 97, 488, 533, 558]
 
 --- Component 12 ---
 Representive Net Name: I
-Metal Indices (2): [327, 385]
+Metal Indices (4): [333, 417, 527, 567]
 
 --- Component 13 ---
 Representive Net Name: VDD:
-Metal Indices (48): [24, 42, 46, 53, 54, 86, 88, 94, 101, 102, 134, 136, 142, 149, 150, 182, 184, 210, 228, 238, 245, 246, 254, 302, 310, 312, 326, 333, 334, 342, 390, 398, 400, 408, 415, 416, 448, 450, 454, 554, 556, 558, 560, 562, 564, 566, 568, 575]
+Metal Indices (3): [7, 12, 44]
 
 --- Component 14 ---
 Representive Net Name: dff_2x__I0__Ninternal
-Metal Indices (5): [324, 328, 337, 386, 393]
+Metal Indices (5): [340, 344, 353, 402, 409]
 
 ------------------------------------------------------------------
 
 Library: logic_generated
 Cell: dff_2x
 
-            ('-.                          ('-.  _ .-') _   
-           ( OO ).-.                    _(  OO)( (  OO) )  
-   ,------./ . --. /  ,-.-')  ,--.     (,------.|     .'_  
-('-| _.---'| |-.  |   |  |OO) |  |.-')  |  .---',`'--..._) 
-(OO|(_|  . | |  |  |  |  |  | |  | OO ) |  |    |  |   | ' 
-/  |  '--. | |_.'  |  |  |(_/ |  |`-' |(|  '--. |  |   ' | 
-|_)|  .--' |  .-.  | ,|  |_.'(|  '---.' |  .--' |  |   / : 
-  ||  |    |  | |  |(_|  |    |      |  |  `---.|  '--'  / 
-   `--'    `--' `--'  `--'    `------'  `------'`-------'  
+   _ (`-.   ('-.      .-')     .-')      ('-.  _ .-') _   
+  ( (OO  ) ( OO ).-. ( OO ).  ( OO ).  _(  OO)( (  OO) )  
+ _.`     | / . --. /(_)---|_)(_)---|_)(,------.|     .'_  
+(__...--'' | |-.   |/    _ | /    _ |  |  .---',`'--..._) 
+ |  /  | | | |  |  ||  (` `  |  (` `   |  |    |  |   | ' 
+ |  |_.' | | |_.'  | '..`''.  '..`''.  |  '--. |  |   ' | 
+ |  .___.' |  .-.  |.-._)   |.-._)   | |  .--' |  |   / : 
+ |  |      |  | |  ||       /|       / |  `---.|  '--'  / 
+ `--'      `--' `--' `-----'  `-----'  `------'`-------'    
         
-Overall Graph Netname Consistency: FAILED ❌
+Overall Graph Netname Consistency: PASSED ✔️
 
-Total Error Count: 1
+Total Error Count: 0
 ├─ Floating: 0
 ├─ Open: 0
-├─ Short: 1
+├─ Short: 0
 └─ Label: 0
 
 ------------------------------------------------------------------

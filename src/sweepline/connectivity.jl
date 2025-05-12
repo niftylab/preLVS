@@ -286,12 +286,13 @@ function check_coloned_netname(netname::String, nets_visited::Dict{String, Vecto
 end
 
 
-function create_error_log_file(error_log::Vector{ErrorEvent}, error_cnt::Dict{String, Int}, log_dir::String, libname::String, cellname::String, hash_rect::Vector{Rect}, nets_visited::Dict{String, Vector{Int}}, djs::IntDisjointSets{Int})
+function create_error_log_file(error_log::Vector{ErrorEvent}, error_cnt::Dict{String, Int}, log_dir::String, libname::String, cellname::String, hash_rect::Vector{Rect}, nets_visited::Dict{String, Vector{Int}}, djs::IntDisjointSets{Int}, cgraph::Dict{Int, GraphNode})
     # create log file
     log_file = joinpath(log_dir, "$(libname)_$(cellname).txt")
     open(log_file, "w") do io
         for error in error_log
-            println(io, error)
+            error_string = get_error_string(error, hash_rect, cgraph)
+            println(io, error_string)
         end
 
         # print nets_visited
@@ -366,3 +367,46 @@ function get_elements_for_root(ds::IntDisjointSets{Int}, known_root::Int)
     return elements_in_set
 end
 
+
+function get_error_string(error::ErrorEvent, hash_rect::Vector{Rect}, cgraph::Dict{Int, GraphNode})
+
+    error_string = ""
+
+    # WARNING
+    if error.errorType == WARNING && error.event_type == LABEL
+        error_string = "[WARNING]: Pin(node=$(error.rect_encounter)) has uneffective NET. ","Example: $(hash_rect[error.rect_encounter])"
+    # SHORT
+    elseif error.errorType == SHORT && error.event_type == LABEL
+        _pin = cgraph[error.rect_ref]
+        rect_ids = _pin.rect_ref
+        nets = Set{Tuple{String,String}}()
+        for rid in rect_ids
+            _rect = hash_rect[rid]
+            if isa(_rect, Label)
+                push!(nets, (_rect.netname_origin, _rect.netname))
+            end
+        end
+        error_string = "[SHORT]: Pin(node=$(error.rect_ref)) has different labels (original, flattened)->[ "
+        for _net in nets
+            error_string = error_string * "$_net "
+        end
+        error_string = error_string * " ]"
+    # OPEN
+    elseif error.errorType == OPEN && error.event_type == NET
+        visited = cgraph[error.rect_encounter]
+        error_string = "[OPEN]: Pin(node=$(error.rect_ref)) included in visited net w/ REFNODE[idx=$(error.rect_encounter), netname=$(visited.netname)]"
+    # SHORT
+    elseif error.errorType == SHORT && error.event_type == METAL
+        node_ref = cgraph[error.rect_ref]
+        node_encounter = cgraph[error.rect_encounter]
+        error_string = "[SHORT]: NODE[idx=$(error.rect_ref), netname=$(node_ref.netname)] has different netname w/ REFNODE[idx=$(error.rect_encounter), netname=$(node_encounter.netname)]"
+    # FLOATING
+    elseif error.errorType == FLOATING && error.event_type == METAL
+        node_ref = cgraph[error.rect_ref]
+        error_string = "[FLOATING]: NODE[$(node_ref)] isn't connected to any PIN/LABEL"
+    else
+        error_string = "warning: combination of $(error.errorType) and $(error.event_type) is not supported yet."
+    end
+
+    return error_string
+end

@@ -54,12 +54,14 @@ Equivalent_net_sets:
     - "VDD"
     - "vdd"
     - "vdd:"
+    - "VDDG"
   "VSS:":
     - "VSS:"
     - "VSS"
     - "vss"
     - "vss:"
     - "gnd"
+    - "VSSG"
   "CLK:":
     - "CLK"
     - "CK"
@@ -72,3 +74,27 @@ Equivalent_net_sets:
   "DI<1>:":
     - "DI<1>"
     - "DI1"
+  "d2<0>:":
+    - "d2<0>"
+    - "d20"
+  "d2<1>:":
+    - "d2<1>"
+    - "d21"
+  "d4<0>:":
+    - "d4<0>"
+    - "d40"
+  "d4<1>:":
+    - "d4<1>"
+    - "d41"
+  "d4<2>:":
+    - "d4<2>"
+    - "d42"
+  "d4<3>:":
+    - "d4<3>"
+    - "d43"
+  "OUTP":
+    - "OUTP"
+    - "OUTPG"
+  "OUTN":
+    - "OUTN"
+    - "OUTNG"

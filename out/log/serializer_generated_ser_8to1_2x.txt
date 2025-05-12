@@ -1,0 +1,1238 @@
+
+--- Component 1 ---
+Representive Net Name: ser2__TAP2__NTAP1
+Metal Indices (2): [4071, 4078]
+
+--- Component 2 ---
+Representive Net Name: ser3__ser0__TAP0__PTAP1
+Metal Indices (2): [3913, 3920]
+
+--- Component 3 ---
+Representive Net Name: ser3__ser0__dff1__ICLKB
+Metal Indices (5): [860, 917, 935, 2363, 2446]
+
+--- Component 4 ---
+Representive Net Name: ser_8to1_2x__TAP5__NTAP1
+Metal Indices (2): [3687, 3694]
+
+--- Component 5 ---
+Representive Net Name: ddi8<2>
+Metal Indices (5): [4731, 4815, 12807, 12917, 12923]
+
+--- Component 6 ---
+Representive Net Name: ser2__latch0__MEM
+Metal Indices (2): [5366, 5422]
+
+--- Component 7 ---
+Representive Net Name: ser3__ser0__dff1__nand1__Nint
+Metal Indices (5): [8882, 8886, 8895, 8949, 8956]
+
+--- Component 8 ---
+Representive Net Name: ser1__tinv0__Pinternal
+Metal Indices (5): [5441, 5450, 5459, 5507, 5515]
+
+--- Component 9 ---
+Representive Net Name: ser2__latch1__MEM
+Metal Indices (2): [4926, 4982]
+
+--- Component 10 ---
+Representive Net Name: ser3__ser3__dff1__MEM2
+Metal Indices (5): [447, 570, 2207, 2263, 7248]
+
+--- Component 11 ---
+Representive Net Name: ser3__ser3__dff1__tinv0__Ninternal
+Metal Indices (5): [2631, 2635, 2644, 2693, 2700]
+
+--- Component 12 ---
+Representive Net Name: DO
+Metal Indices (6): [103, 140, 12360, 12394, 12633, 12661]
+
+--- Component 13 ---
+Representive Net Name: ser3__ser3__latch0__MEM
+Metal Indices (2): [10369, 10395]
+
+--- Component 14 ---
+Representive Net Name: ser3__ser3__tie0__tie
+Metal Indices (3): [10956, 10965, 10998]
+
+--- Component 15 ---
+Representive Net Name: ser0__TAP3__PTAP1
+Metal Indices (2): [3865, 3872]
+
+--- Component 16 ---
+Representive Net Name: ser1__TAP0__PTAP1
+Metal Indices (2): [4009, 4016]
+
+--- Component 17 ---
+Representive Net Name: ser_8to1_2x__ser2__TIE
+Metal Indices (7): [1622, 1625, 9676, 9736, 12415, 12502, 12518]
+
+--- Component 18 ---
+Representive Net Name: ser3__ser1__dff1__nand1__Nint
+Metal Indices (5): [8624, 8628, 8637, 8691, 8698]
+
+--- Component 19 ---
+Representive Net Name: d4<0>:
+Metal Indices (2): [18, 301]
+
+--- Component 20 ---
+Representive Net Name: ser3__ser0__dff0__tinv1__Pinternal
+Metal Indices (5): [3422, 3431, 3440, 3488, 3496]
+
+--- Component 21 ---
+Representive Net Name: ser3__ser2__dff0__nand1__Nint
+Metal Indices (5): [7678, 7682, 7691, 7745, 7752]
+
+--- Component 22 ---
+Representive Net Name: ser3__ser0__tinv1__Ninternal
+Metal Indices (5): [6146, 6150, 6159, 6208, 6215]
+
+--- Component 23 ---
+Representive Net Name: ser3__ser3__TAP0__NTAP1
+Metal Indices (2): [3943, 3950]
+
+--- Component 24 ---
+Representive Net Name: ser_8to1_2x__TAP1__PTAP1
+Metal Indices (2): [3753, 3760]
+
+--- Component 25 ---
+Representive Net Name: ser_8to1_2x__TAP6__NTAP1
+Metal Indices (2): [3847, 3854]
+
+--- Component 26 ---
+Representive Net Name: ser3__ser1__dff0__tinv1__Ninternal
+Metal Indices (5): [3335, 3339, 3348, 3397, 3404]
+
+--- Component 27 ---
+Representive Net Name: ser0__tinv1__Ninternal
+Metal Indices (5): [4210, 4214, 4223, 4272, 4279]
+
+--- Component 28 ---
+Representive Net Name: ser3__ser1__latch0__I0__Ninternal
+Metal Indices (5): [5266, 5270, 5279, 5328, 5335]
+
+--- Component 29 ---
+Representive Net Name: ser3__ser2__dff1__ICLK
+Metal Indices (5): [319, 380, 394, 2538, 2621]
+
+--- Component 30 ---
+Representive Net Name: ser0__latch1__I0__Pinternal
+Metal Indices (5): [5881, 5890, 5899, 5947, 5955]
+
+--- Component 31 ---
+Representive Net Name: ser3__ser0__tinv1__Pinternal
+Metal Indices (5): [6145, 6154, 6163, 6211, 6219]
+
+--- Component 32 ---
+Representive Net Name: ser3__ser1__dff1__tinv0__Ninternal
+Metal Indices (5): [2279, 2283, 2292, 2341, 2348]
+
+--- Component 33 ---
+Representive Net Name: ser_8to1_2x__TAP4__NTAP1
+Metal Indices (2): [3671, 3678]
+
+--- Component 34 ---
+Representive Net Name: ser1__latch0__MEM
+Metal Indices (3): [9396, 9413, 9473]
+
+--- Component 35 ---
+Representive Net Name: ser3__ser1__latch0__I0__Pinternal
+Metal Indices (5): [5265, 5274, 5283, 5331, 5339]
+
+--- Component 36 ---
+Representive Net Name: ser3__ser1__TAP0__NTAP1
+Metal Indices (2): [3927, 3934]
+
+--- Component 37 ---
+Representive Net Name: ser3__ser1__tinv0__Ninternal
+Metal Indices (5): [4738, 4742, 4751, 4800, 4807]
+
+--- Component 38 ---
+Representive Net Name: ser0__latch1__I0__Ninternal
+Metal Indices (5): [5882, 5886, 5895, 5944, 5951]
+
+--- Component 39 ---
+Representive Net Name: ser3__ser3__dff0__tinv0__Ninternal
+Metal Indices (5): [3159, 3163, 3172, 3221, 3228]
+
+--- Component 40 ---
+Representive Net Name: ser3__ser0__dff0__ICLK
+Metal Indices (5): [987, 1040, 1062, 2451, 2534]
+
+--- Component 41 ---
+Representive Net Name: ser1__latch0__I0__Ninternal
+Metal Indices (5): [4122, 4126, 4135, 4184, 4191]
+
+--- Component 42 ---
+Representive Net Name: ser3__ser2__FT
+Metal Indices (2): [9496, 9557]
+
+--- Component 43 ---
+Representive Net Name: ser3__ser1__TAP0__PTAP1
+Metal Indices (2): [3929, 3936]
+
+--- Component 44 ---
+Representive Net Name: ser2__TAP3__NTAP1
+Metal Indices (2): [4039, 4046]
+
+--- Component 45 ---
+Representive Net Name: ser2__TAP3__PTAP1
+Metal Indices (2): [4041, 4048]
+
+--- Component 46 ---
+Representive Net Name: ser3__ser2__TAP1__PTAP1
+Metal Indices (2): [3993, 4000]
+
+--- Component 47 ---
+Representive Net Name: ser_8to1_2x__ser0__FT
+Metal Indices (5): [10459, 10464, 10468, 10492, 10496]
+
+--- Component 48 ---
+Representive Net Name: ser3__ser1__TAP1__NTAP1
+Metal Indices (2): [3879, 3886]
+
+--- Component 49 ---
+Representive Net Name: dd2<1>
+Metal Indices (2): [4217, 4274]
+
+--- Component 50 ---
+Representive Net Name: ser3__ser1__dff1__ICLKB
+Metal Indices (2): [1144, 1246]
+
+--- Component 51 ---
+Representive Net Name: ser3__ser2__tinv0__Ninternal
+Metal Indices (5): [5530, 5534, 5543, 5592, 5599]
+
+--- Component 52 ---
+Representive Net Name: ser3__ser2__latch0__I0__Ninternal
+Metal Indices (5): [6058, 6062, 6071, 6120, 6127]
+
+--- Component 53 ---
+Representive Net Name: ser1__TAP0__NTAP1
+Metal Indices (2): [4007, 4014]
+
+--- Component 54 ---
+Representive Net Name: ser3__ser0__dff1__LATCH
+Metal Indices (2): [2370, 2428]
+
+--- Component 55 ---
+Representive Net Name: ser2__TAP1__NTAP1
+Metal Indices (2): [3703, 3710]
+
+--- Component 56 ---
+Representive Net Name: ser3__ser0__tinv0__Pinternal
+Metal Indices (5): [6233, 6242, 6251, 6299, 6307]
+
+--- Component 57 ---
+Representive Net Name: ser_8to1_2x__ser1__OB
+Metal Indices (2): [12690, 12800]
+
+--- Component 58 ---
+Representive Net Name: ser_8to1_2x__TAP1__NTAP1
+Metal Indices (2): [3751, 3758]
+
+--- Component 59 ---
+Representive Net Name: ser3__ser2__tinv1__Pinternal
+Metal Indices (5): [5705, 5714, 5723, 5771, 5779]
+
+--- Component 60 ---
+Representive Net Name: ser3__ser0__latch1__I0__Pinternal
+Metal Indices (5): [5793, 5802, 5811, 5859, 5867]
+
+--- Component 61 ---
+Representive Net Name: ser2__tinv0__Ninternal
+Metal Indices (5): [4650, 4654, 4663, 4712, 4719]
+
+--- Component 62 ---
+Representive Net Name: ser0__latch1__I2__Nint
+Metal Indices (5): [9226, 9230, 9239, 9293, 9300]
+
+--- Component 63 ---
+Representive Net Name: ser0__latch0__MEM
+Metal Indices (3): [9997, 10011, 10072]
+
+--- Component 64 ---
+Representive Net Name: ser_8to1_2x__TAP11__NTAP1
+Metal Indices (2): [3831, 3838]
+
+--- Component 65 ---
+Representive Net Name: ser3__ser3__dff0__LATCH
+Metal Indices (2): [2990, 3047]
+
+--- Component 66 ---
+Representive Net Name: ser3__ser2__dff1__MEM2
+Metal Indices (5): [331, 383, 406, 2537, 2623]
+
+--- Component 67 ---
+Representive Net Name: ser_8to1_2x__TAP8__PTAP1
+Metal Indices (2): [3641, 3648]
+
+--- Component 68 ---
+Representive Net Name: DI8<2>
+Metal Indices (2): [2814, 2871]
+
+--- Component 69 ---
+Representive Net Name: ser3__ser2__latch1__I0__Ninternal
+Metal Indices (5): [4298, 4302, 4311, 4360, 4367]
+
+--- Component 70 ---
+Representive Net Name: ser1__TAP2__PTAP1
+Metal Indices (2): [3625, 3632]
+
+--- Component 71 ---
+Representive Net Name: ser0__TAP1__PTAP1
+Metal Indices (2): [3769, 3776]
+
+--- Component 72 ---
+Representive Net Name: ser3__ser1__latch0__I2__Nint
+Metal Indices (5): [9914, 9918, 9927, 9981, 9988]
+
+--- Component 73 ---
+Representive Net Name: ser3__ser2__TAP0__NTAP1
+Metal Indices (2): [3719, 3726]
+
+--- Component 74 ---
+Representive Net Name: ser0__TAP2__NTAP1
+Metal Indices (2): [3815, 3822]
+
+--- Component 75 ---
+Representive Net Name: ser3__ser3__latch1__I0__Ninternal
+Metal Indices (5): [5178, 5182, 5191, 5240, 5247]
+
+--- Component 76 ---
+Representive Net Name: ser3__ser3__dff1__nand0__Nint
+Metal Indices (5): [8280, 8284, 8293, 8347, 8354]
+
+--- Component 77 ---
+Representive Net Name: ser_8to1_2x__ser1__FT
+Metal Indices (6): [1646, 1674, 1679, 9419, 9480, 12773]
+
+--- Component 78 ---
+Representive Net Name: ser2__TAP1__PTAP1
+Metal Indices (2): [3705, 3712]
+
+--- Component 79 ---
+Representive Net Name: ser_8to1_2x__TAP7__NTAP1
+Metal Indices (2): [3655, 3662]
+
+--- Component 80 ---
+Representive Net Name: d4<2>:
+Metal Indices (2): [6417, 6474]
+
+--- Component 81 ---
+Representive Net Name: ser3__ser0__TAP0__NTAP1
+Metal Indices (2): [3911, 3918]
+
+--- Component 82 ---
+Representive Net Name: ser3__ser2__OB
+Metal Indices (2): [5722, 5778]
+
+--- Component 83 ---
+Representive Net Name: ser3__ser0__tie0__tie
+Metal Indices (3): [11197, 11204, 11237]
+
+--- Component 84 ---
+Representive Net Name: ser3__ser3__latch1__I0__Pinternal
+Metal Indices (5): [5177, 5186, 5195, 5243, 5251]
+
+--- Component 85 ---
+Representive Net Name: ser3__ser0__dff0__nand1__Nint
+Metal Indices (5): [7936, 7940, 7949, 8003, 8010]
+
+--- Component 86 ---
+Representive Net Name: ser3__ser1__dff1__ICLK
+Metal Indices (2): [11876, 11909]
+
+--- Component 87 ---
+Representive Net Name: ser0__TAP2__PTAP1
+Metal Indices (2): [3817, 3824]
+
+--- Component 88 ---
+Representive Net Name: ser3__ser1__tinv1__Ninternal
+Metal Indices (5): [4826, 4830, 4839, 4888, 4895]
+
+--- Component 89 ---
+Representive Net Name: ser2__latch0__I2__Nint
+Metal Indices (5): [9656, 9660, 9669, 9723, 9730]
+
+--- Component 90 ---
+Representive Net Name: ser3__ser0__latch1__I0__Ninternal
+Metal Indices (5): [5794, 5798, 5807, 5856, 5863]
+
+--- Component 91 ---
+Representive Net Name: ser3__ser3__latch1__I2__Nint
+Metal Indices (5): [9828, 9832, 9841, 9895, 9902]
+
+--- Component 92 ---
+Representive Net Name: ser2__latch0__I0__Ninternal
+Metal Indices (5): [5354, 5358, 5367, 5416, 5423]
+
+--- Component 93 ---
+Representive Net Name: ser3__ser2__latch0__I2__Nint
+Metal Indices (5): [9484, 9488, 9497, 9551, 9558]
+
+--- Component 94 ---
+Representive Net Name: ser3__ser1__tinv0__Pinternal
+Metal Indices (5): [4737, 4746, 4755, 4803, 4811]
+
+--- Component 95 ---
+Representive Net Name: ser2__TAP0__PTAP1
+Metal Indices (2): [3737, 3744]
+
+--- Component 96 ---
+Representive Net Name: ser3__ser1__dff0__ICLK
+Metal Indices (5): [719, 772, 794, 2803, 2886]
+
+--- Component 97 ---
+Representive Net Name: ser3__ser0__dff0__MEM2
+Metal Indices (2): [6893, 6919]
+
+--- Component 98 ---
+Representive Net Name: ser3__ser2__tinv0__Pinternal
+Metal Indices (5): [5529, 5538, 5547, 5595, 5603]
+
+--- Component 99 ---
+Representive Net Name: ser2__tinv1__Ninternal
+Metal Indices (5): [6322, 6326, 6335, 6384, 6391]
+
+--- Component 100 ---
+Representive Net Name: ser3__ser3__dff0__MEM1
+Metal Indices (5): [597, 644, 672, 6730, 6774]
+
+--- Component 101 ---
+Representive Net Name: ser3__ser3__TIE
+Metal Indices (2): [13161, 13286]
+
+--- Component 102 ---
+Representive Net Name: ser3__ser3__latch0__I0__Ninternal
+Metal Indices (5): [5002, 5006, 5015, 5064, 5071]
+
+--- Component 103 ---
+Representive Net Name: ser3__ser2__TAP1__NTAP1
+Metal Indices (2): [3991, 3998]
+
+--- Component 104 ---
+Representive Net Name: ddi8<7>
+Metal Indices (2): [13160, 13285]
+
+--- Component 105 ---
+Representive Net Name: ser3__ser3__latch0__I0__Pinternal
+Metal Indices (5): [5001, 5010, 5019, 5067, 5075]
+
+--- Component 106 ---
+Representive Net Name: ser3__ser2__dff1__ICLKB
+Metal Indices (3): [3244, 3258, 3314]
+
+--- Component 107 ---
+Representive Net Name: ser3__ser1__dff0__nand0__Nint
+Metal Indices (5): [8968, 8972, 8981, 9035, 9042]
+
+--- Component 108 ---
+Representive Net Name: ser3__ser1__dff0__LATCH
+Metal Indices (2): [3338, 3396]
+
+--- Component 109 ---
+Representive Net Name: EN
+Metal Indices (2): [7685, 7747]
+
+--- Component 110 ---
+Representive Net Name: ser_8to1_2x__ser0__TIE
+Metal Indices (2): [10003, 10066]
+
+--- Component 111 ---
+Representive Net Name: ser3__ser3__dff1__tinv1__Ninternal
+Metal Indices (5): [2191, 2195, 2204, 2253, 2260]
+
+--- Component 112 ---
+Representive Net Name: ser3__ser2__dff1__tinv1__Ninternal
+Metal Indices (5): [2543, 2547, 2556, 2605, 2612]
+
+--- Component 113 ---
+Representive Net Name: ser3__ser2__dff0__tinv0__Ninternal
+Metal Indices (5): [2719, 2723, 2732, 2781, 2788]
+
+--- Component 114 ---
+Representive Net Name: ser3__ser0__latch0__I0__Ninternal
+Metal Indices (5): [5618, 5622, 5631, 5680, 5687]
+
+--- Component 115 ---
+Representive Net Name: DI8<5>
+Metal Indices (2): [3250, 3308]
+
+--- Component 116 ---
+Representive Net Name: ser3__ser1__tie0__tie
+Metal Indices (3): [11245, 11252, 11285]
+
+--- Component 117 ---
+Representive Net Name: ser3__ser1__dff0__tinv0__Pinternal
+Metal Indices (5): [2806, 2815, 2824, 2872, 2880]
+
+--- Component 118 ---
+Representive Net Name: ser_8to1_2x__TAP7__PTAP1
+Metal Indices (2): [3657, 3664]
+
+--- Component 119 ---
+Representive Net Name: ser3__ser1__dff1__tinv1__Ninternal
+Metal Indices (5): [2103, 2107, 2116, 2165, 2172]
+
+--- Component 120 ---
+Representive Net Name: ser3__ser0__dff0__LATCH
+Metal Indices (5): [1004, 1045, 1079, 6979, 7023]
+
+--- Component 121 ---
+Representive Net Name: ser3__ser3__dff0__tinv1__Pinternal
+Metal Indices (5): [2982, 2991, 3000, 3048, 3056]
+
+--- Component 122 ---
+Representive Net Name: ser3__ser3__tinv1__Ninternal
+Metal Indices (5): [4386, 4390, 4399, 4448, 4455]
+
+--- Component 123 ---
+Representive Net Name: ser0__latch0__I2__Nint
+Metal Indices (5): [10000, 10004, 10013, 10067, 10074]
+
+--- Component 124 ---
+Representive Net Name: ser3__ser3__dff0__ICLK
+Metal Indices (2): [6737, 6767]
+
+--- Component 125 ---
+Representive Net Name: ser_8to1_2x__TAP10__NTAP1
+Metal Indices (2): [4055, 4062]
+
+--- Component 126 ---
+Representive Net Name: ser3__ser0__dff1__tinv1__Pinternal
+Metal Indices (5): [2366, 2375, 2384, 2432, 2440]
+
+--- Component 127 ---
+Representive Net Name: ser3__ser0__dff1__tinv0__Ninternal
+Metal Indices (5): [2895, 2899, 2908, 2957, 2964]
+
+--- Component 128 ---
+Representive Net Name: ser3__ser0__dff1__ICLK
+Metal Indices (3): [2893, 2910, 2966]
+
+--- Component 129 ---
+Representive Net Name: ser3__ser2__dff1__tinv1__Pinternal
+Metal Indices (5): [2542, 2551, 2560, 2608, 2616]
+
+--- Component 130 ---
+Representive Net Name: ser2__latch1__I0__Pinternal
+Metal Indices (5): [4913, 4922, 4931, 4979, 4987]
+
+--- Component 131 ---
+Representive Net Name: DI8<6>
+Metal Indices (2): [2282, 2340]
+
+--- Component 132 ---
+Representive Net Name: ser3__ser0__dff1__nand0__Nint
+Metal Indices (5): [7850, 7854, 7863, 7917, 7924]
+
+--- Component 133 ---
+Representive Net Name: ser3__ser0__latch0__MEM
+Metal Indices (2): [5634, 5690]
+
+--- Component 134 ---
+Representive Net Name: ser0__TAP1__NTAP1
+Metal Indices (2): [3767, 3774]
+
+--- Component 135 ---
+Representive Net Name: d2<0>:
+Metal Indices (2): [11488, 11522]
+
+--- Component 136 ---
+Representive Net Name: ser3__ser3__TAP1__PTAP1
+Metal Indices (2): [3609, 3616]
+
+--- Component 137 ---
+Representive Net Name: ser_8to1_2x__ser2__OB
+Metal Indices (5): [4644, 4730, 12409, 12495, 12512]
+
+--- Component 138 ---
+Representive Net Name: ser1__TAP3__NTAP1
+Metal Indices (2): [3975, 3982]
+
+--- Component 139 ---
+Representive Net Name: ser3__ser2__dff0__MEM1
+Metal Indices (5): [1266, 1310, 1341, 2713, 2799]
+
+--- Component 140 ---
+Representive Net Name: ser1__tinv1__Pinternal
+Metal Indices (5): [4473, 4482, 4491, 4539, 4547]
+
+--- Component 141 ---
+Representive Net Name: dddi8<4>
+Metal Indices (2): [13325, 13450]
+
+--- Component 142 ---
+Representive Net Name: ser3__ser1__dff1__tinv0__Pinternal
+Metal Indices (5): [2278, 2287, 2296, 2344, 2352]
+
+--- Component 143 ---
+Representive Net Name: ser_8to1_2x__TAP9__NTAP1
+Metal Indices (2): [3895, 3902]
+
+--- Component 144 ---
+Representive Net Name: VSS:
+Metal Indices (3): [4021, 4024, 4029]
+
+--- Component 145 ---
+Representive Net Name: DI8<0>
+Metal Indices (10): [60, 125, 1041, 1084, 2448, 2532, 3545, 3558, 13387, 13441]
+
+--- Component 146 ---
+Representive Net Name: ser2__TAP2__PTAP1
+Metal Indices (2): [4073, 4080]
+
+--- Component 147 ---
+Representive Net Name: ser3__ser3__tinv0__Ninternal
+Metal Indices (5): [5090, 5094, 5103, 5152, 5159]
+
+--- Component 148 ---
+Representive Net Name: VDD:
+Metal Indices (6): [6785, 6790, 6822, 7235, 7240, 7272]
+
+--- Component 149 ---
+Representive Net Name: ser0__TAP0__NTAP1
+Metal Indices (2): [4087, 4094]
+
+--- Component 150 ---
+Representive Net Name: dddi8<5>
+Metal Indices (6): [1957, 9053, 9062, 9070, 9124, 9130]
+
+--- Component 151 ---
+Representive Net Name: ser3__ser0__dff1__tinv1__Ninternal
+Metal Indices (5): [2367, 2371, 2380, 2429, 2436]
+
+--- Component 152 ---
+Representive Net Name: ser3__ser3__tinv1__Pinternal
+Metal Indices (5): [4385, 4394, 4403, 4451, 4459]
+
+--- Component 153 ---
+Representive Net Name: ser0__tie0__tie
+Metal Indices (3): [11099, 11104, 11138]
+
+--- Component 154 ---
+Representive Net Name: DI8<1>
+Metal Indices (2): [2722, 2780]
+
+--- Component 155 ---
+Representive Net Name: ser3__ser2__latch1__I2__Nint
+Metal Indices (5): [9054, 9058, 9067, 9121, 9128]
+
+--- Component 156 ---
+Representive Net Name: ser3__ser2__dff1__LATCH
+Metal Indices (2): [2546, 2604]
+
+--- Component 157 ---
+Representive Net Name: CLK:
+Metal Indices (2): [10263, 10293]
+
+--- Component 158 ---
+Representive Net Name: ddi8<4>
+Metal Indices (2): [5801, 5858]
+
+--- Component 159 ---
+Representive Net Name: ser_8to1_2x__TAP3__NTAP1
+Metal Indices (2): [3783, 3790]
+
+--- Component 160 ---
+Representive Net Name: ser3__ser3__dff1__tinv0__Pinternal
+Metal Indices (5): [2630, 2639, 2648, 2696, 2704]
+
+--- Component 161 ---
+Representive Net Name: ser3__ser2__dff1__MEM1
+Metal Indices (3): [8363, 8377, 8438]
+
+--- Component 162 ---
+Representive Net Name: ser_8to1_2x__TAP9__PTAP1
+Metal Indices (2): [3897, 3904]
+
+--- Component 163 ---
+Representive Net Name: ser3__ser3__tinv0__Pinternal
+Metal Indices (5): [5089, 5098, 5107, 5155, 5163]
+
+--- Component 164 ---
+Representive Net Name: ser3__ser0__TIE
+Metal Indices (7): [2081, 2084, 9332, 9392, 13300, 13399, 13416]
+
+--- Component 165 ---
+Representive Net Name: CLK2
+Metal Indices (3): [4648, 4665, 4721]
+
+--- Component 166 ---
+Representive Net Name: ser3__ser1__dff0__MEM2
+Metal Indices (3): [8450, 8467, 8527]
+
+--- Component 167 ---
+Representive Net Name: ser3__ser2__dff0__nand0__Nint
+Metal Indices (5): [8108, 8112, 8121, 8175, 8182]
+
+--- Component 168 ---
+Representive Net Name: ser_8to1_2x__ser0__OB
+Metal Indices (2): [12554, 12664]
+
+--- Component 169 ---
+Representive Net Name: ser_8to1_2x__TAP11__PTAP1
+Metal Indices (2): [3833, 3840]
+
+--- Component 170 ---
+Representive Net Name: ser0__latch0__I0__Pinternal
+Metal Indices (5): [6497, 6506, 6515, 6563, 6571]
+
+--- Component 171 ---
+Representive Net Name: ser3__ser0__latch0__I0__Pinternal
+Metal Indices (5): [5617, 5626, 5635, 5683, 5691]
+
+--- Component 172 ---
+Representive Net Name: ser3__ser3__latch1__MEM
+Metal Indices (5): [1438, 1439, 1467, 10806, 10850]
+
+--- Component 173 ---
+Representive Net Name: dd4<2>
+Metal Indices (6): [1753, 10085, 10094, 10102, 10156, 10162]
+
+--- Component 174 ---
+Representive Net Name: ser3__ser0__tinv0__Ninternal
+Metal Indices (5): [6234, 6238, 6247, 6296, 6303]
+
+--- Component 175 ---
+Representive Net Name: ser3__ser0__latch0__I2__Nint
+Metal Indices (5): [9312, 9316, 9325, 9379, 9386]
+
+--- Component 176 ---
+Representive Net Name: ser0__TAP3__NTAP1
+Metal Indices (2): [3863, 3870]
+
+--- Component 177 ---
+Representive Net Name: ser3__ser3__dff0__nand0__Nint
+Metal Indices (5): [7764, 7768, 7777, 7831, 7838]
+
+--- Component 178 ---
+Representive Net Name: ser3__ser3__dff1__LATCH
+Metal Indices (4): [448, 571, 8292, 8353]
+
+--- Component 179 ---
+Representive Net Name: ser_8to1_2x__TAP4__PTAP1
+Metal Indices (2): [3673, 3680]
+
+--- Component 180 ---
+Representive Net Name: CLKB:
+Metal Indices (3): [4208, 4225, 4281]
+
+--- Component 181 ---
+Representive Net Name: ser2__tinv0__Pinternal
+Metal Indices (5): [4649, 4658, 4667, 4715, 4723]
+
+--- Component 182 ---
+Representive Net Name: ser3__ser0__TAP1__NTAP1
+Metal Indices (2): [4023, 4030]
+
+--- Component 183 ---
+Representive Net Name: ser1__latch1__I0__Pinternal
+Metal Indices (5): [6409, 6418, 6427, 6475, 6483]
+
+--- Component 184 ---
+Representive Net Name: ser_8to1_2x__TAP2__NTAP1
+Metal Indices (2): [4103, 4110]
+
+--- Component 185 ---
+Representive Net Name: ser3__ser2__dff0__tinv1__Ninternal
+Metal Indices (5): [3071, 3075, 3084, 3133, 3140]
+
+--- Component 186 ---
+Representive Net Name: ser3__ser2__dff1__nand1__Nint
+Metal Indices (5): [8194, 8198, 8207, 8261, 8268]
+
+--- Component 187 ---
+Representive Net Name: DI8<3>
+Metal Indices (10): [63, 128, 639, 682, 3152, 3236, 3518, 3561, 13224, 13278]
+
+--- Component 188 ---
+Representive Net Name: ser1__TAP1__PTAP1
+Metal Indices (2): [3961, 3968]
+
+--- Component 189 ---
+Representive Net Name: ser3__ser0__TAP1__PTAP1
+Metal Indices (2): [4025, 4032]
+
+--- Component 190 ---
+Representive Net Name: ser3__ser3__TAP0__PTAP1
+Metal Indices (2): [3945, 3952]
+
+--- Component 191 ---
+Representive Net Name: ser3__ser1__dff1__tinv1__Pinternal
+Metal Indices (5): [2102, 2111, 2120, 2168, 2176]
+
+--- Component 192 ---
+Representive Net Name: ser3__ser3__dff1__nand1__Nint
+Metal Indices (5): [8538, 8542, 8551, 8605, 8612]
+
+--- Component 193 ---
+Representive Net Name: ser3__ser1__FT
+Metal Indices (4): [1849, 1874, 10605, 10649]
+
+--- Component 194 ---
+Representive Net Name: ser3__ser1__dff0__tinv1__Pinternal
+Metal Indices (5): [3334, 3343, 3352, 3400, 3408]
+
+--- Component 195 ---
+Representive Net Name: ser3__ser2__dff0__MEM2
+Metal Indices (2): [6643, 6669]
+
+--- Component 196 ---
+Representive Net Name: ser3__ser3__TAP1__NTAP1
+Metal Indices (2): [3607, 3614]
+
+--- Component 197 ---
+Representive Net Name: ser1__latch0__I0__Pinternal
+Metal Indices (5): [4121, 4130, 4139, 4187, 4195]
+
+--- Component 198 ---
+Representive Net Name: ser3__ser0__dff0__MEM1
+Metal Indices (5): [982, 1105, 2471, 2527, 6998]
+
+--- Component 199 ---
+Representive Net Name: ser_8to1_2x__TAP6__PTAP1
+Metal Indices (2): [3849, 3856]
+
+--- Component 200 ---
+Representive Net Name: ser3__ser0__dff1__MEM2
+Metal Indices (2): [7039, 7065]
+
+--- Component 201 ---
+Representive Net Name: ser3__ser1__tinv1__Pinternal
+Metal Indices (5): [4825, 4834, 4843, 4891, 4899]
+
+--- Component 202 ---
+Representive Net Name: ser3__ser3__dff0__nand1__Nint
+Metal Indices (5): [8022, 8026, 8035, 8089, 8096]
+
+--- Component 203 ---
+Representive Net Name: ser3__ser0__dff1__MEM1
+Metal Indices (3): [7847, 7861, 7922]
+
+--- Component 204 ---
+Representive Net Name: ddi8<5>
+Metal Indices (5): [8193, 8202, 8210, 8264, 8270]
+
+--- Component 205 ---
+Representive Net Name: ser_8to1_2x__TAP0__PTAP1
+Metal Indices (2): [3801, 3808]
+
+--- Component 206 ---
+Representive Net Name: ser_8to1_2x__TAP5__PTAP1
+Metal Indices (2): [3689, 3696]
+
+--- Component 207 ---
+Representive Net Name: ser3__ser1__latch1__I0__Pinternal
+Metal Indices (5): [5969, 5978, 5987, 6035, 6043]
+
+--- Component 208 ---
+Representive Net Name: ser3__ser2__TAP0__PTAP1
+Metal Indices (2): [3721, 3728]
+
+--- Component 209 ---
+Representive Net Name: ddi8<6>
+Metal Indices (2): [12834, 12959]
+
+--- Component 210 ---
+Representive Net Name: ser_8to1_2x__ser1__TIE
+Metal Indices (2): [4125, 4183]
+
+--- Component 211 ---
+Representive Net Name: ser3__ser3__dff0__ICLKB
+Metal Indices (2): [6787, 6817]
+
+--- Component 212 ---
+Representive Net Name: DI8<4>
+Metal Indices (2): [2898, 2956]
+
+--- Component 213 ---
+Representive Net Name: ser2__TAP0__NTAP1
+Metal Indices (2): [3735, 3742]
+
+--- Component 214 ---
+Representive Net Name: ser3__ser3__dff1__ICLKB
+Metal Indices (5): [457, 508, 532, 7282, 7326]
+
+--- Component 215 ---
+Representive Net Name: ser1__TAP3__PTAP1
+Metal Indices (2): [3977, 3984]
+
+--- Component 216 ---
+Representive Net Name: ser3__ser2__latch1__MEM
+Metal Indices (4): [1950, 1978, 9073, 9135]
+
+--- Component 217 ---
+Representive Net Name: ser3__ser0__dff0__tinv0__Pinternal
+Metal Indices (5): [2454, 2463, 2472, 2520, 2528]
+
+--- Component 218 ---
+Representive Net Name: ser3__ser1__latch1__I0__Ninternal
+Metal Indices (5): [5970, 5974, 5983, 6032, 6039]
+
+--- Component 219 ---
+Representive Net Name: ser3__ser0__latch1__MEM
+Metal Indices (3): [9568, 9585, 9645]
+
+--- Component 220 ---
+Representive Net Name: ser3__ser1__dff1__LATCH
+Metal Indices (5): [1138, 1179, 1213, 7179, 7223]
+
+--- Component 221 ---
+Representive Net Name: ser3__ser3__dff1__ICLK
+Metal Indices (5): [454, 519, 529, 7232, 7276]
+
+--- Component 222 ---
+Representive Net Name: ser_8to1_2x__TAP10__PTAP1
+Metal Indices (2): [4057, 4064]
+
+--- Component 223 ---
+Representive Net Name: ser3__ser0__dff0__tinv1__Ninternal
+Metal Indices (5): [3423, 3427, 3436, 3485, 3492]
+
+--- Component 224 ---
+Representive Net Name: ser1__latch0__I2__Nint
+Metal Indices (5): [9398, 9402, 9411, 9465, 9472]
+
+--- Component 225 ---
+Representive Net Name: ser1__tie0__tie
+Metal Indices (3): [11005, 11012, 11045]
+
+--- Component 226 ---
+Representive Net Name: ser3__ser3__latch0__I2__Nint
+Metal Indices (5): [9140, 9144, 9153, 9207, 9214]
+
+--- Component 227 ---
+Representive Net Name: ser0__TAP0__PTAP1
+Metal Indices (2): [4089, 4096]
+
+--- Component 228 ---
+Representive Net Name: ser3__ser1__dff0__MEM1
+Metal Indices (5): [730, 774, 805, 2801, 2887]
+
+--- Component 229 ---
+Representive Net Name: ser3__ser0__dff0__tinv0__Ninternal
+Metal Indices (5): [2455, 2459, 2468, 2517, 2524]
+
+--- Component 230 ---
+Representive Net Name: ddi8<0>
+Metal Indices (5): [6227, 6311, 13296, 13406, 13412]
+
+--- Component 231 ---
+Representive Net Name: dddi8<7>
+Metal Indices (2): [4393, 4450]
+
+--- Component 232 ---
+Representive Net Name: ser3__ser2__dff0__ICLKB
+Metal Indices (2): [1278, 1380]
+
+--- Component 233 ---
+Representive Net Name: ser3__ser1__latch1__MEM
+Metal Indices (4): [1896, 1922, 5964, 6050]
+
+--- Component 234 ---
+Representive Net Name: ser1__latch1__MEM
+Metal Indices (3): [10083, 10097, 10158]
+
+--- Component 235 ---
+Representive Net Name: ser2__tie0__tie
+Metal Indices (3): [11149, 11156, 11189]
+
+--- Component 236 ---
+Representive Net Name: ser3__ser3__OB
+Metal Indices (2): [13164, 13289]
+
+--- Component 237 ---
+Representive Net Name: ser3__ser1__OB
+Metal Indices (2): [4838, 4894]
+
+--- Component 238 ---
+Representive Net Name: d4<1>:
+Metal Indices (2): [4653, 4711]
+
+--- Component 239 ---
+Representive Net Name: ser3__ser2__dff0__ICLK
+Metal Indices (2): [6641, 6671]
+
+--- Component 240 ---
+Representive Net Name: CLK4B
+Metal Indices (3): [12059, 12063, 12097]
+
+--- Component 241 ---
+Representive Net Name: ser3__ser3__dff0__MEM2
+Metal Indices (5): [581, 704, 2999, 3055, 6798]
+
+--- Component 242 ---
+Representive Net Name: ser3__ser3__dff0__tinv0__Pinternal
+Metal Indices (5): [3158, 3167, 3176, 3224, 3232]
+
+--- Component 243 ---
+Representive Net Name: ser2__latch1__I0__Ninternal
+Metal Indices (5): [4914, 4918, 4927, 4976, 4983]
+
+--- Component 244 ---
+Representive Net Name: ser3__ser2__tinv1__Ninternal
+Metal Indices (5): [5706, 5710, 5719, 5768, 5775]
+
+--- Component 245 ---
+Representive Net Name: ser3__ser0__latch1__I2__Nint
+Metal Indices (5): [9570, 9574, 9583, 9637, 9644]
+
+--- Component 246 ---
+Representive Net Name: ser3__ser1__TAP1__PTAP1
+Metal Indices (2): [3881, 3888]
+
+--- Component 247 ---
+Representive Net Name: ser3__ser2__latch1__I0__Pinternal
+Metal Indices (5): [4297, 4306, 4315, 4363, 4371]
+
+--- Component 248 ---
+Representive Net Name: ser3__ser0__OB
+Metal Indices (5): [6228, 6314, 13308, 13407, 13424]
+
+--- Component 249 ---
+Representive Net Name: ser0__tinv0__Pinternal
+Metal Indices (5): [4561, 4570, 4579, 4627, 4635]
+
+--- Component 250 ---
+Representive Net Name: ser_8to1_2x__ser2__FT
+Metal Indices (5): [10909, 10914, 10918, 10942, 10946]
+
+--- Component 251 ---
+Representive Net Name: ser3__ser0__dff0__ICLKB
+Metal Indices (5): [993, 1044, 1068, 6982, 7026]
+
+--- Component 252 ---
+Representive Net Name: ser3__ser1__TIE
+Metal Indices (2): [9917, 9980]
+
+--- Component 253 ---
+Representive Net Name: ser3__ser0__FT
+Metal Indices (2): [9324, 9385]
+
+--- Component 254 ---
+Representive Net Name: ser3__ser1__dff0__tinv0__Ninternal
+Metal Indices (5): [2807, 2811, 2820, 2869, 2876]
+
+--- Component 255 ---
+Representive Net Name: ddi8<1>
+Metal Indices (14): [78, 142, 1276, 1328, 1351, 1356, 3532, 3571, 7699, 7760, 12969, 13062, 13085, 13117]
+
+--- Component 256 ---
+Representive Net Name: d2<1>:
+Metal Indices (2): [22, 305]
+
+--- Component 257 ---
+Representive Net Name: ser3__ser3__dff1__tinv1__Pinternal
+Metal Indices (5): [2190, 2199, 2208, 2256, 2264]
+
+--- Component 258 ---
+Representive Net Name: ser0__latch1__MEM
+Metal Indices (3): [9224, 9241, 9301]
+
+--- Component 259 ---
+Representive Net Name: ser_8to1_2x__TAP0__NTAP1
+Metal Indices (2): [3799, 3806]
+
+--- Component 260 ---
+Representive Net Name: ser3__ser3__dff1__MEM1
+Metal Indices (2): [7293, 7319]
+
+--- Component 261 ---
+Representive Net Name: ser_8to1_2x__TAP8__NTAP1
+Metal Indices (2): [3639, 3646]
+
+--- Component 262 ---
+Representive Net Name: ser3__ser1__dff1__nand0__Nint
+Metal Indices (5): [8796, 8800, 8809, 8863, 8870]
+
+--- Component 263 ---
+Representive Net Name: ser3__ser2__dff0__tinv0__Pinternal
+Metal Indices (5): [2718, 2727, 2736, 2784, 2792]
+
+--- Component 264 ---
+Representive Net Name: ser1__latch1__I2__Nint
+Metal Indices (5): [10086, 10090, 10099, 10153, 10160]
+
+--- Component 265 ---
+Representive Net Name: ser3__ser2__dff1__tinv0__Ninternal
+Metal Indices (5): [3247, 3251, 3260, 3309, 3316]
+
+--- Component 266 ---
+Representive Net Name: ser3__ser2__TIE
+Metal Indices (7): [1819, 1828, 6051, 6135, 12973, 13071, 13089]
+
+--- Component 267 ---
+Representive Net Name: ser3__ser2__dff1__nand0__Nint
+Metal Indices (5): [8366, 8370, 8379, 8433, 8440]
+
+--- Component 268 ---
+Representive Net Name: ser1__TAP1__NTAP1
+Metal Indices (2): [3959, 3966]
+
+--- Component 269 ---
+Representive Net Name: ser3__ser2__dff0__tinv1__Pinternal
+Metal Indices (5): [3070, 3079, 3088, 3136, 3144]
+
+--- Component 270 ---
+Representive Net Name: ser3__ser0__dff0__nand0__Nint
+Metal Indices (5): [8710, 8714, 8723, 8777, 8784]
+
+--- Component 271 ---
+Representive Net Name: CLK4
+Metal Indices (3): [5176, 5193, 5249]
+
+--- Component 272 ---
+Representive Net Name: ser3__ser3__FT
+Metal Indices (5): [10359, 10364, 10368, 10392, 10396]
+
+--- Component 273 ---
+Representive Net Name: ser3__ser1__dff1__MEM1
+Metal Indices (2): [7189, 7215]
+
+--- Component 274 ---
+Representive Net Name: ser3__ser1__dff1__MEM2
+Metal Indices (5): [1117, 1240, 2119, 2175, 6598]
+
+--- Component 275 ---
+Representive Net Name: DI8<7>
+Metal Indices (10): [67, 132, 505, 548, 2624, 2708, 3519, 3565, 13219, 13279]
+
+--- Component 276 ---
+Representive Net Name: ser0__tinv0__Ninternal
+Metal Indices (5): [4562, 4566, 4575, 4624, 4631]
+
+--- Component 277 ---
+Representive Net Name: ser0__latch0__I0__Ninternal
+Metal Indices (5): [6498, 6502, 6511, 6560, 6567]
+
+--- Component 278 ---
+Representive Net Name: ser3__ser1__latch0__MEM
+Metal Indices (4): [1848, 1876, 9933, 9995]
+
+--- Component 279 ---
+Representive Net Name: ser_8to1_2x__TAP3__PTAP1
+Metal Indices (2): [3785, 3792]
+
+--- Component 280 ---
+Representive Net Name: ser3__ser2__latch0__I0__Pinternal
+Metal Indices (5): [6057, 6066, 6075, 6123, 6131]
+
+--- Component 281 ---
+Representive Net Name: ser2__latch1__I2__Nint
+Metal Indices (5): [10172, 10176, 10185, 10239, 10246]
+
+--- Component 282 ---
+Representive Net Name: ser3__ser2__dff1__tinv0__Pinternal
+Metal Indices (5): [3246, 3255, 3264, 3312, 3320]
+
+--- Component 283 ---
+Representive Net Name: ser3__ser1__dff0__ICLKB
+Metal Indices (2): [6941, 6971]
+
+--- Component 284 ---
+Representive Net Name: ser3__ser1__latch1__I2__Nint
+Metal Indices (5): [9742, 9746, 9755, 9809, 9816]
+
+--- Component 285 ---
+Representive Net Name: ser2__tinv1__Pinternal
+Metal Indices (5): [6321, 6330, 6339, 6387, 6395]
+
+--- Component 286 ---
+Representive Net Name: ser3__ser0__dff1__tinv0__Pinternal
+Metal Indices (5): [2894, 2903, 2912, 2960, 2968]
+
+--- Component 287 ---
+Representive Net Name: ser1__tinv0__Ninternal
+Metal Indices (5): [5442, 5446, 5455, 5504, 5511]
+
+--- Component 288 ---
+Representive Net Name: ser1__tinv1__Ninternal
+Metal Indices (5): [4474, 4478, 4487, 4536, 4543]
+
+--- Component 289 ---
+Representive Net Name: d4<3>:
+Metal Indices (10): [10, 88, 113, 136, 1564, 1573, 4907, 4991, 12484, 12523]
+
+--- Component 290 ---
+Representive Net Name: ser3__ser2__dff0__LATCH
+Metal Indices (5): [1274, 1320, 1349, 3064, 3148]
+
+--- Component 291 ---
+Representive Net Name: ser_8to1_2x__TAP2__PTAP1
+Metal Indices (2): [4105, 4112]
+
+--- Component 292 ---
+Representive Net Name: dddi8<6>
+Metal Indices (6): [1906, 9741, 9750, 9758, 9812, 9818]
+
+--- Component 293 ---
+Representive Net Name: CLK2B
+Metal Indices (2): [10317, 10347]
+
+--- Component 294 ---
+Representive Net Name: ser3__ser2__latch0__MEM
+Metal Indices (2): [10765, 10791]
+
+--- Component 295 ---
+Representive Net Name: ser3__ser1__dff0__nand1__Nint
+Metal Indices (5): [8452, 8456, 8465, 8519, 8526]
+
+--- Component 296 ---
+Representive Net Name: ser2__latch0__I0__Pinternal
+Metal Indices (5): [5353, 5362, 5371, 5419, 5427]
+
+--- Component 297 ---
+Representive Net Name: ser1__latch1__I0__Ninternal
+Metal Indices (5): [6410, 6414, 6423, 6472, 6479]
+
+--- Component 298 ---
+Representive Net Name: ser0__tinv1__Pinternal
+Metal Indices (5): [4209, 4218, 4227, 4275, 4283]
+
+--- Component 299 ---
+Representive Net Name: ser3__ser3__dff0__tinv1__Ninternal
+Metal Indices (5): [2983, 2987, 2996, 3045, 3052]
+
+--- Component 300 ---
+Representive Net Name: dd4<3>
+Metal Indices (8): [91, 154, 6315, 6399, 12412, 12490, 12515, 12524]
+
+--- Component 301 ---
+Representive Net Name: ser3__ser2__tie0__tie
+Metal Indices (3): [11051, 11056, 11090]
+
+--- Component 302 ---
+Representive Net Name: ddi8<3>
+Metal Indices (5): [6783, 6788, 6792, 6816, 6820]
+
+--- Component 303 ---
+Representive Net Name: ser1__TAP2__NTAP1
+Metal Indices (2): [3623, 3630]
+
+------------------------------------------------------------------
+
+Library: serializer_generated
+Cell: ser_8to1_2x
+
+   _ (`-.   ('-.      .-')     .-')      ('-.  _ .-') _   
+  ( (OO  ) ( OO ).-. ( OO ).  ( OO ).  _(  OO)( (  OO) )  
+ _.`     | / . --. /(_)---|_)(_)---|_)(,------.|     .'_  
+(__...--'' | |-.   |/    _ | /    _ |  |  .---',`'--..._) 
+ |  /  | | | |  |  ||  (` `  |  (` `   |  |    |  |   | ' 
+ |  |_.' | | |_.'  | '..`''.  '..`''.  |  '--. |  |   ' | 
+ |  .___.' |  .-.  |.-._)   |.-._)   | |  .--' |  |   / : 
+ |  |      |  | |  ||       /|       / |  `---.|  '--'  / 
+ `--'      `--' `--' `-----'  `-----'  `------'`-------'    
+        
+Overall Graph Netname Consistency: PASSED ✔️
+
+Total Error Count: 0
+├─ Floating: 0
+├─ Open: 0
+├─ Short: 0
+└─ Label: 0
+
+------------------------------------------------------------------
+

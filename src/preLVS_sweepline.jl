@@ -57,6 +57,8 @@ function loadDB(runset::Union{String, Dict})
     root, inst_flatten, cell_list, db_data = get_tree(libname, cellname, db_dir, equiv_net_sets)
     println("Generated tree structure from db\n")
 
+    print_tree(root)
+
     return root, inst_flatten, cell_list, db_data
 end
 
@@ -384,7 +386,7 @@ function runLVS(runset::Union{String, Dict})
     println("graph analysis using BFS complete")
 
     # 8. Create Error Log File
-    create_error_log_file(error_log, error_cnt, log_dir, libname, cellname, hash_rect, nets_visited, djs)
+    create_error_log_file(error_log, error_cnt, log_dir, libname, cellname, hash_rect, nets_visited, djs, cgraph)
     println("error log file created")
 
     return error_log, cgraph, hash_rect

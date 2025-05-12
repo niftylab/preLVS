@@ -1,51 +1,31 @@
-preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.LABEL, 5, 5, "")
-preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.LABEL, 60, 60, "")
-preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.LABEL, 4, 4, "")
-preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.LABEL, 124, 124, "")
-preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.LABEL, 144, 144, "")
-preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.LABEL, 100, 100, "")
-preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.LABEL, 120, 120, "")
-preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.LABEL, 48, 48, "")
-preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.METAL, 132, 5, "")
-preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.METAL, 72, 5, "")
-preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.METAL, 84, 5, "")
-preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.METAL, 2, 117, "")
-preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.METAL, 104, 117, "")
-preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.METAL, 128, 117, "")
-preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.METAL, 1, 251, "")
-preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.METAL, 267, 251, "")
-preLVS_sweepline.ErrorEvent(preLVS_sweepline.SHORT, preLVS_sweepline.METAL, 266, 251, "")
-preLVS_sweepline.ErrorEvent(preLVS_sweepline.OPEN, preLVS_sweepline.NET, 64, 60, "")
-preLVS_sweepline.ErrorEvent(preLVS_sweepline.OPEN, preLVS_sweepline.NET, 144, 124, "")
-preLVS_sweepline.ErrorEvent(preLVS_sweepline.OPEN, preLVS_sweepline.NET, 48, 44, "")
 
 --- Component 1 ---
 Representive Net Name: INN
 Metal Indices (3): [56, 1085, 1139]
 
 --- Component 2 ---
+Representive Net Name: THN
+Metal Indices (3): [60, 1088, 1141]
+
+--- Component 3 ---
 Representive Net Name: CLK:
 Metal Indices (3): [5, 1156, 1180]
 
---- Component 3 ---
+--- Component 4 ---
 Representive Net Name: INTN
 Metal Indices (23): [45, 49, 53, 216, 217, 218, 221, 222, 223, 224, 225, 1020, 1021, 1022, 1025, 1026, 1027, 1028, 1029, 1077, 1080, 1083, 1145]
 
---- Component 4 ---
+--- Component 5 ---
 Representive Net Name: TAILUP
 Metal Indices (13): [30, 101, 106, 109, 113, 118, 121, 1111, 1114, 1116, 1118, 1121, 1123]
 
---- Component 5 ---
+--- Component 6 ---
 Representive Net Name: OUTN
 Metal Indices (6): [117, 258, 264, 1062, 1068, 1120]
 
---- Component 6 ---
+--- Component 7 ---
 Representive Net Name: INTP
 Metal Indices (8): [77, 233, 240, 242, 1037, 1044, 1046, 1099]
-
---- Component 7 ---
-Representive Net Name: comp_pamp_buf__CLKB
-Metal Indices (8): [36, 40, 148, 149, 952, 953, 1072, 1074]
 
 --- Component 8 ---
 Representive Net Name: VSS:
@@ -56,24 +36,24 @@ Representive Net Name: TAIL
 Metal Indices (2): [6, 1157]
 
 --- Component 10 ---
+Representive Net Name: CLKB:
+Metal Indices (8): [36, 40, 148, 149, 952, 953, 1072, 1074]
+
+--- Component 11 ---
 Representive Net Name: OUTP
 Metal Indices (8): [85, 245, 249, 251, 1049, 1053, 1055, 1103]
 
---- Component 11 ---
+--- Component 12 ---
 Representive Net Name: INP
 Metal Indices (3): [52, 1082, 1138]
 
---- Component 12 ---
+--- Component 13 ---
 Representive Net Name: TAILDN
 Metal Indices (13): [31, 125, 130, 133, 137, 142, 145, 1125, 1128, 1130, 1132, 1135, 1137]
 
---- Component 13 ---
-Representive Net Name: VSSG
-Metal Indices (3): [124, 1124, 1146]
-
 --- Component 14 ---
 Representive Net Name: OSN
-Metal Indices (3): [60, 1088, 1141]
+Metal Indices (3): [64, 1091, 1143]
 
 --- Component 15 ---
 Representive Net Name: OSP
@@ -83,27 +63,32 @@ Metal Indices (3): [44, 1076, 1142]
 Representive Net Name: VDD:
 Metal Indices (20): [34, 86, 87, 90, 91, 94, 95, 98, 99, 102, 103, 107, 110, 111, 114, 115, 119, 122, 123, 1152]
 
+--- Component 17 ---
+Representive Net Name: THP
+Metal Indices (3): [48, 1079, 1140]
+
 ------------------------------------------------------------------
 
 Library: comp_generated
 Cell: comp_pamp_buf
 
-            ('-.                          ('-.  _ .-') _   
-           ( OO ).-.                    _(  OO)( (  OO) )  
-   ,------./ . --. /  ,-.-')  ,--.     (,------.|     .'_  
-('-| _.---'| |-.  |   |  |OO) |  |.-')  |  .---',`'--..._) 
-(OO|(_|  . | |  |  |  |  |  | |  | OO ) |  |    |  |   | ' 
-/  |  '--. | |_.'  |  |  |(_/ |  |`-' |(|  '--. |  |   ' | 
-|_)|  .--' |  .-.  | ,|  |_.'(|  '---.' |  .--' |  |   / : 
-  ||  |    |  | |  |(_|  |    |      |  |  `---.|  '--'  / 
-   `--'    `--' `--'  `--'    `------'  `------'`-------'  
+   _ (`-.   ('-.      .-')     .-')      ('-.  _ .-') _   
+  ( (OO  ) ( OO ).-. ( OO ).  ( OO ).  _(  OO)( (  OO) )  
+ _.`     | / . --. /(_)---|_)(_)---|_)(,------.|     .'_  
+(__...--'' | |-.   |/    _ | /    _ |  |  .---',`'--..._) 
+ |  /  | | | |  |  ||  (` `  |  (` `   |  |    |  |   | ' 
+ |  |_.' | | |_.'  | '..`''.  '..`''.  |  '--. |  |   ' | 
+ |  .___.' |  .-.  |.-._)   |.-._)   | |  .--' |  |   / : 
+ |  |      |  | |  ||       /|       / |  `---.|  '--'  / 
+ `--'      `--' `--' `-----'  `-----'  `------'`-------'    
         
-Overall Graph Netname Consistency: FAILED ❌
+Overall Graph Netname Consistency: PASSED ✔️
 
-Total Error Count: 20
+Total Error Count: 0
 ├─ Floating: 0
-├─ Open: 3
-└─ Short: 17
+├─ Open: 0
+├─ Short: 0
+└─ Label: 0
 
 ------------------------------------------------------------------
 

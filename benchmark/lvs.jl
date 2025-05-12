@@ -2,8 +2,8 @@ using BenchmarkTools
 using preLVS_sweepline
 using YAML
 
-libname = "scan_generated"
-cellname = "scan_chain_17bit"
+libname = "serializer_generated"
+cellname = "ser_8to1_2x"
 config_file_path = "config/config_tsmcN28.yaml"
 db_dir = "db"
 metal_dir = "out/metal"
@@ -29,4 +29,8 @@ println("Target: $libname - $cellname\n")
 
 
 # Performance Test
+
+root, inst_flatten, cell_list, db_data = loadDB(runset)
+
+
 error_log, cgraph, hash_rect = runLVS(runset)
