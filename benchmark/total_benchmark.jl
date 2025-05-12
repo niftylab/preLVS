@@ -23,7 +23,8 @@ function run_benchmarks()
         ("flatten", preLVS_vectormerge.flatten),
         ("mergeVector", preLVS_vectormerge.mergeVector),
         ("generate_graph", preLVS_vectormerge.generate_graph),
-        ("runLVS_wo_log", preLVS_vectormerge.runLVS_wo_log)
+        ("runLVS_wo_log", preLVS_vectormerge.runLVS_wo_log),
+        ("runLVS", preLVS_vectormerge.runLVS)
     ]
             
     for i in 1:n_cells

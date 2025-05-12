@@ -1,0 +1,1262 @@
+Total unique nodes found in graph: 246
+
+Starting Connectivity and Netname Consistency Check...
+Error Info:
+
+--- Connectivity Check Report ---
+Total connected components found: 246
+
+--- Component 1 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__dff1__ICLKB
+Netname Consistency: Passed
+Metal Indices (18): [59, 62, 217, 283, 487, 551, 2187, 2202, 2208, 2229, 2233, 2248, 2373, 2414, 2430, 2479, 2527, 2869]
+
+--- Component 2 ---
+Representative Net Name: VSS:
+Netname Consistency: Passed
+Metal Indices (41): [7, 32, 73, 82, 123, 132, 173, 252, 295, 336, 401, 442, 521, 564, 605, 670, 711, 790, 833, 874, 1005, 1051, 1061, 1102, 1111, 1136, 1169, 1184, 1232, 1247, 1286, 1296, 1311, 1375, 1398, 1415, 1456, 1487, 1499, 1522, 2175]
+
+--- Component 3 ---
+Representative Net Name: EN
+Netname Consistency: Passed
+Metal Indices (124): [299, 300, 303, 304, 307, 308, 311, 312, 315, 316, 319, 320, 323, 324, 327, 328, 568, 569, 572, 573, 576, 577, 580, 581, 584, 585, 588, 589, 592, 593, 596, 597, 841, 842, 845, 846, 857, 858, 861, 862, 1315, 1316, 1323, 1324, 1489, 1490, 1572, 1577, 1590, 1601, 1606, 1619, 1664, 1669, 1674, 1690, 1695, 1700, 1765, 1770, 1775, 1786, 1797, 1802, 1807, 1818, 1870, 1875, 1902, 1907, 1987, 1992, 2005, 2019, 2024, 2037, 2092, 2097, 2102, 2124, 2129, 2134, 2204, 2209, 2214, 2230, 2235, 2240, 2291, 2296, 2320, 2325, 2448, 2529, 2530, 2531, 2532, 2533, 2534, 2535, 2536, 2610, 2611, 2614, 2615, 2727, 2729, 2732, 2765, 2777, 2781, 2785, 2791, 2805, 2811, 2815, 2822, 2839, 2844, 2849, 2857, 2872, 2879, 2885]
+
+--- Component 4 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__latch1__MEM
+Netname Consistency: Passed
+Metal Indices (16): [734, 737, 799, 802, 894, 895, 1645, 1646, 1675, 1701, 1726, 1727, 2566, 2594, 2618, 2792]
+
+--- Component 5 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__dff1__LATCH
+Netname Consistency: Passed
+Metal Indices (14): [243, 302, 355, 358, 409, 410, 1642, 1666, 1682, 1692, 1711, 2417, 2458, 2466]
+
+--- Component 6 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__dff0__LATCH
+Netname Consistency: Passed
+Metal Indices (14): [241, 301, 351, 354, 405, 406, 1558, 1574, 1592, 1603, 1632, 2416, 2457, 2465]
+
+--- Component 7 ---
+Representative Net Name: d4<0>:
+Netname Consistency: Passed
+Metal Indices (11): [1088, 1091, 1213, 1214, 2196, 2220, 2246, 2255, 2676, 2696, 2875]
+
+--- Component 8 ---
+Representative Net Name: ser_8to1_2x__ser2__TIE
+Netname Consistency: Passed
+Metal Indices (14): [1143, 1148, 1149, 1319, 1320, 1756, 1885, 1888, 1917, 1920, 2684, 2687, 2728, 2820]
+
+--- Component 9 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__latch1__I2__Nint
+Netname Consistency: Passed
+Metal Indices (4): [843, 879, 923, 1715]
+
+--- Component 10 ---
+Representative Net Name: CLK4
+Netname Consistency: Passed
+Metal Indices (113): [36, 37, 40, 41, 44, 45, 48, 49, 52, 53, 56, 57, 60, 61, 64, 65, 732, 735, 740, 743, 748, 751, 756, 759, 796, 801, 804, 809, 812, 817, 820, 825, 954, 957, 970, 973, 1011, 1022, 1027, 1038, 1567, 1581, 1596, 1609, 1614, 1659, 1672, 1685, 1699, 1702, 1760, 1774, 1777, 1792, 1805, 1865, 1878, 1883, 1897, 1911, 1982, 1996, 2014, 2027, 2032, 2087, 2100, 2119, 2133, 2136, 2199, 2213, 2216, 2225, 2238, 2286, 2299, 2304, 2315, 2329, 2366, 2561, 2562, 2563, 2564, 2601, 2602, 2603, 2604, 2605, 2606, 2607, 2608, 2633, 2634, 2635, 2636, 2649, 2650, 2651, 2652, 2772, 2787, 2797, 2799, 2814, 2830, 2833, 2851, 2865, 2868, 2878, 2892]
+
+--- Component 11 ---
+Representative Net Name: CLK2B
+Netname Consistency: Passed
+Metal Indices (37): [1189, 1193, 1202, 1205, 1209, 1218, 1258, 1266, 1271, 1278, 1283, 1290, 1588, 1618, 1679, 1782, 1887, 1918, 2003, 2036, 2107, 2221, 2308, 2336, 2698, 2705, 2708, 2709, 2712, 2714, 2717, 2776, 2803, 2827, 2837, 2871, 2890]
+
+--- Component 12 ---
+Representative Net Name: VDD:
+Netname Consistency: Passed
+Metal Indices (45): [8, 33, 74, 83, 124, 133, 174, 254, 296, 337, 349, 393, 402, 443, 523, 565, 606, 618, 662, 671, 712, 792, 834, 875, 887, 931, 946, 993, 1006, 1052, 1062, 1103, 1112, 1137, 1170, 1185, 1233, 1250, 1312, 1335, 1343, 1367, 1376, 1523, 2266]
+
+--- Component 13 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__dff1__ICLKB
+Netname Consistency: Passed
+Metal Indices (18): [43, 46, 201, 267, 471, 535, 1746, 1763, 1769, 1796, 1800, 1820, 2369, 2410, 2426, 2475, 2523, 2801]
+
+--- Component 14 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__FT
+Netname Consistency: Passed
+Metal Indices (9): [785, 848, 901, 904, 1858, 1895, 1947, 2580, 2628]
+
+--- Component 15 ---
+Representative Net Name: CLK2
+Netname Consistency: Passed
+Metal Indices (37): [1190, 1194, 1201, 1206, 1210, 1217, 1259, 1267, 1270, 1279, 1282, 1291, 1589, 1617, 1705, 1814, 1886, 1919, 2004, 2035, 2139, 2247, 2307, 2337, 2689, 2700, 2703, 2719, 2720, 2721, 2722, 2773, 2807, 2831, 2834, 2874, 2893]
+
+--- Component 16 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__dff0__tinv0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [150, 183, 231, 1939]
+
+--- Component 17 ---
+Representative Net Name: VSS:
+Netname Consistency: Passed
+Metal Indices (41): [5, 30, 71, 80, 121, 130, 171, 248, 293, 334, 399, 440, 517, 562, 603, 668, 709, 786, 831, 872, 940, 987, 1059, 1100, 1109, 1134, 1167, 1244, 1309, 1333, 1373, 1396, 1413, 1420, 1444, 1451, 1470, 1478, 1485, 1520, 1953]
+
+--- Component 18 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__latch1__MEM
+Netname Consistency: Passed
+Metal Indices (16): [754, 757, 819, 822, 914, 915, 2182, 2183, 2215, 2241, 2262, 2263, 2571, 2599, 2623, 2873]
+
+--- Component 19 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__latch1__I0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [693, 724, 772, 2079]
+
+--- Component 20 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__dff0__tinv1__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [419, 452, 500, 1942]
+
+--- Component 21 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__TIE
+Netname Consistency: Passed
+Metal Indices (14): [674, 675, 837, 838, 1064, 1564, 1579, 1582, 1608, 1611, 2553, 2609, 2677, 2780]
+
+--- Component 22 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__dff1__MEM2
+Netname Consistency: Passed
+Metal Indices (14): [469, 472, 534, 537, 629, 630, 1736, 1750, 1771, 1803, 1823, 2483, 2515, 2539]
+
+--- Component 23 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__dff1__ICLK
+Netname Consistency: Passed
+Metal Indices (18): [109, 112, 218, 282, 486, 552, 2188, 2203, 2207, 2228, 2234, 2249, 2382, 2398, 2446, 2495, 2511, 2867]
+
+--- Component 24 ---
+Representative Net Name: ser_8to1_2x__ser0__FT
+Netname Consistency: Passed
+Metal Indices (9): [1455, 1492, 1508, 1511, 2086, 2118, 2174, 2753, 2770]
+
+--- Component 25 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__dff0__MEM2
+Netname Consistency: Passed
+Metal Indices (14): [461, 464, 526, 529, 621, 622, 1546, 1559, 1578, 1607, 1624, 2481, 2513, 2537]
+
+--- Component 26 ---
+Representative Net Name: ser_8to1_2x__ser1__latch0__I0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [1162, 1187, 1235, 2350]
+
+--- Component 27 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__dff0__ICLK
+Netname Consistency: Passed
+Metal Indices (18): [97, 100, 205, 271, 475, 539, 1854, 1868, 1874, 1901, 1905, 1926, 2379, 2395, 2443, 2492, 2508, 2829]
+
+--- Component 28 ---
+Representative Net Name: VDD:
+Netname Consistency: Passed
+Metal Indices (54): [6, 31, 72, 81, 122, 131, 172, 250, 294, 335, 346, 390, 400, 441, 519, 563, 604, 615, 659, 669, 710, 788, 832, 873, 884, 928, 941, 988, 1004, 1050, 1060, 1101, 1110, 1135, 1168, 1246, 1285, 1295, 1310, 1334, 1342, 1366, 1374, 1397, 1414, 1421, 1445, 1454, 1486, 1498, 1502, 1514, 1521, 2064]
+
+--- Component 29 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__dff1__nand1__Nint
+Netname Consistency: Passed
+Metal Indices (4): [591, 617, 661, 2181]
+
+--- Component 30 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__latch0__I0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [701, 728, 776, 2280]
+
+--- Component 31 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__latch1__I2__Nint
+Netname Consistency: Passed
+Metal Indices (4): [844, 880, 924, 1753]
+
+--- Component 32 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__latch1__I0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [680, 717, 765, 1714]
+
+--- Component 33 ---
+Representative Net Name: dddi8<6>
+Netname Consistency: Passed
+Metal Indices (15): [789, 856, 909, 912, 1030, 1031, 2080, 2105, 2117, 2137, 2169, 2582, 2630, 2658, 2855]
+
+--- Component 34 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__latch0__MEM
+Netname Consistency: Passed
+Metal Indices (16): [746, 749, 811, 814, 906, 907, 1960, 1961, 1998, 2030, 2058, 2059, 2569, 2597, 2621, 2840]
+
+--- Component 35 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__dff0__LATCH
+Netname Consistency: Passed
+Metal Indices (14): [249, 317, 367, 370, 421, 422, 1971, 1989, 2010, 2021, 2055, 2420, 2461, 2469]
+
+--- Component 36 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__latch0__I2__Nint
+Netname Consistency: Passed
+Metal Indices (4): [851, 882, 926, 1932]
+
+--- Component 37 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__OB
+Netname Consistency: Passed
+Metal Indices (16): [952, 955, 1009, 1012, 1069, 1070, 1551, 1637, 1647, 1678, 1704, 1729, 2638, 2653, 2666, 2786]
+
+--- Component 38 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__dff1__MEM2
+Netname Consistency: Passed
+Metal Indices (14): [465, 468, 530, 533, 625, 626, 1652, 1670, 1696, 1712, 1724, 2482, 2514, 2538]
+
+--- Component 39 ---
+Representative Net Name: VSS:
+Netname Consistency: Passed
+Metal Indices (33): [1, 26, 67, 76, 117, 126, 167, 240, 289, 330, 395, 436, 509, 558, 599, 664, 705, 778, 827, 868, 933, 980, 1055, 1096, 1105, 1130, 1163, 1236, 1305, 1330, 1369, 1516, 1541]
+
+--- Component 40 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__dff1__MEM1
+Netname Consistency: Passed
+Metal Indices (14): [196, 199, 261, 264, 356, 357, 1651, 1665, 1691, 1710, 1721, 2401, 2433, 2450]
+
+--- Component 41 ---
+Representative Net Name: VDD:
+Netname Consistency: Passed
+Metal Indices (54): [4, 29, 70, 79, 120, 129, 170, 246, 292, 333, 343, 387, 398, 439, 515, 561, 602, 612, 656, 667, 708, 784, 830, 871, 881, 925, 939, 986, 999, 1045, 1058, 1099, 1108, 1133, 1166, 1177, 1225, 1242, 1308, 1332, 1339, 1363, 1372, 1395, 1412, 1450, 1469, 1477, 1484, 1497, 1501, 1513, 1519, 1842]
+
+--- Component 42 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__dff0__ICLKB
+Netname Consistency: Passed
+Metal Indices (18): [35, 38, 193, 259, 463, 527, 1555, 1570, 1576, 1600, 1604, 1621, 2367, 2408, 2424, 2473, 2521, 2774]
+
+--- Component 43 ---
+Representative Net Name: ddi8<2>
+Netname Consistency: Passed
+Metal Indices (15): [518, 586, 636, 639, 965, 966, 1973, 1999, 2011, 2031, 2057, 2501, 2549, 2641, 2846]
+
+--- Component 44 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__dff0__tinv0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [138, 177, 225, 1631]
+
+--- Component 45 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__FT
+Netname Consistency: Passed
+Metal Indices (9): [793, 864, 917, 920, 2281, 2313, 2360, 2584, 2632]
+
+--- Component 46 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__dff0__MEM2
+Netname Consistency: Passed
+Metal Indices (14): [477, 480, 542, 545, 637, 638, 1958, 1972, 1993, 2025, 2045, 2485, 2517, 2541]
+
+--- Component 47 ---
+Representative Net Name: dd2<1>
+Netname Consistency: Passed
+Metal Indices (15): [1449, 1458, 1459, 1491, 1504, 1507, 1745, 1791, 1831, 1891, 1923, 2751, 2755, 2769, 2817]
+
+--- Component 48 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__dff1__ICLK
+Netname Consistency: Passed
+Metal Indices (18): [93, 96, 202, 266, 470, 536, 1747, 1764, 1768, 1795, 1801, 1821, 2378, 2394, 2442, 2491, 2507, 2798]
+
+--- Component 49 ---
+Representative Net Name: dd4<2>
+Netname Consistency: Passed
+Metal Indices (15): [1245, 1262, 1263, 1325, 1353, 1356, 1966, 2013, 2051, 2108, 2140, 2702, 2710, 2739, 2845]
+
+--- Component 50 ---
+Representative Net Name: VDD:
+Netname Consistency: Passed
+Metal Indices (45): [2, 27, 68, 77, 118, 127, 168, 242, 290, 331, 340, 384, 396, 437, 511, 559, 600, 609, 653, 665, 706, 780, 828, 869, 878, 922, 934, 981, 997, 1043, 1056, 1097, 1106, 1131, 1164, 1238, 1273, 1293, 1306, 1331, 1338, 1362, 1370, 1517, 1640]
+
+--- Component 51 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__tinv1__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [944, 991, 1033, 2195]
+
+--- Component 52 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__dff1__MEM1
+Netname Consistency: Passed
+Metal Indices (14): [200, 203, 265, 268, 360, 361, 1733, 1748, 1766, 1798, 1822, 2402, 2434, 2451]
+
+--- Component 53 ---
+Representative Net Name: ser_8to1_2x__ser2__latch0__MEM
+Netname Consistency: Passed
+Metal Indices (16): [1200, 1203, 1277, 1280, 1350, 1351, 1850, 1851, 1889, 1921, 1949, 1950, 2693, 2715, 2734, 2824]
+
+--- Component 54 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__dff0__ICLK
+Netname Consistency: Passed
+Metal Indices (18): [85, 88, 194, 258, 462, 528, 1556, 1571, 1575, 1599, 1605, 1622, 2376, 2392, 2440, 2489, 2505, 2771]
+
+--- Component 55 ---
+Representative Net Name: ser_8to1_2x__ser1__latch0__MEM
+Netname Consistency: Passed
+Metal Indices (16): [1216, 1219, 1289, 1292, 1358, 1359, 2274, 2275, 2310, 2339, 2362, 2363, 2697, 2718, 2736, 2887]
+
+--- Component 56 ---
+Representative Net Name: DI8<2>
+Netname Consistency: Passed
+Metal Indices (5): [152, 153, 1984, 2016, 2388]
+
+--- Component 57 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__dff0__MEM1
+Netname Consistency: Passed
+Metal Indices (14): [204, 207, 269, 272, 364, 365, 1855, 1871, 1903, 1927, 1940, 2403, 2435, 2452]
+
+--- Component 58 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__tinv0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [979, 1008, 1054, 2348]
+
+--- Component 59 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__tinv0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [976, 1007, 1053, 2282]
+
+--- Component 60 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__TIE
+Netname Consistency: Passed
+Metal Indices (14): [686, 687, 849, 850, 1079, 1877, 1880, 1909, 1912, 1934, 2556, 2612, 2678, 2821]
+
+--- Component 61 ---
+Representative Net Name: DI8<6>
+Netname Consistency: Passed
+Metal Indices (5): [156, 157, 2089, 2121, 2389]
+
+--- Component 62 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__dff0__LATCH
+Netname Consistency: Passed
+Metal Indices (14): [255, 326, 379, 382, 433, 434, 2268, 2293, 2311, 2322, 2343, 2423, 2464, 2472]
+
+--- Component 63 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__dff1__nand0__Nint
+Netname Consistency: Passed
+Metal Indices (4): [306, 342, 386, 1734]
+
+--- Component 64 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__dff1__LATCH
+Netname Consistency: Passed
+Metal Indices (14): [245, 309, 359, 362, 413, 414, 1749, 1767, 1788, 1799, 1833, 2418, 2459, 2467]
+
+--- Component 65 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__dff0__MEM1
+Netname Consistency: Passed
+Metal Indices (14): [220, 223, 285, 288, 380, 381, 2278, 2292, 2321, 2342, 2353, 2407, 2439, 2456]
+
+--- Component 66 ---
+Representative Net Name: VSS:
+Netname Consistency: Passed
+Metal Indices (41): [3, 28, 69, 78, 119, 128, 169, 244, 291, 332, 397, 438, 513, 560, 601, 666, 707, 782, 829, 870, 998, 1044, 1057, 1098, 1107, 1132, 1165, 1176, 1224, 1239, 1274, 1294, 1307, 1371, 1394, 1411, 1448, 1483, 1496, 1518, 1731]
+
+--- Component 67 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__OB
+Netname Consistency: Passed
+Metal Indices (16): [972, 975, 1037, 1040, 1089, 1090, 2185, 2218, 2244, 2264, 2273, 2361, 2643, 2660, 2671, 2880]
+
+--- Component 68 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__dff1__ICLKB
+Netname Consistency: Passed
+Metal Indices (18): [55, 58, 214, 278, 482, 548, 2075, 2091, 2095, 2122, 2128, 2147, 2372, 2413, 2429, 2478, 2526, 2860]
+
+--- Component 69 ---
+Representative Net Name: VSS:
+Netname Consistency: Passed
+Metal Indices (33): [9, 34, 75, 84, 125, 134, 175, 256, 297, 338, 403, 444, 525, 566, 607, 672, 713, 794, 835, 876, 947, 994, 1063, 1104, 1113, 1138, 1171, 1252, 1313, 1336, 1377, 1524, 2365]
+
+--- Component 70 ---
+Representative Net Name: CLK:
+Netname Consistency: Passed
+Metal Indices (19): [1426, 1430, 1437, 1463, 1466, 1475, 1785, 1816, 1922, 2041, 2111, 2144, 2745, 2752, 2761, 2762, 2800, 2842, 2866]
+
+--- Component 71 ---
+Representative Net Name: dddi8<4>
+Netname Consistency: Passed
+Metal Indices (15): [791, 863, 913, 916, 1034, 1035, 2184, 2217, 2224, 2243, 2253, 2583, 2631, 2659, 2877]
+
+--- Component 72 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__latch0__I0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [689, 722, 770, 1974]
+
+--- Component 73 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__latch1__MEM
+Netname Consistency: Passed
+Metal Indices (16): [738, 741, 803, 806, 898, 899, 1738, 1739, 1776, 1808, 1836, 1837, 2567, 2595, 2619, 2806]
+
+--- Component 74 ---
+Representative Net Name: DO
+Netname Consistency: Passed
+Metal Indices (5): [1479, 1482, 1864, 1938, 2764]
+
+--- Component 75 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__dff0__MEM1
+Netname Consistency: Passed
+Metal Indices (14): [192, 195, 257, 260, 352, 353, 1543, 1557, 1573, 1602, 1623, 2400, 2432, 2449]
+
+--- Component 76 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__dff1__MEM2
+Netname Consistency: Passed
+Metal Indices (14): [485, 488, 550, 553, 645, 646, 2180, 2191, 2210, 2236, 2251, 2487, 2519, 2543]
+
+--- Component 77 ---
+Representative Net Name: ddi8<5>
+Netname Consistency: Passed
+Metal Indices (15): [514, 578, 628, 631, 682, 683, 1751, 1772, 1789, 1804, 1835, 2499, 2547, 2555, 2812]
+
+--- Component 78 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__dff0__nand0__Nint
+Netname Consistency: Passed
+Metal Indices (4): [313, 344, 388, 1941]
+
+--- Component 79 ---
+Representative Net Name: ser_8to1_2x__ser1__TIE
+Netname Consistency: Passed
+Metal Indices (14): [1155, 1160, 1161, 1327, 1328, 2197, 2306, 2309, 2335, 2338, 2686, 2688, 2731, 2883]
+
+--- Component 80 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__OB
+Netname Consistency: Passed
+Metal Indices (16): [956, 959, 1021, 1024, 1073, 1074, 1741, 1779, 1811, 1838, 1849, 1948, 2639, 2656, 2667, 2816]
+
+--- Component 81 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__dff0__tinv1__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [416, 451, 499, 1845]
+
+--- Component 82 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__dff0__tinv0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [166, 191, 239, 2352]
+
+--- Component 83 ---
+Representative Net Name: ser_8to1_2x__ser2__tinv1__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [1174, 1222, 1253, 1657]
+
+--- Component 84 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__tie0__tie
+Netname Consistency: Passed
+Metal Indices (7): [1076, 1077, 1078, 1860, 1884, 1916, 2668]
+
+--- Component 85 ---
+Representative Net Name: ser_8to1_2x__ser1__tie0__tie
+Netname Consistency: Passed
+Metal Indices (7): [1156, 1157, 1158, 2219, 2245, 2256, 2682]
+
+--- Component 86 ---
+Representative Net Name: ddi8<0>
+Netname Consistency: Passed
+Metal Indices (15): [524, 595, 648, 651, 977, 978, 2270, 2303, 2312, 2332, 2345, 2504, 2552, 2644, 2882]
+
+--- Component 87 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__TIE
+Netname Consistency: Passed
+Metal Indices (14): [702, 703, 865, 866, 1095, 2298, 2301, 2327, 2330, 2349, 2560, 2616, 2680, 2884]
+
+--- Component 88 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__dff1__nand1__Nint
+Netname Consistency: Passed
+Metal Indices (4): [574, 610, 654, 1725]
+
+--- Component 89 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__tinv1__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [935, 982, 1013, 1655]
+
+--- Component 90 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__latch1__I2__Nint
+Netname Consistency: Passed
+Metal Indices (4): [859, 885, 929, 2154]
+
+--- Component 91 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__dff0__ICLK
+Netname Consistency: Passed
+Metal Indices (18): [113, 116, 221, 287, 491, 555, 2277, 2289, 2295, 2319, 2323, 2341, 2383, 2399, 2447, 2496, 2512, 2891]
+
+--- Component 92 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__dff1__tinv1__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [427, 456, 504, 2164]
+
+--- Component 93 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__dff0__LATCH
+Netname Consistency: Passed
+Metal Indices (14): [247, 310, 363, 366, 417, 418, 1844, 1872, 1893, 1904, 1928, 2419, 2460, 2468]
+
+--- Component 94 ---
+Representative Net Name: d4<3>:
+Netname Consistency: Passed
+Metal Indices (11): [1068, 1071, 1140, 1141, 1587, 1616, 1656, 1717, 2673, 2683, 2788]
+
+--- Component 95 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__dff0__tinv1__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [423, 454, 502, 2056]
+
+--- Component 96 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__tinv0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [960, 1000, 1046, 1859]
+
+--- Component 97 ---
+Representative Net Name: CLK4B
+Netname Consistency: Passed
+Metal Indices (113): [86, 87, 90, 91, 94, 95, 98, 99, 102, 103, 106, 107, 110, 111, 114, 115, 731, 736, 739, 744, 747, 752, 755, 760, 797, 800, 805, 808, 813, 816, 821, 824, 953, 958, 969, 974, 1010, 1023, 1026, 1039, 1568, 1580, 1585, 1597, 1610, 1660, 1673, 1676, 1686, 1698, 1761, 1773, 1793, 1806, 1809, 1866, 1879, 1898, 1910, 1915, 1983, 1995, 2000, 2015, 2028, 2088, 2101, 2104, 2120, 2132, 2200, 2212, 2226, 2239, 2242, 2287, 2300, 2316, 2328, 2333, 2375, 2573, 2574, 2575, 2576, 2585, 2586, 2587, 2588, 2589, 2590, 2591, 2592, 2645, 2646, 2647, 2648, 2661, 2662, 2663, 2664, 2775, 2784, 2794, 2802, 2818, 2826, 2836, 2848, 2861, 2870, 2881, 2889]
+
+--- Component 98 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__latch0__I2__Nint
+Netname Consistency: Passed
+Metal Indices (4): [867, 888, 932, 2347]
+
+--- Component 99 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__tie0__tie
+Netname Consistency: Passed
+Metal Indices (7): [1065, 1066, 1067, 1586, 1615, 1628, 2665]
+
+--- Component 100 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__dff1__ICLK
+Netname Consistency: Passed
+Metal Indices (18): [89, 92, 197, 263, 467, 531, 1650, 1662, 1668, 1689, 1693, 1709, 2377, 2393, 2441, 2490, 2506, 2796]
+
+--- Component 101 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__latch0__MEM
+Netname Consistency: Passed
+Metal Indices (16): [730, 733, 795, 798, 890, 891, 1548, 1549, 1583, 1612, 1635, 1636, 2565, 2593, 2617, 2778]
+
+--- Component 102 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__dff1__MEM1
+Netname Consistency: Passed
+Metal Indices (14): [212, 215, 277, 280, 372, 373, 2077, 2093, 2125, 2149, 2162, 2405, 2437, 2454]
+
+--- Component 103 ---
+Representative Net Name: DI8<5>
+Netname Consistency: Passed
+Metal Indices (5): [144, 145, 1762, 1794, 2386]
+
+--- Component 104 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__dff1__tinv0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [143, 180, 228, 1732]
+
+--- Component 105 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__dff1__ICLKB
+Netname Consistency: Passed
+Metal Indices (18): [39, 42, 198, 262, 466, 532, 1649, 1663, 1667, 1688, 1694, 1708, 2368, 2409, 2425, 2474, 2522, 2793]
+
+--- Component 106 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__dff1__nand1__Nint
+Netname Consistency: Passed
+Metal Indices (4): [590, 616, 660, 2166]
+
+--- Component 107 ---
+Representative Net Name: ser_8to1_2x__ser0__tinv1__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [1419, 1443, 1460, 1937]
+
+--- Component 108 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__dff0__nand0__Nint
+Netname Consistency: Passed
+Metal Indices (4): [298, 339, 383, 1544]
+
+--- Component 109 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__latch0__MEM
+Netname Consistency: Passed
+Metal Indices (16): [758, 761, 823, 826, 918, 919, 2271, 2272, 2302, 2331, 2358, 2359, 2572, 2600, 2624, 2886]
+
+--- Component 110 ---
+Representative Net Name: ser_8to1_2x__ser1__latch1__MEM
+Netname Consistency: Passed
+Metal Indices (16): [1204, 1207, 1281, 1284, 1354, 1355, 1964, 1965, 2006, 2038, 2061, 2062, 2694, 2716, 2735, 2841]
+
+--- Component 111 ---
+Representative Net Name: ser_8to1_2x__ser2__latch1__MEM
+Netname Consistency: Passed
+Metal Indices (16): [1188, 1191, 1269, 1272, 1346, 1347, 1552, 1553, 1591, 1620, 1638, 1639, 2690, 2713, 2733, 2779]
+
+--- Component 112 ---
+Representative Net Name: ddi8<1>
+Netname Consistency: Passed
+Metal Indices (15): [516, 579, 632, 635, 961, 962, 1846, 1882, 1894, 1914, 1930, 2500, 2548, 2640, 2819]
+
+--- Component 113 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__dff0__MEM2
+Netname Consistency: Passed
+Metal Indices (14): [473, 476, 538, 541, 633, 634, 1856, 1876, 1908, 1929, 1943, 2484, 2516, 2540]
+
+--- Component 114 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__FT
+Netname Consistency: Passed
+Metal Indices (9): [779, 839, 889, 892, 1550, 1594, 1626, 2577, 2625]
+
+--- Component 115 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__dff0__MEM2
+Netname Consistency: Passed
+Metal Indices (14): [489, 492, 554, 557, 649, 650, 2279, 2297, 2326, 2344, 2356, 2488, 2520, 2544]
+
+--- Component 116 ---
+Representative Net Name: ser_8to1_2x__ser0__OB
+Netname Consistency: Passed
+Metal Indices (16): [1428, 1431, 1461, 1464, 1480, 1481, 1852, 1892, 1924, 1952, 1967, 2063, 2747, 2756, 2763, 2828]
+
+--- Component 117 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__tinv0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [964, 1002, 1048, 1976]
+
+--- Component 118 ---
+Representative Net Name: ser_8to1_2x__ser0__latch1__I2__Nint
+Netname Consistency: Passed
+Metal Indices (4): [1488, 1500, 1512, 1759]
+
+--- Component 119 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__latch0__MEM
+Netname Consistency: Passed
+Metal Indices (16): [742, 745, 807, 810, 902, 903, 1847, 1848, 1881, 1913, 1945, 1946, 2568, 2596, 2620, 2823]
+
+--- Component 120 ---
+Representative Net Name: DI8<3>
+Netname Consistency: Passed
+Metal Indices (5): [136, 137, 1569, 1598, 2384]
+
+--- Component 121 ---
+Representative Net Name: dddi8<5>
+Netname Consistency: Passed
+Metal Indices (15): [783, 847, 897, 900, 1018, 1019, 1740, 1778, 1790, 1810, 1825, 2579, 2627, 2655, 2813]
+
+--- Component 122 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__dff1__LATCH
+Netname Consistency: Passed
+Metal Indices (14): [253, 325, 375, 378, 429, 430, 2190, 2206, 2222, 2232, 2259, 2422, 2463, 2471]
+
+--- Component 123 ---
+Representative Net Name: ser_8to1_2x__ser1__tinv1__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [1183, 1231, 1264, 2157]
+
+--- Component 124 ---
+Representative Net Name: d2<0>:
+Netname Consistency: Passed
+Metal Indices (13): [1301, 1304, 1433, 1434, 2008, 2040, 2084, 2158, 2726, 2730, 2748, 2847, 2853]
+
+--- Component 125 ---
+Representative Net Name: ser_8to1_2x__ser2__latch1__I2__Nint
+Netname Consistency: Passed
+Metal Indices (4): [1314, 1337, 1361, 1566]
+
+--- Component 126 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__dff0__nand1__Nint
+Netname Consistency: Passed
+Metal Indices (4): [567, 608, 652, 1547]
+
+--- Component 127 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__dff1__MEM1
+Netname Consistency: Passed
+Metal Indices (14): [216, 219, 281, 284, 376, 377, 2177, 2189, 2205, 2231, 2250, 2406, 2438, 2455]
+
+--- Component 128 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__dff0__ICLKB
+Netname Consistency: Passed
+Metal Indices (18): [47, 50, 206, 270, 474, 540, 1853, 1869, 1873, 1900, 1906, 1925, 2370, 2411, 2427, 2476, 2524, 2825]
+
+--- Component 129 ---
+Representative Net Name: dddi8<7>
+Netname Consistency: Passed
+Metal Indices (15): [781, 840, 893, 896, 1014, 1015, 1654, 1677, 1684, 1703, 1728, 2578, 2626, 2654, 2790]
+
+--- Component 130 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__latch0__I2__Nint
+Netname Consistency: Passed
+Metal Indices (4): [836, 877, 921, 1562]
+
+--- Component 131 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__dff1__LATCH
+Netname Consistency: Passed
+Metal Indices (14): [251, 318, 371, 374, 425, 426, 2066, 2094, 2115, 2126, 2150, 2421, 2462, 2470]
+
+--- Component 132 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__dff1__nand0__Nint
+Netname Consistency: Passed
+Metal Indices (4): [322, 348, 392, 2178]
+
+--- Component 133 ---
+Representative Net Name: ser_8to1_2x__ser2__latch1__I0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [1139, 1172, 1220, 1565]
+
+--- Component 134 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__dff1__tinv0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [139, 178, 226, 1641]
+
+--- Component 135 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__tinv1__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [938, 985, 1020, 1826]
+
+--- Component 136 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__latch0__I0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [704, 729, 777, 2346]
+
+--- Component 137 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__latch1__I0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [700, 727, 775, 2252]
+
+--- Component 138 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__dff0__nand1__Nint
+Netname Consistency: Passed
+Metal Indices (4): [598, 619, 663, 2357]
+
+--- Component 139 ---
+Representative Net Name: ser_8to1_2x__ser1__tinv1__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [1182, 1230, 1261, 2083]
+
+--- Component 140 ---
+Representative Net Name: ser_8to1_2x__ser2__OB
+Netname Consistency: Passed
+Metal Indices (16): [1192, 1195, 1257, 1260, 1298, 1299, 1648, 1681, 1707, 1730, 1742, 1839, 2691, 2707, 2723, 2795]
+
+--- Component 141 ---
+Representative Net Name: ddi8<3>
+Netname Consistency: Passed
+Metal Indices (15): [510, 570, 620, 623, 949, 950, 1560, 1584, 1593, 1613, 1634, 2497, 2545, 2637, 2783]
+
+--- Component 142 ---
+Representative Net Name: ser_8to1_2x__ser1__latch0__I2__Nint
+Netname Consistency: Passed
+Metal Indices (4): [1329, 1344, 1368, 2351]
+
+--- Component 143 ---
+Representative Net Name: CLKB:
+Netname Consistency: Passed
+Metal Indices (19): [1425, 1429, 1438, 1462, 1467, 1474, 1784, 1817, 1890, 2009, 2112, 2143, 2750, 2754, 2757, 2759, 2804, 2838, 2863]
+
+--- Component 144 ---
+Representative Net Name: ser_8to1_2x__ser1__tinv0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [1215, 1249, 1288, 2257]
+
+--- Component 145 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__dff0__tinv1__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [420, 453, 501, 1957]
+
+--- Component 146 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__dff1__ICLK
+Netname Consistency: Passed
+Metal Indices (18): [105, 108, 213, 279, 483, 547, 2076, 2090, 2096, 2123, 2127, 2148, 2381, 2397, 2445, 2494, 2510, 2864]
+
+--- Component 147 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__dff0__tinv1__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [407, 446, 494, 1633]
+
+--- Component 148 ---
+Representative Net Name: ser_8to1_2x__ser1__tinv0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [1212, 1248, 1287, 2198]
+
+--- Component 149 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__OB
+Netname Consistency: Passed
+Metal Indices (16): [968, 971, 1025, 1028, 1085, 1086, 1963, 2060, 2071, 2106, 2138, 2170, 2642, 2657, 2670, 2850]
+
+--- Component 150 ---
+Representative Net Name: ser_8to1_2x__ser1__FT
+Netname Consistency: Passed
+Metal Indices (9): [1251, 1326, 1357, 1360, 2285, 2314, 2364, 2704, 2740]
+
+--- Component 151 ---
+Representative Net Name: ser_8to1_2x__ser2__tie0__tie
+Netname Consistency: Passed
+Metal Indices (7): [1144, 1145, 1146, 1780, 1812, 1828, 2681]
+
+--- Component 152 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__latch1__MEM
+Netname Consistency: Passed
+Metal Indices (16): [750, 753, 815, 818, 910, 911, 2069, 2070, 2103, 2135, 2167, 2168, 2570, 2598, 2622, 2858]
+
+--- Component 153 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__tinv0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [963, 1001, 1047, 1933]
+
+--- Component 154 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__dff0__ICLKB
+Netname Consistency: Passed
+Metal Indices (18): [51, 54, 209, 275, 479, 543, 1968, 1985, 1991, 2018, 2022, 2042, 2371, 2412, 2428, 2477, 2525, 2835]
+
+--- Component 155 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__latch1__I0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [684, 719, 767, 1824]
+
+--- Component 156 ---
+Representative Net Name: ser_8to1_2x__ser0__latch1__MEM
+Netname Consistency: Passed
+Metal Indices (16): [1424, 1427, 1465, 1468, 1505, 1506, 1743, 1744, 1787, 1819, 1840, 1841, 2746, 2758, 2767, 2808]
+
+--- Component 157 ---
+Representative Net Name: DI8<4>
+Netname Consistency: Passed
+Metal Indices (5): [160, 161, 2201, 2227, 2390]
+
+--- Component 158 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__dff1__MEM2
+Netname Consistency: Passed
+Metal Indices (14): [481, 484, 546, 549, 641, 642, 2078, 2098, 2130, 2151, 2165, 2486, 2518, 2542]
+
+--- Component 159 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__tinv1__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [936, 983, 1016, 1716]
+
+--- Component 160 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__latch0__I0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [692, 723, 771, 2046]
+
+--- Component 161 ---
+Representative Net Name: ser_8to1_2x__ser0__tinv0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [1435, 1453, 1472, 2053]
+
+--- Component 162 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__dff0__tinv0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [147, 182, 230, 1843]
+
+--- Component 163 ---
+Representative Net Name: ser_8to1_2x__ser0__TIE
+Netname Consistency: Passed
+Metal Indices (14): [1403, 1408, 1409, 1493, 1494, 1980, 2110, 2113, 2142, 2145, 2743, 2744, 2766, 2856]
+
+--- Component 164 ---
+Representative Net Name: ser_8to1_2x__ser1__latch1__I2__Nint
+Netname Consistency: Passed
+Metal Indices (4): [1322, 1341, 1365, 1979]
+
+--- Component 165 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__dff0__tinv1__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [404, 445, 493, 1545]
+
+--- Component 166 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__dff0__MEM1
+Netname Consistency: Passed
+Metal Indices (14): [208, 211, 273, 276, 368, 369, 1955, 1970, 1988, 2020, 2044, 2404, 2436, 2453]
+
+--- Component 167 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__dff1__nand0__Nint
+Netname Consistency: Passed
+Metal Indices (4): [321, 347, 391, 2163]
+
+--- Component 168 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__latch0__I0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [685, 720, 768, 1857]
+
+--- Component 169 ---
+Representative Net Name: ser_8to1_2x__ser0__latch1__I0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [1399, 1416, 1440, 1758]
+
+--- Component 170 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__tinv1__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [942, 989, 1029, 2081]
+
+--- Component 171 ---
+Representative Net Name: d4<1>:
+Netname Consistency: Passed
+Metal Indices (11): [1072, 1075, 1197, 1198, 1755, 1781, 1813, 1827, 2674, 2692, 2809]
+
+--- Component 172 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__dff1__tinv0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [155, 186, 234, 2065]
+
+--- Component 173 ---
+Representative Net Name: ddi8<6>
+Netname Consistency: Passed
+Metal Indices (15): [520, 587, 640, 643, 694, 695, 2068, 2099, 2116, 2131, 2152, 2502, 2550, 2558, 2854]
+
+--- Component 174 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__tinv0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [951, 996, 1042, 1627]
+
+--- Component 175 ---
+Representative Net Name: ser_8to1_2x__ser0__latch0__I0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [1410, 1423, 1447, 2159]
+
+--- Component 176 ---
+Representative Net Name: ser_8to1_2x__ser0__latch0__I2__Nint
+Netname Consistency: Passed
+Metal Indices (4): [1495, 1503, 1515, 2160]
+
+--- Component 177 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__dff0__ICLK
+Netname Consistency: Passed
+Metal Indices (18): [101, 104, 210, 274, 478, 544, 1969, 1986, 1990, 2017, 2023, 2043, 2380, 2396, 2444, 2493, 2509, 2832]
+
+--- Component 178 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__dff0__nand1__Nint
+Netname Consistency: Passed
+Metal Indices (4): [583, 614, 658, 1959]
+
+--- Component 179 ---
+Representative Net Name: ser_8to1_2x__ser0__latch0__MEM
+Netname Consistency: Passed
+Metal Indices (16): [1436, 1439, 1473, 1476, 1509, 1510, 2073, 2074, 2114, 2146, 2172, 2173, 2749, 2760, 2768, 2859]
+
+--- Component 180 ---
+Representative Net Name: ser_8to1_2x__ser1__OB
+Netname Consistency: Passed
+Metal Indices (16): [1208, 1211, 1265, 1268, 1302, 1303, 2072, 2109, 2141, 2171, 2186, 2265, 2695, 2711, 2724, 2862]
+
+--- Component 181 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__dff1__nand1__Nint
+Netname Consistency: Passed
+Metal Indices (4): [575, 611, 655, 1737]
+
+--- Component 182 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__latch1__I2__Nint
+Netname Consistency: Passed
+Metal Indices (4): [860, 886, 930, 2194]
+
+--- Component 183 ---
+Representative Net Name: ser_8to1_2x__ser2__latch0__I0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [1150, 1179, 1227, 1935]
+
+--- Component 184 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__tie0__tie
+Netname Consistency: Passed
+Metal Indices (7): [1092, 1093, 1094, 2283, 2305, 2334, 2672]
+
+--- Component 185 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__tinv1__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [943, 990, 1032, 2155]
+
+--- Component 186 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__FT
+Netname Consistency: Passed
+Metal Indices (9): [787, 855, 905, 908, 1962, 2012, 2047, 2581, 2629]
+
+--- Component 187 ---
+Representative Net Name: d4<2>:
+Netname Consistency: Passed
+Metal Indices (11): [1084, 1087, 1152, 1153, 2002, 2034, 2082, 2156, 2675, 2685, 2852]
+
+--- Component 188 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__tinv1__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [937, 984, 1017, 1754]
+
+--- Component 189 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__latch0__I2__Nint
+Netname Consistency: Passed
+Metal Indices (4): [852, 883, 927, 1975]
+
+--- Component 190 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__dff0__ICLKB
+Netname Consistency: Passed
+Metal Indices (18): [63, 66, 222, 286, 490, 556, 2276, 2290, 2294, 2318, 2324, 2340, 2374, 2415, 2431, 2480, 2528, 2888]
+
+--- Component 191 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__TIE
+Netname Consistency: Passed
+Metal Indices (14): [690, 691, 853, 854, 1080, 1977, 1994, 1997, 2026, 2029, 2557, 2613, 2679, 2843]
+
+--- Component 192 ---
+Representative Net Name: ser_8to1_2x__ser2__latch0__I0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [1147, 1178, 1226, 1861]
+
+--- Component 193 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__dff1__tinv0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [146, 181, 229, 1832]
+
+--- Component 194 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__dff1__nand0__Nint
+Netname Consistency: Passed
+Metal Indices (4): [305, 341, 385, 1722]
+
+--- Component 195 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__latch0__I0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [676, 715, 763, 1625]
+
+--- Component 196 ---
+Representative Net Name: ser_8to1_2x__ser2__FT
+Netname Consistency: Passed
+Metal Indices (9): [1243, 1318, 1349, 1352, 1862, 1896, 1951, 2701, 2738]
+
+--- Component 197 ---
+Representative Net Name: dd4<3>
+Netname Consistency: Passed
+Metal Indices (15): [1237, 1254, 1255, 1317, 1345, 1348, 1554, 1595, 1630, 1680, 1706, 2699, 2706, 2737, 2782]
+
+--- Component 198 ---
+Representative Net Name: ddi8<7>
+Netname Consistency: Passed
+Metal Indices (15): [512, 571, 624, 627, 678, 679, 1644, 1671, 1683, 1697, 1713, 2498, 2546, 2554, 2789]
+
+--- Component 199 ---
+Representative Net Name: ser_8to1_2x__ser2__tinv0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [1196, 1240, 1275, 1757]
+
+--- Component 200 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__latch1__I0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [677, 716, 764, 1653]
+
+--- Component 201 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__dff0__tinv0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [151, 184, 232, 1954]
+
+--- Component 202 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__dff1__tinv1__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [415, 450, 498, 1834]
+
+--- Component 203 ---
+Representative Net Name: d2<1>:
+Netname Consistency: Passed
+Metal Indices (11): [1297, 1300, 1400, 1401, 1658, 1719, 1783, 1815, 2725, 2742, 2810]
+
+--- Component 204 ---
+Representative Net Name: ddi8<4>
+Netname Consistency: Passed
+Metal Indices (15): [522, 594, 644, 647, 698, 699, 2192, 2211, 2223, 2237, 2261, 2503, 2551, 2559, 2876]
+
+--- Component 205 ---
+Representative Net Name: ser_8to1_2x__ser0__tie0__tie
+Netname Consistency: Passed
+Metal Indices (7): [1404, 1405, 1406, 2007, 2039, 2052, 2741]
+
+--- Component 206 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__tie0__tie
+Netname Consistency: Passed
+Metal Indices (7): [1081, 1082, 1083, 2001, 2033, 2049, 2669]
+
+--- Component 207 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__latch1__I0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [681, 718, 766, 1752]
+
+--- Component 208 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__dff1__tinv1__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [408, 447, 495, 1643]
+
+--- Component 209 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__dff1__tinv0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [162, 189, 237, 2258]
+
+--- Component 210 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__tinv1__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [945, 992, 1036, 2254]
+
+--- Component 211 ---
+Representative Net Name: ser_8to1_2x__ser1__latch1__I0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [1154, 1181, 1229, 2050]
+
+--- Component 212 ---
+Representative Net Name: DI8<7>
+Netname Consistency: Passed
+Metal Indices (5): [140, 141, 1661, 1687, 2385]
+
+--- Component 213 ---
+Representative Net Name: ser_8to1_2x__ser0__tinv1__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [1418, 1442, 1457, 1863]
+
+--- Component 214 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__latch1__I0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [697, 726, 774, 2193]
+
+--- Component 215 ---
+Representative Net Name: ser_8to1_2x__ser1__latch1__I0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [1151, 1180, 1228, 1978]
+
+--- Component 216 ---
+Representative Net Name: ser_8to1_2x__ser2__latch1__I0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [1142, 1173, 1221, 1629]
+
+--- Component 217 ---
+Representative Net Name: DI8<0>
+Netname Consistency: Passed
+Metal Indices (5): [164, 165, 2288, 2317, 2391]
+
+--- Component 218 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__dff1__tinv1__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [424, 455, 503, 2067]
+
+--- Component 219 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__dff0__tinv0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [135, 176, 224, 1542]
+
+--- Component 220 ---
+Representative Net Name: ser_8to1_2x__ser2__latch0__I2__Nint
+Netname Consistency: Passed
+Metal Indices (4): [1321, 1340, 1364, 1936]
+
+--- Component 221 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__tinv0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [948, 995, 1041, 1563]
+
+--- Component 222 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__dff0__tinv0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [154, 185, 233, 2054]
+
+--- Component 223 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__dff0__tinv1__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [435, 460, 508, 2355]
+
+--- Component 224 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__dff1__tinv1__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [431, 458, 506, 2260]
+
+--- Component 225 ---
+Representative Net Name: ser_8to1_2x__ser1__latch0__I0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [1159, 1186, 1234, 2284]
+
+--- Component 226 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__latch0__I0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [673, 714, 762, 1561]
+
+--- Component 227 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__dff0__tinv1__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [432, 459, 507, 2269]
+
+--- Component 228 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__dff1__tinv1__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [428, 457, 505, 2179]
+
+--- Component 229 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__dff1__tinv0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [142, 179, 227, 1720]
+
+--- Component 230 ---
+Representative Net Name: ser_8to1_2x__ser2__tinv1__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [1175, 1223, 1256, 1718]
+
+--- Component 231 ---
+Representative Net Name: ser_8to1_2x__ser0__tinv0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [1432, 1452, 1471, 1981]
+
+--- Component 232 ---
+Representative Net Name: ser_8to1_2x__ser2__tinv0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [1199, 1241, 1276, 1829]
+
+--- Component 233 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__dff0__nand0__Nint
+Netname Consistency: Passed
+Metal Indices (4): [314, 345, 389, 1956]
+
+--- Component 234 ---
+Representative Net Name: ser_8to1_2x__ser0__latch1__I0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [1402, 1417, 1441, 1830]
+
+--- Component 235 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__dff0__nand0__Nint
+Netname Consistency: Passed
+Metal Indices (4): [329, 350, 394, 2354]
+
+--- Component 236 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__dff1__tinv0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [159, 188, 236, 2176]
+
+--- Component 237 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__tinv0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [967, 1003, 1049, 2048]
+
+--- Component 238 ---
+Representative Net Name: DI8<1>
+Netname Consistency: Passed
+Metal Indices (5): [148, 149, 1867, 1899, 2387]
+
+--- Component 239 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__latch0__I0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [688, 721, 769, 1931]
+
+--- Component 240 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__dff1__tinv1__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [412, 449, 497, 1735]
+
+--- Component 241 ---
+Representative Net Name: ser_8to1_2x__ser3__ser2__dff0__nand1__Nint
+Netname Consistency: Passed
+Metal Indices (4): [582, 613, 657, 1944]
+
+--- Component 242 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__latch1__I0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [696, 725, 773, 2153]
+
+--- Component 243 ---
+Representative Net Name: ser_8to1_2x__ser0__latch0__I0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [1407, 1422, 1446, 2085]
+
+--- Component 244 ---
+Representative Net Name: ser_8to1_2x__ser3__ser3__dff1__tinv1__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [411, 448, 496, 1723]
+
+--- Component 245 ---
+Representative Net Name: ser_8to1_2x__ser3__ser1__dff1__tinv0__Ninternal
+Netname Consistency: Passed
+Metal Indices (4): [158, 187, 235, 2161]
+
+--- Component 246 ---
+Representative Net Name: ser_8to1_2x__ser3__ser0__dff0__tinv0__Pinternal
+Netname Consistency: Passed
+Metal Indices (4): [163, 190, 238, 2267]
+
+------------------------------------------------------------------
+
+Library: serializer_generated
+Cell: ser_8to1_2x
+
+   _ (`-.   ('-.      .-')     .-')      ('-.  _ .-') _   
+  ( (OO  ) ( OO ).-. ( OO ).  ( OO ).  _(  OO)( (  OO) )  
+ _.`     | / . --. /(_)---|_)(_)---|_)(,------.|     .'_  
+(__...--'' | |-.   |/    _ | /    _ |  |  .---',`'--..._) 
+ |  /  | | | |  |  ||  (` `  |  (` `   |  |    |  |   | ' 
+ |  |_.' | | |_.'  | '..`''.  '..`''.  |  '--. |  |   ' | 
+ |  .___.' |  .-.  |.-._)   |.-._)   | |  .--' |  |   / : 
+ |  |      |  | |  ||       /|       / |  `---.|  '--'  / 
+ `--'      `--' `--' `-----'  `-----'  `------'`-------'    
+        
+Overall Graph Netname Consistency: PASSED ✔️
+
+Total Error Count: 0
+├─ Floating: 0
+├─ Open: 0
+└─ Short: 0
+
+------------------------------------------------------------------
+

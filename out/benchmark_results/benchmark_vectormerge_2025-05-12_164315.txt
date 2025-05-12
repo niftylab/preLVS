@@ -1,0 +1,165 @@
+Cell: serializer_generated - ser_8to1_2x
+  Function: loadDB
+    Mean Time: 2.27086e7 ns
+    Std Time: NaN ns
+    Median Time: 2.27086e7 ns
+    Min Time: 2.27086e7 ns
+    Max Time: 2.27086e7 ns
+    Allocations: 451206
+    Memory: 35605928 bytes
+    Samples Run: 1
+  Function: flatten
+    Mean Time: 2.91562e7 ns
+    Std Time: NaN ns
+    Median Time: 2.91562e7 ns
+    Min Time: 2.91562e7 ns
+    Max Time: 2.91562e7 ns
+    Allocations: 692538
+    Memory: 46833816 bytes
+    Samples Run: 1
+  Function: mergeVector
+    Mean Time: 2.92092e7 ns
+    Std Time: NaN ns
+    Median Time: 2.92092e7 ns
+    Min Time: 2.92092e7 ns
+    Max Time: 2.92092e7 ns
+    Allocations: 706000
+    Memory: 48296968 bytes
+    Samples Run: 1
+  Function: generate_graph
+    Mean Time: 3.08768e7 ns
+    Std Time: NaN ns
+    Median Time: 3.08768e7 ns
+    Min Time: 3.08768e7 ns
+    Max Time: 3.08768e7 ns
+    Allocations: 740934
+    Memory: 50354824 bytes
+    Samples Run: 1
+  Function: runLVS_wo_log
+    Mean Time: 3.55639e7 ns
+    Std Time: NaN ns
+    Median Time: 3.55639e7 ns
+    Min Time: 3.55639e7 ns
+    Max Time: 3.55639e7 ns
+    Allocations: 744429
+    Memory: 51070728 bytes
+    Samples Run: 1
+  Function: runLVS
+    Mean Time: 3.83791e7 ns
+    Std Time: NaN ns
+    Median Time: 3.83791e7 ns
+    Min Time: 3.83791e7 ns
+    Max Time: 3.83791e7 ns
+    Allocations: 755052
+    Memory: 51531752 bytes
+    Samples Run: 1
+Cell: serializer_generated - ser_8to4_2x
+  Function: loadDB
+    Mean Time: 2.09536e7 ns
+    Std Time: NaN ns
+    Median Time: 2.09536e7 ns
+    Min Time: 2.09536e7 ns
+    Max Time: 2.09536e7 ns
+    Allocations: 442345
+    Memory: 35117824 bytes
+    Samples Run: 1
+  Function: flatten
+    Mean Time: 2.51274e7 ns
+    Std Time: NaN ns
+    Median Time: 2.51274e7 ns
+    Min Time: 2.51274e7 ns
+    Max Time: 2.51274e7 ns
+    Allocations: 609677
+    Memory: 42896360 bytes
+    Samples Run: 1
+  Function: mergeVector
+    Mean Time: 2.57654e7 ns
+    Std Time: NaN ns
+    Median Time: 2.57654e7 ns
+    Min Time: 2.57654e7 ns
+    Max Time: 2.57654e7 ns
+    Allocations: 619628
+    Memory: 44007912 bytes
+    Samples Run: 1
+  Function: generate_graph
+    Mean Time: 2.59539e7 ns
+    Std Time: NaN ns
+    Median Time: 2.59539e7 ns
+    Min Time: 2.59539e7 ns
+    Max Time: 2.59539e7 ns
+    Allocations: 645946
+    Memory: 45373416 bytes
+    Samples Run: 1
+  Function: runLVS_wo_log
+    Mean Time: 3.19501e7 ns
+    Std Time: NaN ns
+    Median Time: 3.19501e7 ns
+    Min Time: 3.19501e7 ns
+    Max Time: 3.19501e7 ns
+    Allocations: 648619
+    Memory: 45718952 bytes
+    Samples Run: 1
+  Function: runLVS
+    Mean Time: 3.05876e7 ns
+    Std Time: NaN ns
+    Median Time: 3.05876e7 ns
+    Min Time: 3.05876e7 ns
+    Max Time: 3.05876e7 ns
+    Allocations: 656650
+    Memory: 46066888 bytes
+    Samples Run: 1
+Cell: serializer_generated - ser_2to1_2x
+  Function: loadDB
+    Mean Time: 1.97988e7 ns
+    Std Time: NaN ns
+    Median Time: 1.97988e7 ns
+    Min Time: 1.97988e7 ns
+    Max Time: 1.97988e7 ns
+    Allocations: 434209
+    Memory: 34701832 bytes
+    Samples Run: 1
+  Function: flatten
+    Mean Time: 2.22618e7 ns
+    Std Time: NaN ns
+    Median Time: 2.22618e7 ns
+    Min Time: 2.22618e7 ns
+    Max Time: 2.22618e7 ns
+    Allocations: 490922
+    Memory: 37213464 bytes
+    Samples Run: 1
+  Function: mergeVector
+    Mean Time: 2.58007e7 ns
+    Std Time: NaN ns
+    Median Time: 2.58007e7 ns
+    Min Time: 2.58007e7 ns
+    Max Time: 2.58007e7 ns
+    Allocations: 494635
+    Memory: 37553368 bytes
+    Samples Run: 1
+  Function: generate_graph
+    Mean Time: 2.41487e7 ns
+    Std Time: NaN ns
+    Median Time: 2.41487e7 ns
+    Min Time: 2.41487e7 ns
+    Max Time: 2.41487e7 ns
+    Allocations: 501246
+    Memory: 37896056 bytes
+    Samples Run: 1
+  Function: runLVS_wo_log
+    Mean Time: 2.95902e7 ns
+    Std Time: NaN ns
+    Median Time: 2.95902e7 ns
+    Min Time: 2.95902e7 ns
+    Max Time: 2.95902e7 ns
+    Allocations: 502029
+    Memory: 37986984 bytes
+    Samples Run: 1
+  Function: runLVS
+    Mean Time: 2.85138e7 ns
+    Std Time: NaN ns
+    Median Time: 2.85138e7 ns
+    Min Time: 2.85138e7 ns
+    Max Time: 2.85138e7 ns
+    Allocations: 504157
+    Memory: 38075696 bytes
+    Samples Run: 1

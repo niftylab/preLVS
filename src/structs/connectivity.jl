@@ -49,15 +49,17 @@ end
 struct ErrorInfo
     type::ErrorType
     start_node::MOVector
-    dsc_node::Union{MOVector, Nothing}
-    netname::Union{String, Nothing}
+    current_node::Union{MOVector, Nothing}
+    actual_netname::Union{String, Nothing}
+    expected_netname::Union{String, Nothing}
 end
 
 function get_error_string(error_info::ErrorInfo)
     if error_info.type == OPEN
-        return "OPEN: netname $(error_info.netname) is already visited\n$(error_info.start_node.netname) : layer=$(error_info.start_node.layer), p_coord=$(error_info.start_node.p_coord), s_coord=$(error_info.start_node.points[1].s_coord) - $(error_info.start_node.points[2].s_coord)\n$(error_info.dsc_node.netname) : layer=$(error_info.dsc_node.layer), p_coord=$(error_info.dsc_node.p_coord), s_coord=$(error_info.dsc_node.points[1].s_coord) - $(error_info.dsc_node.points[2].s_coord)"
+        return "OPEN: netname $(error_info.expected_netname) is already visited\n$(error_info.start_node.netname) : layer=$(error_info.start_node.layer), p_coord=$(error_info.start_node.p_coord), s_coord=$(error_info.start_node.points[1].s_coord) - $(error_info.start_node.points[2].s_coord)\n$(error_info.current_node.netname) : layer=$(error_info.current_node.layer), p_coord=$(error_info.current_node.p_coord), s_coord=$(error_info.current_node.points[1].s_coord) - $(error_info.current_node.points[2].s_coord)"
     elseif error_info.type == SHORT
-        return "SHORT: Netname inconsistency! Node$(error_info.start_node.netname) has netname '$(error_info.netname)', but expected '$(error_info.dsc_node.netname)' for this component."
+        return "SHORT: Netname inconsistency! Node $(error_info.current_node.netname) has netname '$(error_info.actual_netname)', but expected '$(error_info.expected_netname)' for this component.
+        layer=$(error_info.current_node.layer), p_coord=$(error_info.current_node.p_coord), s_coord=$(error_info.current_node.points[1].s_coord) - $(error_info.current_node.points[2].s_coord)"
     elseif error_info.type == FLOATING
         return "FLOATING: No netname found metals. Start node = $(error_info.start_node.layer), $(error_info.start_node.p_coord), $(error_info.start_node.points[1].s_coord) - $(error_info.start_node.points[2].s_coord)"
     end
@@ -162,40 +164,33 @@ function check_and_report_connections_bfs(g::MGraph, source_net_sets::Vector{Tup
 
                 # --- 노드 처리 로직 ---
                 current_netname = u_node.netname
-                # current_netname = nothing
-                # try
-                #     current_netname = u_node.netname # MOVector에서 직접 netname 접근
-                # catch e
-                #     node_id_str = hasproperty(u_node, :idx) ? " (idx=$(u_node.idx))" : ""
-                #     @error "Failed to get netname for node$(node_id_str). Error: $e"
-                #     println(io, "Netname Fetch Error: Failed to get netname for node$(node_id_str). Error: $e")
-                #     component_consistent[] = false
-                # end
 
+                # 만난 node의 netname이 있으면
                 if current_netname !== nothing
                     if expected_netname_ref[] === nothing
                         expected_netname_ref[] = current_netname
-                        # println("  Component expected netname set to '$(current_netname)' by node idx=$(u_node.idx)")
+                        # 만난 netname이 이미 방문한 netname 중 하나면 open일 수 있다
                         if current_netname in visited_netnames
                             # VDD, VSS는 open 무시
                             if !(current_netname in source_net_sets[1][2]) && !(current_netname in source_net_sets[2][2])
-                                # 같은 이름이지만, 콜론이 있는 경우 무시
+                                # 같은 이름이지만, 콜론이 있는 경우 open 무시
                                 if check_coloned_netname(current_netname, visited_netnames)
                                     # @warn " OPEN! : netname $current_netname is already visited
                                     # $(u_node.netname) : layer=$(u_node.layer), p_coord=$(u_node.p_coord), s_coord=$(u_node.points[1].s_coord) - $(u_node.points[2].s_coord)
                                     # $(start_node.netname) : layer=$(start_node.layer), p_coord=$(start_node.p_coord), s_coord=$(start_node.points[1].s_coord) - $(start_node.points[2].s_coord)"
-                                    push!(error_info, ErrorInfo(OPEN, u_node, start_node, current_netname))
+                                    push!(error_info, ErrorInfo(OPEN, u_node, start_node, current_netname, expected_netname_ref[]))
                                     # println(io, "OPEN: netname $current_netname is already visited\n$(u_node.netname) : layer=$(u_node.layer), p_coord=$(u_node.p_coord), s_coord=$(u_node.points[1].s_coord) - $(u_node.points[2].s_coord)\n$(start_node.netname) : layer=$(start_node.layer), p_coord=$(start_node.p_coord), s_coord=$(start_node.points[1].s_coord) - $(start_node.points[2].s_coord)")
                                     error_cnt["open"] += 1; error_cnt["total"] += 1;
                                 end
                             end
                         end
                         push!(visited_netnames, current_netname)
-                    elseif current_netname != expected_netname_ref[]
+                    # current_netname 이 nothing이 아니고, expected_netname_ref[] 이 nothing이 아니고, current_netname != expected_netname_ref[] 이면 short
+                    elseif current_netname != expected_netname_ref[] && expected_netname_ref[] !== nothing
                         if component_consistent[] # 첫 불일치 시 로그
                             # node_id_str = hasproperty(u_node, :idx) ? " (idx=$(u_node.idx))" : ""
                             # @warn "  Netname inconsistency! Node$(node_id_str) has netname '$current_netname', but expected '$(expected_netname_ref[])' for this component."
-                            push!(error_info, ErrorInfo(SHORT, u_node, start_node, current_netname))
+                            push!(error_info, ErrorInfo(SHORT, u_node, start_node, current_netname, expected_netname_ref[]))
                             # println(io, "SHORT: Netname inconsistency! Node$(node_id_str) has netname '$current_netname', but expected '$(expected_netname_ref[])' for this component.")
                             error_cnt["short"] += 1; error_cnt["total"] += 1;
                         end
@@ -221,7 +216,7 @@ function check_and_report_connections_bfs(g::MGraph, source_net_sets::Vector{Tup
 
             if expected_netname_ref[] === nothing
                 # @warn "  FLOATING! : No netname found metals. Start node = $(start_node.layer), $(start_node.p_coord), $(start_node.points[1].s_coord) - $(start_node.points[2].s_coord)"
-                push!(error_info, ErrorInfo(FLOATING, start_node, nothing, nothing))
+                push!(error_info, ErrorInfo(FLOATING, start_node, nothing, nothing, nothing))
                 # println(io, "FLOATING: No netname found metals. Start node = $(start_node.layer), $(start_node.p_coord), $(start_node.points[1].s_coord) - $(start_node.points[2].s_coord)")
                 error_cnt["floating"] += 1; error_cnt["total"] += 1;
             end

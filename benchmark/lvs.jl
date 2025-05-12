@@ -3,8 +3,8 @@ using preLVS_vectormerge
 using YAML
 
 
-libname = "comp_generated"
-cellname = "comp_pamp_buf_rtap"
+libname = "logic_generated"
+cellname = "dff_2x"
 config_file_path = "config/config_tsmcN28.yaml"
 db_dir = "db"
 metal_dir = "out/metal"
@@ -28,6 +28,10 @@ runset = Dict{String, Any}(
 
 println("Target: $libname - $cellname\n")
 
+
+root, cell_data, db_data = loadDB(runset)
+
+merged_mdata, nmetals = mergeVector(runset)
 
 # Performance Test
 cinfo, error_info, error_cnt = runLVS(runset)

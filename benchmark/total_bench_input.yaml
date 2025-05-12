@@ -1,31 +1,19 @@
 cells_to_benchmark:
   1:
-    libname: "logic_generated"
-    cellname: "dff_2x"
+    libname: "serializer_generated"
+    cellname: "ser_8to1_2x"
     config_file_path: "config/config_tsmcN28.yaml"
     n_samples: 100
     max_benchmark_seconds: 1
   2:
-    libname: "scan_generated"
-    cellname: "scan_cell"
+    libname: "serializer_generated"
+    cellname: "ser_8to4_2x"
     config_file_path: "config/config_tsmcN28.yaml"
     n_samples: 100
     max_benchmark_seconds: 1
   3:
-    libname: "comp_generated"
-    cellname: "strongarm"
-    config_file_path: "config/config_tsmcN28.yaml"
-    n_samples: 100
-    max_benchmark_seconds: 1
-  4:
-    libname: "comp_generated"
-    cellname: "comp_pamp_buf"
-    config_file_path: "config/config_tsmcN28.yaml"
-    n_samples: 100
-    max_benchmark_seconds: 1
-  5:
-    libname: "tbadc_generated"
-    cellname: "tdc_1bit"
+    libname: "serializer_generated"
+    cellname: "ser_2to1_2x"
     config_file_path: "config/config_tsmcN28.yaml"
     n_samples: 100
     max_benchmark_seconds: 1
