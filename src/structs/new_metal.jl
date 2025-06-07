@@ -160,7 +160,7 @@ function string_to_mposition(pos::String)::MPosition
 end
 
 # Needs refactoring
-function db_to_MData(libname::String, cellname::String, db_json_data::Dict, orientation_list::Vector{String}, source_net_sets::Vector{Tuple{String,Set{String}}})::Tuple{MData, MData}
+function db_to_MData(libname::String, cellname::String, db_json_data::Dict, orientation_list::Vector{String}, equiv_net_sets::Vector{Tuple{String,Set{String}}})::Tuple{MData, MData}
 
     # Initialize metals
     # unnamed_metals = metals + pins of primitives
@@ -230,7 +230,7 @@ function db_to_MData(libname::String, cellname::String, db_json_data::Dict, orie
         extension_orient = is_vertical ? "vextension" : "hextension"
         extension = db_label[extension_orient]
         netname = get(db_label, "netname", nothing)
-        netname = netname === nothing ? "UNKNOWN" : unify_netname(netname, source_net_sets) 
+        netname = netname === nothing ? "UNKNOWN" : unify_netname(netname, equiv_net_sets) 
 
         min_s = is_vertical ? min(db_label["xy"][1][2], db_label["xy"][2][2]) : min(db_label["xy"][1][1], db_label["xy"][2][1])
         max_s = is_vertical ? max(db_label["xy"][1][2], db_label["xy"][2][2]) : max(db_label["xy"][1][1], db_label["xy"][2][1])
@@ -251,7 +251,7 @@ function db_to_MData(libname::String, cellname::String, db_json_data::Dict, orie
         extension_orient = is_vertical ? "vextension" : "hextension"
         extension = db_pin[extension_orient]
         netname = get(db_pin, "netname", nothing)
-        netname = netname === nothing ? "UNKNOWN" : unify_netname(netname, source_net_sets)
+        netname = netname === nothing ? "UNKNOWN" : unify_netname(netname, equiv_net_sets)
 
         min_s = is_vertical ? min(db_pin["xy"][1][2], db_pin["xy"][2][2]) : min(db_pin["xy"][1][1], db_pin["xy"][2][1])
         max_s = is_vertical ? max(db_pin["xy"][1][2], db_pin["xy"][2][2]) : max(db_pin["xy"][1][1], db_pin["xy"][2][1])

@@ -29,14 +29,16 @@ function get_config(file_path::String)
         morien[m] = data["Layer"]["orientation"][i]
     end
 
+    # Equivalent net sets
+    eq_net_sets = Vector{Tuple{String, Set{String}}}()
+    for (key, value) in data["Equivalent_net_sets"]
+        push!(eq_net_sets, (key, Set(value)))
+    end
+
     config_data["Metal"] = morien
     config_data["Via"] = data["Via"]
-    if haskey(data, "Equivalent_net_sets")
-        config_data["equivalent_net_sets"] = Vector{Tuple{String, Set{String}}}()  #equivalent_net_sets = [( "VDD", Set(["VDD", "vdd", "VDD:"]) ), ( "VSS, Set(["VSS", "VSS:", "vss"]) )]
-        for net_list in data["Equivalent_net_sets"]
-            push!(config_data["equivalent_net_sets"], (net_list[1], Set(net_list)))
-        end
-    end
+    config_data["Equivalent_net_sets"] = eq_net_sets
+    
     return config_data
 end
 

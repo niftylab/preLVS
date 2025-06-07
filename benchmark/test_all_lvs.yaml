@@ -1,0 +1,90 @@
+cells_to_benchmark:
+  1:
+    libname: "logic_generated"
+    cellname: "dff_2x"
+    config_file_path: "config/config_tsmcN28.yaml"
+    n_samples: 1
+    max_benchmark_seconds: 0.5
+  2:
+    libname: "scan_generated"
+    cellname: "scan_cell"
+    config_file_path: "config/config_tsmcN28.yaml"
+    n_samples: 1
+    max_benchmark_seconds: 0.5
+  3:
+    libname: "scan_generated"
+    cellname: "scan_chain_17bit"
+    config_file_path: "config/config_tsmcN28.yaml"
+    n_samples: 1
+    max_benchmark_seconds: 1
+  4:
+    libname: "scan_generated"
+    cellname: "scan_chain_33bit"
+    config_file_path: "config/config_tsmcN28.yaml"
+    n_samples: 1
+    max_benchmark_seconds: 1
+  5:
+    libname: "scan_generated"
+    cellname: "scan_chain_65bit"
+    config_file_path: "config/config_tsmcN28.yaml"
+    n_samples: 1
+    max_benchmark_seconds: 1
+  6:
+    libname: "scan_generated"
+    cellname: "scan_chain_129bit"
+    config_file_path: "config/config_tsmcN28.yaml"
+    n_samples: 1
+    max_benchmark_seconds: 2
+  7:
+    libname: "scan_generated"
+    cellname: "scan_chain_288bit"
+    config_file_path: "config/config_tsmcN28.yaml"
+    n_samples: 1
+    max_benchmark_seconds: 3
+  8:
+    libname: "comp_generated"
+    cellname: "strongarm"
+    config_file_path: "config/config_tsmcN28.yaml"
+    n_samples: 1
+    max_benchmark_seconds: 1
+  9:
+    libname: "comp_generated"
+    cellname: "comp_pamp_buf"
+    config_file_path: "config/config_tsmcN28.yaml"
+    n_samples: 1
+    max_benchmark_seconds: 1
+  10:
+    libname: "tbadc_generated"
+    cellname: "tdc_1bit"
+    config_file_path: "config/config_tsmcN28.yaml"
+    n_samples: 1
+    max_benchmark_seconds: 1
+  11:
+    libname: "serializer_generated"
+    cellname: "ser_2to1_2x"
+    config_file_path: "config/config_tsmcN28.yaml"
+    n_samples: 1
+    max_benchmark_seconds: 1
+  12:
+    libname: "serializer_generated"
+    cellname: "ser_8to4_2x"
+    config_file_path: "config/config_tsmcN28.yaml"
+    n_samples: 1
+    max_benchmark_seconds: 1
+  13:
+    libname: "serializer_generated"
+    cellname: "ser_8to1_2x"
+    config_file_path: "config/config_tsmcN28.yaml"
+    n_samples: 1
+    max_benchmark_seconds: 1
+
+
+
+file_paths:
+  db_dir: "db"
+  metal_dir: "out/metal"
+  via_dir: "out/via"
+  visualized_dir: "out/visualized"
+  log_dir: "out/log"
+  netlog_dir: "out/label"
+
