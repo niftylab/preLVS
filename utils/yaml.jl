@@ -1,0 +1,43 @@
+using YAML
+
+function get_yaml(file_path::String)
+    data = YAML.load_file(file_path)
+    return data
+end
+
+
+function get_config(file_path::String)
+    data = get_yaml(file_path)
+
+    if !haskey(data, "Layer")
+        error("Config file must have 'Layer' key")
+    end
+    if !haskey(data, "Via")
+        error("Config file must have 'Via' key")
+    end
+
+    config_data = Dict()
+
+    # Metal layer orientation
+    morien = Dict()
+    for (i, m) in enumerate(data["Layer"]["order"])
+        morien[m] = data["Layer"]["orientation"][i]
+    end
+
+    config_data["Metal"] = morien
+    config_data["Via"] = data["Via"]
+
+    return config_data
+end
+
+
+function get_orientation_list(config_data::Dict)
+
+    max_idx = maximum([parse(Int, replace(lowercase(layer), r"(metal|m)" => "") |> strip) for layer in keys(config_data["Metal"])]) 
+    orientation_list = Vector{String}(undef, max_idx)
+    for (layer, orient) in config_data["Metal"]
+        idx = parse(Int, replace(lowercase(layer), r"(metal|m)" => "") |> strip)
+        orientation_list[idx] = orient == "|" ? "VERTICAL" : "HORIZONTAL"
+    end
+    return orientation_list
+end

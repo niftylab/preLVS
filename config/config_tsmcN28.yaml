@@ -1,4 +1,4 @@
-db_filename: [comp_generated_db.json, tbadc_generated_db.json]
+db_filename: [test_generated_db.json, logic_generated_db.json, scan_generated_db.json]
 Layer:
   order: [M1, M2, M3, M4, M5]
   orientation: ['|', '-', '|', '-', '|']
@@ -16,7 +16,7 @@ Via:
     extension: [5, 5]
   via_M1_M2_2:
     map: [M1, M2]
-    extension: [5, 13]
+    extension: [5, 10]
   via_M2_M3_0:
     map: [M3, M2]
     extension: [5, 5]
@@ -25,76 +25,25 @@ Via:
     extension: [5, 5]
   via_M2_M3_2:
     map: [M3, M2]
-    extension: [5, 13]
+    extension: [5, 10]
   via_M2_M3_3:
     map: [M3, M2]
-    extension: [13, 5]
+    extension: [10, 5]
   via_M3_M4_0:
     map: [M3, M4]
     extension: [5, 5]
   via_M3_M4_1:
     map: [M3, M4]
-    extension: [5, 13]
+    extension: [5, 10]
   via_M3_M4_2:
     map: [M3, M4]
-    extension: [13, 5]
+    extension: [10, 5]
   via_M4_M5_0:
     map: [M5, M4]
     extension: [5, 5]
   via_M4_M5_1:
     map: [M5, M4]
-    extension: [13, 5]
+    extension: [10, 5]
   via_M4_M5_2:
     map: [M5, M4]
-    extension: [5, 13]
-
-Equivalent_net_sets:
-  "VDD:":
-    - "VDD:"
-    - "VDD"
-    - "vdd"
-    - "vdd:"
-    - "VDDG"
-  "VSS:":
-    - "VSS:"
-    - "VSS"
-    - "vss"
-    - "vss:"
-    - "gnd"
-    - "VSSG"
-  "CLK:":
-    - "CLK"
-    - "CK"
-  "CLKB:":
-    - "CLKB"
-    - "CKB"
-  "DI<0>:":
-    - "DI<0>"
-    - "DI0"
-  "DI<1>:":
-    - "DI<1>"
-    - "DI1"
-  "d2<0>:":
-    - "d2<0>"
-    - "d20"
-  "d2<1>:":
-    - "d2<1>"
-    - "d21"
-  "d4<0>:":
-    - "d4<0>"
-    - "d40"
-  "d4<1>:":
-    - "d4<1>"
-    - "d41"
-  "d4<2>:":
-    - "d4<2>"
-    - "d42"
-  "d4<3>:":
-    - "d4<3>"
-    - "d43"
-  "OUTP":
-    - "OUTP"
-    - "OUTPG"
-  "OUTN":
-    - "OUTN"
-    - "OUTNG"
+    extension: [5, 10]

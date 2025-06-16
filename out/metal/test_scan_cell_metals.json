@@ -1,0 +1,7464 @@
+{
+  "Metal1": {
+    "180": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "360": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "540": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "900": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "1080": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "1260": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "1620": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1925,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "1800": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "1980": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1925,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "2340": [
+      [
+        {
+          "coord": 1925,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "2520": [
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "2700": [
+      [
+        {
+          "coord": 1925,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "3060": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1925,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "3240": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "3420": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1925,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "3780": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "3960": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "4140": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "4500": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "4680": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "4860": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "5220": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "5400": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "5580": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "5940": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1995,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "6120": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "6300": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1995,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "6660": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "6840": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ]
+    ],
+    "7020": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1995,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3140,
+          "pos": "START"
+        },
+        {
+          "coord": 3200,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "7380": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ]
+    ],
+    "7560": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ]
+    ],
+    "7740": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1925,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "7920": [
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "8100": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "8460": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 720,
+          "pos": "START"
+        },
+        {
+          "coord": 780,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1925,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "8640": [
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "8820": [
+      [
+        {
+          "coord": 1925,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "9180": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1995,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "9360": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "9540": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1995,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "9900": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "10080": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ]
+    ],
+    "10260": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1995,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3140,
+          "pos": "START"
+        },
+        {
+          "coord": 3200,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "10620": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ]
+    ],
+    "10800": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ]
+    ],
+    "10980": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1925,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "11160": [
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "11340": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "11700": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 720,
+          "pos": "START"
+        },
+        {
+          "coord": 780,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1925,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "11880": [
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "12060": [
+      [
+        {
+          "coord": 1925,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "12420": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "12600": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "12780": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "13140": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1995,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "13320": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "13500": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1995,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "13860": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1995,
+          "pos": "END"
+        }
+      ]
+    ],
+    "14040": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ]
+    ],
+    "14220": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1995,
+          "pos": "END"
+        }
+      ]
+    ],
+    "14580": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1995,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "14760": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "14940": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1995,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "15300": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "15480": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "15660": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "16020": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "16200": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "16380": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "16740": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "16920": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "17100": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "17280": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "17460": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "17640": [
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "17820": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "18000": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "18180": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "18360": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "18540": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "18720": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "18900": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "19080": [
+      [
+        {
+          "coord": 335,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 700,
+          "pos": "START"
+        },
+        {
+          "coord": 800,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1160,
+          "pos": "START"
+        },
+        {
+          "coord": 1260,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 1660,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "19260": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1310,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ],
+    "19440": [
+      [
+        {
+          "coord": 2260,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2660,
+          "pos": "START"
+        },
+        {
+          "coord": 2760,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3120,
+          "pos": "START"
+        },
+        {
+          "coord": 3220,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3585,
+          "pos": "END"
+        }
+      ]
+    ],
+    "19620": [
+      [
+        {
+          "coord": 1925,
+          "pos": "START"
+        },
+        {
+          "coord": 2610,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3305,
+          "pos": "START"
+        },
+        {
+          "coord": 3955,
+          "pos": "END"
+        }
+      ]
+    ]
+  },
+  "Metal2": {
+    "0": [
+      [
+        {
+          "coord": -105,
+          "pos": "START"
+        },
+        {
+          "coord": 19905,
+          "pos": "END"
+        }
+      ]
+    ],
+    "405": [
+      [
+        {
+          "coord": 1585,
+          "pos": "START"
+        },
+        {
+          "coord": 4355,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 7345,
+          "pos": "START"
+        },
+        {
+          "coord": 7775,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 8065,
+          "pos": "START"
+        },
+        {
+          "coord": 8495,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 10585,
+          "pos": "START"
+        },
+        {
+          "coord": 11015,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 11305,
+          "pos": "START"
+        },
+        {
+          "coord": 11735,
+          "pos": "END"
+        }
+      ]
+    ],
+    "545": [
+      [
+        {
+          "coord": 165,
+          "pos": "START"
+        },
+        {
+          "coord": 555,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 885,
+          "pos": "START"
+        },
+        {
+          "coord": 1995,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2125,
+          "pos": "START"
+        },
+        {
+          "coord": 2915,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3045,
+          "pos": "START"
+        },
+        {
+          "coord": 4155,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 4485,
+          "pos": "START"
+        },
+        {
+          "coord": 4875,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 5205,
+          "pos": "START"
+        },
+        {
+          "coord": 5595,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 5925,
+          "pos": "START"
+        },
+        {
+          "coord": 6315,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 6645,
+          "pos": "START"
+        },
+        {
+          "coord": 7755,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 9165,
+          "pos": "START"
+        },
+        {
+          "coord": 9555,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 9885,
+          "pos": "START"
+        },
+        {
+          "coord": 10995,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 12405,
+          "pos": "START"
+        },
+        {
+          "coord": 12795,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 13125,
+          "pos": "START"
+        },
+        {
+          "coord": 13515,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 13845,
+          "pos": "START"
+        },
+        {
+          "coord": 14235,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 14565,
+          "pos": "START"
+        },
+        {
+          "coord": 14955,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 15285,
+          "pos": "START"
+        },
+        {
+          "coord": 15675,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 16005,
+          "pos": "START"
+        },
+        {
+          "coord": 16395,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 16885,
+          "pos": "START"
+        },
+        {
+          "coord": 17315,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 17965,
+          "pos": "START"
+        },
+        {
+          "coord": 19115,
+          "pos": "END"
+        }
+      ]
+    ],
+    "750": [
+      [
+        {
+          "coord": 145,
+          "pos": "START"
+        },
+        {
+          "coord": 555,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 885,
+          "pos": "START"
+        },
+        {
+          "coord": 1275,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1605,
+          "pos": "START"
+        },
+        {
+          "coord": 2195,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2485,
+          "pos": "START"
+        },
+        {
+          "coord": 3435,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3765,
+          "pos": "START"
+        },
+        {
+          "coord": 4155,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 4285,
+          "pos": "START"
+        },
+        {
+          "coord": 4875,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 5185,
+          "pos": "START"
+        },
+        {
+          "coord": 5595,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 5905,
+          "pos": "START"
+        },
+        {
+          "coord": 6315,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 6645,
+          "pos": "START"
+        },
+        {
+          "coord": 7035,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 7345,
+          "pos": "START"
+        },
+        {
+          "coord": 7755,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 8245,
+          "pos": "START"
+        },
+        {
+          "coord": 8855,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 9145,
+          "pos": "START"
+        },
+        {
+          "coord": 9555,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 9885,
+          "pos": "START"
+        },
+        {
+          "coord": 10275,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 10585,
+          "pos": "START"
+        },
+        {
+          "coord": 10995,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 11485,
+          "pos": "START"
+        },
+        {
+          "coord": 12095,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 12385,
+          "pos": "START"
+        },
+        {
+          "coord": 12795,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 13105,
+          "pos": "START"
+        },
+        {
+          "coord": 13515,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 13825,
+          "pos": "START"
+        },
+        {
+          "coord": 14235,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 14545,
+          "pos": "START"
+        },
+        {
+          "coord": 14955,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 15265,
+          "pos": "START"
+        },
+        {
+          "coord": 15675,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 16005,
+          "pos": "START"
+        },
+        {
+          "coord": 16415,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 16705,
+          "pos": "START"
+        },
+        {
+          "coord": 17315,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 17785,
+          "pos": "START"
+        },
+        {
+          "coord": 19115,
+          "pos": "END"
+        }
+      ]
+    ],
+    "980": [
+      [
+        {
+          "coord": 8065,
+          "pos": "START"
+        },
+        {
+          "coord": 8495,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 11305,
+          "pos": "START"
+        },
+        {
+          "coord": 11735,
+          "pos": "END"
+        }
+      ]
+    ],
+    "1210": [
+      [
+        {
+          "coord": 145,
+          "pos": "START"
+        },
+        {
+          "coord": 555,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 885,
+          "pos": "START"
+        },
+        {
+          "coord": 1275,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1605,
+          "pos": "START"
+        },
+        {
+          "coord": 2555,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2845,
+          "pos": "START"
+        },
+        {
+          "coord": 3435,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3765,
+          "pos": "START"
+        },
+        {
+          "coord": 4155,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 4285,
+          "pos": "START"
+        },
+        {
+          "coord": 4875,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 5185,
+          "pos": "START"
+        },
+        {
+          "coord": 5595,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 5905,
+          "pos": "START"
+        },
+        {
+          "coord": 6315,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 6645,
+          "pos": "START"
+        },
+        {
+          "coord": 7035,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 7365,
+          "pos": "START"
+        },
+        {
+          "coord": 7775,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 8425,
+          "pos": "START"
+        },
+        {
+          "coord": 8855,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 9145,
+          "pos": "START"
+        },
+        {
+          "coord": 9555,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 9885,
+          "pos": "START"
+        },
+        {
+          "coord": 10275,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 10605,
+          "pos": "START"
+        },
+        {
+          "coord": 11015,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 11665,
+          "pos": "START"
+        },
+        {
+          "coord": 12095,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 12385,
+          "pos": "START"
+        },
+        {
+          "coord": 12795,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 13105,
+          "pos": "START"
+        },
+        {
+          "coord": 13515,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 13825,
+          "pos": "START"
+        },
+        {
+          "coord": 14235,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 14545,
+          "pos": "START"
+        },
+        {
+          "coord": 14955,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 15265,
+          "pos": "START"
+        },
+        {
+          "coord": 15675,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 16005,
+          "pos": "START"
+        },
+        {
+          "coord": 16415,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 16705,
+          "pos": "START"
+        },
+        {
+          "coord": 17315,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 17785,
+          "pos": "START"
+        },
+        {
+          "coord": 19115,
+          "pos": "END"
+        }
+      ]
+    ],
+    "1415": [
+      [
+        {
+          "coord": 165,
+          "pos": "START"
+        },
+        {
+          "coord": 555,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 885,
+          "pos": "START"
+        },
+        {
+          "coord": 1995,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3045,
+          "pos": "START"
+        },
+        {
+          "coord": 4155,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 4485,
+          "pos": "START"
+        },
+        {
+          "coord": 4875,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 5205,
+          "pos": "START"
+        },
+        {
+          "coord": 5595,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 5925,
+          "pos": "START"
+        },
+        {
+          "coord": 6315,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 6645,
+          "pos": "START"
+        },
+        {
+          "coord": 7755,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 9165,
+          "pos": "START"
+        },
+        {
+          "coord": 9555,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 9885,
+          "pos": "START"
+        },
+        {
+          "coord": 10995,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 12405,
+          "pos": "START"
+        },
+        {
+          "coord": 12795,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 13125,
+          "pos": "START"
+        },
+        {
+          "coord": 13515,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 13845,
+          "pos": "START"
+        },
+        {
+          "coord": 14235,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 14565,
+          "pos": "START"
+        },
+        {
+          "coord": 14955,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 15285,
+          "pos": "START"
+        },
+        {
+          "coord": 15675,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 16005,
+          "pos": "START"
+        },
+        {
+          "coord": 16395,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 16885,
+          "pos": "START"
+        },
+        {
+          "coord": 17315,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 17965,
+          "pos": "START"
+        },
+        {
+          "coord": 19115,
+          "pos": "END"
+        }
+      ]
+    ],
+    "1555": [
+      [
+        {
+          "coord": 1585,
+          "pos": "START"
+        },
+        {
+          "coord": 3455,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 7345,
+          "pos": "START"
+        },
+        {
+          "coord": 7775,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 8065,
+          "pos": "START"
+        },
+        {
+          "coord": 8495,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 10585,
+          "pos": "START"
+        },
+        {
+          "coord": 11015,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 11305,
+          "pos": "START"
+        },
+        {
+          "coord": 11735,
+          "pos": "END"
+        }
+      ]
+    ],
+    "1960": [
+      [
+        {
+          "coord": -105,
+          "pos": "START"
+        },
+        {
+          "coord": 19905,
+          "pos": "END"
+        }
+      ]
+    ],
+    "2365": [
+      [
+        {
+          "coord": 5905,
+          "pos": "START"
+        },
+        {
+          "coord": 6335,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 6625,
+          "pos": "START"
+        },
+        {
+          "coord": 7055,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 9145,
+          "pos": "START"
+        },
+        {
+          "coord": 9575,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 9865,
+          "pos": "START"
+        },
+        {
+          "coord": 10295,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 13105,
+          "pos": "START"
+        },
+        {
+          "coord": 14975,
+          "pos": "END"
+        }
+      ]
+    ],
+    "2505": [
+      [
+        {
+          "coord": 165,
+          "pos": "START"
+        },
+        {
+          "coord": 555,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 885,
+          "pos": "START"
+        },
+        {
+          "coord": 1275,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1605,
+          "pos": "START"
+        },
+        {
+          "coord": 1995,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2325,
+          "pos": "START"
+        },
+        {
+          "coord": 2715,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3045,
+          "pos": "START"
+        },
+        {
+          "coord": 3435,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3765,
+          "pos": "START"
+        },
+        {
+          "coord": 4155,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 4485,
+          "pos": "START"
+        },
+        {
+          "coord": 4875,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 5205,
+          "pos": "START"
+        },
+        {
+          "coord": 6315,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 7725,
+          "pos": "START"
+        },
+        {
+          "coord": 8115,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 8445,
+          "pos": "START"
+        },
+        {
+          "coord": 9555,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 10965,
+          "pos": "START"
+        },
+        {
+          "coord": 11355,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 11685,
+          "pos": "START"
+        },
+        {
+          "coord": 12075,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 12405,
+          "pos": "START"
+        },
+        {
+          "coord": 13515,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 14565,
+          "pos": "START"
+        },
+        {
+          "coord": 15675,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 16005,
+          "pos": "START"
+        },
+        {
+          "coord": 16395,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 16885,
+          "pos": "START"
+        },
+        {
+          "coord": 19475,
+          "pos": "END"
+        }
+      ]
+    ],
+    "2710": [
+      [
+        {
+          "coord": 165,
+          "pos": "START"
+        },
+        {
+          "coord": 575,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 885,
+          "pos": "START"
+        },
+        {
+          "coord": 1295,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1605,
+          "pos": "START"
+        },
+        {
+          "coord": 2015,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2325,
+          "pos": "START"
+        },
+        {
+          "coord": 2735,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3025,
+          "pos": "START"
+        },
+        {
+          "coord": 3435,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3745,
+          "pos": "START"
+        },
+        {
+          "coord": 4155,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 4465,
+          "pos": "START"
+        },
+        {
+          "coord": 4875,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 5205,
+          "pos": "START"
+        },
+        {
+          "coord": 5595,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 5925,
+          "pos": "START"
+        },
+        {
+          "coord": 6335,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 6985,
+          "pos": "START"
+        },
+        {
+          "coord": 7415,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 7705,
+          "pos": "START"
+        },
+        {
+          "coord": 8115,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 8445,
+          "pos": "START"
+        },
+        {
+          "coord": 8835,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 9165,
+          "pos": "START"
+        },
+        {
+          "coord": 9575,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 10225,
+          "pos": "START"
+        },
+        {
+          "coord": 10655,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 10945,
+          "pos": "START"
+        },
+        {
+          "coord": 11355,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 11665,
+          "pos": "START"
+        },
+        {
+          "coord": 12075,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 12405,
+          "pos": "START"
+        },
+        {
+          "coord": 12795,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 13125,
+          "pos": "START"
+        },
+        {
+          "coord": 14075,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 14365,
+          "pos": "START"
+        },
+        {
+          "coord": 14955,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 15285,
+          "pos": "START"
+        },
+        {
+          "coord": 15675,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 15805,
+          "pos": "START"
+        },
+        {
+          "coord": 16395,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 16885,
+          "pos": "START"
+        },
+        {
+          "coord": 19655,
+          "pos": "END"
+        }
+      ]
+    ],
+    "2940": [
+      [
+        {
+          "coord": 6625,
+          "pos": "START"
+        },
+        {
+          "coord": 7055,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 9865,
+          "pos": "START"
+        },
+        {
+          "coord": 10295,
+          "pos": "END"
+        }
+      ]
+    ],
+    "3170": [
+      [
+        {
+          "coord": 165,
+          "pos": "START"
+        },
+        {
+          "coord": 575,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 885,
+          "pos": "START"
+        },
+        {
+          "coord": 1295,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1605,
+          "pos": "START"
+        },
+        {
+          "coord": 2015,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2325,
+          "pos": "START"
+        },
+        {
+          "coord": 2735,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3025,
+          "pos": "START"
+        },
+        {
+          "coord": 3435,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3745,
+          "pos": "START"
+        },
+        {
+          "coord": 4155,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 4465,
+          "pos": "START"
+        },
+        {
+          "coord": 4875,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 5205,
+          "pos": "START"
+        },
+        {
+          "coord": 5595,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 5905,
+          "pos": "START"
+        },
+        {
+          "coord": 6315,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 6805,
+          "pos": "START"
+        },
+        {
+          "coord": 7415,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 7705,
+          "pos": "START"
+        },
+        {
+          "coord": 8115,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 8445,
+          "pos": "START"
+        },
+        {
+          "coord": 8835,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 9145,
+          "pos": "START"
+        },
+        {
+          "coord": 9555,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 10045,
+          "pos": "START"
+        },
+        {
+          "coord": 10655,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 10945,
+          "pos": "START"
+        },
+        {
+          "coord": 11355,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 11665,
+          "pos": "START"
+        },
+        {
+          "coord": 12075,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 12405,
+          "pos": "START"
+        },
+        {
+          "coord": 12795,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 13125,
+          "pos": "START"
+        },
+        {
+          "coord": 13715,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 14005,
+          "pos": "START"
+        },
+        {
+          "coord": 14955,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 15285,
+          "pos": "START"
+        },
+        {
+          "coord": 15675,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 15805,
+          "pos": "START"
+        },
+        {
+          "coord": 16395,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 16885,
+          "pos": "START"
+        },
+        {
+          "coord": 19655,
+          "pos": "END"
+        }
+      ]
+    ],
+    "3375": [
+      [
+        {
+          "coord": 165,
+          "pos": "START"
+        },
+        {
+          "coord": 555,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 885,
+          "pos": "START"
+        },
+        {
+          "coord": 1275,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1605,
+          "pos": "START"
+        },
+        {
+          "coord": 1995,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2325,
+          "pos": "START"
+        },
+        {
+          "coord": 2715,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3045,
+          "pos": "START"
+        },
+        {
+          "coord": 3435,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3765,
+          "pos": "START"
+        },
+        {
+          "coord": 4155,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 4485,
+          "pos": "START"
+        },
+        {
+          "coord": 4875,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 5205,
+          "pos": "START"
+        },
+        {
+          "coord": 6315,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 7725,
+          "pos": "START"
+        },
+        {
+          "coord": 8115,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 8445,
+          "pos": "START"
+        },
+        {
+          "coord": 9555,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 10965,
+          "pos": "START"
+        },
+        {
+          "coord": 11355,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 11685,
+          "pos": "START"
+        },
+        {
+          "coord": 12075,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 12405,
+          "pos": "START"
+        },
+        {
+          "coord": 13515,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 13645,
+          "pos": "START"
+        },
+        {
+          "coord": 14435,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 14565,
+          "pos": "START"
+        },
+        {
+          "coord": 15675,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 16005,
+          "pos": "START"
+        },
+        {
+          "coord": 16395,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 16885,
+          "pos": "START"
+        },
+        {
+          "coord": 19475,
+          "pos": "END"
+        }
+      ]
+    ],
+    "3515": [
+      [
+        {
+          "coord": 5905,
+          "pos": "START"
+        },
+        {
+          "coord": 6335,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 6625,
+          "pos": "START"
+        },
+        {
+          "coord": 7055,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 9145,
+          "pos": "START"
+        },
+        {
+          "coord": 9575,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 9865,
+          "pos": "START"
+        },
+        {
+          "coord": 10295,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 13105,
+          "pos": "START"
+        },
+        {
+          "coord": 15875,
+          "pos": "END"
+        }
+      ]
+    ],
+    "3920": [
+      [
+        {
+          "coord": -105,
+          "pos": "START"
+        },
+        {
+          "coord": 19905,
+          "pos": "END"
+        }
+      ]
+    ]
+  },
+  "Metal3": {
+    "180": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1295,
+          "pos": "END"
+        }
+      ]
+    ],
+    "360": [
+      [
+        {
+          "coord": 510,
+          "pos": "START"
+        },
+        {
+          "coord": 1450,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2470,
+          "pos": "START"
+        },
+        {
+          "coord": 3410,
+          "pos": "END"
+        }
+      ]
+    ],
+    "540": [
+      [
+        {
+          "coord": 2625,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "1080": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1245,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2470,
+          "pos": "START"
+        },
+        {
+          "coord": 3410,
+          "pos": "END"
+        }
+      ]
+    ],
+    "1260": [
+      [
+        {
+          "coord": 2675,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "1800": [
+      [
+        {
+          "coord": 2470,
+          "pos": "START"
+        },
+        {
+          "coord": 3410,
+          "pos": "END"
+        }
+      ]
+    ],
+    "1980": [
+      [
+        {
+          "coord": 2625,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "2160": [
+      [
+        {
+          "coord": 370,
+          "pos": "START"
+        },
+        {
+          "coord": 785,
+          "pos": "END"
+        }
+      ]
+    ],
+    "2520": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1435,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2470,
+          "pos": "START"
+        },
+        {
+          "coord": 3410,
+          "pos": "END"
+        }
+      ]
+    ],
+    "2700": [
+      [
+        {
+          "coord": 1645,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "2880": [
+      [
+        {
+          "coord": 510,
+          "pos": "START"
+        },
+        {
+          "coord": 1295,
+          "pos": "END"
+        }
+      ]
+    ],
+    "3060": [
+      [
+        {
+          "coord": 2675,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "3240": [
+      [
+        {
+          "coord": 2470,
+          "pos": "START"
+        },
+        {
+          "coord": 3410,
+          "pos": "END"
+        }
+      ]
+    ],
+    "3420": [
+      [
+        {
+          "coord": 370,
+          "pos": "START"
+        },
+        {
+          "coord": 1590,
+          "pos": "END"
+        }
+      ]
+    ],
+    "3780": [
+      [
+        {
+          "coord": 2625,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "3960": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1245,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2345,
+          "pos": "START"
+        },
+        {
+          "coord": 3410,
+          "pos": "END"
+        }
+      ]
+    ],
+    "4320": [
+      [
+        {
+          "coord": 370,
+          "pos": "START"
+        },
+        {
+          "coord": 1245,
+          "pos": "END"
+        }
+      ]
+    ],
+    "4500": [
+      [
+        {
+          "coord": 2345,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "4680": [
+      [
+        {
+          "coord": 510,
+          "pos": "START"
+        },
+        {
+          "coord": 1450,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2205,
+          "pos": "START"
+        },
+        {
+          "coord": 3410,
+          "pos": "END"
+        }
+      ]
+    ],
+    "5220": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1715,
+          "pos": "END"
+        }
+      ]
+    ],
+    "5400": [
+      [
+        {
+          "coord": 510,
+          "pos": "START"
+        },
+        {
+          "coord": 1575,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2675,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "5940": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1575,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2205,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "6120": [
+      [
+        {
+          "coord": 510,
+          "pos": "START"
+        },
+        {
+          "coord": 1715,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2330,
+          "pos": "START"
+        },
+        {
+          "coord": 3550,
+          "pos": "END"
+        }
+      ]
+    ],
+    "6300": [
+      [
+        {
+          "coord": 2345,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "6660": [
+      [
+        {
+          "coord": 2625,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "6840": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1295,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2345,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "7020": [
+      [
+        {
+          "coord": 2330,
+          "pos": "START"
+        },
+        {
+          "coord": 3550,
+          "pos": "END"
+        }
+      ]
+    ],
+    "7200": [
+      [
+        {
+          "coord": 2205,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "7380": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1715,
+          "pos": "END"
+        }
+      ]
+    ],
+    "7560": [
+      [
+        {
+          "coord": 370,
+          "pos": "START"
+        },
+        {
+          "coord": 1590,
+          "pos": "END"
+        }
+      ]
+    ],
+    "7740": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1575,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2485,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "7920": [
+      [
+        {
+          "coord": 2470,
+          "pos": "START"
+        },
+        {
+          "coord": 3410,
+          "pos": "END"
+        }
+      ]
+    ],
+    "8100": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1295,
+          "pos": "END"
+        }
+      ]
+    ],
+    "8280": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1575,
+          "pos": "END"
+        }
+      ]
+    ],
+    "8460": [
+      [
+        {
+          "coord": 370,
+          "pos": "START"
+        },
+        {
+          "coord": 1590,
+          "pos": "END"
+        }
+      ]
+    ],
+    "8640": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1715,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2625,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "9180": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1435,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2345,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "9360": [
+      [
+        {
+          "coord": 510,
+          "pos": "START"
+        },
+        {
+          "coord": 1450,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2330,
+          "pos": "START"
+        },
+        {
+          "coord": 3550,
+          "pos": "END"
+        }
+      ]
+    ],
+    "9540": [
+      [
+        {
+          "coord": 2205,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "9900": [
+      [
+        {
+          "coord": 2625,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "10080": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1295,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2205,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "10260": [
+      [
+        {
+          "coord": 2330,
+          "pos": "START"
+        },
+        {
+          "coord": 3550,
+          "pos": "END"
+        }
+      ]
+    ],
+    "10440": [
+      [
+        {
+          "coord": 2345,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "10620": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1575,
+          "pos": "END"
+        }
+      ]
+    ],
+    "10800": [
+      [
+        {
+          "coord": 370,
+          "pos": "START"
+        },
+        {
+          "coord": 1590,
+          "pos": "END"
+        }
+      ]
+    ],
+    "10980": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1715,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2485,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "11160": [
+      [
+        {
+          "coord": 2470,
+          "pos": "START"
+        },
+        {
+          "coord": 3410,
+          "pos": "END"
+        }
+      ]
+    ],
+    "11340": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1295,
+          "pos": "END"
+        }
+      ]
+    ],
+    "11520": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1715,
+          "pos": "END"
+        }
+      ]
+    ],
+    "11700": [
+      [
+        {
+          "coord": 370,
+          "pos": "START"
+        },
+        {
+          "coord": 1590,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2675,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "11880": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1575,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2470,
+          "pos": "START"
+        },
+        {
+          "coord": 3410,
+          "pos": "END"
+        }
+      ]
+    ],
+    "12240": [
+      [
+        {
+          "coord": 525,
+          "pos": "START"
+        },
+        {
+          "coord": 2975,
+          "pos": "END"
+        }
+      ]
+    ],
+    "12420": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1435,
+          "pos": "END"
+        }
+      ]
+    ],
+    "12600": [
+      [
+        {
+          "coord": 510,
+          "pos": "START"
+        },
+        {
+          "coord": 1450,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2675,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "13140": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1295,
+          "pos": "END"
+        }
+      ]
+    ],
+    "13320": [
+      [
+        {
+          "coord": 510,
+          "pos": "START"
+        },
+        {
+          "coord": 1450,
+          "pos": "END"
+        }
+      ]
+    ],
+    "13680": [
+      [
+        {
+          "coord": 3135,
+          "pos": "START"
+        },
+        {
+          "coord": 3550,
+          "pos": "END"
+        }
+      ]
+    ],
+    "13860": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1245,
+          "pos": "END"
+        }
+      ]
+    ],
+    "14040": [
+      [
+        {
+          "coord": 510,
+          "pos": "START"
+        },
+        {
+          "coord": 1450,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2675,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "14400": [
+      [
+        {
+          "coord": 2675,
+          "pos": "START"
+        },
+        {
+          "coord": 3410,
+          "pos": "END"
+        }
+      ]
+    ],
+    "14580": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1295,
+          "pos": "END"
+        }
+      ]
+    ],
+    "14760": [
+      [
+        {
+          "coord": 510,
+          "pos": "START"
+        },
+        {
+          "coord": 1450,
+          "pos": "END"
+        }
+      ]
+    ],
+    "14940": [
+      [
+        {
+          "coord": 2330,
+          "pos": "START"
+        },
+        {
+          "coord": 3550,
+          "pos": "END"
+        }
+      ]
+    ],
+    "15300": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1245,
+          "pos": "END"
+        }
+      ]
+    ],
+    "15480": [
+      [
+        {
+          "coord": 510,
+          "pos": "START"
+        },
+        {
+          "coord": 1450,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2625,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ],
+    "15840": [
+      [
+        {
+          "coord": 1225,
+          "pos": "START"
+        },
+        {
+          "coord": 2275,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2675,
+          "pos": "START"
+        },
+        {
+          "coord": 3550,
+          "pos": "END"
+        }
+      ]
+    ],
+    "16200": [
+      [
+        {
+          "coord": 510,
+          "pos": "START"
+        },
+        {
+          "coord": 1450,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 2205,
+          "pos": "START"
+        },
+        {
+          "coord": 3410,
+          "pos": "END"
+        }
+      ]
+    ],
+    "16380": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1295,
+          "pos": "END"
+        }
+      ]
+    ],
+    "16740": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1245,
+          "pos": "END"
+        }
+      ]
+    ],
+    "16920": [
+      [
+        {
+          "coord": 2470,
+          "pos": "START"
+        },
+        {
+          "coord": 3410,
+          "pos": "END"
+        }
+      ]
+    ],
+    "17280": [
+      [
+        {
+          "coord": 510,
+          "pos": "START"
+        },
+        {
+          "coord": 1450,
+          "pos": "END"
+        }
+      ]
+    ],
+    "17820": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1295,
+          "pos": "END"
+        }
+      ]
+    ],
+    "19080": [
+      [
+        {
+          "coord": 510,
+          "pos": "START"
+        },
+        {
+          "coord": 2555,
+          "pos": "END"
+        }
+      ]
+    ],
+    "19620": [
+      [
+        {
+          "coord": 2485,
+          "pos": "START"
+        },
+        {
+          "coord": 3205,
+          "pos": "END"
+        }
+      ]
+    ]
+  },
+  "Metal4": {
+    "560": [
+      [
+        {
+          "coord": 12205,
+          "pos": "START"
+        },
+        {
+          "coord": 12635,
+          "pos": "END"
+        }
+      ]
+    ],
+    "1120": [
+      [
+        {
+          "coord": 13285,
+          "pos": "START"
+        },
+        {
+          "coord": 13895,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 14725,
+          "pos": "START"
+        },
+        {
+          "coord": 15335,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 16165,
+          "pos": "START"
+        },
+        {
+          "coord": 16775,
+          "pos": "END"
+        }
+      ]
+    ],
+    "1260": [
+      [
+        {
+          "coord": 145,
+          "pos": "START"
+        },
+        {
+          "coord": 2915,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 4645,
+          "pos": "START"
+        },
+        {
+          "coord": 6875,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 8065,
+          "pos": "START"
+        },
+        {
+          "coord": 10115,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 11305,
+          "pos": "START"
+        },
+        {
+          "coord": 13175,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 14005,
+          "pos": "START"
+        },
+        {
+          "coord": 14615,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 15805,
+          "pos": "START"
+        },
+        {
+          "coord": 16415,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 17245,
+          "pos": "START"
+        },
+        {
+          "coord": 17855,
+          "pos": "END"
+        }
+      ]
+    ],
+    "1400": [
+      [
+        {
+          "coord": 325,
+          "pos": "START"
+        },
+        {
+          "coord": 2555,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 7525,
+          "pos": "START"
+        },
+        {
+          "coord": 9215,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 10765,
+          "pos": "START"
+        },
+        {
+          "coord": 12455,
+          "pos": "END"
+        }
+      ]
+    ],
+    "1540": [
+      [
+        {
+          "coord": 5365,
+          "pos": "START"
+        },
+        {
+          "coord": 11915,
+          "pos": "END"
+        }
+      ]
+    ],
+    "1680": [
+      [
+        {
+          "coord": 2665,
+          "pos": "START"
+        },
+        {
+          "coord": 5255,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 6085,
+          "pos": "START"
+        },
+        {
+          "coord": 11555,
+          "pos": "END"
+        }
+      ]
+    ],
+    "2240": [
+      [
+        {
+          "coord": 4645,
+          "pos": "START"
+        },
+        {
+          "coord": 10115,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 15805,
+          "pos": "START"
+        },
+        {
+          "coord": 16235,
+          "pos": "END"
+        }
+      ]
+    ],
+    "2380": [
+      [
+        {
+          "coord": 3925,
+          "pos": "START"
+        },
+        {
+          "coord": 10475,
+          "pos": "END"
+        }
+      ]
+    ],
+    "2520": [
+      [
+        {
+          "coord": 6085,
+          "pos": "START"
+        },
+        {
+          "coord": 7775,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 9325,
+          "pos": "START"
+        },
+        {
+          "coord": 11015,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 19045,
+          "pos": "START"
+        },
+        {
+          "coord": 19655,
+          "pos": "END"
+        }
+      ]
+    ],
+    "2660": [
+      [
+        {
+          "coord": 505,
+          "pos": "START"
+        },
+        {
+          "coord": 1115,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1945,
+          "pos": "START"
+        },
+        {
+          "coord": 2555,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 3205,
+          "pos": "START"
+        },
+        {
+          "coord": 3815,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 6625,
+          "pos": "START"
+        },
+        {
+          "coord": 8675,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 9865,
+          "pos": "START"
+        },
+        {
+          "coord": 15515,
+          "pos": "END"
+        }
+      ]
+    ],
+    "2800": [
+      [
+        {
+          "coord": 1225,
+          "pos": "START"
+        },
+        {
+          "coord": 1835,
+          "pos": "END"
+        }
+      ]
+    ],
+    "2940": [
+      [
+        {
+          "coord": 5365,
+          "pos": "START"
+        },
+        {
+          "coord": 12275,
+          "pos": "END"
+        }
+      ]
+    ],
+    "3080": [
+      [
+        {
+          "coord": 11665,
+          "pos": "START"
+        },
+        {
+          "coord": 14075,
+          "pos": "END"
+        }
+      ]
+    ],
+    "3220": [
+      [
+        {
+          "coord": 11845,
+          "pos": "START"
+        },
+        {
+          "coord": 14435,
+          "pos": "END"
+        }
+      ]
+    ]
+  }
+}

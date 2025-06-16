@@ -1,0 +1,148 @@
+{
+  "Metal1": {
+    "180": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 440,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1520,
+          "pos": "START"
+        },
+        {
+          "coord": 1995,
+          "pos": "END"
+        }
+      ]
+    ],
+    "540": [
+      [
+        {
+          "coord": -35,
+          "pos": "START"
+        },
+        {
+          "coord": 440,
+          "pos": "END"
+        }
+      ],
+      [
+        {
+          "coord": 1520,
+          "pos": "START"
+        },
+        {
+          "coord": 1995,
+          "pos": "END"
+        }
+      ]
+    ]
+  },
+  "Metal2": {
+    "0": [
+      [
+        {
+          "coord": -105,
+          "pos": "START"
+        },
+        {
+          "coord": 825,
+          "pos": "END"
+        }
+      ]
+    ],
+    "545": [
+      [
+        {
+          "coord": 165,
+          "pos": "START"
+        },
+        {
+          "coord": 555,
+          "pos": "END"
+        }
+      ]
+    ],
+    "750": [
+      [
+        {
+          "coord": 145,
+          "pos": "START"
+        },
+        {
+          "coord": 555,
+          "pos": "END"
+        }
+      ]
+    ],
+    "1210": [
+      [
+        {
+          "coord": 145,
+          "pos": "START"
+        },
+        {
+          "coord": 555,
+          "pos": "END"
+        }
+      ]
+    ],
+    "1415": [
+      [
+        {
+          "coord": 165,
+          "pos": "START"
+        },
+        {
+          "coord": 555,
+          "pos": "END"
+        }
+      ]
+    ],
+    "1960": [
+      [
+        {
+          "coord": -105,
+          "pos": "START"
+        },
+        {
+          "coord": 825,
+          "pos": "END"
+        }
+      ]
+    ]
+  },
+  "Metal3": {
+    "180": [
+      [
+        {
+          "coord": 715,
+          "pos": "START"
+        },
+        {
+          "coord": 1245,
+          "pos": "END"
+        }
+      ]
+    ],
+    "360": [
+      [
+        {
+          "coord": 510,
+          "pos": "START"
+        },
+        {
+          "coord": 1450,
+          "pos": "END"
+        }
+      ]
+    ]
+  }
+}
