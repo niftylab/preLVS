@@ -6,7 +6,7 @@
 # cellname: "scan_cell" # cell 이름
 
 libname: "logic_generated" # 라이브러리 이름
-cellname: "dff_2x" # cell 이름
+cellname: "tinv_2x" # cell 이름
 
 # libname: "comp_generated" # 라이브러리 이름
 # cellname: "strongarm" # cell 이름
@@ -23,7 +23,7 @@ cellname: "dff_2x" # cell 이름
 # libname: "debug_generated"
 # cellname: "inv"
 
-
+is_detailed: true
 db_dir: "db"
 metal_dir: "out/metal"
 via_dir: "out/via"

@@ -7,6 +7,7 @@ mutable struct VPoint
     type::String
     netname::Union{String, Nothing}
     idx::Int
+    laygo_name::Union{String, Nothing}
 end
 
 mutable struct VList
@@ -28,9 +29,10 @@ function VPoint(
     extension::Vector{Int},
     layer::Vector{String},
     type::String,
-    idx::Int
+    idx::Int=-1,
+    laygo_name::Union{String, Nothing}=nothing
 )
-    return VPoint(xy, extension, layer, type, nothing, -1)
+    return VPoint(xy, extension, layer, type, nothing, idx, laygo_name)
 end
 
 
@@ -54,23 +56,33 @@ function json_to_VData(libname::String, cellname::String, json_path::String)::VD
     return VData(cellname, libname, vlists, OrderedDict{String, Dict{Int, VList}}(), OrderedDict{String, Dict{Int, VList}}())
 end
 
-function db_to_VData(libname::String, cellname::String, db_vias::Vector, config_data, perform_sort::Bool=false)
+function db_to_VData(
+    libname::String, 
+    cellname::String, 
+    db_vias::Union{Vector, Dict}, 
+    config_data, 
+    is_detailed::Bool=false, 
+    perform_sort::Bool=false
+)::VData
 
     # _unsorted_vdata = VData(cellname, libname, OrderedDict{String, VList}(), OrderedDict{String, Dict{Int, VList}}(), OrderedDict{String, Dict{Int, VList}}())
     _unsorted_vdata = VData(cellname, libname, OrderedDict{String, VList}())
 
     for via in db_vias
-        _type = via["cellname"]
+        # detailed (key: name, value: via_data)
+        # non-detailed (key: via_data)
+        # detailed인 경우 벡터의 이름을 따로 저장.
+        via_data = is_detailed ? last(via) : via
+        current_name = is_detailed ? first(via) : nothing
+
+        println("via_data: $via_data")
+        println("current_name: $current_name")
+
+        _type = via_data["cellname"]
         if !haskey(_unsorted_vdata.vlists, _type)
             _unsorted_vdata.vlists[_type] = VList(_type, Vector{VPoint}())
         end
-        # println("via[xy] = ", map(Int, via["xy"]))
-        # println("type of via[xy] = ", typeof(map(Int, via["xy"])))
-        # println("via[layer] = ", map(String, via["layer"]))
-        # println("type of via[layer] = ", typeof(map(String, via["layer"])))
-        # println("config_data[\"Via\"][_type][\"extension\"] = ", map(Int, config_data["Via"][_type]["extension"]))
-        # println("type of config_data[\"Via\"][_type][\"extension\"] = ", typeof(map(Int, config_data["Via"][_type]["extension"])))
-        push!(_unsorted_vdata.vlists[_type].vpoints, VPoint(xy=map(Int, via["xy"]), extension=map(Int, config_data["Via"][_type]["extension"]), layer=map(String, via["layer"]), type=_type, idx=-1))
+        push!(_unsorted_vdata.vlists[_type].vpoints, VPoint(xy=map(Int, via_data["xy"]), extension=map(Int, config_data["Via"][_type]["extension"]), layer=map(String, via_data["layer"]), type=_type, idx=-1, laygo_name=current_name))
     end
 
     if perform_sort
@@ -117,7 +129,7 @@ function transform_VData(vdata::VData, transform::Matrix{Int})
         new_vlist = VList(type, Vector{VPoint}())
         for vpoint in vlist.vpoints
             new_xy = transform * [vpoint.xy[1]; vpoint.xy[2]; 1]
-            push!(new_vlist.vpoints, VPoint(new_xy[1:2], vpoint.extension, vpoint.layer, vpoint.type, nothing, -1))
+            push!(new_vlist.vpoints, VPoint(new_xy[1:2], vpoint.extension, vpoint.layer, vpoint.type, nothing, -1, vpoint.laygo_name))
         end
         new_vdata.vlists[type] = new_vlist
     end

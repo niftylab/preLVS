@@ -28,6 +28,8 @@ include("utils/log.jl")
 # 0. Fetch input ARG
 input_arg   = get_yaml("test_input.yaml")
 
+is_detailed = true
+
 # 1. Prepare JSON files and directories
 libname     = input_arg["libname"] #"scan_generated"   # 라이브러리 이름
 cellname    = input_arg["cellname"] #"scan_cell"  # cell 이름
@@ -73,7 +75,7 @@ print_tree_root(root)
 
 
 # flatten all metals + primitive pins + labels + pins without merging
-mdata, vdata = flatten_v2(libname, cellname, cell_data, db_data, orientation_list, config_data, source_net_sets)
+mdata, vdata = flatten_v2(libname, cellname, cell_data, db_data, orientation_list, config_data, source_net_sets, is_detailed)
 
 # println("Flattened metals: $(mdata.metals)")
 
@@ -91,8 +93,8 @@ create_error_log_file(libname, cellname, logfile_path, error_info, cinfo, error_
 
 
 
-3. Visualize(optional)
-visualize_metals_by_layer(merged_mdata.metals, orientation_list, "$(visualized_dir)/test_$(cellname)")
+# 3. Visualize(optional)
+# visualize_metals_by_layer(merged_mdata.metals, orientation_list, "$(visualized_dir)/test_$(cellname)")
 visualize_metals(merged_mdata.metals, orientation_list, "$(visualized_dir)/$(cellname).png")
 
 

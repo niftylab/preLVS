@@ -24,7 +24,8 @@ function flatten_v2(
     db_data::Dict,
     orientation_list::Vector{String},
     config_data::Dict,
-    equiv_net_sets::Vector{Tuple{String, Set{String}}}
+    equiv_net_sets::Vector{Tuple{String, Set{String}}},
+    is_detailed::Bool=false
 )::Tuple{MData, VData}
 
     # Get top cell name
@@ -51,11 +52,11 @@ function flatten_v2(
         # METALS
         # unnamed_metals : metals + pins of primitives
         # named_metals : labels + pins
-        unnamed_metals, named_metals = db_to_MData(lib, cell, db_data, orientation_list, equiv_net_sets)
+        unnamed_metals, named_metals = db_to_MData(lib, cell, db_data, orientation_list, equiv_net_sets, is_detailed)
         # println("Named Metals: $(named_metals.metals)")
 
         # VIAS
-        vias = db_to_VData(lib, cell, db_data[lib][cell]["vias"], config_data, false)
+        vias = db_to_VData(lib, cell, db_data[lib][cell]["vias"], config_data, is_detailed, false)
 
 
         # Transform metals with MTransform & netname_dict

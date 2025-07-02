@@ -99,7 +99,7 @@ end
 
 
 function visualize_metals_by_layer(
-    metals::OrderedDict{Int, MLayer},
+    metals::OrderedDict{Int, MOLayer},
     orientation_list::Vector{String},
     output_dir::String
 )
