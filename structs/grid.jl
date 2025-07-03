@@ -188,6 +188,7 @@ function analyze_grid_occupation(grid_data::Dict, merged_metals::Dict)
             println("used_metal_length: $(used_metal_length)")
             total_occupation = round(used_metal_length / (total_num_of_grids * grid_data["top_bbox"][1]) * 100, digits=2)
             println("occupation: $(total_occupation)%")
+            grid_occupation_result[layer_num]["total_occupation"] = total_occupation
         else    # vertical layer
             used_metal_length = 0
             for (mn, mvector_list) in layer_data
@@ -216,8 +217,24 @@ function analyze_grid_occupation(grid_data::Dict, merged_metals::Dict)
             println("used_metal_length: $(used_metal_length)")
             total_occupation = round(used_metal_length / (total_num_of_grids * grid_data["top_bbox"][2]) * 100, digits=2)
             println("occupation: $(total_occupation)%")
+            grid_occupation_result[layer_num]["total_occupation"] = total_occupation
         end
     end
 
     return grid_occupation_result
+end
+
+
+function print_grid_occupation_result(grid_occupation_result::Dict, status::String)
+
+    println("Grid Occupation Result: $(status)")
+
+    total_occupation = 0
+
+    layers = sort(collect(keys(grid_occupation_result)))
+    for layer_num in layers
+        println("Layer $(layer_num): $(grid_occupation_result[layer_num]["total_occupation"])%")
+        total_occupation += grid_occupation_result[layer_num]["total_occupation"]
+    end
+    println("Total Occupation: $(round(total_occupation / length(layers), digits=2))%")
 end

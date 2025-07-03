@@ -110,8 +110,15 @@ merged_top_metals = get_merged_metals(grid_data, top_modata)
 # println("top_metals: $(merged_top_metals)")
 # println("obstacle_metals: $(merged_obstacle_metals)")
 
-grid_occupation_result = analyze_grid_occupation(grid_data, merged_combined_metals)
-# println("grid_occupation_result: $(grid_occupation_result)")
+merged_grid_occupation_result = analyze_grid_occupation(grid_data, merged_combined_metals)
+top_grid_occupation_result = analyze_grid_occupation(grid_data, merged_top_metals)
+obstacle_grid_occupation_result = analyze_grid_occupation(grid_data, merged_obstacle_metals)
+
+print_grid_occupation_result(merged_grid_occupation_result, "merged")
+print_grid_occupation_result(top_grid_occupation_result, "top")
+print_grid_occupation_result(obstacle_grid_occupation_result, "obstacle")
+
+
 
 
 
