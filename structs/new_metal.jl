@@ -441,7 +441,7 @@ function merge_mvector_list(mvector_list::Vector{MVector}, p_coord::Int, layer::
 
     merged_metals = Vector{MOVector}()
     # named_metal_list = Vector{MVector}()
-    st = Stack{MPoint}()
+    st = CustomStack{MPoint}()
     netname_set = Set{String}()
     laygo_origin_set = Set{LaygoOrigin}()
 

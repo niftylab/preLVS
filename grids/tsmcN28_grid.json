@@ -1,0 +1,33 @@
+{
+    "tech": "tsmcN28",
+    "grid": {
+        "routing_23_cmos": {
+            "horizontal": {
+                "scope": [0, 1200],
+                "elements": [0, 200, 300, 485, 600, 715, 900, 1000],
+                "extension": [75, 25, 25, 25, 25, 25, 25, 25],
+                "width": [150, 50, 50, 50, 50, 50, 50, 50]
+            },
+            "vertical": {
+                "scope": [0, 130],
+                "elements": [0],
+                "extension": [30],
+                "width": [60]
+            }
+        },
+        "routing_34_cmos": {
+            "horizontal": {
+                "scope": [0, 1200],
+                "elements": [100, 200, 300, 400, 500, 700, 800, 900, 1000, 1100],
+                "extension": [25, 25, 25, 25, 25, 25, 25, 25, 25, 25],
+                "width": [100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
+            },
+            "vertical": {
+                "scope": [0, 130],
+                "elements": [0],
+                "extension": [30],
+                "width": [60]
+            }
+        }
+    }
+}
