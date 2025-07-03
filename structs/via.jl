@@ -1,4 +1,5 @@
 using OrderedCollections
+include("laygo_origin.jl")
 
 mutable struct VPoint
     xy::Vector{Int}
@@ -7,7 +8,7 @@ mutable struct VPoint
     type::String
     netname::Union{String, Nothing}
     idx::Int
-    laygo_name::Union{String, Nothing}
+    laygo_origin::Union{LaygoOrigin, Nothing}
 end
 
 mutable struct VList
@@ -30,9 +31,9 @@ function VPoint(
     layer::Vector{String},
     type::String,
     idx::Int=-1,
-    laygo_name::Union{String, Nothing}=nothing
+    laygo_origin::Union{LaygoOrigin, Nothing}=nothing
 )
-    return VPoint(xy, extension, layer, type, nothing, idx, laygo_name)
+    return VPoint(xy, extension, layer, type, nothing, idx, laygo_origin)
 end
 
 
@@ -62,6 +63,7 @@ function db_to_VData(
     db_vias::Union{Vector, Dict}, 
     config_data, 
     is_detailed::Bool=false, 
+    is_topcell::Bool=false,
     perform_sort::Bool=false
 )::VData
 
@@ -75,6 +77,12 @@ function db_to_VData(
         via_data = is_detailed ? last(via) : via
         current_name = is_detailed ? first(via) : nothing
 
+        if is_topcell
+            laygo_origin = LaygoOrigin(current_name)
+        else
+            laygo_origin = LaygoOrigin("OBSTACLE")
+        end
+
         println("via_data: $via_data")
         println("current_name: $current_name")
 
@@ -82,7 +90,7 @@ function db_to_VData(
         if !haskey(_unsorted_vdata.vlists, _type)
             _unsorted_vdata.vlists[_type] = VList(_type, Vector{VPoint}())
         end
-        push!(_unsorted_vdata.vlists[_type].vpoints, VPoint(xy=map(Int, via_data["xy"]), extension=map(Int, config_data["Via"][_type]["extension"]), layer=map(String, via_data["layer"]), type=_type, idx=-1, laygo_name=current_name))
+        push!(_unsorted_vdata.vlists[_type].vpoints, VPoint(xy=map(Int, via_data["xy"]), extension=map(Int, config_data["Via"][_type]["extension"]), layer=map(String, via_data["layer"]), type=_type, idx=-1, laygo_origin=laygo_origin))
     end
 
     if perform_sort
@@ -129,7 +137,7 @@ function transform_VData(vdata::VData, transform::Matrix{Int})
         new_vlist = VList(type, Vector{VPoint}())
         for vpoint in vlist.vpoints
             new_xy = transform * [vpoint.xy[1]; vpoint.xy[2]; 1]
-            push!(new_vlist.vpoints, VPoint(new_xy[1:2], vpoint.extension, vpoint.layer, vpoint.type, nothing, -1, vpoint.laygo_name))
+            push!(new_vlist.vpoints, VPoint(new_xy[1:2], vpoint.extension, vpoint.layer, vpoint.type, nothing, -1, vpoint.laygo_origin))
         end
         new_vdata.vlists[type] = new_vlist
     end

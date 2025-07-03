@@ -47,16 +47,18 @@ function flatten_v2(
 
     for (lib, cell) in task_list
 
+        is_topcell = (cell == top_cellname)
+
         # println("Creating Cell: $(cell) in Task List")
 
         # METALS
         # unnamed_metals : metals + pins of primitives
         # named_metals : labels + pins
-        unnamed_metals, named_metals = db_to_MData(lib, cell, db_data, orientation_list, equiv_net_sets, is_detailed)
+        unnamed_metals, named_metals = db_to_MData(lib, cell, db_data, orientation_list, equiv_net_sets, is_detailed, is_topcell)
         # println("Named Metals: $(named_metals.metals)")
 
         # VIAS
-        vias = db_to_VData(lib, cell, db_data[lib][cell]["vias"], config_data, is_detailed, false)
+        vias = db_to_VData(lib, cell, db_data[lib][cell]["vias"], config_data, is_detailed, is_topcell, false)
 
 
         # Transform metals with MTransform & netname_dict

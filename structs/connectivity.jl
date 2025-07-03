@@ -36,6 +36,7 @@ end
 struct ComponentInfo
     nodes::Set{MOVector}            # 컴포넌트에 속한 노드(MOVector)들의 Set
     netname::Union{String, Nothing} # 컴포넌트의 대표 netname
+    laygo_origin_set::Set{LaygoOrigin} # 컴포넌트의 대표 laygo_origin
     is_consistent::Bool             # 해당 컴포넌트의 netname 일관성 여부
 end
 
@@ -102,6 +103,7 @@ function create_error_log_file(libname::String, cellname::String, logFileName::S
             else
                 println(io, "Metals: (Empty component)")
             end
+            println(io, "Laygo Origin Set: $(component.laygo_origin_set)")
         end
         print_consistency_status(libname, cellname, io, overall_consistent, error_cnt)
     end # Close file
@@ -142,12 +144,14 @@ function check_and_report_connections_bfs(g::MGraph, source_net_sets::Vector{Tup
             current_component_nodes = Set{MOVector}() # 현재 컴포넌트 노드 저장
             expected_netname_ref = Ref{Union{String, Nothing}}(nothing)
             component_consistent = Ref(true)
+            component_laygo_origin_set = Set{LaygoOrigin}()
 
             q = Vector{MOVector}() # Queue of MOVector objects
 
             # 시작 노드 처리 및 큐에 추가
             push!(visited_metals, start_node)
             push!(current_component_nodes, start_node) # 컴포넌트에 시작 노드 추가
+            union!(component_laygo_origin_set, start_node.laygo_origin_set)
             push!(q, start_node)
 
             # 컴포넌트 시작 노드 정보 출력 (노드의 idx 필드가 있다고 가정)
@@ -201,6 +205,7 @@ function check_and_report_connections_bfs(g::MGraph, source_net_sets::Vector{Tup
                         if !(v_node in visited_metals)
                             push!(visited_metals, v_node)
                             push!(current_component_nodes, v_node) # 컴포넌트에 이웃 노드 추가
+                            union!(component_laygo_origin_set, v_node.laygo_origin_set)
                             push!(q, v_node) # 이웃 MOVector 객체를 큐에 추가
                         end
                     end
@@ -220,6 +225,7 @@ function check_and_report_connections_bfs(g::MGraph, source_net_sets::Vector{Tup
             push!(all_components_info, ComponentInfo(
                 current_component_nodes,
                 expected_netname_ref[],
+                component_laygo_origin_set,
                 component_consistent[]
             ))
         end

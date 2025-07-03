@@ -150,7 +150,7 @@ function get_lib_cell_db(libname::String, cellname::String, db_dir::String, memo
 end
 
 
-
+# Sub의 metal, via는 모두 obstacle로 처리리
 function get_tree_sub!(node::TreeNode{NodeData}, cell_data::Dict, db_dir::String, db_data::Dict, source_net_sets::Vector{Tuple{String, Set{String}}}, idx::Int)
     libname = node.data.libname
     cellname = node.data.cellname

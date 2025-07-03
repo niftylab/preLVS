@@ -3,50 +3,50 @@ Total unique nodes found in graph: 8
 Starting Connectivity and Netname Consistency Check...
 Error Info:
 FLOATING: No netname found metals. Start node = 2, 300, 120 - 935
-FLOATING: No netname found metals. Start node = 1, 260, 830 - 1070
+FLOATING: No netname found metals. Start node = 2, 900, 120 - 935
 
 --- Connectivity Check Report ---
 Total connected components found: 8
 
 --- Component 1 ---
-Representative Net Name: VDD
-Netname Consistency: Passed
-Metal Indices (3): [2, 8, 26]
-
---- Component 2 ---
 Representative Net Name: None (all nodes had 'nothing' netname or component is empty)
 Netname Consistency: Passed
 Metal Indices (3): [3, 15, 19]
 
---- Component 3 ---
-Representative Net Name: I
-Netname Consistency: Passed
-Metal Indices (5): [4, 5, 20, 22, 27]
-
---- Component 4 ---
+--- Component 2 ---
 Representative Net Name: O
 Netname Consistency: Passed
 Metal Indices (5): [11, 14, 18, 25, 29]
 
+--- Component 3 ---
+Representative Net Name: None (all nodes had 'nothing' netname or component is empty)
+Netname Consistency: Passed
+Metal Indices (3): [6, 16, 24]
+
+--- Component 4 ---
+Representative Net Name: I
+Netname Consistency: Passed
+Metal Indices (5): [4, 5, 20, 22, 27]
+
 --- Component 5 ---
+Representative Net Name: VDD
+Netname Consistency: Passed
+Metal Indices (3): [2, 8, 26]
+
+--- Component 6 ---
 Representative Net Name: ENB
 Netname Consistency: Passed
 Metal Indices (3): [13, 23, 28]
 
---- Component 6 ---
+--- Component 7 ---
 Representative Net Name: VSS
 Netname Consistency: Passed
 Metal Indices (3): [1, 7, 17]
 
---- Component 7 ---
+--- Component 8 ---
 Representative Net Name: EN
 Netname Consistency: Passed
 Metal Indices (3): [12, 21, 30]
-
---- Component 8 ---
-Representative Net Name: None (all nodes had 'nothing' netname or component is empty)
-Netname Consistency: Passed
-Metal Indices (3): [6, 16, 24]
 
 ------------------------------------------------------------------
 

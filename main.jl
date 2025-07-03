@@ -91,8 +91,8 @@ create_error_log_file(libname, cellname, logfile_path, error_info, cinfo, error_
 
 
 
-3. Visualize(optional)
-visualize_metals_by_layer(merged_mdata.metals, orientation_list, "$(visualized_dir)/test_$(cellname)")
+# 3. Visualize(optional)
+# visualize_metals_by_layer(merged_mdata.metals, orientation_list, "$(visualized_dir)/test_$(cellname)")
 visualize_metals(merged_mdata.metals, orientation_list, "$(visualized_dir)/$(cellname).png")
 
 

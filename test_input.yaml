@@ -6,7 +6,7 @@
 # cellname: "scan_cell" # cell 이름
 
 libname: "logic_generated" # 라이브러리 이름
-cellname: "tinv_2x" # cell 이름
+cellname: "inv_2x" # cell 이름
 
 # libname: "comp_generated" # 라이브러리 이름
 # cellname: "strongarm" # cell 이름

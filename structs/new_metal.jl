@@ -2,6 +2,7 @@ using OrderedCollections
 using StaticArrays
 include("structure.jl")
 include("stack.jl")
+include("laygo_origin.jl")
 
 @enum MPosition START=1 END=2 UNDEF=3
 
@@ -9,7 +10,7 @@ mutable struct MPoint
     s_coord::Int
     pos::MPosition
     netname::Union{String, Nothing}
-    laygo_name::Union{String, Nothing}
+    laygo_origin::Union{LaygoOrigin, Nothing}
 end
 
 mutable struct MVector
@@ -17,7 +18,7 @@ mutable struct MVector
     p_coord::Int
     points::SVector{2, MPoint}           # contains only two MPoints (start, end)
     netname::Union{String, Nothing}
-    laygo_name::Union{String, Nothing}
+    laygo_origin::Union{LaygoOrigin, Nothing}
 end
 
 mutable struct MLayer
@@ -40,6 +41,7 @@ mutable struct MOVector
     p_coord::Int
     points::SVector{2, MPoint}          # contains only two MPoints (start, end)
     netname::Union{String, Nothing}
+    laygo_origin_set::Union{Set{LaygoOrigin}, Nothing}
     idx::Int                            # unique index for merged metals
     is_visited::Bool
 end
@@ -62,14 +64,14 @@ end
 """
 Convenience constructor for MPoint.
 """
-MPoint(s_coord::Int, pos::MPosition; netname::Union{String, Nothing}=nothing, laygo_name::Union{String, Nothing}=nothing) = 
-    MPoint(s_coord, pos, netname, laygo_name)
+MPoint(s_coord::Int, pos::MPosition; netname::Union{String, Nothing}=nothing, laygo_origin::Union{LaygoOrigin, Nothing}=nothing) = 
+    MPoint(s_coord, pos, netname, laygo_origin)
 
 """
 Convenience constructor for MVector.
 """
-function MVector(layer::Int, p_coord::Int, p0::MPoint, p1::MPoint; netname::Union{String, Nothing}=nothing, laygo_name::Union{String, Nothing}=nothing)
-    return MVector(layer, p_coord, SVector(p0, p1), netname, laygo_name)
+function MVector(layer::Int, p_coord::Int, p0::MPoint, p1::MPoint; netname::Union{String, Nothing}=nothing, laygo_origin::Union{LaygoOrigin, Nothing}=nothing)
+    return MVector(layer, p_coord, SVector(p0, p1), netname, laygo_origin)
 end
 
 """
@@ -88,11 +90,17 @@ MData(libname::String, cellname::String; metals::Dict{Int, MLayer}=Dict{Int, MLa
 
 # OrderedMLayer and OrderedMData
 
+
+
 """
 Convenience constructor for MOVector.
 """
-function MOVector(layer::Int, p_coord::Int, p0::MPoint, p1::MPoint; netname::Union{String, Nothing}=nothing, laygo_name::Union{String, Nothing}=nothing, idx::Int=0, is_visited::Bool=false)
-    return MOVector(layer, p_coord, SVector(p0, p1), netname, laygo_name, idx, is_visited)
+function MOVector(layer::Int, p_coord::Int, p0::MPoint, p1::MPoint; netname::Union{String, Nothing}=nothing, laygo_origin_set::Union{Set{LaygoOrigin}, Nothing}=nothing, idx::Int=0, is_visited::Bool=false)
+    return MOVector(layer, p_coord, SVector(p0, p1), netname, laygo_origin_set, idx, is_visited)
+end
+
+function MOVector(layer::Int, p_coord::Int, points::SVector{2, MPoint}; netname::Union{String, Nothing}=nothing, laygo_origin_set::Union{Set{LaygoOrigin}, Nothing}=nothing, idx::Int=0, is_visited::Bool=false)
+    return MOVector(layer, p_coord, points, netname, laygo_origin_set, idx, is_visited)
 end
 
 
@@ -166,7 +174,8 @@ function db_to_MData(
     db_json_data::Dict, 
     orientation_list::Vector{String}, 
     source_net_sets::Vector{Tuple{String,Set{String}}},
-    is_detailed::Bool=false
+    is_detailed::Bool=false,
+    is_topcell::Bool=false
     )::Tuple{MData, MData}
 
     # Initialize metals
@@ -198,8 +207,8 @@ function db_to_MData(
 
             min_s = is_vertical ? min(p["xy"][1][2], p["xy"][2][2]) : min(p["xy"][1][1], p["xy"][2][1])
             max_s = is_vertical ? max(p["xy"][1][2], p["xy"][2][2]) : max(p["xy"][1][1], p["xy"][2][1])
-            points = SVector{2, MPoint}(MPoint(min_s - extension, UNDEF, netname=nothing, laygo_name=nothing),
-                                        MPoint(max_s + extension, UNDEF, netname=nothing, laygo_name=nothing))
+            points = SVector{2, MPoint}(MPoint(min_s - extension, UNDEF, netname=nothing, laygo_origin=nothing),
+                                        MPoint(max_s + extension, UNDEF, netname=nothing, laygo_origin=nothing))
 
             if !haskey(unnamed_metals[layer].metals, p_coord)
                 unnamed_metals[layer].metals[p_coord] = Vector{MVector}()
@@ -219,7 +228,13 @@ function db_to_MData(
         println("is_detailed: $is_detailed")
         metal_data = is_detailed ? last(db_metal) : db_metal
         current_name = is_detailed ? first(db_metal) : nothing
-        
+
+        if is_topcell
+            laygo_origin = LaygoOrigin(current_name)
+        else
+            laygo_origin = LaygoOrigin("OBSTACLE")
+        end
+
         println("current_name: $current_name")
         println("metal_data: $metal_data")
 
@@ -231,13 +246,13 @@ function db_to_MData(
 
         min_s = is_vertical ? min(metal_data["xy"][1][2], metal_data["xy"][2][2]) : min(metal_data["xy"][1][1], metal_data["xy"][2][1])
         max_s = is_vertical ? max(metal_data["xy"][1][2], metal_data["xy"][2][2]) : max(metal_data["xy"][1][1], metal_data["xy"][2][1])
-        points = SVector{2, MPoint}(MPoint(min_s - extension, UNDEF, netname=nothing, laygo_name=current_name),
-                                    MPoint(max_s + extension, UNDEF, netname=nothing, laygo_name=current_name))
+        points = SVector{2, MPoint}(MPoint(min_s - extension, UNDEF, netname=nothing, laygo_origin=laygo_origin),
+                                    MPoint(max_s + extension, UNDEF, netname=nothing, laygo_origin=laygo_origin))
 
         if !haskey(unnamed_metals[layer].metals, p_coord)
             unnamed_metals[layer].metals[p_coord] = Vector{MVector}()
         end
-        push!(unnamed_metals[layer].metals[p_coord], MVector(layer, p_coord, points, nothing, current_name))
+        push!(unnamed_metals[layer].metals[p_coord], MVector(layer, p_coord, points, nothing, laygo_origin))
     end
 
     # Named metals
@@ -254,8 +269,8 @@ function db_to_MData(
 
         min_s = is_vertical ? min(db_label["xy"][1][2], db_label["xy"][2][2]) : min(db_label["xy"][1][1], db_label["xy"][2][1])
         max_s = is_vertical ? max(db_label["xy"][1][2], db_label["xy"][2][2]) : max(db_label["xy"][1][1], db_label["xy"][2][1])
-        points = SVector{2, MPoint}(MPoint(min_s - extension, UNDEF, netname=netname, laygo_name=nothing),
-                                    MPoint(max_s + extension, UNDEF, netname=netname, laygo_name=nothing))
+        points = SVector{2, MPoint}(MPoint(min_s - extension, UNDEF, netname=netname, laygo_origin=nothing),
+                                    MPoint(max_s + extension, UNDEF, netname=netname, laygo_origin=nothing))
 
         if !haskey(named_metals[layer].metals, p_coord)
             named_metals[layer].metals[p_coord] = Vector{MVector}()
@@ -275,8 +290,8 @@ function db_to_MData(
 
         min_s = is_vertical ? min(db_pin["xy"][1][2], db_pin["xy"][2][2]) : min(db_pin["xy"][1][1], db_pin["xy"][2][1])
         max_s = is_vertical ? max(db_pin["xy"][1][2], db_pin["xy"][2][2]) : max(db_pin["xy"][1][1], db_pin["xy"][2][1])
-        points = SVector{2, MPoint}(MPoint(min_s - extension, UNDEF, netname=netname, laygo_name=nothing),
-                                    MPoint(max_s + extension, UNDEF, netname=netname, laygo_name=nothing))
+        points = SVector{2, MPoint}(MPoint(min_s - extension, UNDEF, netname=netname, laygo_origin=nothing),
+                                    MPoint(max_s + extension, UNDEF, netname=netname, laygo_origin=nothing))
 
         if !haskey(named_metals[layer].metals, p_coord)
             named_metals[layer].metals[p_coord] = Vector{MVector}()
@@ -316,9 +331,9 @@ function transform_MData(unnamed_MData::MData, named_MData::MData, Mtransform::M
                 new_s1 = is_vertical ? (Mtransform * [0; mvector.points[1].s_coord; 1])[2] : (Mtransform * [mvector.points[1].s_coord; 0; 1])[1]
                 new_s2 = is_vertical ? (Mtransform * [0; mvector.points[2].s_coord; 1])[2] : (Mtransform * [mvector.points[2].s_coord; 0; 1])[1]
                 
-                new_points = SVector{2, MPoint}(MPoint(min(new_s1, new_s2), mvector.points[1].pos, netname=mvector.netname, laygo_name=mvector.laygo_name),
-                                                MPoint(max(new_s1, new_s2), mvector.points[2].pos, netname=mvector.netname, laygo_name=mvector.laygo_name))
-                push!(new_mvector_list, MVector(layer, p_coord, new_points, mvector.netname, mvector.laygo_name))
+                new_points = SVector{2, MPoint}(MPoint(min(new_s1, new_s2), mvector.points[1].pos, netname=mvector.netname, laygo_origin=mvector.laygo_origin),
+                                                MPoint(max(new_s1, new_s2), mvector.points[2].pos, netname=mvector.netname, laygo_origin=mvector.laygo_origin))
+                push!(new_mvector_list, MVector(layer, p_coord, new_points, mvector.netname, mvector.laygo_origin))
             end
             new_mlayer.metals[new_p_coord] = new_mvector_list
         end
@@ -345,9 +360,9 @@ function transform_MData(unnamed_MData::MData, named_MData::MData, Mtransform::M
                     netname = net_dict[unify_netname(mvector.points[1].netname, source_net_sets)]
                 end
                 
-                new_points = SVector{2, MPoint}(MPoint(min(new_s1, new_s2), mvector.points[1].pos, netname=netname, laygo_name=mvector.laygo_name),
-                                                MPoint(max(new_s1, new_s2), mvector.points[2].pos, netname=netname, laygo_name=mvector.laygo_name))
-                push!(new_mvector_list, MVector(layer, p_coord, new_points, netname, mvector.laygo_name))
+                new_points = SVector{2, MPoint}(MPoint(min(new_s1, new_s2), mvector.points[1].pos, netname=netname, laygo_origin=mvector.laygo_origin),
+                                                MPoint(max(new_s1, new_s2), mvector.points[2].pos, netname=netname, laygo_origin=mvector.laygo_origin))
+                push!(new_mvector_list, MVector(layer, p_coord, new_points, netname, mvector.laygo_origin))
             end
             if haskey(new_metals[layer].metals, new_p_coord)
                 append!(new_metals[layer].metals[new_p_coord], new_mvector_list)
@@ -428,8 +443,15 @@ function merge_mvector_list(mvector_list::Vector{MVector}, p_coord::Int, layer::
     # named_metal_list = Vector{MVector}()
     st = Stack{MPoint}()
     netname_set = Set{String}()
+    laygo_origin_set = Set{LaygoOrigin}()
 
     for mpoint in mpoints
+
+        if mpoint.laygo_origin === nothing
+            println("mpoint.laygo_origin is nothing")
+            println("mpoint: $mpoint")
+        end
+
         if mpoint.pos == START
             push_stack!(st, mpoint)
         elseif mpoint.pos == END
@@ -444,19 +466,29 @@ function merge_mvector_list(mvector_list::Vector{MVector}, p_coord::Int, layer::
                     # println("ERROR: Multiple netnames found for the same s_coord $(mpoint.s_coord): $(netname_set)")
                 end
             end
-                
+            if mpoint.laygo_origin !== nothing
+                if !(mpoint.laygo_origin.traceback in Set([laygo_origin.traceback for laygo_origin in laygo_origin_set]))
+                    push!(laygo_origin_set, mpoint.laygo_origin)
+                end
+            end
 
             start_mpoint = pop_stack!(st)
             if is_empty_stack(st)
                 netname = isempty(netname_set) ? nothing : pop!(netname_set)
-                push!(merged_metals, MOVector(layer, p_coord, SVector{2, MPoint}(MPoint(start_mpoint.s_coord, START, netname=netname, laygo_name=start_mpoint.laygo_name), 
-                                                                                  MPoint(mpoint.s_coord, END, netname=netname, laygo_name=mpoint.laygo_name)), netname, idx, false))
+                push!(merged_metals, MOVector(layer, p_coord, SVector{2, MPoint}(MPoint(start_mpoint.s_coord, START, netname=netname, laygo_origin=start_mpoint.laygo_origin), 
+                                                                                  MPoint(mpoint.s_coord, END, netname=netname, laygo_origin=mpoint.laygo_origin)), netname, laygo_origin_set, idx, false))
                 idx += 1
                 # if netname !== nothing
                 #     push!(named_metal_list, MVector(layer, p_coord, SVector{2, MPoint}(MPoint(start_mpoint.s_coord, START, netname), 
                 #                                                                       MPoint(mpoint.s_coord, END, netname)), netname))
                 # end
             end
+
+            # println("laygo_origin_set: $laygo_origin_set")
+            # if isempty(laygo_origin_set)
+            #     println("laygo_origin_set is empty")
+            #     println("mpoint: $mpoint")
+            # end
         end
     end
     return merged_metals, idx #, named_metal_list
