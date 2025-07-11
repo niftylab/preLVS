@@ -52,6 +52,7 @@ include(joinpath(lvsdir, "utils", "log.jl"))
 
 # Load config data
 config_data = get_config(config_file_path)
+is_detailed = true
 orientation_list = get_orientation_list(config_data)
 equiv_net_sets = config_data["Equivalent_net_sets"]
 
@@ -60,7 +61,7 @@ equiv_net_sets = config_data["Equivalent_net_sets"]
 root, cell_data, db_data = get_tree(libname, cellname, db_dir, equiv_net_sets)
 
 # 3. Flatten target cell
-mdata, vdata = flatten_v2(libname, cellname, cell_data, db_data, orientation_list, config_data, equiv_net_sets)
+mdata, vdata = flatten_v2(libname, cellname, cell_data, db_data, orientation_list, config_data, equiv_net_sets, is_detailed)
 
 # 4. Sort & Merge metals (vector merge)
 merged_mdata, nmetals = sort_n_merge_MData(mdata)
