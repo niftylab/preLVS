@@ -44,7 +44,7 @@ if !isdir(log_dir)
 end
 
 # Include files
-include(joinpath(lvsdir, "main_functions_test.jl")) # main functions ver2
+include(joinpath(lvsdir, "main_functions.jl")) # main functions ver2
 include(joinpath(lvsdir, "structs", "connectivity.jl"))
 include(joinpath(lvsdir, "utils", "log.jl"))
 

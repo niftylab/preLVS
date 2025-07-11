@@ -2,43 +2,43 @@ Total unique nodes found in graph: 14
 
 Starting Connectivity and Netname Consistency Check...
 Error Info:
+FLOATING: No netname found metals. Start node = 2, 300, 1160 - 1975
+FLOATING: No netname found metals. Start node = 2, 200, 3500 - 4315
+FLOATING: No netname found metals. Start node = 2, 900, 1160 - 1975
 FLOATING: No netname found metals. Start node = 1, 3640, 830 - 1070
-FLOATING: No netname found metals. Start node = 1, 1950, 830 - 1070
-FLOATING: No netname found metals. Start node = 1, 1950, 130 - 370
-FLOATING: No netname found metals. Start node = 1, 4290, 130 - 370
 
 --- Connectivity Check Report ---
 Total connected components found: 14
 
 --- Component 1 ---
+Representative Net Name: None (all nodes had 'nothing' netname or component is empty)
+Netname Consistency: Passed
+Metal Indices (3): [19, 31, 86]
+Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("LATCH_3"), LaygoOrigin("OBSTACLE"), LaygoOrigin("OUT_2")])
+
+--- Component 2 ---
+Representative Net Name: VSS
+Netname Consistency: Passed
+Metal Indices (15): [1, 7, 9, 15, 17, 23, 33, 40, 46, 48, 54, 64, 71, 77, 79]
+Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("NoName_0"), LaygoOrigin("OBSTACLE")])
+
+--- Component 3 ---
 Representative Net Name: VDD
 Netname Consistency: Passed
 Metal Indices (15): [2, 8, 10, 16, 18, 24, 35, 41, 47, 49, 55, 66, 72, 78, 120]
 Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("OBSTACLE"), LaygoOrigin("NoName_1")])
 
---- Component 2 ---
-Representative Net Name: ICLKB
-Netname Consistency: Passed
-Metal Indices (23): [3, 6, 12, 13, 28, 38, 60, 68, 84, 91, 93, 98, 103, 106, 109, 112, 122, 123, 128, 130, 136, 142, 146]
-Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("ICLKB_4_0"), LaygoOrigin("ICLKB_1_0"), LaygoOrigin("ICLKB_3_0"), LaygoOrigin("MEM2_3"), LaygoOrigin("ICLKB_6"), LaygoOrigin("ICLKB_2_0"), LaygoOrigin("ICLKB_5_0"), LaygoOrigin("LATCH_3"), LaygoOrigin("OBSTACLE"), LaygoOrigin("ICLKB_0_0"), LaygoOrigin("OUT_2")])
-
---- Component 3 ---
-Representative Net Name: MEM1
-Netname Consistency: Passed
-Metal Indices (14): [27, 30, 36, 39, 43, 44, 80, 81, 95, 107, 117, 127, 131, 133]
-Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("MEM1_3"), LaygoOrigin("MEM1_1_0"), LaygoOrigin("OBSTACLE"), LaygoOrigin("MEM1_2_0"), LaygoOrigin("MEM1_0_0")])
-
 --- Component 4 ---
-Representative Net Name: I
-Netname Consistency: Passed
-Metal Indices (5): [20, 21, 92, 104, 125]
-Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("OBSTACLE")])
-
---- Component 5 ---
 Representative Net Name: OUT
 Netname Consistency: Passed
 Metal Indices (8): [65, 73, 76, 89, 101, 119, 139, 144]
-Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("MEM1_3"), LaygoOrigin("LATCH_3"), LaygoOrigin("OBSTACLE"), LaygoOrigin("OUT_1_0"), LaygoOrigin("OUT_2"), LaygoOrigin("OUT_0_0")])
+Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("LATCH_3"), LaygoOrigin("MEM1_3"), LaygoOrigin("OBSTACLE"), LaygoOrigin("OUT_1_0"), LaygoOrigin("OUT_2"), LaygoOrigin("OUT_0_0")])
+
+--- Component 5 ---
+Representative Net Name: ICLK
+Netname Consistency: Passed
+Metal Indices (18): [11, 14, 29, 37, 59, 69, 85, 94, 97, 105, 110, 113, 124, 126, 132, 138, 140, 145]
+Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("ICLK_3_0"), LaygoOrigin("MEM2_3"), LaygoOrigin("LATCH_3"), LaygoOrigin("OBSTACLE"), LaygoOrigin("ICLK_2_0"), LaygoOrigin("ICLK_5"), LaygoOrigin("ICLK_4_0"), LaygoOrigin("ICLK_1_0"), LaygoOrigin("OUT_2"), LaygoOrigin("ICLK_0_0")])
 
 --- Component 6 ---
 Representative Net Name: MEM2
@@ -47,52 +47,52 @@ Metal Indices (14): [58, 61, 67, 70, 74, 75, 83, 88, 99, 111, 116, 137, 141, 143
 Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("MEM2_0_0"), LaygoOrigin("LATCH_3"), LaygoOrigin("MEM2_2_0"), LaygoOrigin("OBSTACLE"), LaygoOrigin("MEM2_1_0"), LaygoOrigin("MEM2_3"), LaygoOrigin("OUT_2")])
 
 --- Component 7 ---
-Representative Net Name: ICLK
+Representative Net Name: ICLKB
 Netname Consistency: Passed
-Metal Indices (18): [11, 14, 29, 37, 59, 69, 85, 94, 97, 105, 110, 113, 124, 126, 132, 138, 140, 145]
-Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("ICLK_3_0"), LaygoOrigin("MEM2_3"), LaygoOrigin("LATCH_3"), LaygoOrigin("OBSTACLE"), LaygoOrigin("ICLK_2_0"), LaygoOrigin("ICLK_5"), LaygoOrigin("ICLK_1_0"), LaygoOrigin("ICLK_4_0"), LaygoOrigin("OUT_2"), LaygoOrigin("ICLK_0_0")])
+Metal Indices (23): [3, 6, 12, 13, 28, 38, 60, 68, 84, 91, 93, 98, 103, 106, 109, 112, 122, 123, 128, 130, 136, 142, 146]
+Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("ICLKB_4_0"), LaygoOrigin("ICLKB_1_0"), LaygoOrigin("ICLKB_3_0"), LaygoOrigin("MEM2_3"), LaygoOrigin("ICLKB_6"), LaygoOrigin("ICLKB_2_0"), LaygoOrigin("ICLKB_5_0"), LaygoOrigin("LATCH_3"), LaygoOrigin("OBSTACLE"), LaygoOrigin("ICLKB_0_0"), LaygoOrigin("OUT_2")])
 
 --- Component 8 ---
-Representative Net Name: None (all nodes had 'nothing' netname or component is empty)
-Netname Consistency: Passed
-Metal Indices (3): [53, 63, 118]
-Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("MEM1_3"), LaygoOrigin("OBSTACLE")])
-
---- Component 9 ---
-Representative Net Name: LATCH
-Netname Consistency: Passed
-Metal Indices (13): [34, 42, 45, 51, 52, 87, 96, 100, 108, 115, 129, 134, 135]
-Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("LATCH_3"), LaygoOrigin("OBSTACLE"), LaygoOrigin("LATCH_2_0"), LaygoOrigin("LATCH_1_0"), LaygoOrigin("LATCH_0_0"), LaygoOrigin("MEM2_3"), LaygoOrigin("OUT_2")])
-
---- Component 10 ---
-Representative Net Name: VSS
-Netname Consistency: Passed
-Metal Indices (15): [1, 7, 9, 15, 17, 23, 33, 40, 46, 48, 54, 64, 71, 77, 79]
-Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("NoName_0"), LaygoOrigin("OBSTACLE")])
-
---- Component 11 ---
-Representative Net Name: None (all nodes had 'nothing' netname or component is empty)
-Netname Consistency: Passed
-Metal Indices (3): [22, 32, 114]
-Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("OBSTACLE"), LaygoOrigin("MEM2_3")])
-
---- Component 12 ---
 Representative Net Name: CLK
 Netname Consistency: Passed
 Metal Indices (5): [4, 5, 90, 102, 121]
 Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("OBSTACLE")])
 
---- Component 13 ---
-Representative Net Name: None (all nodes had 'nothing' netname or component is empty)
+--- Component 9 ---
+Representative Net Name: MEM1
 Netname Consistency: Passed
-Metal Indices (3): [19, 31, 86]
-Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("LATCH_3"), LaygoOrigin("OBSTACLE"), LaygoOrigin("OUT_2")])
+Metal Indices (14): [27, 30, 36, 39, 43, 44, 80, 81, 95, 107, 117, 127, 131, 133]
+Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("MEM1_3"), LaygoOrigin("MEM1_1_0"), LaygoOrigin("OBSTACLE"), LaygoOrigin("MEM1_2_0"), LaygoOrigin("MEM1_0_0")])
 
---- Component 14 ---
+--- Component 10 ---
+Representative Net Name: I
+Netname Consistency: Passed
+Metal Indices (5): [20, 21, 92, 104, 125]
+Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("OBSTACLE")])
+
+--- Component 11 ---
 Representative Net Name: None (all nodes had 'nothing' netname or component is empty)
 Netname Consistency: Passed
 Metal Indices (3): [50, 62, 82]
 Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("OBSTACLE")])
+
+--- Component 12 ---
+Representative Net Name: LATCH
+Netname Consistency: Passed
+Metal Indices (13): [34, 42, 45, 51, 52, 87, 96, 100, 108, 115, 129, 134, 135]
+Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("LATCH_3"), LaygoOrigin("OBSTACLE"), LaygoOrigin("LATCH_2_0"), LaygoOrigin("LATCH_1_0"), LaygoOrigin("LATCH_0_0"), LaygoOrigin("MEM2_3"), LaygoOrigin("OUT_2")])
+
+--- Component 13 ---
+Representative Net Name: None (all nodes had 'nothing' netname or component is empty)
+Netname Consistency: Passed
+Metal Indices (3): [22, 32, 114]
+Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("OBSTACLE"), LaygoOrigin("MEM2_3")])
+
+--- Component 14 ---
+Representative Net Name: None (all nodes had 'nothing' netname or component is empty)
+Netname Consistency: Passed
+Metal Indices (3): [53, 63, 118]
+Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("MEM1_3"), LaygoOrigin("OBSTACLE")])
 
 ------------------------------------------------------------------
 

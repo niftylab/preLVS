@@ -114,6 +114,7 @@ merged_grid_occupation_result = analyze_grid_occupation(grid_data, merged_combin
 top_grid_occupation_result = analyze_grid_occupation(grid_data, merged_top_metals)
 obstacle_grid_occupation_result = analyze_grid_occupation(grid_data, merged_obstacle_metals)
 
+println("\n")
 print_grid_occupation_result(merged_grid_occupation_result, "merged")
 print_grid_occupation_result(top_grid_occupation_result, "top")
 print_grid_occupation_result(obstacle_grid_occupation_result, "obstacle")
