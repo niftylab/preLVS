@@ -75,16 +75,7 @@ cinfo, error_info, error_cnt = check_and_report_connections_bfs(cgraph, equiv_ne
 # 7. Create error log file
 create_error_log_file(libname, cellname, outlogFilePath, error_info, cinfo, error_cnt)
 
+# 8. Create MCP response
+response = create_mcp_response(libname, cellname, error_info, cinfo, error_cnt)
 
-# Return results as JSON string
-result = Dict{String, Any}(
-    "status" => "completed",
-    "target" => "$libname - $cellname",
-    "error_count" => error_cnt,
-    "error_info" => error_info,
-    "cgraph" => cinfo
-)
-
-JSON.json(result)
-
-# println(result)
+JSON.json(response)
