@@ -1,4 +1,5 @@
 using JSON
+using Dates
 
 
 
@@ -47,6 +48,8 @@ end
 include(joinpath(lvsdir, "main_functions.jl")) # main functions ver2
 include(joinpath(lvsdir, "structs", "connectivity.jl"))
 include(joinpath(lvsdir, "utils", "log.jl"))
+include(joinpath(lvsdir, "utils", "visualize.jl"))
+
 
 
 
@@ -75,7 +78,15 @@ cinfo, error_info, error_cnt = check_and_report_connections_bfs(cgraph, equiv_ne
 # 7. Create error log file
 create_error_log_file(libname, cellname, outlogFilePath, error_info, cinfo, error_cnt)
 
-# 8. Create MCP response
-response = create_mcp_response(libname, cellname, error_info, cinfo, error_cnt)
+filepath = nothing
+# 8. Visualize(optional)
+if @isdefined(is_visualized) && is_visualized
+    timestamp = Dates.format(now(), "yyyy-mm-dd_HH-MM-SS")
+    filepath = "$(visualized_dir)/$(cellname)_$(timestamp).png"
+    visualize_metals(merged_mdata.metals, orientation_list, filepath)
+end
+
+# 9. Create MCP response
+response = create_mcp_response(libname, cellname, error_info, cinfo, error_cnt, is_visualized, filepath)
 
 JSON.json(response)

@@ -64,7 +64,7 @@ function get_error_string(error_info::ErrorInfo)
 end
 
 
-function create_mcp_response(libname::String, cellname::String, error_info::Vector{ErrorInfo}, all_components_info::Vector{ComponentInfo}, error_cnt::Dict{String, Int})
+function create_mcp_response(libname::String, cellname::String, error_info::Vector{ErrorInfo}, all_components_info::Vector{ComponentInfo}, error_cnt::Dict{String, Int}, is_visualized::Bool, filepath::Union{String, Nothing})
     response = Dict{String, Any}()
     response["target"] = "$libname - $cellname"
     response["status"] = error_cnt["total"] > 0 ? "failed" : "passed"
@@ -97,6 +97,11 @@ function create_mcp_response(libname::String, cellname::String, error_info::Vect
             push!(response["short"]["components"], Dict{String, Any}("laygo_origin_set" => laygo_origin_set_string, "number" => num))
         end
     end
+
+    if is_visualized
+        response["visualized_filepath"] = filepath
+    end
+
     response["all_components_info"] = all_components_info # 테스트 필요
     return response
 end
