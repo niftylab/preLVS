@@ -65,7 +65,6 @@ grid_error_log = Vector{String}()
 is_grid_consistent = check_grid_consistency(libname, cellname, db_data, orientation_list, grid_error_log, is_detailed)
 
 if !is_grid_consistent
-    println("Grid consistency check failed:")
     for error in grid_error_log
         println(error) 
     end
@@ -76,7 +75,7 @@ if !is_grid_consistent
             write(f, error * "\n")
         end
     end
-    error("Grid consistency check failed. There are ")
+    error("Grid consistency check failed.\n Error : $(grid_error_log)")
 end
 
 # 4. Sort & Merge metals (vector merge)
