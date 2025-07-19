@@ -28,16 +28,12 @@ using Dates
 
 
 # Set variables
-db_dir = joinpath(workdir, "output", "db")
 log_dir = joinpath(workdir, "output", "out", "log")
 outlogFilePath = joinpath(log_dir, "$(libname)_$(cellname).txt")
 
 # Check if directory exists
 if !isdir(lvsdir)
     error("LVS directory $lvsdir does not exist")
-end
-if !isdir(db_dir)
-    error("DB directory $db_dir does not exist")
 end
 if !isdir(log_dir)
     error("Log directory $log_dir does not exist")
