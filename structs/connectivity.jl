@@ -64,7 +64,7 @@ function get_error_string(error_info::ErrorInfo)
 end
 
 
-function create_mcp_response(libname::String, cellname::String, error_info::Vector{ErrorInfo}, all_components_info::Vector{ComponentInfo}, error_cnt::Dict{String, Int}, is_visualized::Bool, filepath::Union{String, Nothing})
+function create_mcp_response(libname::String, cellname::String, error_info::Vector{ErrorInfo}, all_components_info::Vector{ComponentInfo}, error_cnt::Dict{String, Int}, is_visualized::Bool, filepath::Union{String, Nothing}, added_short_error_info::Vector{Dict{String, Any}})
     response = Dict{String, Any}()
     response["target"] = "$libname - $cellname"
     response["status"] = error_cnt["total"] > 0 ? "failed" : "passed"
@@ -98,6 +98,10 @@ function create_mcp_response(libname::String, cellname::String, error_info::Vect
         end
     end
 
+    for error_data in added_short_error_info
+        push!(response["short"]["components"], Dict{String, Any}("netname_set" => error_data["netname_set"]))
+    end
+
     if is_visualized
         response["visualized_filepath"] = filepath
     end
@@ -119,6 +123,7 @@ function create_error_log_file(
     )
 
     overall_consistent = true
+    added_short_error_info = Vector{Dict{String, Any}}()
 
     open(logFileName, "w") do io
         println(io, "Total unique nodes found in graph: $(length(all_components_info))")
@@ -145,6 +150,7 @@ function create_error_log_file(
                     error_cnt["total"] += 1
                     push!(short_error_netnames, error_data["netname_set"])
                     overall_consistent = false
+                    push!(added_short_error_info, error_data)
                 end
 
             end
@@ -184,6 +190,8 @@ function create_error_log_file(
         end
         print_consistency_status(libname, cellname, io, overall_consistent, error_cnt, all_components_info)
     end # Close file
+
+    return added_short_error_info
 end
 
 function check_and_report_connections_bfs(g::MGraph, source_net_sets::Vector{Tuple{String, Set{String}}})

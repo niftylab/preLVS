@@ -107,7 +107,7 @@ merged_mdata, nmetals, short_error_data = sort_n_merge_MData(mdata)
 cgraph = connect_metals_from_via(merged_mdata, vdata, nmetals)
 cinfo, error_info, error_cnt = check_and_report_connections_bfs(cgraph, source_net_sets)
 logfile_path = "$(log_dir)/$(libname)_$(cellname).txt"
-create_error_log_file(libname, cellname, logfile_path, error_info, cinfo, error_cnt, short_error_data)
+added_short_error_info = create_error_log_file(libname, cellname, logfile_path, error_info, cinfo, error_cnt, short_error_data)
 
 
 
@@ -120,4 +120,4 @@ if @isdefined(is_visualized) && is_visualized
     visualize_metals(merged_mdata.metals, orientation_list, filepath)
 end
 
-response = create_mcp_response(libname, cellname, error_info, cinfo, error_cnt, is_visualized, filepath)
+response = create_mcp_response(libname, cellname, error_info, cinfo, error_cnt, is_visualized, filepath, added_short_error_info)

@@ -5,9 +5,9 @@
 # libname: "scan_generated" # 라이브러리 이름
 # cellname: "scan_cell" # cell 이름
 
-# libname: "logic_generated" # 라이브러리 이름
-# cellname: "tinv_2x" # cell 이름
-# techname: "tsmcN28"
+libname: "logic_generated" # 라이브러리 이름
+cellname: "tinv_2x" # cell 이름
+techname: "tsmcN28"
 
 # libname: "comp_generated" # 라이브러리 이름
 # cellname: "strongarm" # cell 이름
@@ -21,9 +21,9 @@
 # libname: "serializer_generated"
 # cellname: "ser_8to1_2x"
 
-libname: "error_generated"
-cellname: "tinv_2"
-techname: "tsmcN28"
+# libname: "error_generated"
+# cellname: "tinv_2"
+# techname: "tsmcN28"
 
 is_detailed: true
 db_dir: "db"
