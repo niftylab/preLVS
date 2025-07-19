@@ -130,7 +130,6 @@ function create_error_log_file(
         for error_info in error_info
             println(io, get_error_string(error_info))
 
-            println("error_info: $error_info")
             if error_info.type == SHORT
                 push!(short_error_netnames, Set([error_info.actual_netname, error_info.expected_netname]))
             end

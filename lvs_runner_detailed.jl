@@ -76,6 +76,7 @@ cinfo, error_info, error_cnt = check_and_report_connections_bfs(cgraph, equiv_ne
 # 7. Create error log file
 create_error_log_file(libname, cellname, outlogFilePath, error_info, cinfo, error_cnt, short_error_data)
 
+filepath = nothing
 # 8. Visualize(optional)
 if @isdefined(is_visualized) && is_visualized
     timestamp = Dates.format(now(), "yyyy-mm-dd_HH-MM-SS")
@@ -83,14 +84,7 @@ if @isdefined(is_visualized) && is_visualized
     visualize_metals(merged_mdata.metals, orientation_list, filepath)
 end
 
-
-# Return results as JSON string
-result = Dict{String, Any}(
-    "status" => "completed",
-    "target" => "$libname - $cellname",
-    "error_count" => error_cnt,
-    "error_info" => error_info,
-    "cgraph" => cinfo
-)
+# 9. Create MCP response
+response = create_mcp_response(libname, cellname, error_info, cinfo, error_cnt, is_visualized, filepath)
 
 JSON.json(response)
