@@ -83,8 +83,8 @@ function db_to_VData(
             laygo_origin = LaygoOrigin("OBSTACLE")
         end
 
-        println("via_data: $via_data")
-        println("current_name: $current_name")
+        # println("via_data: $via_data")
+        # println("current_name: $current_name")
 
         _type = via_data["cellname"]
         if !haskey(_unsorted_vdata.vlists, _type)

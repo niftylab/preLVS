@@ -62,19 +62,50 @@ function get_error_string(error_info::ErrorInfo)
 end
 
 
-function create_error_log_file(libname::String, cellname::String, logFileName::String, error_info::Vector{ErrorInfo}, all_components_info::Vector{ComponentInfo}, error_cnt::Dict{String, Int})
+function create_error_log_file(
+    libname::String, cellname::String, 
+    logFileName::String, 
+    error_info::Vector{ErrorInfo}, 
+    all_components_info::Vector{ComponentInfo}, 
+    error_cnt::Dict{String, Int}, 
+    short_error_data::Vector{Dict{String, Any}}
+    )
+
+    overall_consistent = true
+
     open(logFileName, "w") do io
         println(io, "Total unique nodes found in graph: $(length(all_components_info))")
         println(io, "\nStarting Connectivity and Netname Consistency Check...")
 
+        short_error_netnames = Vector{Set{String}}()
+
         println(io, "Error Info:")
         for error_info in error_info
             println(io, get_error_string(error_info))
+
+            println("error_info: $error_info")
+            if error_info.type == SHORT
+                push!(short_error_netnames, Set([error_info.actual_netname, error_info.expected_netname]))
+            end
+        end
+
+        if !isempty(short_error_data)
+            println(io, "Short Error Log:")
+            for error_data in short_error_data
+                println(io, error_data["message"])
+
+                if !(error_data["netname_set"] in short_error_netnames)
+                    error_cnt["short"] += 1
+                    error_cnt["total"] += 1
+                    push!(short_error_netnames, error_data["netname_set"])
+                    overall_consistent = false
+                end
+
+            end
         end
         println(io, "\n--- Connectivity Check Report ---")
         println(io, "Total connected components found: $(length(all_components_info))")
-        # --- 최종 결과 출력 ---
-        overall_consistent = true
+
         # --- 최종 결과 출력 ---
         for (i, component) in enumerate(all_components_info)
             println(io, "\n--- Component $i ---")
@@ -103,9 +134,9 @@ function create_error_log_file(libname::String, cellname::String, logFileName::S
             else
                 println(io, "Metals: (Empty component)")
             end
-            println(io, "Laygo Origin Set: $(component.laygo_origin_set)")
+            println(io, "Laygo Origin Set: $(Set([laygo_origin.traceback for laygo_origin in component.laygo_origin_set]))")
         end
-        print_consistency_status(libname, cellname, io, overall_consistent, error_cnt)
+        print_consistency_status(libname, cellname, io, overall_consistent, error_cnt, all_components_info)
     end # Close file
 end
 
@@ -231,16 +262,6 @@ function check_and_report_connections_bfs(g::MGraph, source_net_sets::Vector{Tup
         end
     end
 
-    println("\n--- Connectivity Check Report ---")
-    println("Total connected components found: $(length(all_components_info))")
-
-    println("\n---------------------------------")
-    println("\nTotal Error Count: $(error_cnt["total"])")
-    println("├─ Floating: $(error_cnt["floating"])")
-    println("├─ Open: $(error_cnt["open"])")
-    println("└─ Short: $(error_cnt["short"])")
-    println("---------------------------------")
-
     return all_components_info, error_info, error_cnt
 end
 
@@ -271,7 +292,7 @@ function check_coloned_netname(netname::String, net_sets::Set{String})
 end
 
 
-function print_consistency_status(libname::String, cellname::String, io::IO, overall_consistent::Bool, error_cnt::Dict{String, Int})
+function print_consistency_status(libname::String, cellname::String, io::IO, overall_consistent::Bool, error_cnt::Dict{String, Int}, all_components_info::Vector{ComponentInfo})
     println(io, "\n------------------------------------------------------------------\n")
 
     println(io, "Library: $libname")
@@ -311,6 +332,18 @@ function print_consistency_status(libname::String, cellname::String, io::IO, ove
     println(io, "└─ Short: $(error_cnt["short"])")
 
     println(io, "\n------------------------------------------------------------------\n")
+
+
+    # print in terminal
+    println("\n--- Connectivity Check Report ---")
+    println("Total connected components found: $(length(all_components_info))")
+
+    println("\n---------------------------------")
+    println("\nTotal Error Count: $(error_cnt["total"])")
+    println("├─ Floating: $(error_cnt["floating"])")
+    println("├─ Open: $(error_cnt["open"])")
+    println("└─ Short: $(error_cnt["short"])")
+    println("---------------------------------")
 end
 
 

@@ -10,6 +10,7 @@
 
 
 using JSON
+using Dates
 include("utils/visualize.jl")
 include("main_functions.jl") # main functions ver2
 include("structs/connectivity.jl")
@@ -33,6 +34,7 @@ is_detailed = true
 # 1. Prepare JSON files and directories
 libname     = input_arg["libname"] #"scan_generated"   # 라이브러리 이름
 cellname    = input_arg["cellname"] #"scan_cell"  # cell 이름
+is_visualized = input_arg["is_visualized"]
 
 db_dir = input_arg["db_dir"] #"db"
 metal_dir = input_arg["metal_dir"] #"out/metal"
@@ -77,17 +79,35 @@ print_tree_root(root)
 # flatten all metals + primitive pins + labels + pins without merging
 mdata, vdata = flatten_v2(libname, cellname, cell_data, db_data, orientation_list, config_data, source_net_sets, is_detailed)
 
-# println("Flattened metals: $(mdata.metals)")
+# grid_error_log = Vector{String}()
+# is_grid_consistent = check_grid_consistency(libname, cellname, db_data, orientation_list, grid_error_log, is_detailed)
+
+# if !is_grid_consistent
+#     println("Grid consistency check failed:")
+#     for error in grid_error_log
+#         println(error) 
+#     end
+
+#     txt_path = "$(log_dir)/$(libname)_$(cellname)_grid_error_log.txt"
+#     open(txt_path, "w") do f
+#         for error in grid_error_log
+#             write(f, error * "\n")
+#         end
+#     end
+
+#     error("Grid consistency check failed")
+# end
+
 
 
 # merged_mdata, named_mvectors = sort_n_merge_MData(mdata)
-merged_mdata, nmetals = sort_n_merge_MData(mdata)
+merged_mdata, nmetals, short_error_data = sort_n_merge_MData(mdata)
 
 
 cgraph = connect_metals_from_via(merged_mdata, vdata, nmetals)
 cinfo, error_info, error_cnt = check_and_report_connections_bfs(cgraph, source_net_sets)
 logfile_path = "$(log_dir)/$(libname)_$(cellname).txt"
-create_error_log_file(libname, cellname, logfile_path, error_info, cinfo, error_cnt)
+create_error_log_file(libname, cellname, logfile_path, error_info, cinfo, error_cnt, short_error_data)
 
 
 
@@ -95,7 +115,9 @@ create_error_log_file(libname, cellname, logfile_path, error_info, cinfo, error_
 
 # 3. Visualize(optional)
 # visualize_metals_by_layer(merged_mdata.metals, orientation_list, "$(visualized_dir)/test_$(cellname)")
-visualize_metals(merged_mdata.metals, orientation_list, "$(visualized_dir)/$(cellname).png")
-
-
+if @isdefined(is_visualized) && is_visualized
+    timestamp = Dates.format(now(), "yyyy-mm-dd_HH-MM-SS")
+    filepath = "$(visualized_dir)/$(cellname)_$(timestamp).png"
+    visualize_metals(merged_mdata.metals, orientation_list, filepath)
+end
 

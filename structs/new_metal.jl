@@ -168,6 +168,80 @@ function string_to_mposition(pos::String)::MPosition
     error("Invalid position: $pos")
 end
 
+
+# Grid에 따라 만들어지지 않은 metal 확인.
+function check_grid_consistency(
+    libname::String, cellname::String, 
+    db_json_data::Dict, 
+    orientation_list::Vector{String}, 
+    grid_error_log::Vector{String},
+    is_detailed::Bool=false,
+    is_topcell::Bool=false
+    )::Bool
+
+    db_primitives = db_json_data[libname][cellname]["primitives"]
+    db_metals = db_json_data[libname][cellname]["metals"]
+    db_labels = db_json_data[libname][cellname]["labels"]
+    db_pins = db_json_data[libname][cellname]["pins"]
+
+    is_grid_consistent = true
+
+    push!(grid_error_log, "Checking grid consistency for $libname/$cellname...")
+
+    for _prim in db_primitives
+        _pins = _prim["pins"]
+        for (pname, p) in _pins
+            layer = metal_to_int(p["layer"])
+            is_vertical = orientation_list[layer] == "VERTICAL"
+            p_coord_1 = p["xy"][1][is_vertical ? 1 : 2]
+            p_coord_2 = p["xy"][2][is_vertical ? 1 : 2]
+            if p_coord_1 !== p_coord_2
+                push!(grid_error_log, "Primitive $pname occupies more than one grid: p_coords: $p_coord_1, $p_coord_2 / PinName: $pname")
+                is_grid_consistent = false
+            end
+        end
+    end
+
+    for db_metal in db_metals
+        _metal = is_detailed ? last(db_metal) : db_metal
+        _name = is_detailed ? first(db_metal) : nothing
+        layer = metal_to_int(_metal["layer"])
+        is_vertical = orientation_list[layer] == "VERTICAL"
+        p_coord_1 = _metal["xy"][1][is_vertical ? 1 : 2]
+        p_coord_2 = _metal["xy"][2][is_vertical ? 1 : 2]
+        if p_coord_1 !== p_coord_2
+            push!(grid_error_log, "Metal occupies more than one grid: p_coords: $p_coord_1, $p_coord_2 / MetalName: $_name")
+            is_grid_consistent = false
+        end
+    end
+
+    for db_label in db_labels
+        layer = metal_to_int(db_label["layer"])
+        is_vertical = orientation_list[layer] == "VERTICAL"
+        p_coord_1 = db_label["xy"][1][is_vertical ? 1 : 2]
+        p_coord_2 = db_label["xy"][2][is_vertical ? 1 : 2]
+        if p_coord_1 !== p_coord_2
+            push!(grid_error_log, "Label occupies more than one grid: p_coords: $p_coord_1, $p_coord_2 / LabelName: $(db_label["netname"])")
+            is_grid_consistent = false
+        end
+    end
+
+    for db_pin in db_pins
+        layer = metal_to_int(db_pin["layer"])
+        is_vertical = orientation_list[layer] == "VERTICAL"
+        p_coord_1 = db_pin["xy"][1][is_vertical ? 1 : 2]
+        p_coord_2 = db_pin["xy"][2][is_vertical ? 1 : 2]
+        if p_coord_1 !== p_coord_2
+            push!(grid_error_log, "Pin occupies more than one grid: p_coords: $p_coord_1, $p_coord_2 / PinName: $(db_pin["name"])")
+            is_grid_consistent = false
+        end
+    end
+    
+    return is_grid_consistent
+end
+
+
+
 # Needs refactoring
 function db_to_MData(
     libname::String, cellname::String, 
@@ -224,8 +298,8 @@ function db_to_MData(
         # non-detailed (key: metal_data)
         # detailed인 경우 메탈의 이름을 따로 저장.
 
-        println("db_metal: $db_metal")
-        println("is_detailed: $is_detailed")
+        # println("db_metal: $db_metal")
+        # println("is_detailed: $is_detailed")
         metal_data = is_detailed ? last(db_metal) : db_metal
         current_name = is_detailed ? first(db_metal) : nothing
 
@@ -235,8 +309,8 @@ function db_to_MData(
             laygo_origin = LaygoOrigin("OBSTACLE")
         end
 
-        println("current_name: $current_name")
-        println("metal_data: $metal_data")
+        # println("current_name: $current_name")
+        # println("metal_data: $metal_data")
 
         layer = metal_to_int(metal_data["layer"])
         is_vertical = orientation_list[layer] == "VERTICAL"
@@ -259,6 +333,17 @@ function db_to_MData(
 
     # Add labels
     for db_label in db_labels
+
+        if is_topcell
+            if db_label["netname"] === nothing
+                laygo_origin = LaygoOrigin("UNKNOWN_LABEL")
+            else
+                laygo_origin = LaygoOrigin(db_label["netname"])
+            end
+        else
+            laygo_origin = LaygoOrigin("OBSTACLE")
+        end
+
         layer = metal_to_int(db_label["layer"])
         is_vertical = orientation_list[layer] == "VERTICAL"
         p_coord = db_label["xy"][1][is_vertical ? 1 : 2]
@@ -269,17 +354,28 @@ function db_to_MData(
 
         min_s = is_vertical ? min(db_label["xy"][1][2], db_label["xy"][2][2]) : min(db_label["xy"][1][1], db_label["xy"][2][1])
         max_s = is_vertical ? max(db_label["xy"][1][2], db_label["xy"][2][2]) : max(db_label["xy"][1][1], db_label["xy"][2][1])
-        points = SVector{2, MPoint}(MPoint(min_s - extension, UNDEF, netname=netname, laygo_origin=nothing),
-                                    MPoint(max_s + extension, UNDEF, netname=netname, laygo_origin=nothing))
+        points = SVector{2, MPoint}(MPoint(min_s - extension, UNDEF, netname=netname, laygo_origin=laygo_origin),
+                                    MPoint(max_s + extension, UNDEF, netname=netname, laygo_origin=laygo_origin))
 
         if !haskey(named_metals[layer].metals, p_coord)
             named_metals[layer].metals[p_coord] = Vector{MVector}()
         end
-        push!(named_metals[layer].metals[p_coord], MVector(layer, p_coord, points, netname, nothing))
+        push!(named_metals[layer].metals[p_coord], MVector(layer, p_coord, points, netname, laygo_origin))
     end
 
     # Add pins
     for db_pin in db_pins
+
+        if is_topcell
+            if db_pin["netname"] === nothing
+                laygo_origin = LaygoOrigin("UNKNOWN_PIN")
+            else
+                laygo_origin = LaygoOrigin(db_pin["netname"])
+            end
+        else
+            laygo_origin = LaygoOrigin("OBSTACLE")
+        end
+
         layer = metal_to_int(db_pin["layer"])
         is_vertical = orientation_list[layer] == "VERTICAL"
         p_coord = db_pin["xy"][1][is_vertical ? 1 : 2]
@@ -290,13 +386,13 @@ function db_to_MData(
 
         min_s = is_vertical ? min(db_pin["xy"][1][2], db_pin["xy"][2][2]) : min(db_pin["xy"][1][1], db_pin["xy"][2][1])
         max_s = is_vertical ? max(db_pin["xy"][1][2], db_pin["xy"][2][2]) : max(db_pin["xy"][1][1], db_pin["xy"][2][1])
-        points = SVector{2, MPoint}(MPoint(min_s - extension, UNDEF, netname=netname, laygo_origin=nothing),
-                                    MPoint(max_s + extension, UNDEF, netname=netname, laygo_origin=nothing))
+        points = SVector{2, MPoint}(MPoint(min_s - extension, UNDEF, netname=netname, laygo_origin=laygo_origin),
+                                    MPoint(max_s + extension, UNDEF, netname=netname, laygo_origin=laygo_origin))
 
         if !haskey(named_metals[layer].metals, p_coord)
             named_metals[layer].metals[p_coord] = Vector{MVector}()
         end
-        push!(named_metals[layer].metals[p_coord], MVector(layer, p_coord, points, netname, nothing))
+        push!(named_metals[layer].metals[p_coord], MVector(layer, p_coord, points, netname, laygo_origin))
     end
 
 
@@ -395,6 +491,7 @@ function sort_n_merge_MData(mdata::MData)
 
     new_mdata = MOData(mdata.libname, mdata.cellname, OrderedDict{Int, MOLayer}())
     layer_list = sort(unique(Iterators.flatten(keys(mdata.metals))))
+    short_error_data = Vector{Dict{String, Any}}()
 
     #named_mvectors = Vector{MVector}()
 
@@ -408,17 +505,17 @@ function sort_n_merge_MData(mdata::MData)
         p_coords = sort(collect(keys(mdata.metals[layer].metals)))
 
         for p_coord in p_coords
-            new_mdata.metals[layer].metals[p_coord], idx = merge_mvector_list(mdata.metals[layer].metals[p_coord], p_coord, layer, idx)
+            new_mdata.metals[layer].metals[p_coord], idx = merge_mvector_list(mdata.metals[layer].metals[p_coord], p_coord, layer, idx, short_error_data)
             # if length(_named_mvectors) > 0
             #     append!(named_mvectors, _named_mvectors)
             # end
         end
     end
-    return new_mdata, idx-1#, named_mvectors
+    return new_mdata, idx-1, short_error_data #, named_mvectors
 end
 
 
-function merge_mvector_list(mvector_list::Vector{MVector}, p_coord::Int, layer::Int, idx::Int)
+function merge_mvector_list(mvector_list::Vector{MVector}, p_coord::Int, layer::Int, idx::Int, short_error_data::Vector{Dict{String, Any}})
 
 
     # Assign START/END to each MPoint
@@ -447,13 +544,9 @@ function merge_mvector_list(mvector_list::Vector{MVector}, p_coord::Int, layer::
 
     for mpoint in mpoints
 
-        if mpoint.laygo_origin === nothing
-            println("mpoint.laygo_origin is nothing")
-            println("mpoint: $mpoint")
-        end
-
         if mpoint.pos == START
             push_stack!(st, mpoint)
+
         elseif mpoint.pos == END
             if is_empty_stack(st)
                 error("No matching START point for END point at s_coord $(mpoint.s_coord)")
@@ -464,6 +557,10 @@ function merge_mvector_list(mvector_list::Vector{MVector}, p_coord::Int, layer::
                 if length(netname_set) > 1
                     # error("Multiple netnames found for the same s_coord $(mpoint.s_coord): $(netname_set)")
                     # println("ERROR: Multiple netnames found for the same s_coord $(mpoint.s_coord): $(netname_set)")
+                    current_error_data = Dict{String, Any}()
+                    current_error_data["message"] = "SHORT_ERROR: Multiple netnames found for the same s_coord $(mpoint.s_coord): $(netname_set)"
+                    current_error_data["netname_set"] = copy(netname_set)
+                    push!(short_error_data, current_error_data)
                 end
             end
             if mpoint.laygo_origin !== nothing
@@ -473,11 +570,16 @@ function merge_mvector_list(mvector_list::Vector{MVector}, p_coord::Int, layer::
             end
 
             start_mpoint = pop_stack!(st)
+            # empty stack = metal 끝
             if is_empty_stack(st)
                 netname = isempty(netname_set) ? nothing : pop!(netname_set)
                 push!(merged_metals, MOVector(layer, p_coord, SVector{2, MPoint}(MPoint(start_mpoint.s_coord, START, netname=netname, laygo_origin=start_mpoint.laygo_origin), 
-                                                                                  MPoint(mpoint.s_coord, END, netname=netname, laygo_origin=mpoint.laygo_origin)), netname, laygo_origin_set, idx, false))
+                                                                                  MPoint(mpoint.s_coord, END, netname=netname, laygo_origin=mpoint.laygo_origin)), netname, copy(laygo_origin_set), idx, false))
                 idx += 1
+
+                # 이름 저장한 set들 초기화
+                empty!(laygo_origin_set)
+                empty!(netname_set)
                 # if netname !== nothing
                 #     push!(named_metal_list, MVector(layer, p_coord, SVector{2, MPoint}(MPoint(start_mpoint.s_coord, START, netname), 
                 #                                                                       MPoint(mpoint.s_coord, END, netname)), netname))

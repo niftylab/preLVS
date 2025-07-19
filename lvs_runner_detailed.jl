@@ -1,4 +1,5 @@
 using JSON
+using Dates
 
 
 
@@ -47,6 +48,7 @@ end
 include(joinpath(lvsdir, "main_functions.jl")) # main functions ver2
 include(joinpath(lvsdir, "structs", "connectivity.jl"))
 include(joinpath(lvsdir, "utils", "log.jl"))
+include(joinpath(lvsdir, "utils", "visualize.jl"))
 
 
 
@@ -63,7 +65,7 @@ root, cell_data, db_data = get_tree(libname, cellname, db_dir, equiv_net_sets)
 mdata, vdata = flatten_v2(libname, cellname, cell_data, db_data, orientation_list, config_data, equiv_net_sets)
 
 # 4. Sort & Merge metals (vector merge)
-merged_mdata, nmetals = sort_n_merge_MData(mdata)
+merged_mdata, nmetals, short_error_data = sort_n_merge_MData(mdata)
 
 # 5. Connect metals from via
 cgraph = connect_metals_from_via(merged_mdata, vdata, nmetals)
@@ -72,7 +74,14 @@ cgraph = connect_metals_from_via(merged_mdata, vdata, nmetals)
 cinfo, error_info, error_cnt = check_and_report_connections_bfs(cgraph, equiv_net_sets)
 
 # 7. Create error log file
-create_error_log_file(libname, cellname, outlogFilePath, error_info, cinfo, error_cnt)
+create_error_log_file(libname, cellname, outlogFilePath, error_info, cinfo, error_cnt, short_error_data)
+
+# 8. Visualize(optional)
+if @isdefined(is_visualized) && is_visualized
+    timestamp = Dates.format(now(), "yyyy-mm-dd_HH-MM-SS")
+    filepath = "$(visualized_dir)/$(cellname)_$(timestamp).png"
+    visualize_metals(merged_mdata.metals, orientation_list, filepath)
+end
 
 
 # Return results as JSON string
