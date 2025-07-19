@@ -4,7 +4,7 @@ using StaticArrays
 struct Node
     x::Int
     y::Int
-    z::Int # layer
+    z::Int # layer Num
 end
 
 # 라우팅 그리드 정보를 담을 구조체
@@ -16,7 +16,6 @@ struct RoutingGrid
     # Int(layer_num) <-> String(layer_name) 변환 맵
     layer_map::Dict{String, Int}
     rev_layer_map::Dict{Int, String}
-    
     via_cost::Int
 end
 function parse_layout_data(filepath::String)
@@ -139,86 +138,3 @@ function create_id_to_netname_map(connectivity_graph::Dict{Int, GraphNode}, hash
     return id_to_netname
 end
 
-"""
-    get_neighbors(current_node::Node, grid::RoutingGrid)
-
-주어진 노드에서 이동 가능한 모든 이웃 노드(다음 교차점)를 반환한다.
-M3 -> M2/M4 이동 시, 현재 y좌표가 목표 레이어의 h_track에 존재하는지 확인한다.
-"""
-function get_neighbors(current_node::Node, grid::RoutingGrid)
-    neighbors = Vector{Node}()
-    x, y, z = current_node.x, current_node.y, current_node.z
-
-    is_horizontal = haskey(grid.h_tracks, z)
-    is_vertical = haskey(grid.v_tracks, z)
-
-    # --- 1. 같은 레이어 내에서의 이동 ---
-    if is_horizontal
-        # 현재 레이어는 수평 트랙 레이어 (M2, M4 등)
-        # 이웃은 현재 y트랙을 따라 다음 x 교차점(v_track)으로 이동한 노드
-        
-        # 교차점을 만들 수 있는 모든 수직 트랙 목록 (보통 M3)
-        # 여기서는 모든 v_track을 합쳐서 사용한다고 가정
-        all_v_track_xs = vcat(values(grid.v_tracks)...)
-        unique!(sort!(all_v_track_xs)) # 정렬 및 중복 제거
-        
-        # 현재 x 위치의 인덱스를 이진 탐색으로 찾음
-        idx = searchsortedfirst(all_v_track_xs, x)
-
-        # 왼쪽 이웃
-        if idx > 1
-            push!(neighbors, Node(all_v_track_xs[idx-1], y, z))
-        end
-        # 오른쪽 이웃
-        if idx < length(all_v_track_xs)
-            push!(neighbors, Node(all_v_track_xs[idx+1], y, z))
-        end
-
-    elseif is_vertical
-        # 현재 레이어는 수직 트랙 레이어 (M3 등)
-        # 이웃은 현재 x트랙을 따라 다음 y 교차점(h_track)으로 이동한 노드
-        
-        all_h_track_ys = vcat(values(grid.h_tracks)...)
-        unique!(sort!(all_h_track_ys))
-        
-        idx = searchsortedfirst(all_h_track_ys, y)
-
-        # 아래쪽 이웃
-        if idx > 1
-            push!(neighbors, Node(x, all_h_track_ys[idx-1], z))
-        end
-        # 위쪽 이웃
-        if idx < length(all_h_track_ys)
-            push!(neighbors, Node(x, all_h_track_ys[idx+1], z))
-        end
-    end
-
-    # --- 2. 다른 레이어로의 이동 (Via) [로직 수정됨] ---
-    if is_horizontal # M2 -> M3 또는 M4 -> M3
-        # 현재 노드(x,y)는 유효한 교차점이므로, M3로의 이동은 항상 가능
-        m3_layer = get(grid.layer_map, "M3", -1)
-        if m3_layer != -1
-            push!(neighbors, Node(x, y, m3_layer))
-        end
-    elseif is_vertical # M3 -> M2 또는 M3 -> M4
-        # M3에서 M2로 이동 조건 확인
-        m2_layer = get(grid.layer_map, "M2", -1)
-        if m2_layer != -1 && haskey(grid.h_tracks, m2_layer)
-            # 현재 y좌표가 M2의 h_track에 존재하는지 확인
-            if binarysearch(grid.h_tracks[m2_layer], y) > 0
-                push!(neighbors, Node(x, y, m2_layer))
-            end
-        end
-        
-        # M3에서 M4로 이동 조건 확인
-        m4_layer = get(grid.layer_map, "M4", -1)
-        if m4_layer != -1 && haskey(grid.h_tracks, m4_layer)
-            # 현재 y좌표가 M4의 h_track에 존재하는지 확인
-            if binarysearch(grid.h_tracks[m4_layer], y) > 0
-                push!(neighbors, Node(x, y, m4_layer))
-            end
-        end
-    end
-
-    return neighbors
-end
