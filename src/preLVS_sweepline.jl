@@ -307,7 +307,7 @@ function runLVS_wo_log(runset::Union{String, Dict})
     println("connectivity graph generation complete")
 
     # 7. Check Connections
-    error_log, error_cnt, hash_rect, nets_visited = check_connections_bfs(cgraph, pinNodes, hash_rect, equiv_net_sets)
+    error_log, error_cnt, nets_visited = check_connections_bfs(cgraph, pinNodes, hash_rect, equiv_net_sets)
     println("graph analysis using BFS complete")
 
     # # 8. Create Error Log File
@@ -382,7 +382,7 @@ function runLVS(runset::Union{String, Dict})
     println("connectivity graph generation complete")
 
     # 7. Check Connections
-    error_log, error_cnt, hash_rect, nets_visited = check_connections_bfs(cgraph, pinNodes, hash_rect, equiv_net_sets)
+    error_log, error_cnt, nets_visited = check_connections_bfs(cgraph, pinNodes, hash_rect, equiv_net_sets)
     println("graph analysis using BFS complete")
 
     # 8. Create Error Log File

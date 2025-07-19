@@ -258,7 +258,7 @@ function check_connections_bfs(cgraph::Dict{Int, GraphNode}, pinNodes::Dict{Int,
     println("└─ Label: $(error_cnt["label"])")
     println("--------------------------------")
            
-    return error_log, error_cnt, hash_rect, nets_visited
+    return error_log, error_cnt, nets_visited
 end
 
 function check_coloned_netname(netname::String, nets_visited::Dict{String, Vector{Int}})

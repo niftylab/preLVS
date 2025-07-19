@@ -15,30 +15,30 @@ include("sweepline/flatten.jl")
 include("sweepline/sweepline.jl")
 include("sweepline/connectivity.jl")
 
-# # command-line 입력 확인
-# if length(ARGS) < 2
-#     println("Usage: julia main.jl <libname> <cellname>")
-#     println("Example: julia main.jl test_generated dff_2x")
-#     exit(1)
-# end
-
-# REPL test 용으로  ARGS 없이 직접 변수를 넣어줌
 # 0. Fetch input ARG
-path_runset = "config/test_input.yaml"
-input_arg   = get_yaml(path_runset)
-# 1. Prepare JSON files and directories
-libname     = input_arg["libname"]#"test_generated"   # 라이브러리 이름
-cellname    = input_arg["cellname"]#"scan_cell"  # cell 이름
+runset = "config/test_input.yaml"
+# 1. Fetch input ARGS
+if isa(runset, String)
+    input_arg   = get_yaml(runset)
+elseif isa(runset, Dict)
+    input_arg = runset
+else
+    error("Invalid input type. Expected String or Dict.")
+end
 
-db_dir = input_arg["db_dir"] #"db"
-metal_dir = input_arg["metal_dir"] #"out/metal"
-via_dir = input_arg["via_dir"] #"out/via"
-visualized_dir = input_arg["visualized_dir"] #"out/visualized"
-
+# Initialize variables
+libname = input_arg["libname"]
+cellname = input_arg["cellname"]
+db_dir = input_arg["db_dir"]
+metal_dir = input_arg["metal_dir"]
+via_dir = input_arg["via_dir"]
+visualized_dir = input_arg["visualized_dir"]
+log_dir = input_arg["log_dir"]
 netlog_dir = input_arg["netlog_dir"]
-config_file_path = input_arg["config_file_path"] #"config/config.yaml"
+config_file_path = input_arg["config_file_path"]
 
-    # Check if database/config file exists
+
+# Check if database/config file exists
 if !isfile("$(db_dir)/$(libname)_db.json")
     error("Database file '$(libname)_db.json' not found in $(db_dir)")
 end
@@ -46,61 +46,39 @@ if !isfile(config_file_path)
     error("Config file not found at $config_file_path")
 end
 
-    # Load db_json_data
-db_json_path    = "$(db_dir)/$(libname)_db.json"
-db_json_data    = JSON.parse(read(db_json_path, String))
-config_data     = get_config(config_file_path)
+# Load config data
+config_data = get_config(config_file_path)
+equiv_net_sets = config_data["Equivalent_net_sets"]
 
-    # libname, cellname이 db_json_data에 있는지 확인
-if !haskey(db_json_data, libname)
-    error("Library name '$libname' not found in database at $db_json_path")
-    exit(1)
-elseif !haskey(db_json_data[libname], cellname)
-    error("Cell name '$cellname' not found in library '$libname' at $db_json_path")
-    exit(1)
-end
-
-
-# 2. Create tree structure from the target cell
-# 2.1. set equivalent net (needed to be taken over by config.yaml)
-equivalent_net_sets = [("VDD:", Set(["VDD", "vdd", "VDD:"])), ("VSS:", Set(["VSS", "VSS:", "vss"]))]
-# pass this through config_data
-config_data["equivalent_net_sets"] = equivalent_net_sets
 events    = Vector{Event}()
 hash_rect = Vector{Rect}()
 overlaps  = Dict{Int, Vector{Int}}()
 via_link  = Dict{Int, Tuple{Int, Int}}()
+error_log = Vector{ErrorEvent}()
 cgraph    = Dict{Int, GraphNode}()
 
-root, inst_flatten, cell_list, db_data = get_tree(libname, cellname, db_dir, equivalent_net_sets)
-#    print_tree_root(root)
 
-mflat, vflat, lflat = flatten_V2(inst_flatten, cell_list, db_data, config_data, equivalent_net_sets)
+# 2. Create tree structure from db
+root, inst_flatten, cell_list, db_data = get_tree(libname, cellname, db_dir, equiv_net_sets)
+println("Generated tree structure from db\n")
+
+# 3. Flatten target cell
+mflat, vflat, lflat = flatten_V2(inst_flatten, cell_list, db_data, config_data, equiv_net_sets)
 println("Rect transform complete\n")
-#-------------------------------------------------------------
-# 3. Create Events
+
+# 4. Create Events
 events, hash_rect = create_events(inst_flatten, mflat, vflat, lflat, config_data)
 events_sorted = sort(events, by=event_sort_priority)
 println("Event align complete")
-djs, overlaps, via_link, error_log, pinNodes = process_events(events_sorted, hash_rect) 
+
+# 5. Process Events
+djs, overlaps, via_link, error_log, pinNodes= process_events(events_sorted, hash_rect)
 println("sweepline-based grouping complete\n")
+
+# 6. Generate Graph
 cgraph = generate_graph(overlaps, via_link, hash_rect, djs)
 println("connectivity graph generation complete")
-error_log, nets_visited = check_connections_bfs(cgraph, pinNodes, hash_rect)
+
+# 7. Check Connections
+error_log, error_cnt, nets_visited = check_connections_bfs(cgraph, pinNodes, hash_rect, equiv_net_sets)
 println("graph analysis using BFS complete")
-println("finish main")
-
-
-# # 4. Visualize the merged metal layers
-# visualize_metals(cellname, "$(metal_dir)/$(cellname)_metals.json", "$(visualized_dir)/$(cellname)_metal_layout.png")
-# visualize_vias(cellname, "$(via_dir)/$(cellname)_vias.json", "$(visualized_dir)/$(cellname)_via_layout.png", scale_factor=5.0)
-
-# @elapsed는 코드 블록의 결과값을 반환하지 않고 시간만 반환합니다.
-# 결과값도 필요하면 다음과 같이 할 수 있습니다.
-# result_val = 0.0 # 외부 스코프에 변수 선언
-# elapsed_time_with_result = @elapsed begin
-#     result_val = my_calculation(10^6)
-#     # 다른 작업들...
-# end
-# println("소요 시간 (초): ", elapsed_time_with_result)
-# println("저장된 결과값: ", result_val)
