@@ -109,7 +109,7 @@ cinfo, error_info, error_cnt = check_and_report_connections_bfs(cgraph, source_n
 logfile_path = "$(log_dir)/$(libname)_$(cellname).txt"
 create_error_log_file(libname, cellname, logfile_path, error_info, cinfo, error_cnt, short_error_data)
 
-
+response = create_mcp_response(libname, cellname, error_info, cinfo, error_cnt)
 
 
 

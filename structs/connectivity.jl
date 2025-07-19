@@ -34,6 +34,7 @@ end
 
 # --- 각 컴포넌트 정보를 저장하기 위한 구조체 (선택사항, NamedTuple도 가능) ---
 struct ComponentInfo
+    number::Int
     nodes::Set{MOVector}            # 컴포넌트에 속한 노드(MOVector)들의 Set
     netname::Union{String, Nothing} # 컴포넌트의 대표 netname
     laygo_origin_set::Set{LaygoOrigin} # 컴포넌트의 대표 laygo_origin
@@ -48,6 +49,7 @@ struct ErrorInfo
     current_node::Union{MOVector, Nothing}
     actual_netname::Union{String, Nothing}
     expected_netname::Union{String, Nothing}
+    number::Int
 end
 
 function get_error_string(error_info::ErrorInfo)
@@ -60,6 +62,51 @@ function get_error_string(error_info::ErrorInfo)
         return "FLOATING: No netname found metals. Start node = $(error_info.start_node.layer), $(error_info.start_node.p_coord), $(error_info.start_node.points[1].s_coord) - $(error_info.start_node.points[2].s_coord)"
     end
 end
+
+
+function create_mcp_response(libname::String, cellname::String, error_info::Vector{ErrorInfo}, all_components_info::Vector{ComponentInfo}, error_cnt::Dict{String, Int}, is_visualized::Bool, filepath::Union{String, Nothing})
+    response = Dict{String, Any}()
+    response["target"] = "$libname - $cellname"
+    response["status"] = error_cnt["total"] > 0 ? "failed" : "passed"
+    response["error_cnt"] = error_cnt
+
+
+    response["floating"] = Dict{String, Any}()
+    response["open"] = Dict{String, Any}()
+    response["short"] = Dict{String, Any}()
+
+    response["floating"]["components"] = Vector{Dict{String, Any}}()
+    response["open"]["components"] = Vector{Dict{String, Any}}()
+    response["short"]["components"] = Vector{Dict{String, Any}}()
+
+    for error_info in error_info
+        if error_info.type == FLOATING
+            num = error_info.number
+            cur_component = all_components_info[num]
+            laygo_origin_set_string = join([string(laygo_origin.traceback) for laygo_origin in cur_component.laygo_origin_set], ", ")
+            push!(response["floating"]["components"], Dict{String, Any}("laygo_origin_set" => laygo_origin_set_string, "number" => num))
+        elseif error_info.type == OPEN
+            num = error_info.number
+            cur_component = all_components_info[num]
+            laygo_origin_set_string = join([string(laygo_origin.traceback) for laygo_origin in cur_component.laygo_origin_set], ", ")
+            push!(response["open"]["components"], Dict{String, Any}("laygo_origin_set" => laygo_origin_set_string, "number" => num))
+        elseif error_info.type == SHORT
+            num = error_info.number
+            cur_component = all_components_info[num]
+            laygo_origin_set_string = join([string(laygo_origin.traceback) for laygo_origin in cur_component.laygo_origin_set], ", ")
+            push!(response["short"]["components"], Dict{String, Any}("laygo_origin_set" => laygo_origin_set_string, "number" => num))
+        end
+    end
+
+    if is_visualized
+        response["visualized_filepath"] = filepath
+    end
+
+    response["all_components_info"] = all_components_info # 테스트 필요
+    return response
+end
+
+
 
 
 function create_error_log_file(
@@ -169,6 +216,7 @@ function check_and_report_connections_bfs(g::MGraph, source_net_sets::Vector{Tup
 
     println("Total unique nodes found in graph: $(length(all_nodes_in_graph))")
     println("\nStarting Connectivity and Netname Consistency Check...")
+    component_number = 1
     for start_node in all_nodes_in_graph # 그래프 내 모든 노드를 시작점으로 시도
         if !(start_node in visited_metals)
             # --- 새 컴포넌트 발견 ---
@@ -208,7 +256,7 @@ function check_and_report_connections_bfs(g::MGraph, source_net_sets::Vector{Tup
                                     # @warn " OPEN! : netname $current_netname is already visited
                                     # $(u_node.netname) : layer=$(u_node.layer), p_coord=$(u_node.p_coord), s_coord=$(u_node.points[1].s_coord) - $(u_node.points[2].s_coord)
                                     # $(start_node.netname) : layer=$(start_node.layer), p_coord=$(start_node.p_coord), s_coord=$(start_node.points[1].s_coord) - $(start_node.points[2].s_coord)"
-                                    push!(error_info, ErrorInfo(OPEN, u_node, start_node, current_netname, expected_netname_ref[]))
+                                    push!(error_info, ErrorInfo(OPEN, u_node, start_node, current_netname, expected_netname_ref[], component_number))
                                     # println(io, "OPEN: netname $current_netname is already visited\n$(u_node.netname) : layer=$(u_node.layer), p_coord=$(u_node.p_coord), s_coord=$(u_node.points[1].s_coord) - $(u_node.points[2].s_coord)\n$(start_node.netname) : layer=$(start_node.layer), p_coord=$(start_node.p_coord), s_coord=$(start_node.points[1].s_coord) - $(start_node.points[2].s_coord)")
                                     error_cnt["open"] += 1; error_cnt["total"] += 1;
                                 end
@@ -220,7 +268,7 @@ function check_and_report_connections_bfs(g::MGraph, source_net_sets::Vector{Tup
                         if component_consistent[] # 첫 불일치 시 로그
                             # node_id_str = hasproperty(u_node, :idx) ? " (idx=$(u_node.idx))" : ""
                             # @warn "  Netname inconsistency! Node$(node_id_str) has netname '$current_netname', but expected '$(expected_netname_ref[])' for this component."
-                            push!(error_info, ErrorInfo(SHORT, u_node, start_node, current_netname, expected_netname_ref[]))
+                            push!(error_info, ErrorInfo(SHORT, u_node, start_node, current_netname, expected_netname_ref[], component_number))
                             # println(io, "SHORT: Netname inconsistency! Node$(node_id_str) has netname '$current_netname', but expected '$(expected_netname_ref[])' for this component.")
                             error_cnt["short"] += 1; error_cnt["total"] += 1;
                         end
@@ -247,18 +295,20 @@ function check_and_report_connections_bfs(g::MGraph, source_net_sets::Vector{Tup
 
             if expected_netname_ref[] === nothing
                 # @warn "  FLOATING! : No netname found metals. Start node = $(start_node.layer), $(start_node.p_coord), $(start_node.points[1].s_coord) - $(start_node.points[2].s_coord)"
-                push!(error_info, ErrorInfo(FLOATING, start_node, nothing, nothing, nothing))
+                push!(error_info, ErrorInfo(FLOATING, start_node, nothing, nothing, nothing, component_number))
                 # println(io, "FLOATING: No netname found metals. Start node = $(start_node.layer), $(start_node.p_coord), $(start_node.points[1].s_coord) - $(start_node.points[2].s_coord)")
                 error_cnt["floating"] += 1; error_cnt["total"] += 1;
             end
 
             # --- 현재 컴포넌트 정보 저장 ---
             push!(all_components_info, ComponentInfo(
+                component_number,
                 current_component_nodes,
                 expected_netname_ref[],
                 component_laygo_origin_set,
                 component_consistent[]
             ))
+            component_number += 1
         end
     end
 
