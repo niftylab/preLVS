@@ -79,24 +79,26 @@ print_tree_root(root)
 # flatten all metals + primitive pins + labels + pins without merging
 mdata, vdata = flatten_v2(libname, cellname, cell_data, db_data, orientation_list, config_data, source_net_sets, is_detailed)
 
-# grid_error_log = Vector{String}()
-# is_grid_consistent = check_grid_consistency(libname, cellname, db_data, orientation_list, grid_error_log, is_detailed)
 
-# if !is_grid_consistent
-#     println("Grid consistency check failed:")
-#     for error in grid_error_log
-#         println(error) 
-#     end
+# Check grid consistency
+grid_error_log = Vector{String}()
+is_grid_consistent = check_grid_consistency(libname, cellname, db_data, orientation_list, grid_error_log, is_detailed)
 
-#     txt_path = "$(log_dir)/$(libname)_$(cellname)_grid_error_log.txt"
-#     open(txt_path, "w") do f
-#         for error in grid_error_log
-#             write(f, error * "\n")
-#         end
-#     end
+if !is_grid_consistent
+    println("Grid consistency check failed:")
+    for error in grid_error_log
+        println(error) 
+    end
 
-#     error("Grid consistency check failed")
-# end
+    txt_path = "$(log_dir)/$(libname)_$(cellname)_grid_error_log.txt"
+    open(txt_path, "w") do f
+        for error in grid_error_log
+            write(f, error * "\n")
+        end
+    end
+
+    error("Grid consistency check failed")
+end
 
 
 

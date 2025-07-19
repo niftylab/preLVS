@@ -60,6 +60,25 @@ root, cell_data, db_data = get_tree(libname, cellname, db_dir, equiv_net_sets)
 # 3. Flatten target cell
 mdata, vdata = flatten_v2(libname, cellname, cell_data, db_data, orientation_list, config_data, equiv_net_sets, is_detailed)
 
+# 3-1. Check grid consistency
+grid_error_log = Vector{String}()
+is_grid_consistent = check_grid_consistency(libname, cellname, db_data, orientation_list, grid_error_log, is_detailed)
+
+if !is_grid_consistent
+    println("Grid consistency check failed:")
+    for error in grid_error_log
+        println(error) 
+    end
+
+    txt_path = "$(log_dir)/$(libname)_$(cellname)_grid_error_log.txt"
+    open(txt_path, "w") do f
+        for error in grid_error_log
+            write(f, error * "\n")
+        end
+    end
+    error("Grid consistency check failed. There are ")
+end
+
 # 4. Sort & Merge metals (vector merge)
 merged_mdata, nmetals, short_error_data = sort_n_merge_MData(mdata)
 
