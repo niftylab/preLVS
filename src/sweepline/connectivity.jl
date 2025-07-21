@@ -74,8 +74,13 @@ end
 
 end #endif
 
-function check_connections_bfs(cgraph::Dict{Int, GraphNode}, pinNodes::Dict{Int, Vector{Int}},
-                                            hash_rect::Vector{Rect}, equiv_net_sets::Vector{Tuple{String, Set{String}}}) # ::Vector{ErrorEvent} # ::Vector{ComponentInfo}
+function check_connections_bfs(
+    cgraph::Dict{Int, GraphNode},
+    pinNodes::Dict{Int, Vector{Int}},
+    hash_rect::Vector{Rect},
+    equiv_net_sets::Vector{Tuple{String, Set{String}}},
+    config_data::Dict{String, Any}
+) # ::Vector{ErrorEvent} # ::Vector{ComponentInfo}
     nets_visited = Dict{String, Vector{Int}}() # for tracing open error
     error_log = Vector{ErrorEvent}()
     error_cnt = Dict{String, Int}(
@@ -302,6 +307,8 @@ function create_error_log_file(error_log::Vector{ErrorEvent}, error_cnt::Dict{St
             root_idx = find_root(djs, nodes[1])
             metal_indices = sort(get_elements_for_root(djs, root_idx))
             println(io, "Metal Indices ($(length(metal_indices))): $metal_indices")
+            laygo_origins = get_laygo_origins_for_root(djs, root_idx, hash_rect)
+            println(io, "Laygo Origins ($(length(laygo_origins))): $laygo_origins")
         end
 
         # print total result
@@ -365,6 +372,23 @@ function get_elements_for_root(ds::IntDisjointSets{Int}, known_root::Int)
         end
     end
     return elements_in_set
+end
+
+function get_laygo_origins_for_root(ds::IntDisjointSets{Int}, known_root::Int, hash_rect::Vector{Rect})
+    laygo_origins = Set{String}() # 결과를 담을 배열
+    for i in 1:length(ds.parents)
+        if find_root(ds, i) == known_root
+            _rect = hash_rect[i]
+            if isa(_rect, MRect)
+                push!(laygo_origins, _rect.laygo_origin.traceback)
+            elseif isa(_rect, VRect)
+                push!(laygo_origins, _rect.laygo_origin.traceback)
+            elseif isa(_rect, Label)
+                push!(laygo_origins, _rect.laygo_origin.traceback)
+            end
+        end
+    end
+    return laygo_origins
 end
 
 

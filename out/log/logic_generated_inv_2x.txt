@@ -1,0 +1,46 @@
+
+--- Component 1 ---
+Representive Net Name: I
+Metal Indices (2): [13, 37]
+Laygo Origins (2): Set(["NoName_4", "I"])
+
+--- Component 2 ---
+Representive Net Name: VSS:
+Metal Indices (4): [2, 4, 7, 35]
+Laygo Origins (4): Set(["NoName_8", "VSS:", "MN0/RECT_TIE2", "MN0/RRAIL0"])
+
+--- Component 3 ---
+Representive Net Name: VDD:
+Metal Indices (4): [5, 8, 9, 36]
+Laygo Origins (4): Set(["MP0/RRAIL0", "NoName_9", "VDD:", "MP0/RECT_TIE2"])
+
+--- Component 4 ---
+Representive Net Name: O
+Metal Indices (2): [14, 38]
+Laygo Origins (2): Set(["NoName_6", "O"])
+
+------------------------------------------------------------------
+
+Library: logic_generated
+Cell: inv_2x
+
+   _ (`-.   ('-.      .-')     .-')      ('-.  _ .-') _   
+  ( (OO  ) ( OO ).-. ( OO ).  ( OO ).  _(  OO)( (  OO) )  
+ _.`     | / . --. /(_)---|_)(_)---|_)(,------.|     .'_  
+(__...--'' | |-.   |/    _ | /    _ |  |  .---',`'--..._) 
+ |  /  | | | |  |  ||  (` `  |  (` `   |  |    |  |   | ' 
+ |  |_.' | | |_.'  | '..`''.  '..`''.  |  '--. |  |   ' | 
+ |  .___.' |  .-.  |.-._)   |.-._)   | |  .--' |  |   / : 
+ |  |      |  | |  ||       /|       / |  `---.|  '--'  / 
+ `--'      `--' `--' `-----'  `-----'  `------'`-------'    
+        
+Overall Graph Netname Consistency: PASSED ✔️
+
+Total Error Count: 0
+├─ Floating: 0
+├─ Open: 0
+├─ Short: 0
+└─ Label: 0
+
+------------------------------------------------------------------
+

@@ -21,7 +21,7 @@ function get_config(file_path::String)
         error("Config file must have 'Via' key")
     end
 
-    config_data = Dict()
+    config_data = Dict{String, Any}()
 
     # Metal layer orientation
     morien = Dict()

@@ -29,6 +29,8 @@ input_arg   = get_yaml(path_runset)
 # 1. Prepare JSON files and directories
 libname     = input_arg["libname"]#"test_generated"   # 라이브러리 이름
 cellname    = input_arg["cellname"]#"scan_cell"  # cell 이름
+toplib      = libname
+topcell     = cellname
 
 db_dir = input_arg["db_dir"] #"db"
 metal_dir = input_arg["metal_dir"] #"out/metal"
@@ -36,7 +38,10 @@ via_dir = input_arg["via_dir"] #"out/via"
 visualized_dir = input_arg["visualized_dir"] #"out/visualized"
 
 netlog_dir = input_arg["netlog_dir"]
+log_dir = input_arg["log_dir"]
 config_file_path = input_arg["config_file_path"] #"config/config.yaml"
+is_detailed = input_arg["is_detailed"]
+is_visualized = input_arg["is_visualized"]
 
     # Check if database/config file exists
 if !isfile("$(db_dir)/$(libname)_db.json")
@@ -75,7 +80,7 @@ cgraph    = Dict{Int, GraphNode}()
 root, inst_flatten, cell_list, db_data = get_tree(libname, cellname, db_dir, equivalent_net_sets)
 #    print_tree_root(root)
 
-mflat, vflat, lflat = flatten_V2(inst_flatten, cell_list, db_data, config_data, equivalent_net_sets)
+mflat, vflat, lflat = flatten_V2(inst_flatten, cell_list, db_data, config_data, equivalent_net_sets, toplib, topcell, is_detailed)
 println("Rect transform complete\n")
 #-------------------------------------------------------------
 # 3. Create Events
@@ -86,8 +91,10 @@ djs, overlaps, via_link, error_log, pinNodes = process_events(events_sorted, has
 println("sweepline-based grouping complete\n")
 cgraph = generate_graph(overlaps, via_link, hash_rect, djs)
 println("connectivity graph generation complete")
-error_log, nets_visited = check_connections_bfs(cgraph, pinNodes, hash_rect)
+error_log, error_cnt, hash_rect, nets_visited = check_connections_bfs(cgraph, pinNodes, hash_rect, equivalent_net_sets, config_data)
 println("graph analysis using BFS complete")
+create_error_log_file(error_log, error_cnt, log_dir, libname, cellname, hash_rect, nets_visited, djs, cgraph)
+println("error log file created")
 println("finish main")
 
 

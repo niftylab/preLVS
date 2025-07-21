@@ -223,6 +223,12 @@ function get_tree_sub!(node::TreeNode{CellData}, cell_data::Dict, db_dir::String
                 for label in labels
                     _netname = get(label, "netname", nothing)
                     _netname = _netname === nothing ? "UNKNOWN" : unify_netname(_netname, source_net_sets)     # "netname": null인 경우 해결
+
+                    # 현재 Label 중 netname = null 인 경우 존재로 인한 임시처리..
+                    if _netname === "UNKNOWN"
+                        continue
+                    end
+
                     if !haskey(net_block, _netname)
                         if haskey(node.data.net_extern, _netname)
                             net_block[_netname] = node.data.net_extern[_netname]
@@ -310,7 +316,11 @@ function get_tree(libname::String, cellname::String, db_dir::String, source_net_
         for label in labels
             _netname = get(label, "netname", nothing)
             _netname = _netname === nothing ? "UNKNOWN" : unify_netname(_netname, source_net_sets)     # "netname": null인 경우 해결
-            net_extern_top[_netname] = _netname
+
+            # 현재 Label 중 netname = null 인 경우 존재로 인한 임시처리..
+            if _netname !== "UNKNOWN"
+                net_extern_top[_netname] = _netname
+            end
         end
     end    
     rootNode = TreeNode(
@@ -393,6 +403,12 @@ function get_tree(libname::String, cellname::String, db_dir::String, source_net_
                 for label in labels
                     _netname = get(label, "netname", nothing)
                     _netname = _netname === nothing ? "UNKNOWN" : unify_netname(_netname, source_net_sets)     # "netname": null인 경우 해결
+
+                    # 현재 Label 중 netname = null 인 경우 존재로 인한 임시처리..
+                    if _netname === "UNKNOWN"
+                        continue
+                    end
+
                     if !haskey(net_block_top, _netname)
                         net_block_top[_netname] = rootNode.data.Mname * "__" * _name * "__" * _netname
                         rootNode.data.net_extern[rootNode.data.Mname * "__" * _name * "__" * _netname] = rootNode.data.Mname * "__" * _name * "__" * _netname

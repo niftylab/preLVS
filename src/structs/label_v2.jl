@@ -4,6 +4,7 @@ if !isdefined(@__MODULE__, :_STRUCT_LABELV2_JL_)
     const _STRUCT_LABELV2_JL_ = true
 
 include("structure.jl")
+include("laygo_origin.jl")
 
 mutable struct Label{NT} <: Rect
     netname_origin::NT
@@ -11,10 +12,11 @@ mutable struct Label{NT} <: Rect
     xy::SMatrix{2, 2, Int}
     layer::Int
     is_pin::Bool
+    laygo_origin::Union{LaygoOrigin, Nothing}
 end
 
-function Label(netname_origin::NT, xy::SMatrix{2, 2, Int}, layer::Int, is_pin::Bool) where {NT}
-    Label{NT}(netname_origin, netname_origin, xy, layer, is_pin)
+function Label(netname_origin::NT, xy::SMatrix{2, 2, Int}, layer::Int, is_pin::Bool, laygo_origin::Union{LaygoOrigin, Nothing}) where {NT}
+    Label{NT}(netname_origin, netname_origin, xy, layer, is_pin, laygo_origin)
 end
 
 mutable struct LLayer{NT}
@@ -42,12 +44,24 @@ end
 """
 
 # db -> LData format    (netname, instname unmapped LData. Just original netname and original xy)    ( JSON -> LData )
-function db_to_LData(db_json_data::Dict, libname::String, cellname::String)
+function db_to_LData(db_json_data::Dict, libname::String, cellname::String, is_topcell::Bool)
 
     _ldata      = LData{String}(libname, cellname, cellname, OrderedDict{Int, LLayer{String}}()) # initialize instname with cellname
     db_labels   = db_json_data[libname][cellname]["labels"]
     db_pins     = db_json_data[libname][cellname]["pins"]
     for label in db_labels
+
+        if is_topcell
+            if label["netname"] === nothing
+                laygo_origin = LaygoOrigin("UNKNOWN_LABEL")
+            else
+                laygo_origin = LaygoOrigin(label["netname"])
+            end
+        else
+            laygo_origin = LaygoOrigin("OBSTACLE")
+        end
+
+
         layerNum = metal_to_int(label["layer"])
         is_horizontal = layerNum % 2 == 0
         if !haskey(_ldata.layers, layerNum)
@@ -66,9 +80,20 @@ function db_to_LData(db_json_data::Dict, libname::String, cellname::String)
             _netname_origin = label["netname"]
         end
         # Label(netname_origin::NT, xy::SMatrix{2, 2, Int}, layer::Int, is_pin::Bool)
-        push!(_ldata.layers[layerNum].labels, Label(_netname_origin, _xy, layerNum, false))
+        push!(_ldata.layers[layerNum].labels, Label(_netname_origin, _xy, layerNum, false, laygo_origin))
     end
     for label in db_pins # this is iteration for pin db
+
+        if is_topcell
+            if label["netname"] === nothing
+                laygo_origin = LaygoOrigin("UNKNOWN_PIN")
+            else
+                laygo_origin = LaygoOrigin(label["netname"])
+            end
+        else
+            laygo_origin = LaygoOrigin("OBSTACLE")
+        end
+
         layerNum = metal_to_int(label["layer"])
         is_horizontal = layerNum % 2 == 0
         if !haskey(_ldata.layers, layerNum)
@@ -81,7 +106,7 @@ function db_to_LData(db_json_data::Dict, libname::String, cellname::String)
         _xy         = SMatrix{2, 2, Int}( [ xy_ll[1]-hextension xy_ll[2]-vextension; xy_ur[1]+hextension xy_ur[2]+vextension ] )
         _netname_origin = label["netname"]
         # Label(netname_origin::NT, xy::SMatrix{2, 2, Int}, layer::Int, is_pin::Bool)
-        push!(_ldata.layers[layerNum].labels, Label(_netname_origin, _xy, layerNum, true))
+        push!(_ldata.layers[layerNum].labels, Label(_netname_origin, _xy, layerNum, true, laygo_origin))
     end
     return _ldata
 end

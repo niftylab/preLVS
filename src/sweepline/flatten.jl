@@ -9,7 +9,16 @@ include("../structs/tree.jl")
 include("../structs/rect.jl")
 include("../utils/yaml.jl")
 
-function flatten_V2(cell_data::Dict, cell_list::Set{Tuple{String, String}}, db_data::Dict, config_data::Dict, source_net_sets::Vector)
+function flatten_V2(
+    cell_data::Dict, 
+    cell_list::Set{Tuple{String, String}}, 
+    db_data::Dict, 
+    config_data::Dict, 
+    source_net_sets::Vector, 
+    toplib::String, 
+    topcell::String, 
+    is_detailed::Bool=false
+    )
 
     out_metal = Vector{MData}()
     out_via   = Vector{VData}()
@@ -20,14 +29,17 @@ function flatten_V2(cell_data::Dict, cell_list::Set{Tuple{String, String}}, db_d
     memory_label    = Dict()
 
     for (lib, cell) in cell_list
+
+        is_topcell = (lib == toplib && cell == topcell)
+
         if !haskey(memory_metal, lib)
             memory_metal[lib]   = Dict()
             memory_via[lib]     = Dict()
             memory_label[lib]   = Dict()
         end
-        memory_metal[lib][cell]   = db_to_MData(db_data, lib, cell, false)
-        memory_via[lib][cell]     = db_to_VData(db_data, lib, cell, config_data)
-        memory_label[lib][cell]   = db_to_LData(db_data, lib, cell)
+        memory_metal[lib][cell]   = db_to_MData(db_data, lib, cell, is_detailed, is_topcell, false)
+        memory_via[lib][cell]     = db_to_VData(db_data, lib, cell, config_data, is_detailed, is_topcell)
+        memory_label[lib][cell]   = db_to_LData(db_data, lib, cell, is_topcell)
 
         for (idx, inst) in cell_data[lib][cell]
             Mtransform = inst["Mtransform"]
@@ -47,23 +59,13 @@ end
 
 function get_transformed_MData_V3(originMetal::MData, Mtransform::Matrix{Int})
 
-    # newMData            = deepcopy(originMetal)
-
-    # for (_layerNum, _layer) in newMData.layers
-    #     for _metal in _layer.metals
-    #         # Determine transformed coordinates
-    #         _metal.xy = affine_transform(_metal.xy, Mtransform)
-    #     end
-    # end
-    # return newMData
-
     newMData = MData(originMetal.libname, originMetal.cellname, OrderedDict{Int, MLayer}())
     for (_layerNum, _layer) in originMetal.layers
         newMData.layers[_layerNum] = MLayer(_layerNum, _layer.prefer_direction, Vector{MRect}())
         for _metal in _layer.metals
             # Determine transformed coordinates
             xy = affine_transform(_metal.xy, Mtransform)
-            push!(newMData.layers[_layerNum].metals, MRect(_layerNum, xy))
+            push!(newMData.layers[_layerNum].metals, MRect(_layerNum, xy, _metal.laygo_origin))
         end
     end
     return newMData
@@ -71,22 +73,13 @@ end
 
 function get_transformed_VData_V3(originVia::VData, Mtransform::Matrix{Int})
 
-    # newVData            = deepcopy(originVia)
-
-    # for (vcellname, vlist) in newVData.vlists
-    #     for via in vlist.vias
-    #         # Determine transformed coordinates
-    #         via.xy = affine_transform(via.xy, Mtransform)
-    #     end
-    # end
-    # return newVData
     newVData = VData(originVia.libname, originVia.cellname, OrderedDict{String, VList}())
     for (vtype, vlist) in originVia.vlists
         newVData.vlists[vtype] = VList(vtype, Vector{VRect}())
         for via in vlist.vias
             # Determine transformed coordinates
             xy = affine_transform(via.xy, Mtransform)
-            push!(newVData.vlists[vtype].vias, VRect(via.type, via.layer, xy))
+            push!(newVData.vlists[vtype].vias, VRect(via.type, via.layer, xy, via.laygo_origin))
         end
     end
     return newVData
@@ -105,7 +98,7 @@ function get_transformed_LData_V3(originlabel::LData, inst_data::Dict, equivalen
             # Determine transformed coordinates
             xy = affine_transform(_label.xy, Mtransform)
 
-            if _label.netname_origin in Set(["UNKNOWN", "OBSTACLE"])
+            if _label.netname_origin in Set(["UNKNOWN", "OBSTACLE", "UNKNOWN_LABEL", "UNKNOWN_PIN"])
                 _netname = "UNKNOWN"
             else
                 _netname = net_mapper[unify_netname(_label.netname_origin, equivalent_net_sets)]
@@ -142,7 +135,7 @@ function get_transformed_LData_V3(originlabel::LData, inst_data::Dict, equivalen
             #         println("net_mapper = $(net_mapper)")
             #     end
             # end
-            push!(newLData.layers[_layerNum].labels, Label(_label.netname_origin, _netname, SMatrix{2,2,Int}([xy[1] xy[3]; xy[2] xy[4]]), _label.layer, _label.is_pin))
+            push!(newLData.layers[_layerNum].labels, Label(_label.netname_origin, _netname, SMatrix{2,2,Int}([xy[1] xy[3]; xy[2] xy[4]]), _label.layer, _label.is_pin, _label.laygo_origin))
         end
     end
     return newLData

@@ -4,15 +4,17 @@ if !isdefined(@__MODULE__, :_STRUCT_VIA_V2_JL_)
     const _STRUCT_VIA_V2_JL_ = true
 
 include("structure.jl")
+include("laygo_origin.jl")
 
 mutable struct VRect <: Rect
     type::String
     layer::SVector{2,Int}
     xy::SVector{2,Int}
+    laygo_origin::Union{LaygoOrigin, Nothing}
 end
 
-function VRect(;type::String, layer::SVector{2,Int}, xy::SVector{2,Int})
-    VRect(type, layer, xy)
+function VRect(;type::String, layer::SVector{2,Int}, xy::SVector{2,Int}, laygo_origin::Union{LaygoOrigin, Nothing})
+    VRect(type, layer, xy, laygo_origin)
 end
 mutable struct VList
     type::String
@@ -25,18 +27,24 @@ mutable struct VData
     vlists::OrderedDict{String, VList}
 end
 
-function db_to_VData(db_json_data::Dict, libname::String, cellname::String, config_data::Dict)
+function db_to_VData(db_json_data::Dict, libname::String, cellname::String, config_data::Dict, is_detailed::Bool, is_topcell::Bool)
     via_config = config_data["Via"]
     _unsorted_vdata = VData(libname, cellname, OrderedDict{String, VList}())
+
     for (vcellname, viacell) in via_config
         _unsorted_vdata.vlists[vcellname] = VList(vcellname, Vector{VRect}()) 
     end
     db_vias = db_json_data[libname][cellname]["vias"]
     for via in db_vias
-        _type   = via["cellname"]
+
+        via_data = is_detailed ? last(via) : via
+        current_name = is_detailed ? first(via) : nothing
+        laygo_origin = is_topcell ? LaygoOrigin(current_name) : LaygoOrigin("UNKNOWN")
+
+        _type   = via_data["cellname"]
         _layer1  = metal_to_int(via_config[_type]["map"][1])
         _layer2  = metal_to_int(via_config[_type]["map"][2])
-        push!(_unsorted_vdata.vlists[_type].vias, VRect(type=_type, layer=SVector{2,Int}(_layer1, _layer2), xy=SVector{2,Int}(via["xy"]) ) )
+        push!(_unsorted_vdata.vlists[_type].vias, VRect(type=_type, layer=SVector{2,Int}(_layer1, _layer2), xy=SVector{2,Int}(via_data["xy"]), laygo_origin=laygo_origin))
     end
     return _unsorted_vdata
 end

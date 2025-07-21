@@ -1,81 +1,84 @@
+[SHORT]: Pin(node=324) has different labels (original, flattened)->[ ("O", "O") ("O", "OUT") ("OUT", "OUT")  ]
+[FLOATING]: NODE[GraphNode(2, [253, 259, 260], nothing, GraphEdge[], false)] isn't connected to any PIN/LABEL
+[FLOATING]: NODE[GraphNode(1, [277], nothing, GraphEdge[], false)] isn't connected to any PIN/LABEL
+[FLOATING]: NODE[GraphNode(1, [273], nothing, GraphEdge[GraphEdge(292, 273, 258)], false)] isn't connected to any PIN/LABEL
+[FLOATING]: NODE[GraphNode(1, [213], nothing, GraphEdge[GraphEdge(232, 213, 198)], false)] isn't connected to any PIN/LABEL
+[FLOATING]: NODE[GraphNode(1, [217], nothing, GraphEdge[], false)] isn't connected to any PIN/LABEL
+[FLOATING]: NODE[GraphNode(2, [193, 199, 200], nothing, GraphEdge[], false)] isn't connected to any PIN/LABEL
+[FLOATING]: NODE[GraphNode(2, [252, 258, 270], nothing, GraphEdge[GraphEdge(292, 258, 273)], false)] isn't connected to any PIN/LABEL
+[FLOATING]: NODE[GraphNode(2, [192, 198, 210], nothing, GraphEdge[GraphEdge(232, 198, 213)], false)] isn't connected to any PIN/LABEL
 
 --- Component 1 ---
-Representive Net Name: MEM2
-Metal Indices (5): [214, 268, 324, 472, 587]
+Representive Net Name: MEM1
+Metal Indices (5): [20, 34, 363, 412, 437]
+Laygo Origins (4): Set(["UNKNOWN", "MEM1_1_0", "MEM1", "OBSTACLE"])
 
 --- Component 2 ---
-Representive Net Name: LATCH
-Metal Indices (2): [60, 93]
+Representive Net Name: MEM2
+Metal Indices (5): [221, 250, 356, 418, 439]
+Laygo Origins (4): Set(["MEM2_0_0", "UNKNOWN", "MEM2", "OBSTACLE"])
 
 --- Component 3 ---
-Representive Net Name: CLK:
-Metal Indices (4): [111, 145, 521, 568]
+Representive Net Name: VSS:
+Metal Indices (40): [9, 37, 40, 42, 45, 73, 78, 80, 83, 111, 116, 118, 121, 149, 161, 189, 195, 202, 206, 207, 245, 255, 262, 266, 267, 305, 312, 314, 317, 345, 373, 451, 453, 455, 457, 459, 461, 463, 465, 470]
+Laygo Origins (4): Set(["UNKNOWN", "NoName_0", "VSS:", "OBSTACLE"])
 
 --- Component 4 ---
-Representive Net Name: O
-Metal Indices (2): [430, 463]
+Representive Net Name: I
+Metal Indices (4): [284, 307, 407, 447]
+Laygo Origins (3): Set(["UNKNOWN", "I", "OBSTACLE"])
 
 --- Component 5 ---
-Representive Net Name: dff_2x__I3__Ninternal
-Metal Indices (5): [252, 256, 265, 314, 321]
+Representive Net Name: ICLKB
+Metal Indices (5): [169, 187, 353, 419, 435]
+Laygo Origins (4): Set(["UNKNOWN", "OBSTACLE", "ICLKB", "ICLKB_5_0"])
 
 --- Component 6 ---
-Representive Net Name: ICLKB
-Metal Indices (5): [197, 241, 485, 539, 555]
+Representive Net Name: LATCH
+Metal Indices (5): [224, 247, 366, 417, 444]
+Laygo Origins (4): Set(["UNKNOWN", "OBSTACLE", "LATCH_2_0", "LATCH"])
 
 --- Component 7 ---
-Representive Net Name: VSS:
-Metal Indices (3): [6, 8, 40]
+Representive Net Name: CLK
+Metal Indices (4): [89, 113, 401, 448]
+Laygo Origins (3): Set(["UNKNOWN", "OBSTACLE", "CLK"])
 
 --- Component 8 ---
-Representive Net Name: dff_2x__I0__Pinternal
-Metal Indices (5): [339, 348, 357, 405, 413]
+Representive Net Name: OUT
+Metal Indices (6): [324, 348, 369, 424, 446, 449]
+Laygo Origins (5): Set(["UNKNOWN", "OBSTACLE", "OUT", "OUT_1_0", "O"])
 
 --- Component 9 ---
-Representive Net Name: dff_2x__I3__Pinternal
-Metal Indices (5): [251, 260, 269, 317, 325]
+Representive Net Name: VDD:
+Metal Indices (40): [3, 38, 43, 46, 47, 74, 81, 84, 85, 112, 119, 122, 123, 150, 155, 190, 197, 201, 203, 208, 246, 257, 261, 263, 268, 306, 315, 318, 319, 346, 376, 450, 452, 454, 456, 458, 460, 462, 464, 471]
+Laygo Origins (4): Set(["UNKNOWN", "OBSTACLE", "NoName_1", "VDD:"])
 
 --- Component 10 ---
 Representive Net Name: ICLK
-Metal Indices (2): [497, 592]
-
---- Component 11 ---
-Representive Net Name: MEM1
-Metal Indices (5): [63, 97, 488, 533, 558]
-
---- Component 12 ---
-Representive Net Name: I
-Metal Indices (4): [333, 417, 527, 567]
-
---- Component 13 ---
-Representive Net Name: VDD:
-Metal Indices (3): [7, 12, 44]
-
---- Component 14 ---
-Representive Net Name: dff_2x__I0__Ninternal
-Metal Indices (5): [340, 344, 353, 402, 409]
+Metal Indices (5): [17, 35, 365, 409, 427]
+Laygo Origins (4): Set(["UNKNOWN", "OBSTACLE", "ICLK_2_0", "ICLK"])
 
 ------------------------------------------------------------------
 
 Library: logic_generated
 Cell: dff_2x
 
-   _ (`-.   ('-.      .-')     .-')      ('-.  _ .-') _   
-  ( (OO  ) ( OO ).-. ( OO ).  ( OO ).  _(  OO)( (  OO) )  
- _.`     | / . --. /(_)---|_)(_)---|_)(,------.|     .'_  
-(__...--'' | |-.   |/    _ | /    _ |  |  .---',`'--..._) 
- |  /  | | | |  |  ||  (` `  |  (` `   |  |    |  |   | ' 
- |  |_.' | | |_.'  | '..`''.  '..`''.  |  '--. |  |   ' | 
- |  .___.' |  .-.  |.-._)   |.-._)   | |  .--' |  |   / : 
- |  |      |  | |  ||       /|       / |  `---.|  '--'  / 
- `--'      `--' `--' `-----'  `-----'  `------'`-------'    
+            ('-.                          ('-.  _ .-') _   
+           ( OO ).-.                    _(  OO)( (  OO) )  
+   ,------./ . --. /  ,-.-')  ,--.     (,------.|     .'_  
+('-| _.---'| |-.  |   |  |OO) |  |.-')  |  .---',`'--..._) 
+(OO|(_|  . | |  |  |  |  |  | |  | OO ) |  |    |  |   | ' 
+/  |  '--. | |_.'  |  |  |(_/ |  |`-' |(|  '--. |  |   ' | 
+|_)|  .--' |  .-.  | ,|  |_.'(|  '---.' |  .--' |  |   / : 
+  ||  |    |  | |  |(_|  |    |      |  |  `---.|  '--'  / 
+   `--'    `--' `--'  `--'    `------'  `------'`-------'  
         
-Overall Graph Netname Consistency: PASSED ✔️
+Overall Graph Netname Consistency: FAILED ❌
 
-Total Error Count: 0
-├─ Floating: 0
+Total Error Count: 9
+├─ Floating: 8
 ├─ Open: 0
-├─ Short: 0
+├─ Short: 1
 └─ Label: 0
 
 ------------------------------------------------------------------
