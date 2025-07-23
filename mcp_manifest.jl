@@ -8,7 +8,7 @@ using Dates
 # libname = "logic_generated"
 # cellname = "inv"
 # workdir = "D:/dev/dev_nifty/laygo_mcp"
-# lvsdir = "D:/dev/dev_nifty/laygo_mcp/preLVS"
+# manifest_dir = "D:/dev/dev_nifty/laygo_mcp/preLVS"
 # config_path = "D:/dev/dev_nifty/laygo_mcp/preLVS/config/config_tsmcN28.yaml"
 
 # variables
@@ -22,7 +22,7 @@ using Dates
 # libname = "logic_generated"
 # cellname = "inv"
 # workdir = "D:\\dev\\dev_nifty\\laygo_mcp"
-# lvsdir = "D:\\dev\\dev_nifty\\laygo_mcp\\preLVS"
+# manifest_dir = "D:\\dev\\dev_nifty\\laygo_mcp\\preLVS"
 # config_file_path = "D:\\dev\\dev_nifty\\laygo_mcp\\preLVS\\config\\config_tsmcN28.yaml"
 
 
@@ -32,19 +32,19 @@ log_dir = joinpath(workdir, "output", "out", "log")
 outlogFilePath = joinpath(log_dir, "$(libname)_$(cellname).txt")
 
 # Check if directory exists
-if !isdir(lvsdir)
-    error("LVS directory $lvsdir does not exist")
+if !isdir(manifest_dir)
+    error("manifest_dir directory $manifest_dir does not exist")
 end
 if !isdir(log_dir)
     error("Log directory $log_dir does not exist")
 end
 
 # Include files
-include(joinpath(lvsdir, "main_functions.jl")) # main functions ver2
-include(joinpath(lvsdir, "structs", "connectivity.jl"))
-include(joinpath(lvsdir, "utils", "log.jl"))
-include(joinpath(lvsdir, "utils", "visualize.jl"))
-include(joinpath(lvsdir, "structs", "grid.jl"))
+include(joinpath(manifest_dir, "main_functions.jl")) # main functions ver2
+include(joinpath(manifest_dir, "structs", "connectivity.jl"))
+include(joinpath(manifest_dir, "utils", "log.jl"))
+include(joinpath(manifest_dir, "utils", "visualize.jl"))
+include(joinpath(manifest_dir, "structs", "grid.jl"))
 
 
 
@@ -92,13 +92,14 @@ cinfo, error_info, error_cnt = check_and_report_connections_bfs(cgraph, equiv_ne
 # 7. Create error log file
 added_short_error_info = create_error_log_file(libname, cellname, outlogFilePath, error_info, cinfo, error_cnt, short_error_data)
 
-grid_json_data = get_grid(techname, config_data)
+techname = "tsmcN28"
+grid_json_data = get_grid(techname, config_data, manifest_dir)
 empty_grid_data = create_empty_grid_data(grid_json_data, cell_data, libname, cellname)
 grid_data = get_grid_data(empty_grid_data, cinfo, top_netname_list, grid_json_data)
 
 response = Dict{String, Any}()
 response["target"] = "$libname - $cellname"
-response["top_netnames"] = equiv_net_sets
+response["top_netnames"] = top_netname_list
 response["grid_data"] = grid_data
 
-println(response)
+JSON.json(response)

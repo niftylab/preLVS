@@ -110,12 +110,12 @@ end
 
 
 
-function get_grid(techname::String, config_data::Dict)
+function get_grid(techname::String, config_data::Dict, dir_path::String)
     # Get grid data
     out_grid_data = Dict()
 
     # Load grid data
-    grid_file_path = "grids/$(techname)_grid.json"
+    grid_file_path = joinpath(dir_path, "grids", "$(techname)_grid.json")
     grid_tech_data = JSON.parse(read(grid_file_path, String))
 
     for (routing_grid, grid_data) in grid_tech_data["grid"]
