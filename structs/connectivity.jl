@@ -64,7 +64,7 @@ function get_error_string(error_info::ErrorInfo)
 end
 
 
-function create_mcp_response(libname::String, cellname::String, error_info::Vector{ErrorInfo}, all_components_info::Vector{ComponentInfo}, error_cnt::Dict{String, Int}, is_visualized::Bool, filepath::Union{String, Nothing}, added_short_error_info::Vector{Dict{String, Any}})
+function create_mcp_lvs_response(libname::String, cellname::String, error_info::Vector{ErrorInfo}, all_components_info::Vector{ComponentInfo}, error_cnt::Dict{String, Int}, is_visualized::Bool, filepath::Union{String, Nothing}, added_short_error_info::Vector{Dict{String, Any}})
     response = Dict{String, Any}()
     response["target"] = "$libname - $cellname"
     response["status"] = error_cnt["total"] > 0 ? "failed" : "passed"

@@ -317,6 +317,8 @@ function get_tree(libname::String, cellname::String, db_dir::String, source_net_
         end
     end
 
+    top_netname_list = collect(keys(net_extern_top))
+
     # Initialize top cell node
     rootNode = TreeNode(
         NodeData(
@@ -466,7 +468,7 @@ function get_tree(libname::String, cellname::String, db_dir::String, source_net_
         end
     end
 
-    return rootNode, cell_data, db_data
+    return rootNode, cell_data, db_data, top_netname_list
 end
 
 

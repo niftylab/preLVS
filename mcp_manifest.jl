@@ -44,12 +44,14 @@ include(joinpath(lvsdir, "main_functions.jl")) # main functions ver2
 include(joinpath(lvsdir, "structs", "connectivity.jl"))
 include(joinpath(lvsdir, "utils", "log.jl"))
 include(joinpath(lvsdir, "utils", "visualize.jl"))
+include(joinpath(lvsdir, "structs", "grid.jl"))
 
 
 
 # Load config data
 config_data = get_config(config_file_path)
 is_detailed = true
+is_manifest = true
 orientation_list = get_orientation_list(config_data)
 equiv_net_sets = config_data["Equivalent_net_sets"]
 
@@ -90,15 +92,13 @@ cinfo, error_info, error_cnt = check_and_report_connections_bfs(cgraph, equiv_ne
 # 7. Create error log file
 added_short_error_info = create_error_log_file(libname, cellname, outlogFilePath, error_info, cinfo, error_cnt, short_error_data)
 
-filepath = nothing
-# 8. Visualize(optional)
-if @isdefined(is_visualized) && is_visualized
-    timestamp = Dates.format(now(), "yyyy-mm-dd_HH-MM-SS")
-    filepath = "$(visualized_dir)/$(cellname)_$(timestamp).png"
-    visualize_metals(merged_mdata.metals, orientation_list, filepath)
-end
+grid_json_data = get_grid(techname, config_data)
+empty_grid_data = create_empty_grid_data(grid_json_data, cell_data, libname, cellname)
+grid_data = get_grid_data(empty_grid_data, cinfo, top_netname_list, grid_json_data)
 
-# 9. Create MCP response
-response = create_mcp_lvs_response(libname, cellname, error_info, cinfo, error_cnt, is_visualized, filepath, added_short_error_info)
+response = Dict{String, Any}()
+response["target"] = "$libname - $cellname"
+response["top_netnames"] = equiv_net_sets
+response["grid_data"] = grid_data
 
-JSON.json(response)
+println(response)

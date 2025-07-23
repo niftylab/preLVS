@@ -20,10 +20,9 @@ mutable struct Pin
     hextension::Int
     vextension::Int
     netname::String
-    Mname::String
+    layer::Int
 end
 
-# 일단은 Cell은 사용하지 않았고, db는 Dict로 작성했습니다.
 
 # mutable struct Cell
 #     lib::String

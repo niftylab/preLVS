@@ -120,20 +120,9 @@ grid_data = get_grid_data(empty_grid_data, cinfo, top_netname_list, grid_json_da
 
 
 
-# 3. Visualize(optional)
-# visualize_metals_by_layer(merged_mdata.metals, orientation_list, "$(visualized_dir)/test_$(cellname)")
-if @isdefined(is_visualized) && is_visualized
-    timestamp = Dates.format(now(), "yyyy-mm-dd_HH-MM-SS")
-    filepath = "$(visualized_dir)/$(cellname)_$(timestamp).png"
-    visualize_metals(merged_mdata.metals, orientation_list, filepath)
-else
-    filepath = nothing
-end
+response = Dict{String, Any}()
+response["target"] = "$libname - $cellname"
+response["top_netnames"] = top_netname_list
+response["grid_data"] = grid_data
 
-response = create_mcp_lvs_response(libname, cellname, error_info, cinfo, error_cnt, is_visualized, filepath, added_short_error_info)
-
-
-
-
-
-
+println(response)

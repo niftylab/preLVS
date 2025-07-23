@@ -1,6 +1,113 @@
 include("new_metal.jl")
+include("connectivity.jl")
 
 using JSON
+
+struct LineObject
+    layer_num::Int
+    scope::Tuple{Int, Int}  # (start, end) in xy
+    netname::String
+end
+
+# GridLine: 1D grid line
+mutable struct GridLine
+    layer_num::Int
+    orientation::String
+    occupation::Union{Vector{LineObject}, Nothing}
+    extension::Int
+end
+
+# GridLayer: 2D grid layer
+mutable struct GridLayer
+    layer_num::Int
+    orientation::String
+    lines::Dict{Int, GridLine}  # key: xy, value: GridLine
+end
+
+# GridData: total grid data of an cell
+mutable struct GridData
+    layers::Dict{Int, GridLayer}
+    top_bbox::Tuple{Int, Int}  # (width, height) in xy
+end
+
+
+
+function create_empty_grid_data(grid_json_data::Dict, cell_data::Dict, libname::String, cellname::String)
+
+    bbox = (cell_data[libname][cellname][1]["width"], cell_data[libname][cellname][1]["height"])
+    bbox_mn = (xy_to_mn(grid_json_data, 3, bbox[1]), xy_to_mn(grid_json_data, 2, bbox[2]))
+    out_grid_data = GridData(Dict{Int, GridLayer}(), bbox)
+
+    current_layers = [2, 3, 4]
+
+    for layer_num in current_layers
+        orientation = grid_json_data[layer_num]["orientation"]
+        max_mn = orientation == "vertical" ? bbox_mn[1] : bbox_mn[2]
+
+        out_grid_data.layers[layer_num] = GridLayer(layer_num, orientation, Dict{Int, GridLine}())
+
+        for mn in 1:max_mn
+            xy = mn_to_xy(grid_json_data, layer_num, mn)
+            extension = get_extension(grid_json_data, layer_num, mn)
+            out_grid_data.layers[layer_num].lines[xy] = GridLine(layer_num, orientation, nothing, extension)
+        end
+    end
+        
+    return out_grid_data
+end
+
+
+
+function get_grid_data(
+    empty_grid_data::GridData,
+    cinfo::Vector{ComponentInfo}, 
+    top_netname_list::Vector{String},
+    grid_json_data::Dict
+)
+
+    for top_netname in top_netname_list
+
+        net_cinfo = filter(ci -> ci.netname == top_netname, cinfo)
+
+        for cur_cinfo in net_cinfo
+            for node in cur_cinfo.nodes
+                if !(node.layer in [2, 3, 4])
+                    continue
+                end
+                line_obj = LineObject(node.layer, (node.points[1].s_coord, node.points[2].s_coord), top_netname)
+                xy = node.p_coord
+                
+                if empty_grid_data.layers[node.layer].lines[xy].occupation === nothing
+                    empty_grid_data.layers[node.layer].lines[xy].occupation = [line_obj]
+                else
+                    push!(empty_grid_data.layers[node.layer].lines[xy].occupation, line_obj)
+                end
+            end
+        end
+    end
+
+
+    obstacle_cinfo = filter(ci -> !(ci.netname in top_netname_list), cinfo)
+    for cur_cinfo in obstacle_cinfo
+        for node in cur_cinfo.nodes
+            if !(node.layer in [2, 3, 4])
+                continue
+            end
+            line_obj = LineObject(node.layer, (node.points[1].s_coord, node.points[2].s_coord), "OBSTACLE")
+            xy = node.p_coord
+            
+            if empty_grid_data.layers[node.layer].lines[xy].occupation === nothing
+                empty_grid_data.layers[node.layer].lines[xy].occupation = [line_obj]
+            else
+                push!(empty_grid_data.layers[node.layer].lines[xy].occupation, line_obj)
+            end
+        end
+    end
+
+    return empty_grid_data
+end
+
+
 
 
 function get_grid(techname::String, config_data::Dict)
@@ -40,22 +147,88 @@ function get_grid(techname::String, config_data::Dict)
 end
 
 
+# function xy_to_mn(grid_data::Dict, layer_num::Int, xy::Int)
+#     if !haskey(grid_data, layer_num)
+#         error("Layer $(layer_num) not found in grid data")
+#     end
+#     track = rem(xy, grid_data[layer_num]["scope"][2])
+#     cycle_num = div(xy, grid_data[layer_num]["scope"][2])
+
+#     if !(track in grid_data[layer_num]["elements"])
+#         error("Track $(track) not found in layer $(layer_num) grid data
+#         elements: $(grid_data[layer_num]["elements"])")
+#     end
+
+#     # Find the index of track in elements array (1-based indexing)
+#     track_index = findfirst(x -> x == track, grid_data[layer_num]["elements"])
+#     mn = cycle_num * length(grid_data[layer_num]["elements"]) + track_index
+
+#     return mn
+# end
+
+# function mn_to_xy(grid_data::Dict, layer_num::Int, mn::Int)
+#     if !haskey(grid_data, layer_num)
+#         error("Layer $(layer_num) not found in grid data")
+#     end
+#     mn = mn - 1
+#     track = rem(mn, length(grid_data[layer_num]["elements"]))
+#     cycle_num = div(mn, length(grid_data[layer_num]["elements"]))
+
+
+#     return cycle_num * grid_data[layer_num]["scope"][2] + track
+
+# end
+
+using Logging
+
+"""
+정렬된 배열에서 주어진 값과 가장 가까운 값 및 그 인덱스를 찾습니다.
+(closest_value, 1-based_index)를 반환합니다.
+"""
+function find_closest(sorted_array::Vector, value::Number)
+    # searchsortedfirst는 value보다 크거나 같은 첫 번째 요소의 인덱스를 찾습니다.
+    idx = searchsortedfirst(sorted_array, value)
+
+    # 경계값 처리
+    if idx == 1
+        return (sorted_array[1], 1)
+    end
+    if idx > length(sorted_array)
+        return (sorted_array[end], length(sorted_array))
+    end
+
+    # 인접한 두 값 중 어느 쪽이 더 가까운지 비교
+    val_before = sorted_array[idx-1]
+    val_after = sorted_array[idx]
+    
+    if abs(value - val_before) <= abs(value - val_after)
+        return (val_before, idx - 1)
+    else
+        return (val_after, idx)
+    end
+end
+
 function xy_to_mn(grid_data::Dict, layer_num::Int, xy::Int)
     if !haskey(grid_data, layer_num)
         error("Layer $(layer_num) not found in grid data")
     end
-    track = rem(xy, grid_data[layer_num]["scope"][2])
-    cycle_num = div(xy, grid_data[layer_num]["scope"][2])
+    
+    layer_info = grid_data[layer_num]
+    scope = layer_info["scope"]
+    elements = layer_info["elements"]
+    
+    track = rem(xy, scope[2])
+    cycle_num = div(xy, scope[2])
 
-    if !(track in grid_data[layer_num]["elements"])
-        error("Track $(track) not found in layer $(layer_num) grid data
-        elements: $(grid_data[layer_num]["elements"])")
+    # 가장 가까운 track 값과 그 인덱스(1-based)를 찾습니다.
+    closest_track, track_index = find_closest(elements, track)
+
+    # 원래의 track 값과 가장 가까운 값이 다르면 로그를 남깁니다.
+    if closest_track != track
+        @info "xy_to_mn: Snapped xy $(xy) to nearest track. Original track: $(track), Snapped track: $(closest_track) on layer $(layer_num)."
     end
 
-    # Find the index of track in elements array (1-based indexing)
-    track_index = findfirst(x -> x == track, grid_data[layer_num]["elements"])
-    mn = cycle_num * length(grid_data[layer_num]["elements"]) + track_index
-
+    mn = cycle_num * length(elements) + track_index
     return mn
 end
 
@@ -63,13 +236,34 @@ function mn_to_xy(grid_data::Dict, layer_num::Int, mn::Int)
     if !haskey(grid_data, layer_num)
         error("Layer $(layer_num) not found in grid data")
     end
-    mn = mn - 1
-    track = rem(mn, length(grid_data[layer_num]["elements"]))
-    cycle_num = div(mn, length(grid_data[layer_num]["elements"]))
+
+    layer_info = grid_data[layer_num]
+    scope = layer_info["scope"]
+    elements = layer_info["elements"]
+    num_elements = length(elements)
+
+    # mn을 0-based로 변환하여 계산
+    mn_0based = mn - 1
+    
+    # track의 인덱스(0-based)와 사이클 번호를 계산
+    track_index_0based = rem(mn_0based, num_elements)
+    cycle_num = div(mn_0based, num_elements)
+
+    # [수정된 부분] 인덱스가 아닌 'elements' 배열의 실제 값을 사용합니다.
+    track_value = elements[track_index_0based + 1] # Julia는 1-based 인덱싱
+
+    return cycle_num * scope[2] + track_value
+end
 
 
-    return cycle_num * grid_data[layer_num]["scope"][2] + track
+function get_extension(grid_data::Dict, layer_num::Int, mn::Int)
+    if !haskey(grid_data, layer_num)
+        error("Layer $(layer_num) not found in grid data")
+    end
 
+    circular_mn = rem(mn, length(grid_data[layer_num]["elements"]))
+
+    return grid_data[layer_num]["extension"][circular_mn + 1]
 end
 
 
