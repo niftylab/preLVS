@@ -16,11 +16,11 @@ end
 
 mutable struct Pin
     name::String
+    layer::String # M1, M2, M3, ...
     xy::Vector{Vector{Int}}
     hextension::Int
     vextension::Int
     netname::String
-    Mname::String
 end
 
 # 일단은 Cell은 사용하지 않았고, db는 Dict로 작성했습니다.
