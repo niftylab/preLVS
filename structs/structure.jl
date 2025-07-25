@@ -16,11 +16,11 @@ end
 
 mutable struct Pin
     name::String
+    layer::String # M1, M2, M3, ...
     xy::Vector{Vector{Int}}
     hextension::Int
     vextension::Int
     netname::String
-    layer::Int
 end
 
 
