@@ -151,7 +151,7 @@ function a_star_route(
     goal_regions::Vector{Rect},
     grid::RoutingGrid,
     obstacles::Vector{Rect},
-    fid
+    fid::IOStream
 )
     # 1. 휴리스틱 함수 정의
     goal_center_x = round(Int, mean((r.xy[1,1] + r.xy[2,1])/2 for r in goal_regions))
@@ -181,42 +181,61 @@ function a_star_route(
     all_v_tracks = vcat(values(grid.v_tracks)...) |> unique |> sort
     
     for region in start_regions
-        layer = region.layer
-        xmin, ymin = region.xy[1,1], region.xy[1,2]
-        xmax, ymax = region.xy[2,1], region.xy[2,2]
-        
-        # 수평 영역 처리
-        if haskey(grid.h_tracks, layer)
-            for y in grid.h_tracks[layer]
-                if ymin <= y <= ymax
-                    # 영역 내에 있는 수직 트랙들을 찾아 교차점을 노드로 추가
-                    for x in all_v_tracks
-                         if xmin <= x <= xmax
-                            start_node = Node(x, y, layer)
-                            if !haskey(g_score, start_node)
-                                g_score[start_node] = 0
-                                open_set[start_node] = heuristic(start_node)
+        if region isa MRect
+            layer = region.layer
+            xmin, ymin = region.xy[1,1], region.xy[1,2]
+            xmax, ymax = region.xy[2,1], region.xy[2,2]
+            # 수평 영역 처리
+            if haskey(grid.h_tracks, layer)
+                for y in grid.h_tracks[layer]
+                    if ymin <= y <= ymax
+                        # 영역 내에 있는 수직 트랙들을 찾아 교차점을 노드로 추가
+                        for x in all_v_tracks
+                            if xmin <= x <= xmax
+                                start_node = Node(x, y, layer)
+                                if !haskey(g_score, start_node)
+                                    g_score[start_node] = 0
+                                    open_set[start_node] = heuristic(start_node)
+                                end
+                            end
+                        end
+                    end
+                end
+            # 수직 영역 처리
+            elseif haskey(grid.v_tracks, layer)
+                for x in grid.v_tracks[layer]
+                    if xmin <= x <= xmax
+                        # 영역 내에 있는 수평 트랙들을 찾아 교차점을 노드로 추가
+                        for y in all_h_tracks
+                            if ymin <= y <= ymax
+                                start_node = Node(x, y, layer)
+                                if !haskey(g_score, start_node)
+                                    g_score[start_node] = 0
+                                    open_set[start_node] = heuristic(start_node)
+                                end
                             end
                         end
                     end
                 end
             end
-        # 수직 영역 처리
-        elseif haskey(grid.v_tracks, layer)
-            for x in grid.v_tracks[layer]
-                if xmin <= x <= xmax
-                    # 영역 내에 있는 수평 트랙들을 찾아 교차점을 노드로 추가
-                    for y in all_h_tracks
-                        if ymin <= y <= ymax
-                            start_node = Node(x, y, layer)
-                            if !haskey(g_score, start_node)
-                                g_score[start_node] = 0
-                                open_set[start_node] = heuristic(start_node)
-                            end
-                        end
-                    end
-                end
+        elseif region isa VRect
+            # Via는 점이므로, 해당 위치를 두 레이어 모두의 시작점으로 추가
+            x, y = region.xy[1], region.xy[2]
+            layer1, layer2 = region.layer[1], region.layer[2]
+
+            # Via의 첫 번째 레이어
+            node1 = Node(x, y, layer1)
+            if !haskey(g_score, node1)
+                g_score[node1] = 0
+                open_set[node1] = heuristic(node1)
             end
+            
+            # Via의 두 번째 레이어
+            node2 = Node(x, y, layer2)
+            if !haskey(g_score, node2)
+                g_score[node2] = 0
+                open_set[node2] = heuristic(node2)
+            end            
         end
     end
     
@@ -357,7 +376,7 @@ function route_single_net(target_net::String, components::Vector{ComponentInfo},
         end
         
         # 새로 찾은 경로를 Rect 객체로 변환
-        new_path_rects = path_to_rects(path_nodes) 
+        new_path_rects = path_to_rects(path_nodes, grid) 
         println(fid, "  -> Path found. Adding $(length(new_path_rects)) new rectangles.")
         append!(total_new_routes, new_path_rects)
 
@@ -418,7 +437,7 @@ end
 # end
 
 function route_all_nets(cinfo::Vector{ComponentInfo}, grid::RoutingGrid, logfile=nothing)
-    savefilename::String
+
     if isnothing(logfile)
         savefilename = "out/log/pathFind_log.out"
     else
