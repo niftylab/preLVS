@@ -87,6 +87,12 @@ cgraph = connect_metals_from_via(merged_mdata, vdata, nmetals)
 # 6. Check & Report connections
 cinfo, error_info, error_cnt = check_and_report_connections_bfs(cgraph, equiv_net_sets)
 
+cinfo, error_info, error_cnt = check_and_report_connections_bfs(cgraph, source_net_sets)
+_bbox = db_data[libname][cellname]["bbox"]
+rgrid = create_grid([_bbox[1][1],_bbox[1][2], _bbox[2][1], _bbox[2][2]])
+grid_map_string = generate_grid_maps_json(cinfo, rgrid, cellname)
+
+
 # 7. Create error log file
 added_short_error_info = create_error_log_file(libname, cellname, outlogFilePath, error_info, cinfo, error_cnt, short_error_data)
 
@@ -99,6 +105,6 @@ if @isdefined(is_visualized) && is_visualized
 end
 
 # 9. Create MCP response
-response = create_mcp_lvs_response(libname, cellname, error_info, cinfo, error_cnt, is_visualized, filepath, added_short_error_info)
+response = create_mcp_lvs_response(libname, cellname, error_info, cinfo, error_cnt, is_visualized, filepath, added_short_error_info, grid_map_string)
 
 JSON.json(response)

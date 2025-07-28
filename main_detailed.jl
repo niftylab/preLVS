@@ -48,6 +48,9 @@ log_dir = input_arg["log_dir"] #"out/log"
 netlog_dir = input_arg["netlog_dir"] #"out/label"
 dir_path = pwd()
 
+outlogFilePath = "$(log_dir)/$(libname)_$(cellname).txt"
+
+
 config_file_path = input_arg["config_file_path"] #"config/config.yaml"
 
     # Check if database/config file exists
@@ -111,26 +114,52 @@ merged_mdata, nmetals, short_error_data = sort_n_merge_MData(mdata)
 
 
 cgraph = connect_metals_from_via(merged_mdata, vdata, nmetals)
+# cinfo, error_info, error_cnt = check_and_report_connections_bfs(cgraph, source_net_sets)
+# logfile_path = "$(log_dir)/$(libname)_$(cellname).txt"
+# added_short_error_info = create_error_log_file(libname, cellname, logfile_path, error_info, cinfo, error_cnt, short_error_data)
+
+
 cinfo, error_info, error_cnt = check_and_report_connections_bfs(cgraph, source_net_sets)
-logfile_path = "$(log_dir)/$(libname)_$(cellname).txt"
-added_short_error_info = create_error_log_file(libname, cellname, logfile_path, error_info, cinfo, error_cnt, short_error_data)
-
-
-grid_json_data = get_grid(techname, config_data, dir_path)
-empty_grid_data = create_empty_grid_data(grid_json_data, cell_data, libname, cellname)
-grid_data = get_grid_data(empty_grid_data, cinfo, top_netname_list, grid_json_data)
-
-
-
-# 3. Visualize(optional)
-# visualize_metals_by_layer(merged_mdata.metals, orientation_list, "$(visualized_dir)/test_$(cellname)")
-if @isdefined(is_visualized) && is_visualized
-    timestamp = Dates.format(now(), "yyyy-mm-dd_HH-MM-SS")
-    filepath = "$(visualized_dir)/$(cellname)_$(timestamp).png"
-    visualize_metals(merged_mdata.metals, orientation_list, filepath)
-else
-    filepath = nothing
+_bbox = db_data[libname][cellname]["bbox"]
+rgrid = create_grid([_bbox[1][1],_bbox[1][2], _bbox[2][1], _bbox[2][2]])
+grid_map_string = generate_grid_maps_json(cinfo, rgrid, cellname)
+ 
+open("$(log_dir)/$(merged_mdata.cellname)_map.json", "w") do io
+    println(io, grid_map_string)
 end
+ 
+# 7. Create error log file
+added_short_error_info = create_error_log_file(libname, cellname, outlogFilePath, error_info, cinfo, error_cnt, short_error_data)
+ 
+filepath = nothing
+is_visualized = false
+ 
+# 9. Create MCP response
+response = create_mcp_lvs_response(libname, cellname, error_info, cinfo, error_cnt, is_visualized, filepath, added_short_error_info, grid_map_string)
+# open("$(log_dir)/$(libname)_$(cellname)_lvslog.json", "w") do io
+#     JSON.print(io, response)
+# end
+# JSON.json(response)
+
+
+
+
+
+# grid_json_data = get_grid(techname, config_data, dir_path)
+# empty_grid_data = create_empty_grid_data(grid_json_data, cell_data, libname, cellname)
+# grid_data = get_grid_data(empty_grid_data, cinfo, top_netname_list, grid_json_data)
+
+
+
+# # 3. Visualize(optional)
+# # visualize_metals_by_layer(merged_mdata.metals, orientation_list, "$(visualized_dir)/test_$(cellname)")
+# if @isdefined(is_visualized) && is_visualized
+#     timestamp = Dates.format(now(), "yyyy-mm-dd_HH-MM-SS")
+#     filepath = "$(visualized_dir)/$(cellname)_$(timestamp).png"
+#     visualize_metals(merged_mdata.metals, orientation_list, filepath)
+# else
+#     filepath = nothing
+# end
 
 # response = create_mcp_lvs_response(libname, cellname, error_info, cinfo, error_cnt, is_visualized, filepath, added_short_error_info)
 
