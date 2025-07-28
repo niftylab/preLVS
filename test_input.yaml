@@ -6,7 +6,7 @@
 # cellname: "scan_cell" # cell 이름
 
 libname: "logic_generated" # 라이브러리 이름
-cellname: "dff" # cell 이름
+cellname: "inv" # cell 이름
 techname: "tsmcN28"
 
 # libname: "comp_generated" # 라이브러리 이름
@@ -37,6 +37,7 @@ via_dir: "out/via"
 visualized_dir: "out/visualized"
 log_dir: "out/log"
 netlog_dir: "out/label"
+
 
 
 

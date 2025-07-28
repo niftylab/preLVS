@@ -16,6 +16,7 @@ include("main_functions.jl") # main functions ver2
 include("structs/connectivity.jl")
 include("utils/log.jl")
 include("structs/grid.jl")
+include("eval/SliceMap.jl")
 
 
 # # command-line 입력 확인
@@ -45,6 +46,7 @@ via_dir = input_arg["via_dir"] #"out/via"
 visualized_dir = input_arg["visualized_dir"] #"out/visualized"
 log_dir = input_arg["log_dir"] #"out/log"
 netlog_dir = input_arg["netlog_dir"] #"out/label"
+dir_path = pwd()
 
 config_file_path = input_arg["config_file_path"] #"config/config.yaml"
 
@@ -114,7 +116,7 @@ logfile_path = "$(log_dir)/$(libname)_$(cellname).txt"
 added_short_error_info = create_error_log_file(libname, cellname, logfile_path, error_info, cinfo, error_cnt, short_error_data)
 
 
-grid_json_data = get_grid(techname, config_data)
+grid_json_data = get_grid(techname, config_data, dir_path)
 empty_grid_data = create_empty_grid_data(grid_json_data, cell_data, libname, cellname)
 grid_data = get_grid_data(empty_grid_data, cinfo, top_netname_list, grid_json_data)
 
@@ -130,9 +132,7 @@ else
     filepath = nothing
 end
 
-response = create_mcp_lvs_response(libname, cellname, error_info, cinfo, error_cnt, is_visualized, filepath, added_short_error_info)
-
-
+# response = create_mcp_lvs_response(libname, cellname, error_info, cinfo, error_cnt, is_visualized, filepath, added_short_error_info)
 
 
 

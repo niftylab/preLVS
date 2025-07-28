@@ -5,6 +5,7 @@ include("new_metal.jl")
 
 mutable struct MGraph
     adj::Dict{MOVector, Vector{MOVector}}   # adjacency list
+    adj_v::Dict{MOVector, Vector{VPoint}}
 end
 
 
@@ -12,7 +13,7 @@ end
 function connect_metals_from_via(mdata::MOData, vdata::VData, nmetals::Int)
     # println("Number of metals: $nmetals")
 
-    cgraph = MGraph(Dict{MOVector, Vector{MOVector}}())
+    cgraph = MGraph(Dict{MOVector, Vector{MOVector}}(), Dict{MOVector, Vector{VPoint}}())
 
     for (vtype, vlist) in vdata.vlists
         for vp in vlist.vpoints
@@ -24,6 +25,11 @@ function connect_metals_from_via(mdata::MOData, vdata::VData, nmetals::Int)
                 adj_list_mv2 = get!(cgraph.adj, mv2, Vector{MOVector}())
                 push!(adj_list_mv1, mv2)
                 push!(adj_list_mv2, mv1)
+
+                adj_list_v = get!(cgraph.adj_v, mv1, Vector{VPoint}())
+                push!(adj_list_v, vp)
+                adj_list_v = get!(cgraph.adj_v, mv2, Vector{VPoint}())
+                push!(adj_list_v, vp)
             end
         end
     end
@@ -36,6 +42,7 @@ end
 struct ComponentInfo
     number::Int
     nodes::Set{MOVector}            # 컴포넌트에 속한 노드(MOVector)들의 Set
+    vias::Set{VPoint}
     netname::Union{String, Nothing} # 컴포넌트의 대표 netname
     laygo_origin_set::Set{LaygoOrigin} # 컴포넌트의 대표 laygo_origin
     is_consistent::Bool             # 해당 컴포넌트의 netname 일관성 여부
@@ -228,6 +235,7 @@ function check_and_report_connections_bfs(g::MGraph, source_net_sets::Vector{Tup
         if !(start_node in visited_metals)
             # --- 새 컴포넌트 발견 ---
             current_component_nodes = Set{MOVector}() # 현재 컴포넌트 노드 저장
+            current_component_vpoints = Set{VPoint}()
             expected_netname_ref = Ref{Union{String, Nothing}}(nothing)
             component_consistent = Ref(true)
             component_laygo_origin_set = Set{LaygoOrigin}()
@@ -236,7 +244,12 @@ function check_and_report_connections_bfs(g::MGraph, source_net_sets::Vector{Tup
 
             # 시작 노드 처리 및 큐에 추가
             push!(visited_metals, start_node)
-            push!(current_component_nodes, start_node) # 컴포넌트에 시작 노드 추가
+            push!(current_component_nodes, start_node)  # 컴포넌트에 시작 노드 추가
+            for vp in g.adj_v[start_node]
+                if !(vp in current_component_vpoints)
+                    push!(current_component_vpoints, vp)
+                end
+            end
             union!(component_laygo_origin_set, start_node.laygo_origin_set)
             push!(q, start_node)
 
@@ -291,6 +304,11 @@ function check_and_report_connections_bfs(g::MGraph, source_net_sets::Vector{Tup
                         if !(v_node in visited_metals)
                             push!(visited_metals, v_node)
                             push!(current_component_nodes, v_node) # 컴포넌트에 이웃 노드 추가
+                            for vp in g.adj_v[v_node]
+                                if !(vp in current_component_vpoints)
+                                    push!(current_component_vpoints, vp)
+                                end
+                            end
                             union!(component_laygo_origin_set, v_node.laygo_origin_set)
                             push!(q, v_node) # 이웃 MOVector 객체를 큐에 추가
                         end
@@ -311,6 +329,7 @@ function check_and_report_connections_bfs(g::MGraph, source_net_sets::Vector{Tup
             push!(all_components_info, ComponentInfo(
                 component_number,
                 current_component_nodes,
+                current_component_vpoints,
                 expected_netname_ref[],
                 component_laygo_origin_set,
                 component_consistent[]
