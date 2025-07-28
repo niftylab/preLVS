@@ -95,7 +95,12 @@ function create_grid(layout_bbox::Vector{Int})
             push!(h_tracks[2], y_base + y_el)
         end
     end
-
+    _residue = layout_bbox[4] % m2_scope
+    _idx = 1
+    while m2_elements[_idx] <= _residue
+        push!(h_tracks[2], m2_scope*div(layout_bbox[4], m2_scope)+m2_elements[_idx])
+        _idx += 1
+    end
     # M4 트랙 생성 (예시)
     m4_scope = 1200
     m4_elements = [100, 200, 300, 400, 500, 700, 800, 900, 1000, 1100]
@@ -104,11 +109,16 @@ function create_grid(layout_bbox::Vector{Int})
             push!(h_tracks[4], y_base + y_el)
         end
     end
-
+    _residue = layout_bbox[4] % m4_scope
+    _idx = 1
+    while m4_elements[_idx] <= _residue
+        push!(h_tracks[4], m4_scope*div(layout_bbox[4], m4_scope)+m4_elements[_idx])
+        _idx += 1
+    end
     # M3 트랙 생성 (예시)
     m3_scope = 130 # M3는 scope가 작고 주기적이지 않을 수 있음
     m3_elements = [0] # 예시 값이므로 실제 파일 값 사용 필요
-    for x_base in 0:m3_scope:(layout_bbox[3])-m3_scope
+    for x_base in 0:m3_scope:(layout_bbox[3])
          for x_el in m3_elements
             push!(v_tracks[3], x_base + x_el)
          end

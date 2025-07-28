@@ -1,4 +1,6 @@
 using OrderedCollections
+import Base: ==, hash
+
 include("laygo_origin.jl")
 
 mutable struct VPoint
@@ -35,6 +37,22 @@ function VPoint(
 )
     return VPoint(xy, extension, layer, type, nothing, idx, laygo_origin)
 end
+
+
+function ==(a::VPoint, b::VPoint)
+    return a.xy == b.xy &&
+           a.extension == b.extension &&
+           a.layer == b.layer &&
+           a.type == b.type
+end
+
+function hash(v::VPoint, h::UInt)
+    return hash(v.xy, 
+           hash(v.extension, 
+           hash(v.layer, 
+           hash(v.type, h))))
+end
+
 
 
 function json_to_VData(libname::String, cellname::String, json_path::String)::VData

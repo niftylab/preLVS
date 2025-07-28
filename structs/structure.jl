@@ -23,7 +23,6 @@ mutable struct Pin
     netname::String
 end
 
-# 일단은 Cell은 사용하지 않았고, db는 Dict로 작성했습니다.
 
 # mutable struct Cell
 #     lib::String
