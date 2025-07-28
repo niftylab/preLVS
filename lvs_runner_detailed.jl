@@ -44,7 +44,7 @@ include(joinpath(lvsdir, "main_functions.jl")) # main functions ver2
 include(joinpath(lvsdir, "structs", "connectivity.jl"))
 include(joinpath(lvsdir, "utils", "log.jl"))
 include(joinpath(lvsdir, "utils", "visualize.jl"))
-
+include(joinpath(lvsdir, "eval", "SliceMap.jl"))
 
 
 # Load config data
@@ -87,7 +87,6 @@ cgraph = connect_metals_from_via(merged_mdata, vdata, nmetals)
 # 6. Check & Report connections
 cinfo, error_info, error_cnt = check_and_report_connections_bfs(cgraph, equiv_net_sets)
 
-cinfo, error_info, error_cnt = check_and_report_connections_bfs(cgraph, source_net_sets)
 _bbox = db_data[libname][cellname]["bbox"]
 rgrid = create_grid([_bbox[1][1],_bbox[1][2], _bbox[2][1], _bbox[2][2]])
 grid_map_string = generate_grid_maps_json(cinfo, rgrid, cellname)
