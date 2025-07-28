@@ -115,10 +115,108 @@ function generate_grid_maps(cinfo::Vector{ComponentInfo}, grid::RoutingGrid, cel
     
     return output_str
 end
-# --- 사용 예시 ---
-# main() 함수 내에서 아래와 같이 호출
-# grid_map_string = generate_grid_maps(cinfo, grid)
-# println(grid_map_string)
+
+"""
+    generate_grid_maps_json(cinfo::Vector{ComponentInfo}, grid::RoutingGrid, cellname::String)
+
+Creates a structured dictionary with routing map information and returns it as a JSON string.
+"""
+function generate_grid_maps_json(cinfo::Vector{ComponentInfo}, grid::RoutingGrid, cellname::String)
+
+    # --- 1. Collect and sort netnames ---
+    all_netnames = Set{String}()
+    for component in cinfo
+        netname = component.netname
+        if netname !== nothing && netname ∉ ["VDD:", "VSS:"]
+            push!(all_netnames, netname)
+        end
+    end
+    sorted_netnames = sort(collect(all_netnames))
+
+    # --- 2. Create netname -> Hex ID map ---
+    net_id_map = Dict{String, String}()
+    for (i, netname) in enumerate(sorted_netnames)
+        net_id_map[netname] = uppercase(@sprintf("%02X", i - 1))
+    end
+    
+    # --- 3. Initialize grid and map data structures ---
+    all_h_tracks = vcat(values(grid.h_tracks)...) |> unique |> sort
+    all_v_tracks = vcat(values(grid.v_tracks)...) |> unique |> sort
+    max_x = length(all_v_tracks)
+    max_y = length(all_h_tracks)
+    
+    maps = Dict{Int, Matrix{String}}()
+    all_layers = sort(unique(vcat(collect(keys(grid.h_tracks)), collect(keys(grid.v_tracks)))))
+    for layer in all_layers
+        maps[layer] = fill("..", (max_y, max_x))
+    end
+    
+    # --- 4. Populate maps with obstacles from cinfo ---
+    for component in cinfo
+        netname = component.netname
+        if haskey(net_id_map, netname)
+            obs_id = net_id_map[netname]
+            for mov in component.nodes
+                layer = mov.layer
+                if !haskey(maps, layer) continue end
+
+                is_horizontal = haskey(grid.h_tracks, layer)
+                
+                p_idx = is_horizontal ? get_grid_index(all_h_tracks, mov.p_coord) : get_grid_index(all_v_tracks, mov.p_coord)
+                s_start_idx = get_grid_index(is_horizontal ? all_v_tracks : all_h_tracks, mov.points[1].s_coord)
+                s_end_idx   = get_grid_index(is_horizontal ? all_v_tracks : all_h_tracks, mov.points[2].s_coord)
+                
+                s_start_idx, s_end_idx = minmax(s_start_idx, s_end_idx)
+
+                if is_horizontal && (1 <= p_idx <= max_y) && (1 <= s_end_idx <= max_x)
+                    maps[layer][p_idx, s_start_idx:s_end_idx] .= obs_id
+                elseif !is_horizontal && (1 <= p_idx <= max_x) && (1 <= s_end_idx <= max_y)
+                    maps[layer][s_start_idx:s_end_idx, p_idx] .= obs_id
+                end
+            end
+        end
+    end
+
+    # --- 5. Generate axis info ---
+    y_idx_to_labels = DefaultDict{Int, Vector{String}}(() -> String[])
+    for (layer_num, h_track_ys) in grid.h_tracks
+        layer_name = grid.rev_layer_map[layer_num]
+        sorted_layer_tracks = sort(h_track_ys)
+        for (layer_track_idx, y_coord) in enumerate(sorted_layer_tracks)
+            global_y_idx = get_grid_index(all_h_tracks, y_coord)
+            push!(y_idx_to_labels[global_y_idx], "$(layer_name)_trk=$(layer_track_idx-1)")
+        end
+    end
+
+    # --- 6. Construct the final JSON structure ---
+    output_dict = Dict()
+    output_dict["cell_name"] = cellname
+    output_dict["legend"] = Dict(id => net for (net, id) in net_id_map) # Flip for legend: ID => Netname
+    
+    grid_maps_list = []
+    for layer in all_layers
+        layer_map_dict = Dict()
+        layer_map_dict["layer"] = layer
+        layer_map_dict["layer_name"] = grid.rev_layer_map[layer]
+        
+        # X-axis info (physical coordinates)
+        layer_map_dict["x_axis_info"] = [0:max_x-1] # [all_v_tracks[i]for i in 1:max_x]
+        
+        # Y-axis info (track descriptions)
+        y_info_col = [join(get(y_idx_to_labels, y_idx, [""]), ", ") for y_idx in max_y:-1:1]
+        layer_map_dict["y_axis_info"] = y_info_col
+        
+        # Map data (array of strings)
+        map_rows = [join(maps[layer][y_idx, :], " ") for y_idx in max_y:-1:1]
+        layer_map_dict["map"] = map_rows
+        
+        push!(grid_maps_list, layer_map_dict)
+    end
+    output_dict["grid_maps"] = grid_maps_list
+    
+    # --- 7. Serialize to JSON string with pretty printing ---
+    return JSON.json(output_dict, 2)
+end
 
 # currently not used
 # function save_grid_maps_to_csv(cinfo::Vector{ComponentInfo}, grid::RoutingGrid, basename::String="routing_map")
