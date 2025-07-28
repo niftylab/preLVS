@@ -127,7 +127,7 @@ function generate_grid_maps_json(cinfo::Vector{ComponentInfo}, grid::RoutingGrid
     all_netnames = Set{String}()
     for component in cinfo
         netname = component.netname
-        if netname !== nothing && netname ∉ ["VDD:", "VSS:"]
+        if netname !== nothing # && netname ∉ ["VDD:", "VSS:"]
             push!(all_netnames, netname)
         end
     end
@@ -147,6 +147,11 @@ function generate_grid_maps_json(cinfo::Vector{ComponentInfo}, grid::RoutingGrid
     
     maps = Dict{Int, Matrix{String}}()
     all_layers = sort(unique(vcat(collect(keys(grid.h_tracks)), collect(keys(grid.v_tracks)))))
+
+    # [수정] Via 레이어 추가 (-23, -34는 정렬 및 처리를 위한 임시 키)
+    push!(all_layers, -23, -34) # via23, via34
+    sort!(all_layers)
+
     for layer in all_layers
         maps[layer] = fill("..", (max_y, max_x))
     end
@@ -177,7 +182,37 @@ function generate_grid_maps_json(cinfo::Vector{ComponentInfo}, grid::RoutingGrid
         end
     end
 
-    # --- 5. Generate axis info ---
+    # --- 4. Populate maps with via obstacles from cinfo ---
+    for component in cinfo
+        netname = component.netname
+        if haskey(net_id_map, netname)
+            obs_id = net_id_map[netname]
+            if isdefined(component, :vias) && component.vias !== nothing
+                for via in component.vias
+                    # [FIX] Check if all layers for this via exist in the grid's layer_map
+                    if !all(l -> haskey(grid.layer_map, l), via.layer)
+                        continue # Skip this via if it connects to an unknown layer (like M1)
+                    end
+
+                    via_layers_num = sort([grid.layer_map[l] for l in via.layer])
+                    
+                    target_map_key = 0
+                    if via_layers_num == [2, 3]; target_map_key = -23;
+                    elseif via_layers_num == [3, 4]; target_map_key = -34;
+                    else continue; end
+                    
+                    x_idx = get_grid_index(all_v_tracks, via.xy[1])
+                    y_idx = get_grid_index(all_h_tracks, via.xy[2])
+                    
+                    if 1 <= y_idx <= max_y && 1 <= x_idx <= max_x
+                        maps[target_map_key][y_idx, x_idx] = obs_id
+                    end
+                end
+            end
+        end
+    end
+
+    # --- 5. Generate Y-axis info ---
     y_idx_to_labels = DefaultDict{Int, Vector{String}}(() -> String[])
     for (layer_num, h_track_ys) in grid.h_tracks
         layer_name = grid.rev_layer_map[layer_num]
@@ -191,16 +226,22 @@ function generate_grid_maps_json(cinfo::Vector{ComponentInfo}, grid::RoutingGrid
     # --- 6. Construct the final JSON structure ---
     output_dict = Dict()
     output_dict["cell_name"] = cellname
-    output_dict["legend"] = Dict(id => net for (net, id) in net_id_map) # Flip for legend: ID => Netname
+    output_dict["legend"] = Dict(id => net for (net, id) in net_id_map)
     
     grid_maps_list = []
+    special_layer_names = Dict(-23 => "viaM2M3", -34 => "viaM3M4")
+
     for layer in all_layers
         layer_map_dict = Dict()
-        layer_map_dict["layer"] = layer
-        layer_map_dict["layer_name"] = grid.rev_layer_map[layer]
+        
+        # Use a real layer number for the JSON output, not the temporary key
+        layer_map_dict["layer"] = layer > 0 ? layer : replace(string(layer), "-" => "")
+
+        layer_name = get(grid.rev_layer_map, layer, get(special_layer_names, layer, "unknown"))
+        layer_map_dict["layer_name"] = layer_name
         
         # X-axis info (physical coordinates)
-        layer_map_dict["x_axis_info"] = [0:max_x-1] # [all_v_tracks[i]for i in 1:max_x]
+        layer_map_dict["x_axis_info"] = [0:max_x-1] # [all_v_tracks[i] for i in 1:max_x]
         
         # Y-axis info (track descriptions)
         y_info_col = [join(get(y_idx_to_labels, y_idx, [""]), ", ") for y_idx in max_y:-1:1]
