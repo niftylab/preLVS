@@ -16,6 +16,7 @@ end
 mutable struct MVector
     layer::Int
     p_coord::Int
+    width::Int                            # width in primary coord direction
     points::SVector{2, MPoint}           # contains only two MPoints (start, end)
     netname::Union{String, Nothing}
     laygo_origin::Union{LaygoOrigin, Nothing}
@@ -39,6 +40,7 @@ end
 mutable struct MOVector
     layer::Int
     p_coord::Int
+    width::Int                           # width in primary coord direction
     points::SVector{2, MPoint}          # contains only two MPoints (start, end)
     netname::Union{String, Nothing}
     laygo_origin_set::Union{Set{LaygoOrigin}, Nothing}
@@ -70,8 +72,8 @@ MPoint(s_coord::Int, pos::MPosition; netname::Union{String, Nothing}=nothing, la
 """
 Convenience constructor for MVector.
 """
-function MVector(layer::Int, p_coord::Int, p0::MPoint, p1::MPoint; netname::Union{String, Nothing}=nothing, laygo_origin::Union{LaygoOrigin, Nothing}=nothing)
-    return MVector(layer, p_coord, SVector(p0, p1), netname, laygo_origin)
+function MVector(layer::Int, p_coord::Int, width::Int, p0::MPoint, p1::MPoint; netname::Union{String, Nothing}=nothing, laygo_origin::Union{LaygoOrigin, Nothing}=nothing)
+    return MVector(layer, p_coord, width, SVector(p0, p1), netname, laygo_origin)
 end
 
 """
@@ -95,12 +97,12 @@ MData(libname::String, cellname::String; metals::Dict{Int, MLayer}=Dict{Int, MLa
 """
 Convenience constructor for MOVector.
 """
-function MOVector(layer::Int, p_coord::Int, p0::MPoint, p1::MPoint; netname::Union{String, Nothing}=nothing, laygo_origin_set::Union{Set{LaygoOrigin}, Nothing}=nothing, idx::Int=0, is_visited::Bool=false)
-    return MOVector(layer, p_coord, SVector(p0, p1), netname, laygo_origin_set, idx, is_visited)
+function MOVector(layer::Int, p_coord::Int, width::Int, p0::MPoint, p1::MPoint; netname::Union{String, Nothing}=nothing, laygo_origin_set::Union{Set{LaygoOrigin}, Nothing}=nothing, idx::Int=0, is_visited::Bool=false)
+    return MOVector(layer, p_coord, width, SVector(p0, p1), netname, laygo_origin_set, idx, is_visited)
 end
 
-function MOVector(layer::Int, p_coord::Int, points::SVector{2, MPoint}; netname::Union{String, Nothing}=nothing, laygo_origin_set::Union{Set{LaygoOrigin}, Nothing}=nothing, idx::Int=0, is_visited::Bool=false)
-    return MOVector(layer, p_coord, points, netname, laygo_origin_set, idx, is_visited)
+function MOVector(layer::Int, p_coord::Int, width::Int, points::SVector{2, MPoint}; netname::Union{String, Nothing}=nothing, laygo_origin_set::Union{Set{LaygoOrigin}, Nothing}=nothing, idx::Int=0, is_visited::Bool=false)
+    return MOVector(layer, p_coord, width, points, netname, laygo_origin_set, idx, is_visited)
 end
 
 
@@ -278,6 +280,9 @@ function db_to_MData(
             p_coord = p["xy"][1][is_vertical ? 1 : 2]
             extension_orient = is_vertical ? "vextension" : "hextension"
             extension = p[extension_orient]
+            # Width-direction extension (perpendicular to span)
+            width_extension = is_vertical ? p["hextension"] : p["vextension"]
+            width = width_extension * 2
 
             min_s = is_vertical ? min(p["xy"][1][2], p["xy"][2][2]) : min(p["xy"][1][1], p["xy"][2][1])
             max_s = is_vertical ? max(p["xy"][1][2], p["xy"][2][2]) : max(p["xy"][1][1], p["xy"][2][1])
@@ -287,7 +292,7 @@ function db_to_MData(
             if !haskey(unnamed_metals[layer].metals, p_coord)
                 unnamed_metals[layer].metals[p_coord] = Vector{MVector}()
             end
-            push!(unnamed_metals[layer].metals[p_coord], MVector(layer, p_coord, points, nothing, nothing))
+            push!(unnamed_metals[layer].metals[p_coord], MVector(layer, p_coord, width, points, nothing, nothing))
         end
     end
 
@@ -317,6 +322,9 @@ function db_to_MData(
         p_coord = metal_data["xy"][1][is_vertical ? 1 : 2]
         extension_orient = is_vertical ? "vextension" : "hextension"
         extension = metal_data[extension_orient]
+        # Width-direction extension (perpendicular to span)
+        width_extension = is_vertical ? metal_data["hextension"] : metal_data["vextension"]
+        width = width_extension * 2
 
         min_s = is_vertical ? min(metal_data["xy"][1][2], metal_data["xy"][2][2]) : min(metal_data["xy"][1][1], metal_data["xy"][2][1])
         max_s = is_vertical ? max(metal_data["xy"][1][2], metal_data["xy"][2][2]) : max(metal_data["xy"][1][1], metal_data["xy"][2][1])
@@ -326,7 +334,7 @@ function db_to_MData(
         if !haskey(unnamed_metals[layer].metals, p_coord)
             unnamed_metals[layer].metals[p_coord] = Vector{MVector}()
         end
-        push!(unnamed_metals[layer].metals[p_coord], MVector(layer, p_coord, points, nothing, laygo_origin))
+        push!(unnamed_metals[layer].metals[p_coord], MVector(layer, p_coord, width, points, nothing, laygo_origin))
     end
 
     # Named metals
@@ -349,8 +357,11 @@ function db_to_MData(
         p_coord = db_label["xy"][1][is_vertical ? 1 : 2]
         extension_orient = is_vertical ? "vextension" : "hextension"
         extension = db_label[extension_orient]
+        # Width-direction extension (perpendicular to span)
+        width_extension = is_vertical ? db_label["hextension"] : db_label["vextension"]
+        width = width_extension * 2
         netname = get(db_label, "netname", nothing)
-        netname = netname === nothing ? "UNKNOWN" : unify_netname(netname, source_net_sets) 
+        netname = netname === nothing ? "UNKNOWN" : unify_netname(netname, source_net_sets)
 
         min_s = is_vertical ? min(db_label["xy"][1][2], db_label["xy"][2][2]) : min(db_label["xy"][1][1], db_label["xy"][2][1])
         max_s = is_vertical ? max(db_label["xy"][1][2], db_label["xy"][2][2]) : max(db_label["xy"][1][1], db_label["xy"][2][1])
@@ -360,7 +371,7 @@ function db_to_MData(
         if !haskey(named_metals[layer].metals, p_coord)
             named_metals[layer].metals[p_coord] = Vector{MVector}()
         end
-        push!(named_metals[layer].metals[p_coord], MVector(layer, p_coord, points, netname, laygo_origin))
+        push!(named_metals[layer].metals[p_coord], MVector(layer, p_coord, width, points, netname, laygo_origin))
     end
 
     # Add pins
@@ -381,6 +392,9 @@ function db_to_MData(
         p_coord = db_pin["xy"][1][is_vertical ? 1 : 2]
         extension_orient = is_vertical ? "vextension" : "hextension"
         extension = db_pin[extension_orient]
+        # Width-direction extension (perpendicular to span)
+        width_extension = is_vertical ? db_pin["hextension"] : db_pin["vextension"]
+        width = width_extension * 2
         netname = get(db_pin, "netname", nothing)
         netname = netname === nothing ? "UNKNOWN" : unify_netname(netname, source_net_sets)
 
@@ -392,7 +406,7 @@ function db_to_MData(
         if !haskey(named_metals[layer].metals, p_coord)
             named_metals[layer].metals[p_coord] = Vector{MVector}()
         end
-        push!(named_metals[layer].metals[p_coord], MVector(layer, p_coord, points, netname, laygo_origin))
+        push!(named_metals[layer].metals[p_coord], MVector(layer, p_coord, width, points, netname, laygo_origin))
     end
 
 
@@ -429,7 +443,7 @@ function transform_MData(unnamed_MData::MData, named_MData::MData, Mtransform::M
                 
                 new_points = SVector{2, MPoint}(MPoint(min(new_s1, new_s2), mvector.points[1].pos, netname=mvector.netname, laygo_origin=mvector.laygo_origin),
                                                 MPoint(max(new_s1, new_s2), mvector.points[2].pos, netname=mvector.netname, laygo_origin=mvector.laygo_origin))
-                push!(new_mvector_list, MVector(layer, p_coord, new_points, mvector.netname, mvector.laygo_origin))
+                push!(new_mvector_list, MVector(layer, p_coord, mvector.width, new_points, mvector.netname, mvector.laygo_origin))
             end
             new_mlayer.metals[new_p_coord] = new_mvector_list
         end
@@ -455,10 +469,10 @@ function transform_MData(unnamed_MData::MData, named_MData::MData, Mtransform::M
                     # println("Netname: $netname -> $(net_dict[unify_netname(netname, source_net_sets)])")
                     netname = net_dict[unify_netname(mvector.points[1].netname, source_net_sets)]
                 end
-                
+
                 new_points = SVector{2, MPoint}(MPoint(min(new_s1, new_s2), mvector.points[1].pos, netname=netname, laygo_origin=mvector.laygo_origin),
                                                 MPoint(max(new_s1, new_s2), mvector.points[2].pos, netname=netname, laygo_origin=mvector.laygo_origin))
-                push!(new_mvector_list, MVector(layer, p_coord, new_points, netname, mvector.laygo_origin))
+                push!(new_mvector_list, MVector(layer, p_coord, mvector.width, new_points, netname, mvector.laygo_origin))
             end
             if haskey(new_metals[layer].metals, new_p_coord)
                 append!(new_metals[layer].metals[new_p_coord], new_mvector_list)
@@ -517,6 +531,13 @@ end
 
 function merge_mvector_list(mvector_list::Vector{MVector}, p_coord::Int, layer::Int, idx::Int, short_error_data::Vector{Dict{String, Any}})
 
+    # Build a map from MPoint to its source MVector (for width lookup)
+    mpoint_to_mvector = Dict{MPoint, MVector}()
+    for mvector in mvector_list
+        for mpoint in mvector.points
+            mpoint_to_mvector[mpoint] = mvector
+        end
+    end
 
     # Assign START/END to each MPoint
     for mvector in mvector_list
@@ -541,11 +562,16 @@ function merge_mvector_list(mvector_list::Vector{MVector}, p_coord::Int, layer::
     st = CustomStack{MPoint}()
     netname_set = Set{String}()
     laygo_origin_set = Set{LaygoOrigin}()
+    width_set = Set{Int}()  # Track widths of metals being merged
 
     for mpoint in mpoints
 
         if mpoint.pos == START
             push_stack!(st, mpoint)
+            # Track width of this metal
+            if haskey(mpoint_to_mvector, mpoint)
+                push!(width_set, mpoint_to_mvector[mpoint].width)
+            end
 
         elseif mpoint.pos == END
             if is_empty_stack(st)
@@ -573,15 +599,18 @@ function merge_mvector_list(mvector_list::Vector{MVector}, p_coord::Int, layer::
             # empty stack = metal 끝
             if is_empty_stack(st)
                 netname = isempty(netname_set) ? nothing : pop!(netname_set)
-                push!(merged_metals, MOVector(layer, p_coord, SVector{2, MPoint}(MPoint(start_mpoint.s_coord, START, netname=netname, laygo_origin=start_mpoint.laygo_origin), 
+                # Use maximum width from merged metals (or 0 if no widths tracked)
+                merged_width = isempty(width_set) ? 0 : maximum(width_set)
+                push!(merged_metals, MOVector(layer, p_coord, merged_width, SVector{2, MPoint}(MPoint(start_mpoint.s_coord, START, netname=netname, laygo_origin=start_mpoint.laygo_origin),
                                                                                   MPoint(mpoint.s_coord, END, netname=netname, laygo_origin=mpoint.laygo_origin)), netname, copy(laygo_origin_set), idx, false))
                 idx += 1
 
                 # 이름 저장한 set들 초기화
                 empty!(laygo_origin_set)
                 empty!(netname_set)
+                empty!(width_set)
                 # if netname !== nothing
-                #     push!(named_metal_list, MVector(layer, p_coord, SVector{2, MPoint}(MPoint(start_mpoint.s_coord, START, netname), 
+                #     push!(named_metal_list, MVector(layer, p_coord, SVector{2, MPoint}(MPoint(start_mpoint.s_coord, START, netname),
                 #                                                                       MPoint(mpoint.s_coord, END, netname)), netname))
                 # end
             end

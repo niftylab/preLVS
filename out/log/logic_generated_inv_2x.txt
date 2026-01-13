@@ -7,28 +7,28 @@ Error Info:
 Total connected components found: 4
 
 --- Component 1 ---
-Representative Net Name: I
-Netname Consistency: Passed
-Metal Indices (5): [4, 5, 11, 12, 15]
-Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("NoName_4"), LaygoOrigin("NoName_0"), LaygoOrigin("MP0/RG0"), LaygoOrigin("NoName_2"), LaygoOrigin("MN0/RG0")])
-
---- Component 2 ---
 Representative Net Name: VSS
 Netname Consistency: Passed
 Metal Indices (3): [1, 7, 9]
-Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("NoName_8"), LaygoOrigin("MN0/RECT_TIE2"), LaygoOrigin("MN0/RECT_TIE1"), LaygoOrigin("MP0/RECT_TIE0"), LaygoOrigin("MN0/RECT_TIE0"), LaygoOrigin("MN0/RRAIL0"), LaygoOrigin("MP0/RECT_TIE1")])
+Laygo Origin Set: Set(["NoName_8", "VSS:", "MN0/RECT_TIE2", "MN0/RECT_TIE1", "UNKNOWN_LABEL", "MN0/RECT_TIE0", "MN0/RRAIL0"])
 
---- Component 3 ---
+--- Component 2 ---
 Representative Net Name: O
 Netname Consistency: Passed
 Metal Indices (5): [3, 6, 10, 13, 16]
-Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("MP0/RD0"), LaygoOrigin("NoName_6"), LaygoOrigin("MN0/RD0")])
+Laygo Origin Set: Set(["MP0/RD0", "UNKNOWN_LABEL", "NoName_6", "MN0/RD0", "O"])
+
+--- Component 3 ---
+Representative Net Name: I
+Netname Consistency: Passed
+Metal Indices (5): [4, 5, 11, 12, 15]
+Laygo Origin Set: Set(["NoName_4", "I", "NoName_0", "UNKNOWN_LABEL", "MP0/RG0", "NoName_2", "MN0/RG0"])
 
 --- Component 4 ---
 Representative Net Name: VDD
 Netname Consistency: Passed
 Metal Indices (3): [2, 8, 14]
-Laygo Origin Set: Set(LaygoOrigin[LaygoOrigin("MN0/RECT_TIE1"), LaygoOrigin("MP0/RRAIL0"), LaygoOrigin("MP0/RECT_TIE0"), LaygoOrigin("NoName_9"), LaygoOrigin("MN0/RECT_TIE0"), LaygoOrigin("MP0/RECT_TIE2"), LaygoOrigin("MP0/RECT_TIE1")])
+Laygo Origin Set: Set(["MP0/RECT_TIE0", "MP0/RRAIL0", "UNKNOWN_LABEL", "NoName_9", "VDD:", "MP0/RECT_TIE2", "MP0/RECT_TIE1"])
 
 ------------------------------------------------------------------
 
