@@ -115,6 +115,7 @@ const DEFAULT_CONFIG_PATH = joinpath(PRELVS_ROOT, "config", "config_tsmcN28.yaml
     build_layout(library, cell; tech_spec, db_dir, config_path) -> Layout
 
 Build layout using preLVS hierarchy flattening and metal merging.
+Also runs LVS and caches the result in Layout.lvs_result.
 
 # Arguments
 - `library::String`: Library name
@@ -124,7 +125,7 @@ Build layout using preLVS hierarchy flattening and metal merging.
 - `config_path::String`: Path to config YAML (default: "grids/config_tsmcN28.yaml")
 
 # Returns
-- `Layout`: laygo3-julia Layout with merged metals, vias, pins, labels
+- `Layout`: laygo3-julia Layout with merged metals, vias, pins, labels, and cached LVS result
 """
 function build_layout(
     library::String,
@@ -183,9 +184,13 @@ function build_layout(
     pins = extract_pins(db_data, library, cell, orientation_list)
     labels = extract_labels(db_data, library, cell, orientation_list)
 
+    # Step 5: Run LVS using the SAME modata/vdata (ensures consistent IDs)
+    @debug "Running LVS analysis..."
+    lvs_result_dict = run_lvs_internal(modata, vdata, nmetals, config)
+
     @info "PreLVSWrapper.build_layout complete" num_metals=length(merged_metals) num_vias=length(vias) num_pins=length(pins) num_labels=length(labels)
 
-    # Create Layout (raw_metals empty, using merged only)
+    # Create Layout with cached LVS result
     return Layout(
         library,
         cell,
@@ -196,64 +201,18 @@ function build_layout(
         RawMetal[],              # raw_metals (empty - using merged)
         merged_metals,
         MergeMappings(),         # merge_mappings (empty)
-        Dict{Int, CellInfo}()    # cell_registry (empty)
+        Dict{Int, CellInfo}(),   # cell_registry (empty)
+        lvs_result_dict          # cached LVS result
     )
 end
 
-# ============================================================================
-# run_lvs - LVS Entry Point (replaces LVSChecker.check_layout)
-# ============================================================================
-
 """
-    run_lvs(layout; db_dir, config_path) -> Dict
+    run_lvs_internal(modata, vdata, nmetals, config) -> Dict
 
-Run LVS using preLVS connectivity analysis.
-Re-runs flattening to get MOData/VData for connectivity check.
-
-# Arguments
-- `layout::Layout`: Layout to check
-- `db_dir::String`: Path to database JSON files
-- `config_path::String`: Path to config YAML
-
-# Returns
-- `Dict`: Dictionary with keys "success", "passed", "lvs_result", etc.
-  (matches RoutingOrchestrator.run_lvs format for compatibility)
+Internal function to run LVS on already-processed modata/vdata.
+Used by build_layout to ensure consistent metal IDs.
 """
-function run_lvs(
-    layout::Layout;
-    db_dir::String = DEFAULT_DB_DIR,
-    config_path::String = DEFAULT_CONFIG_PATH
-)
-
-    library = layout.library
-    cell = layout.cell
-
-    @info "PreLVSWrapper.run_lvs starting" library=library cell=cell
-
-    # Load preLVS config
-    config = load_prelvs_config(config_path, db_dir)
-
-    # Build orientation_list from layout's technology
-    tech_spec = layout.technology
-    max_layer = length(config.config_data["Layer"]["order"])
-    orientation_list = build_orientation_list(tech_spec, max_layer)
-
-    # Re-run preLVS pipeline to get MOData/VData
-    @debug "Re-running preLVS pipeline for connectivity analysis..."
-
-    root, cell_data, db_data, _ = get_tree(
-        library, cell, db_dir, config.source_net_sets
-    )
-
-    mdata, vdata = flatten_v2(
-        library, cell, cell_data, db_data,
-        orientation_list, config.config_data,
-        config.source_net_sets,
-        true  # is_detailed
-    )
-
-    modata, nmetals, short_errors = sort_n_merge_MData(mdata)
-
+function run_lvs_internal(modata, vdata, nmetals::Int, config::PreLVSConfig)
     # Assign via indices (continuing from metal indices)
     via_idx = nmetals + 1
     for (vtype, vlist) in vdata.vlists
@@ -291,8 +250,6 @@ function run_lvs(
     # Create minimal ConnectivityGraph
     graph = create_empty_connectivity_graph()
 
-    @info "PreLVSWrapper.run_lvs complete" passed=summary["passed"] num_components=length(components) num_errors=error_cnt
-
     lvs_result = LVSResult(
         components,
         errors,
@@ -316,13 +273,44 @@ function run_lvs(
 end
 
 # ============================================================================
+# run_lvs - LVS Entry Point (replaces LVSChecker.check_layout)
+# ============================================================================
+
+"""
+    run_lvs(layout) -> Dict
+
+Return cached LVS result from layout.
+LVS is run during build_layout to ensure consistent metal IDs.
+
+# Arguments
+- `layout::Layout`: Layout with cached LVS result
+
+# Returns
+- `Dict`: Dictionary with keys "success", "passed", "lvs_result", etc.
+  (matches RoutingOrchestrator.run_lvs format for compatibility)
+"""
+function run_lvs(layout::Layout)
+    @info "PreLVSWrapper.run_lvs returning cached result" library=layout.library cell=layout.cell
+
+    if isempty(layout.lvs_result)
+        error("Layout does not have cached LVS result. Was it built with PreLVSWrapper.build_layout?")
+    end
+
+    return layout.lvs_result
+end
+
+# ============================================================================
 # Convenience function for combined build + LVS
 # ============================================================================
 
 """
-    build_layout_with_lvs(library, cell; tech_spec, db_dir, config_path) -> (Layout, LVSResult)
+    build_layout_with_lvs(library, cell; tech_spec, db_dir, config_path) -> (Layout, Dict)
 
-Build layout and run LVS in one call.
+Build layout and return LVS result.
+Note: LVS is now run inside build_layout, so this is just a convenience wrapper.
+
+# Returns
+- `(Layout, Dict)`: Layout and its cached LVS result dictionary
 """
 function build_layout_with_lvs(
     library::String,
@@ -332,8 +320,7 @@ function build_layout_with_lvs(
     config_path::String = DEFAULT_CONFIG_PATH
 )
     layout = build_layout(library, cell; tech_spec=tech_spec, db_dir=db_dir, config_path=config_path)
-    lvs_result = run_lvs(layout; db_dir=db_dir, config_path=config_path)
-    return (layout, lvs_result)
+    return (layout, layout.lvs_result)
 end
 
 end # module PreLVSWrapper

@@ -9,8 +9,8 @@
 """
     get_track_at_coord(tech_spec, layer::Int, p_coord::Int) -> (width::Int, track_index::Int)
 
-Get track width and index at p_coord for a layer using GridSpec circular pattern.
-Returns (width, track_index) tuple.
+Get track width and absolute track index at p_coord for a layer using GridSpec circular pattern.
+Returns (width, track_index) tuple where track_index accounts for grid repetition.
 """
 function get_track_at_coord(tech_spec, layer::Int, p_coord::Int)::Tuple{Int, Int}
     # Check if layer exists in grid
@@ -28,17 +28,22 @@ function get_track_at_coord(tech_spec, layer::Int, p_coord::Int)::Tuple{Int, Int
         error("Invalid scope size for layer $layer")
     end
 
-    # Normalize p_coord to within scope (handle negative coords too)
-    normalized_coord = mod(p_coord - scope_start, scope_size) + scope_start
+    # Find which repetition we're in
+    repetition = div(p_coord - scope_start, scope_size)
 
-    # Find closest track
+    # Get position within the current period
+    local_coord = p_coord - (scope_start + repetition * scope_size)
+
+    # Find closest track in base array (need 1-based position for calculation)
     min_dist = typemax(Int)
+    closest_element_pos = 1  # 1-based position in tracks array
     best_track = nothing
 
-    for track in grid_spec.tracks
-        dist = abs(track.coordinate - normalized_coord)
+    for (idx, track) in enumerate(grid_spec.tracks)
+        dist = abs(track.coordinate - local_coord)
         if dist < min_dist
             min_dist = dist
+            closest_element_pos = idx  # 1-based
             best_track = track
         end
     end
@@ -47,7 +52,12 @@ function get_track_at_coord(tech_spec, layer::Int, p_coord::Int)::Tuple{Int, Int
         error("No valid track found for layer $layer at p_coord $p_coord")
     end
 
-    return (best_track.width, best_track.index)
+    # Calculate absolute track index: (element_pos + num_elements * repetition) - 1
+    # This matches the logic in LayoutExtractor.find_closest_repeated_track
+    num_elements = length(grid_spec.tracks)
+    track_index = (closest_element_pos + num_elements * repetition) - 1
+
+    return (best_track.width, track_index)
 end
 
 """
