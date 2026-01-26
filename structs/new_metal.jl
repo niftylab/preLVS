@@ -1,3 +1,6 @@
+if !isdefined(@__MODULE__, :_PRELVS_NEW_METAL_JL_)
+const _PRELVS_NEW_METAL_JL_ = true
+
 using OrderedCollections
 using StaticArrays
 include("structure.jl")
@@ -625,3 +628,4 @@ function merge_mvector_list(mvector_list::Vector{MVector}, p_coord::Int, layer::
     return merged_metals, idx #, named_metal_list
 end
 
+end # include guard

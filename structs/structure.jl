@@ -1,3 +1,6 @@
+if !isdefined(@__MODULE__, :_PRELVS_STRUCTURE_JL_)
+const _PRELVS_STRUCTURE_JL_ = true
+
 mutable struct Metal
     layer::String
     xy::Vector{Vector{Int}}
@@ -202,3 +205,5 @@ function get_via_xy(xy::Vector{Int}, Mtransform::Matrix{Int})
     _xy_affine      = Mtransform * [xy ; 1]
     return _xy_affine[1:2]
 end
+
+end # include guard

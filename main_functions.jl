@@ -1,3 +1,6 @@
+if !isdefined(@__MODULE__, :_PRELVS_MAIN_FUNCTIONS_JL_)
+const _PRELVS_MAIN_FUNCTIONS_JL_ = true
+
 using JSON
 using OrderedCollections
 include("structs/tree.jl")
@@ -102,4 +105,4 @@ function flatten_v2(
     return MData(top_libname, top_cellname, out_metals), VData(top_libname, top_cellname, out_vias)
 end
 
-
+end # include guard

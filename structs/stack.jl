@@ -1,3 +1,6 @@
+if !isdefined(@__MODULE__, :_PRELVS_STACK_JL_)
+const _PRELVS_STACK_JL_ = true
+
 struct CustomStack{T}
     items::Vector{T}
 
@@ -22,3 +25,4 @@ function is_empty_stack(stack::CustomStack)
     isempty(stack.items)
 end
 
+end # include guard

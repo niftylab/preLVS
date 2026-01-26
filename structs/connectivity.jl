@@ -1,3 +1,6 @@
+if !isdefined(@__MODULE__, :_PRELVS_CONNECTIVITY_JL_)
+const _PRELVS_CONNECTIVITY_JL_ = true
+
 using DataStructures
 
 include("via.jl")
@@ -842,3 +845,4 @@ function get_layer_from_via_type(via_type::String)
     end
 end
 
+end # include guard

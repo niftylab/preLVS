@@ -1,3 +1,6 @@
+if !isdefined(@__MODULE__, :_PRELVS_TREE_JL_)
+const _PRELVS_TREE_JL_ = true
+
 using DataStructures
 
 # cell들간의 hierarchy를 나타내기 위한 tree 구조
@@ -523,3 +526,5 @@ end
 
 #     return clusters
 # end
+
+end # include guard

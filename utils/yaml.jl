@@ -1,3 +1,6 @@
+if !isdefined(@__MODULE__, :_PRELVS_YAML_JL_)
+const _PRELVS_YAML_JL_ = true
+
 using YAML
 
 function get_yaml(file_path::String)
@@ -40,7 +43,7 @@ end
 
 function get_orientation_list(config_data::Dict)
 
-    max_idx = maximum([parse(Int, replace(lowercase(layer), r"(metal|m)" => "") |> strip) for layer in keys(config_data["Metal"])]) 
+    max_idx = maximum([parse(Int, replace(lowercase(layer), r"(metal|m)" => "") |> strip) for layer in keys(config_data["Metal"])])
     orientation_list = Vector{String}(undef, max_idx)
     for (layer, orient) in config_data["Metal"]
         idx = parse(Int, replace(lowercase(layer), r"(metal|m)" => "") |> strip)
@@ -48,3 +51,5 @@ function get_orientation_list(config_data::Dict)
     end
     return orientation_list
 end
+
+end # include guard

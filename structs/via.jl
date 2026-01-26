@@ -1,3 +1,6 @@
+if !isdefined(@__MODULE__, :_PRELVS_VIA_JL_)
+const _PRELVS_VIA_JL_ = true
+
 using OrderedCollections
 import Base: ==, hash
 
@@ -214,3 +217,5 @@ function set_via_idx(vp::VPoint, idx::Int)
     vp.idx = idx
     return vp
 end
+
+end # include guard
