@@ -228,12 +228,22 @@ function get_tree_sub!(node::TreeNode{NodeData}, cell_data::Dict, db_dir::String
                     end
 
                     if !haskey(net_block, _netname)
-                        if haskey(node.data.net_extern, _netname)
-                            net_block[_netname] = node.data.net_extern[_netname]
-                        else
-                            net_block[_netname] = node.data.Mname * "__" * _name * "__" * _netname
-                            node.data.net_extern[node.data.Mname * "__" * _name * "__" * _netname] = node.data.Mname * "__" * _name * "__" * _netname
-                        end
+                        # FIX: Always use hierarchical prefix for internal labels.
+                        # The old code checked node.data.net_extern, which caused
+                        # collisions when a child's internal net had the same name
+                        # as a parent-level net (e.g., both using "net1").
+                        # Pin-passed nets are already in net_block from the pin
+                        # loop above, so they won't reach here.
+                        #
+                        # Original code:
+                        # if haskey(node.data.net_extern, _netname)
+                        #     net_block[_netname] = node.data.net_extern[_netname]
+                        # else
+                        #     net_block[_netname] = node.data.Mname * "__" * _name * "__" * _netname
+                        #     node.data.net_extern[node.data.Mname * "__" * _name * "__" * _netname] = node.data.Mname * "__" * _name * "__" * _netname
+                        # end
+                        net_block[_netname] = node.data.Mname * "__" * _name * "__" * _netname
+                        node.data.net_extern[node.data.Mname * "__" * _name * "__" * _netname] = node.data.Mname * "__" * _name * "__" * _netname
                     end
                 end
             end
