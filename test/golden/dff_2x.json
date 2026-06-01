@@ -1,0 +1,626 @@
+{
+  "error_cnt": {
+    "floating": 4,
+    "open": 0,
+    "short": 1,
+    "total": 5
+  },
+  "errors": [
+    {
+      "detail": "FLOATING: No netname found metals. Start node = 1, 1300, 130 - 370",
+      "expected": null,
+      "netname": null,
+      "type": "FLOATING"
+    },
+    {
+      "detail": "FLOATING: No netname found metals. Start node = 1, 1300, 830 - 1070",
+      "expected": null,
+      "netname": null,
+      "type": "FLOATING"
+    },
+    {
+      "detail": "FLOATING: No netname found metals. Start node = 1, 3640, 130 - 370",
+      "expected": null,
+      "netname": null,
+      "type": "FLOATING"
+    },
+    {
+      "detail": "FLOATING: No netname found metals. Start node = 1, 3640, 830 - 1070",
+      "expected": null,
+      "netname": null,
+      "type": "FLOATING"
+    },
+    {
+      "detail": "SHORT_ERROR: Multiple netnames found for the same s_coord 1000: Set([\"OUT\", \"O\"])",
+      "netname_set": [
+        "O",
+        "OUT"
+      ],
+      "type": "SHORT"
+    }
+  ],
+  "netmap": {
+    "layers": {
+      "2": {
+        "lines": {
+          "0": [
+            {
+              "netname": "VSS:",
+              "scope": [
+                -75,
+                5795
+              ]
+            }
+          ],
+          "1000": [
+            {
+              "netname": "MEM1",
+              "scope": [
+                1680,
+                3015
+              ]
+            },
+            {
+              "netname": "OBSTACLE",
+              "scope": [
+                3500,
+                4315
+              ]
+            },
+            {
+              "netname": "OUT",
+              "scope": [
+                5320,
+                5600
+              ]
+            }
+          ],
+          "1200": [
+            {
+              "netname": "VDD:",
+              "scope": [
+                -75,
+                5795
+              ]
+            }
+          ],
+          "200": [
+            {
+              "netname": "MEM1",
+              "scope": [
+                1680,
+                1960
+              ]
+            },
+            {
+              "netname": "MEM1",
+              "scope": [
+                2185,
+                2495
+              ]
+            },
+            {
+              "netname": "OBSTACLE",
+              "scope": [
+                3500,
+                4315
+              ]
+            },
+            {
+              "netname": "MEM2",
+              "scope": [
+                4525,
+                4835
+              ]
+            }
+          ],
+          "300": [
+            {
+              "netname": "ICLKB",
+              "scope": [
+                120,
+                400
+              ]
+            },
+            {
+              "netname": "ICLK",
+              "scope": [
+                640,
+                920
+              ]
+            },
+            {
+              "netname": "OBSTACLE",
+              "scope": [
+                1160,
+                1975
+              ]
+            },
+            {
+              "netname": "LATCH",
+              "scope": [
+                2185,
+                3665
+              ]
+            },
+            {
+              "netname": "MEM2",
+              "scope": [
+                4020,
+                4300
+              ]
+            },
+            {
+              "netname": "OUT",
+              "scope": [
+                4525,
+                5600
+              ]
+            }
+          ],
+          "485": [
+            {
+              "netname": "CLK:",
+              "scope": [
+                105,
+                400
+              ]
+            },
+            {
+              "netname": "ICLKB",
+              "scope": [
+                625,
+                920
+              ]
+            },
+            {
+              "netname": "I",
+              "scope": [
+                1160,
+                1440
+              ]
+            },
+            {
+              "netname": "ICLKB",
+              "scope": [
+                1680,
+                1975
+              ]
+            },
+            {
+              "netname": "ICLK",
+              "scope": [
+                2445,
+                2755
+              ]
+            },
+            {
+              "netname": "MEM1",
+              "scope": [
+                2965,
+                3260
+              ]
+            },
+            {
+              "netname": "LATCH",
+              "scope": [
+                3500,
+                3780
+              ]
+            },
+            {
+              "netname": "ICLK",
+              "scope": [
+                4020,
+                4315
+              ]
+            },
+            {
+              "netname": "ICLKB",
+              "scope": [
+                4785,
+                5095
+              ]
+            },
+            {
+              "netname": "MEM2",
+              "scope": [
+                5305,
+                5600
+              ]
+            }
+          ],
+          "600": [
+            {
+              "netname": "LATCH",
+              "scope": [
+                2185,
+                2495
+              ]
+            },
+            {
+              "netname": "OUT",
+              "scope": [
+                4525,
+                4835
+              ]
+            }
+          ],
+          "715": [
+            {
+              "netname": "CLK:",
+              "scope": [
+                105,
+                400
+              ]
+            },
+            {
+              "netname": "ICLKB",
+              "scope": [
+                625,
+                920
+              ]
+            },
+            {
+              "netname": "I",
+              "scope": [
+                1160,
+                1440
+              ]
+            },
+            {
+              "netname": "ICLK",
+              "scope": [
+                1665,
+                1960
+              ]
+            },
+            {
+              "netname": "ICLKB",
+              "scope": [
+                2315,
+                2755
+              ]
+            },
+            {
+              "netname": "MEM1",
+              "scope": [
+                2965,
+                3260
+              ]
+            },
+            {
+              "netname": "LATCH",
+              "scope": [
+                3500,
+                3780
+              ]
+            },
+            {
+              "netname": "ICLKB",
+              "scope": [
+                4005,
+                4300
+              ]
+            },
+            {
+              "netname": "ICLK",
+              "scope": [
+                4655,
+                5095
+              ]
+            },
+            {
+              "netname": "MEM2",
+              "scope": [
+                5305,
+                5600
+              ]
+            }
+          ],
+          "900": [
+            {
+              "netname": "ICLKB",
+              "scope": [
+                120,
+                400
+              ]
+            },
+            {
+              "netname": "ICLK",
+              "scope": [
+                640,
+                920
+              ]
+            },
+            {
+              "netname": "OBSTACLE",
+              "scope": [
+                1160,
+                1975
+              ]
+            },
+            {
+              "netname": "LATCH",
+              "scope": [
+                2980,
+                3260
+              ]
+            },
+            {
+              "netname": "MEM2",
+              "scope": [
+                4020,
+                5355
+              ]
+            }
+          ]
+        },
+        "orientation": "horizontal"
+      },
+      "3": {
+        "lines": {
+          "130": [
+            {
+              "netname": "CLK:",
+              "scope": [
+                455,
+                745
+              ]
+            }
+          ],
+          "1300": [
+            {
+              "netname": "I",
+              "scope": [
+                455,
+                745
+              ]
+            }
+          ],
+          "1690": [
+            {
+              "netname": "ICLK",
+              "scope": [
+                70,
+                745
+              ]
+            }
+          ],
+          "1820": [
+            {
+              "netname": "MEM1",
+              "scope": [
+                170,
+                1030
+              ]
+            }
+          ],
+          "1950": [
+            {
+              "netname": "ICLKB",
+              "scope": [
+                170,
+                745
+              ]
+            }
+          ],
+          "2210": [
+            {
+              "netname": "LATCH",
+              "scope": [
+                270,
+                745
+              ]
+            }
+          ],
+          "2340": [
+            {
+              "netname": "ICLKB",
+              "scope": [
+                170,
+                745
+              ]
+            }
+          ],
+          "2470": [
+            {
+              "netname": "MEM1",
+              "scope": [
+                170,
+                1030
+              ]
+            }
+          ],
+          "260": [
+            {
+              "netname": "ICLKB",
+              "scope": [
+                170,
+                930
+              ]
+            }
+          ],
+          "2600": [
+            {
+              "netname": "ICLK",
+              "scope": [
+                70,
+                745
+              ]
+            }
+          ],
+          "2990": [
+            {
+              "netname": "MEM1",
+              "scope": [
+                455,
+                1030
+              ]
+            }
+          ],
+          "3120": [
+            {
+              "netname": "LATCH",
+              "scope": [
+                270,
+                930
+              ]
+            }
+          ],
+          "3640": [
+            {
+              "netname": "LATCH",
+              "scope": [
+                270,
+                745
+              ]
+            }
+          ],
+          "4030": [
+            {
+              "netname": "ICLKB",
+              "scope": [
+                170,
+                745
+              ]
+            }
+          ],
+          "4160": [
+            {
+              "netname": "MEM2",
+              "scope": [
+                270,
+                930
+              ]
+            }
+          ],
+          "4290": [
+            {
+              "netname": "ICLK",
+              "scope": [
+                70,
+                745
+              ]
+            }
+          ],
+          "4550": [
+            {
+              "netname": "OUT",
+              "scope": [
+                270,
+                745
+              ]
+            }
+          ],
+          "4680": [
+            {
+              "netname": "ICLK",
+              "scope": [
+                70,
+                745
+              ]
+            }
+          ],
+          "4810": [
+            {
+              "netname": "MEM2",
+              "scope": [
+                170,
+                930
+              ]
+            }
+          ],
+          "4940": [
+            {
+              "netname": "ICLKB",
+              "scope": [
+                170,
+                745
+              ]
+            }
+          ],
+          "5330": [
+            {
+              "netname": "MEM2",
+              "scope": [
+                455,
+                930
+              ]
+            }
+          ],
+          "5460": [
+            {
+              "netname": "OUT",
+              "scope": [
+                270,
+                1030
+              ]
+            }
+          ],
+          "650": [
+            {
+              "netname": "ICLKB",
+              "scope": [
+                170,
+                745
+              ]
+            }
+          ],
+          "780": [
+            {
+              "netname": "ICLK",
+              "scope": [
+                70,
+                930
+              ]
+            }
+          ]
+        },
+        "orientation": "vertical"
+      },
+      "4": {
+        "lines": {
+          "100": [
+            {
+              "netname": "ICLK",
+              "scope": [
+                235,
+                4965
+              ]
+            }
+          ],
+          "200": [
+            {
+              "netname": "ICLKB",
+              "scope": [
+                235,
+                4965
+              ]
+            }
+          ]
+        },
+        "orientation": "horizontal"
+      }
+    },
+    "top_bbox": [
+      5720,
+      1200
+    ]
+  },
+  "status": "failed",
+  "target": "logic_generated - dff_2x",
+  "top_netnames": [
+    "MEM2",
+    "LATCH",
+    "CLK:",
+    "O",
+    "ICLKB",
+    "VSS:",
+    "ICLK",
+    "MEM1",
+    "I",
+    "OUT",
+    "VDD:"
+  ]
+}

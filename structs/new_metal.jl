@@ -144,24 +144,6 @@ import Base: ==
     a.netname == b.netname
 
 
-function pop_mvector!(v::Vector{MVector}, x::MVector)
-    idx = findfirst(y -> y == x, v)
-    for mv in v
-        println("MVector: $mv")
-        println("x: $x")
-        println("mv == x: $(mv == x)")
-    end
-    if idx === nothing
-        error("Element not found in the vector")
-    end
-    element = v[idx]
-    deleteat!(v, idx)
-    return element
-end
-
-# function get_mvector_at_loc(mdata::MData, layer::Int, p_coord::Int)::MVector
-
-
 function string_to_mposition(pos::String)::MPosition
     if pos == "START"
         return START

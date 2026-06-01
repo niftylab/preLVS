@@ -1,0 +1,111 @@
+{
+  "error_cnt": {
+    "floating": 0,
+    "open": 0,
+    "short": 0,
+    "total": 0
+  },
+  "errors": [],
+  "netmap": {
+    "layers": {
+      "2": {
+        "lines": {
+          "0": [
+            {
+              "netname": "VSS:",
+              "scope": [
+                -75,
+                595
+              ]
+            }
+          ],
+          "1200": [
+            {
+              "netname": "VDD:",
+              "scope": [
+                -75,
+                595
+              ]
+            }
+          ],
+          "300": [
+            {
+              "netname": "O",
+              "scope": [
+                120,
+                400
+              ]
+            }
+          ],
+          "485": [
+            {
+              "netname": "I",
+              "scope": [
+                105,
+                400
+              ]
+            }
+          ],
+          "715": [
+            {
+              "netname": "I",
+              "scope": [
+                105,
+                400
+              ]
+            }
+          ],
+          "900": [
+            {
+              "netname": "O",
+              "scope": [
+                120,
+                400
+              ]
+            }
+          ]
+        },
+        "orientation": "horizontal"
+      },
+      "3": {
+        "lines": {
+          "130": [
+            {
+              "netname": "I",
+              "scope": [
+                455,
+                745
+              ]
+            }
+          ],
+          "260": [
+            {
+              "netname": "O",
+              "scope": [
+                270,
+                930
+              ]
+            }
+          ]
+        },
+        "orientation": "vertical"
+      },
+      "4": {
+        "lines": {},
+        "orientation": "horizontal"
+      }
+    },
+    "top_bbox": [
+      520,
+      1200
+    ]
+  },
+  "status": "passed",
+  "target": "logic_generated - inv_2x",
+  "top_netnames": [
+    "I",
+    "VSS:",
+    "VDD:",
+    "O"
+  ]
+}

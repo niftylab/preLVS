@@ -49,11 +49,17 @@ try
     # Connectivity (depends on via.jl, new_metal.jl)
     include(joinpath(PRELVS_ROOT, "structs", "connectivity.jl"))
 
+    # Grid netmap (depends on new_metal.jl, connectivity.jl)
+    include(joinpath(PRELVS_ROOT, "structs", "grid.jl"))
+
     # Utils
     include(joinpath(PRELVS_ROOT, "utils", "yaml.jl"))
 
     # Main functions (depends on all above)
     include(joinpath(PRELVS_ROOT, "main_functions.jl"))
+
+    # High-level entry point + JSON serialization (depends on all above)
+    include(joinpath(PRELVS_ROOT, "run.jl"))
 finally
     cd(_original_dir)
 end
@@ -62,9 +68,13 @@ end
 # Exports - Functions used by laygo3-julia PreLVSWrapper
 # ============================================================================
 
-# Main entry functions
+# High-level single-call entry point (used by the migration flow via cli.jl)
+export run_prelvs, result_to_dict
+
+# Pipeline-stage functions (lower-level; used by laygo3-julia historically)
 export get_tree, flatten_v2, sort_n_merge_MData
 export connect_metals_from_via, check_and_report_connections_bfs
+export get_grid, create_empty_grid_data, get_grid_data
 
 # Data types
 export MData, MLayer, MVector, MPoint, MPosition, START, END, UNDEF

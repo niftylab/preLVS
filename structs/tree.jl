@@ -1,8 +1,6 @@
 if !isdefined(@__MODULE__, :_PRELVS_TREE_JL_)
 const _PRELVS_TREE_JL_ = true
 
-using DataStructures
-
 # cell들간의 hierarchy를 나타내기 위한 tree 구조
 # NodeData: cell의 정보를 담는 struct
 # TreeNode: tree의 node를 나타내는 struct
@@ -483,35 +481,6 @@ function get_tree(libname::String, cellname::String, db_dir::String, source_net_
 
     return rootNode, cell_data, db_data, top_netname_list
 end
-
-
-function build_task_list(
-    node::TreeNode{NodeData},
-    tasks::Vector{Tuple{String,String}} = Vector{Tuple{String,String}}(),
-    visited::Set{Tuple{String,String}} = Set{Tuple{String,String}}()
-)
-    # Key to check if we've built this cell already:
-    key = (node.data.libname, node.data.cellname)
-
-    # If this node’s cell has already been added/built, skip it
-    if key in visited
-        return tasks
-    end
-
-    # Otherwise, process children first (post-order)
-    for child in node.children
-        build_task_list(child, tasks, visited)
-    end
-
-    # Then push the current node’s data
-    push!(tasks, (node.data.libname, node.data.cellname))
-
-    # Mark it as visited
-    push!(visited, key)
-
-    return tasks
-end
-
 
 
 # function cluster_nodes_by_cellname(node::TreeNode, cell_data::Dict)

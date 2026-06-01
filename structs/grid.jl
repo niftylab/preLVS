@@ -1,3 +1,6 @@
+if !isdefined(@__MODULE__, :_PRELVS_GRID_JL_)
+const _PRELVS_GRID_JL_ = true
+
 include("new_metal.jl")
 include("connectivity.jl")
 
@@ -38,7 +41,9 @@ function create_empty_grid_data(grid_json_data::Dict, cell_data::Dict, libname::
     bbox_mn = (xy_to_mn(grid_json_data, 3, bbox[1]), xy_to_mn(grid_json_data, 2, bbox[2]))
     out_grid_data = GridData(Dict{Int, GridLayer}(), bbox)
 
-    current_layers = [2, 3, 4]
+    # netmap-emit set = whichever layers grid.json actually defines.
+    # M1 lands here once routing_12_cmos is present in the tech grid.
+    current_layers = sort(collect(keys(grid_json_data)))
 
     for layer_num in current_layers
         orientation = grid_json_data[layer_num]["orientation"]
@@ -71,7 +76,7 @@ function get_grid_data(
 
         for cur_cinfo in net_cinfo
             for node in cur_cinfo.nodes
-                if !(node.layer in [2, 3, 4])
+                if !haskey(empty_grid_data.layers, node.layer)
                     continue
                 end
                 line_obj = LineObject(node.layer, (node.points[1].s_coord, node.points[2].s_coord), top_netname)
@@ -90,7 +95,7 @@ function get_grid_data(
     obstacle_cinfo = filter(ci -> !(ci.netname in top_netname_list), cinfo)
     for cur_cinfo in obstacle_cinfo
         for node in cur_cinfo.nodes
-            if !(node.layer in [2, 3, 4])
+            if !haskey(empty_grid_data.layers, node.layer)
                 continue
             end
             line_obj = LineObject(node.layer, (node.points[1].s_coord, node.points[2].s_coord), "OBSTACLE")
@@ -178,8 +183,6 @@ end
 #     return cycle_num * grid_data[layer_num]["scope"][2] + track
 
 # end
-
-using Logging
 
 """
 정렬된 배열에서 주어진 값과 가장 가까운 값 및 그 인덱스를 찾습니다.
@@ -432,3 +435,5 @@ function print_grid_occupation_result(grid_occupation_result::Dict, status::Stri
     end
     println("Total Occupation: $(round(total_occupation / length(layers), digits=2))%")
 end
+
+end # include guard
