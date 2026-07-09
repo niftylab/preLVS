@@ -244,6 +244,10 @@ function check_and_report_connections_bfs(g::MGraph, source_net_sets::Vector{Tup
             component_consistent = Ref(true)
             component_laygo_origin_set = Set{LaygoOrigin}()
 
+            # Track OPEN error info to print AFTER BFS completes (so we have full metal set)
+            open_error_detected = Ref(false)
+            open_error_netname = Ref{Union{String, Nothing}}(nothing)
+
             q = Vector{MOVector}() # Queue of MOVector objects
 
             # 시작 노드 처리 및 큐에 추가
@@ -281,8 +285,11 @@ function check_and_report_connections_bfs(g::MGraph, source_net_sets::Vector{Tup
                                     # $(u_node.netname) : layer=$(u_node.layer), p_coord=$(u_node.p_coord), s_coord=$(u_node.points[1].s_coord) - $(u_node.points[2].s_coord)
                                     # $(start_node.netname) : layer=$(start_node.layer), p_coord=$(start_node.p_coord), s_coord=$(start_node.points[1].s_coord) - $(start_node.points[2].s_coord)"
                                     push!(error_info, ErrorInfo(OPEN, u_node, start_node, current_netname, expected_netname_ref[], component_number))
-                                    # println(io, "OPEN: netname $current_netname is already visited\n$(u_node.netname) : layer=$(u_node.layer), p_coord=$(u_node.p_coord), s_coord=$(u_node.points[1].s_coord) - $(u_node.points[2].s_coord)\n$(start_node.netname) : layer=$(start_node.layer), p_coord=$(start_node.p_coord), s_coord=$(start_node.points[1].s_coord) - $(start_node.points[2].s_coord)")
                                     error_cnt["open"] += 1; error_cnt["total"] += 1;
+
+                                    # Mark OPEN error for deferred printing (after BFS completes)
+                                    open_error_detected[] = true
+                                    open_error_netname[] = current_netname
                                 end
                             end
                         end
@@ -322,11 +329,112 @@ function check_and_report_connections_bfs(g::MGraph, source_net_sets::Vector{Tup
             end
             # --- BFS 종료 ---
 
+            # DEBUG: Print OPEN error with COMPLETE metal sets (deferred until BFS completes)
+            if open_error_detected[]
+                println("="^70)
+                println("OPEN ERROR | Net: $(open_error_netname[]) found in SEPARATE components")
+                println("="^70)
+
+                # Find the previous component that has this netname
+                prev_component_idx = nothing
+                for (idx, comp) in enumerate(all_components_info)
+                    if comp.netname == open_error_netname[]
+                        prev_component_idx = idx
+                        break
+                    end
+                end
+
+                # Print previous component metals (complete set)
+                if prev_component_idx !== nothing
+                    prev_comp = all_components_info[prev_component_idx]
+                    println("\n[COMPONENT #$(prev_component_idx)] - Previously visited ($(length(prev_comp.nodes)) metals)")
+                    println("-"^70)
+                    # Sort metals by layer, then by p_coord for better readability
+                    sorted_prev = sort(collect(prev_comp.nodes), by = n -> (n.layer, n.p_coord, n.points[1].s_coord))
+                    for node in sorted_prev
+                        is_vert = node.layer % 2 == 1
+                        if is_vert
+                            x = node.p_coord
+                            y1 = node.points[1].s_coord
+                            y2 = node.points[2].s_coord
+                            println("  M$(node.layer) | xy=($x, $y1)-($x, $y2) | net=$(node.netname)")
+                        else
+                            y = node.p_coord
+                            x1 = node.points[1].s_coord
+                            x2 = node.points[2].s_coord
+                            println("  M$(node.layer) | xy=($x1, $y)-($x2, $y) | net=$(node.netname)")
+                        end
+                    end
+                else
+                    println("\n[WARNING] Could not find previous component with net=$(open_error_netname[])")
+                end
+
+                # Print current component metals (NOW COMPLETE after BFS finished)
+                println("\n[COMPONENT #$(component_number)] - Current component ($(length(current_component_nodes)) metals - COMPLETE)")
+                println("-"^70)
+                sorted_curr = sort(collect(current_component_nodes), by = n -> (n.layer, n.p_coord, n.points[1].s_coord))
+                for node in sorted_curr
+                    is_vert = node.layer % 2 == 1
+                    if is_vert
+                        x = node.p_coord
+                        y1 = node.points[1].s_coord
+                        y2 = node.points[2].s_coord
+                        println("  M$(node.layer) | xy=($x, $y1)-($x, $y2) | net=$(node.netname)")
+                    else
+                        y = node.p_coord
+                        x1 = node.points[1].s_coord
+                        x2 = node.points[2].s_coord
+                        println("  M$(node.layer) | xy=($x1, $y)-($x2, $y) | net=$(node.netname)")
+                    end
+                end
+                println("="^70)
+                println()
+            end
+
             if expected_netname_ref[] === nothing
                 # @warn "  FLOATING! : No netname found metals. Start node = $(start_node.layer), $(start_node.p_coord), $(start_node.points[1].s_coord) - $(start_node.points[2].s_coord)"
                 push!(error_info, ErrorInfo(FLOATING, start_node, nothing, nothing, nothing, component_number))
                 # println(io, "FLOATING: No netname found metals. Start node = $(start_node.layer), $(start_node.p_coord), $(start_node.points[1].s_coord) - $(start_node.points[2].s_coord)")
                 error_cnt["floating"] += 1; error_cnt["total"] += 1;
+
+                # DEBUG: Print floating component metals
+                println("="^60)
+                println("FLOATING COMPONENT #$(component_number) ($(length(current_component_nodes)) metals)")
+                println("="^60)
+                for node in current_component_nodes
+                    is_vert = node.layer % 2 == 1
+                    if is_vert
+                        println("  Layer: M$(node.layer) | x=$(node.p_coord) | y=$(node.points[1].s_coord)-$(node.points[2].s_coord) | net=$(node.netname)")
+                    else
+                        println("  Layer: M$(node.layer) | y=$(node.p_coord) | x=$(node.points[1].s_coord)-$(node.points[2].s_coord) | net=$(node.netname)")
+                    end
+                end
+                println()
+            end
+
+            # DEBUG: Print short component metals (component_consistent[] == false means short)
+            if !component_consistent[] && expected_netname_ref[] !== nothing
+                # Collect all unique netnames in the component
+                netnames_in_component = Set{String}()
+                for node in current_component_nodes
+                    if node.netname !== nothing
+                        push!(netnames_in_component, node.netname)
+                    end
+                end
+
+                println("="^60)
+                println("SHORT COMPONENT #$(component_number) | Expected net: $(expected_netname_ref[]) | Nets found: $(collect(netnames_in_component))")
+                println("($(length(current_component_nodes)) metals)")
+                println("="^60)
+                for node in current_component_nodes
+                    is_vert = node.layer % 2 == 1
+                    if is_vert
+                        println("  Layer: M$(node.layer) | x=$(node.p_coord) | y=$(node.points[1].s_coord)-$(node.points[2].s_coord) | net=$(node.netname)")
+                    else
+                        println("  Layer: M$(node.layer) | y=$(node.p_coord) | x=$(node.points[1].s_coord)-$(node.points[2].s_coord) | net=$(node.netname)")
+                    end
+                end
+                println()
             end
 
             # --- 현재 컴포넌트 정보 저장 ---

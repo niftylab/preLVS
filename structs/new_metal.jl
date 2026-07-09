@@ -446,7 +446,7 @@ function transform_MData(unnamed_MData::MData, named_MData::MData, Mtransform::M
                 
                 new_points = SVector{2, MPoint}(MPoint(min(new_s1, new_s2), mvector.points[1].pos, netname=mvector.netname, laygo_origin=mvector.laygo_origin),
                                                 MPoint(max(new_s1, new_s2), mvector.points[2].pos, netname=mvector.netname, laygo_origin=mvector.laygo_origin))
-                push!(new_mvector_list, MVector(layer, p_coord, mvector.width, new_points, mvector.netname, mvector.laygo_origin))
+                push!(new_mvector_list, MVector(layer, new_p_coord, mvector.width, new_points, mvector.netname, mvector.laygo_origin))
             end
             new_mlayer.metals[new_p_coord] = new_mvector_list
         end
@@ -475,7 +475,7 @@ function transform_MData(unnamed_MData::MData, named_MData::MData, Mtransform::M
 
                 new_points = SVector{2, MPoint}(MPoint(min(new_s1, new_s2), mvector.points[1].pos, netname=netname, laygo_origin=mvector.laygo_origin),
                                                 MPoint(max(new_s1, new_s2), mvector.points[2].pos, netname=netname, laygo_origin=mvector.laygo_origin))
-                push!(new_mvector_list, MVector(layer, p_coord, mvector.width, new_points, netname, mvector.laygo_origin))
+                push!(new_mvector_list, MVector(layer, new_p_coord, mvector.width, new_points, netname, mvector.laygo_origin))
             end
             if haskey(new_metals[layer].metals, new_p_coord)
                 append!(new_metals[layer].metals[new_p_coord], new_mvector_list)

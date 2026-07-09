@@ -21,6 +21,7 @@ module preLVS
 
 using PrecompileTools
 using JSON
+using Dates
 
 # ============================================================================
 # Includes - Order matters due to dependencies
@@ -54,6 +55,9 @@ try
 
     # Main functions (depends on all above)
     include(joinpath(PRELVS_ROOT, "main_functions.jl"))
+
+    # Export functions (depends on all structs + connectivity)
+    include(joinpath(PRELVS_ROOT, "export", "frontend_json.jl"))
 finally
     cd(_original_dir)
 end
@@ -63,7 +67,7 @@ end
 # ============================================================================
 
 # Main entry functions
-export get_tree, flatten_v2, sort_n_merge_MData
+export get_tree, flatten_v2, sort_n_merge_MData, print_tree_root
 export connect_metals_from_via, check_and_report_connections_bfs
 
 # Data types
@@ -77,6 +81,9 @@ export LaygoOrigin
 export get_config, get_yaml, get_orientation_list
 export db_to_MData, db_to_VData, transform_MData, transform_VData
 export metal_to_int, affineMat, unify_netname
+
+# Frontend export
+export export_lvs_frontend_json
 
 # ============================================================================
 # Precompilation Workload
