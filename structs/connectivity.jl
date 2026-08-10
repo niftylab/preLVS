@@ -17,9 +17,38 @@ function connect_metals_from_via(mdata::MOData, vdata::VData, nmetals::Int)
 
     cgraph = MGraph(Dict{MOVector, Vector{MOVector}}(), Dict{MOVector, Vector{VPoint}}())
 
+    # 계측 (2026-08-11, vtc_core M3/M4 섬 진단): PRELVS_DEBUG_FILE 이
+    # 설정되면 링크에 실패한 via (겹침 ≠ 2) 의 probe 상세를 기록.
+    # 미설정 시 완전 무동작 — 프로덕션 경로 불변.
+    _dbgpath = get(ENV, "PRELVS_DEBUG_FILE", "")
+    _dbg = _dbgpath == "" ? nothing : open(_dbgpath, "a")
+
     for (vtype, vlist) in vdata.vlists
         for vp in vlist.vpoints
             overlapping_metals = find_overlapping_metals(vp, mdata)
+
+            if _dbg !== nothing && length(overlapping_metals) != 2
+                println(_dbg, "VIA_FAIL $(vp.type) xy=$(vp.xy) n=$(length(overlapping_metals))")
+                for layer in get_layer_from_via_type(vp.type)
+                    is_vertical = layer % 2 == 1
+                    pcoord = is_vertical ? vp.xy[1] : vp.xy[2]
+                    scoord = is_vertical ? vp.xy[2] : vp.xy[1]
+                    if !haskey(mdata.metals, layer)
+                        println(_dbg, "  L$(layer): layer 없음")
+                        continue
+                    end
+                    if !haskey(mdata.metals[layer].metals, pcoord)
+                        ks = sort(collect(keys(mdata.metals[layer].metals)))
+                        near = [k for k in ks if abs(k - pcoord) <= 300]
+                        println(_dbg, "  L$(layer): bin p=$(pcoord) 없음 (근방 키: $(near))")
+                        continue
+                    end
+                    mvlist = mdata.metals[layer].metals[pcoord]
+                    idx = searchsortedfirst(mvlist, scoord, by = x -> (isa(x, MOVector) ? x.points[1].s_coord : x)) - 1
+                    spans = [(mv.points[1].s_coord, mv.points[2].s_coord) for mv in mvlist]
+                    println(_dbg, "  L$(layer): p=$(pcoord) s=$(scoord) idx=$(idx)/$(length(mvlist)) spans=$(spans)")
+                end
+            end
 
             if length(overlapping_metals) == 2
                 mv1::MOVector, mv2::MOVector = overlapping_metals
@@ -34,6 +63,9 @@ function connect_metals_from_via(mdata::MOData, vdata::VData, nmetals::Int)
                 push!(adj_list_v, vp)
             end
         end
+    end
+    if _dbg !== nothing
+        close(_dbg)
     end
     return cgraph
 end
