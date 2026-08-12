@@ -2,8 +2,14 @@
 # cli.jl - Subprocess entry point for the layout-migration flow.
 #
 # Usage (from the migration flow):
-#   julia --project=<preLVS_root> cli.jl <input.json>
-#   julia --project=<preLVS_root> cli.jl            # input on stdin
+#   julia --project=<preLVS_root> cli.jl <input.json> <output.json>
+#   julia --project=<preLVS_root> cli.jl <input.json>   # result on stdout
+#   julia --project=<preLVS_root> cli.jl                # input on stdin
+#
+# The migration flow always passes <output.json> (file contract,
+# 2026-08-12): stdout as a data channel is vulnerable to external
+# pollution — juliaup's periodic version-DB update wrote to stdout and
+# broke JSON parsing on the compute server (measured incident).
 #
 # Input JSON:
 #   {
@@ -45,8 +51,14 @@ function main()
         )
     end
 
-    JSON.print(stdout, result_to_dict(result))
-    println(stdout)
+    if length(ARGS) >= 2
+        open(ARGS[2], "w") do io
+            JSON.print(io, result_to_dict(result))
+        end
+    else
+        JSON.print(stdout, result_to_dict(result))
+        println(stdout)
+    end
     return 0
 end
 

@@ -52,9 +52,13 @@ subprocess wrapper around it.
 }
 ```
 
-### Output — a single JSON object on **stdout**
+### Output — a single JSON object, to a **file** (second arg) or stdout
 
-All logs/progress go to **stderr**, so stdout is always clean, parseable JSON.
+The migration flow always passes an output-file path (`cli.jl <in> <out>`,
+2026-08-12): stdout as a data channel is vulnerable to external pollution —
+juliaup's periodic version-DB update wrote to stdout on the compute server
+and broke JSON parsing. Without a second arg the result goes to stdout
+(logs/progress always go to **stderr**).
 
 ```jsonc
 {
@@ -93,25 +97,16 @@ All logs/progress go to **stderr**, so stdout is always clean, parseable JSON.
 
 ### From the migration flow (Python subprocess)
 
-```python
-import json, subprocess
-from pathlib import Path
-
-def run_prelvs(payload: dict, prelvs_root: Path) -> dict:
-    proc = subprocess.run(
-        ["julia", f"--project={prelvs_root}", str(prelvs_root / "cli.jl")],
-        input=json.dumps(payload), capture_output=True, text=True,
-    )
-    if proc.returncode != 0:
-        raise RuntimeError(f"preLVS failed:\n{proc.stderr}")
-    return json.loads(proc.stdout)   # {status, error_cnt, errors, top_netnames, netmap}
-```
+The canonical wrapper is `laygo2.interface.prelvs.run()` (src/laygo3) —
+it writes the payload to a temp file, invokes `cli.jl <in> <out>`, and
+reads the result file back (file contract; stdout/stderr are log-only).
 
 ### Directly
 
 ```bash
-julia --project=. cli.jl test/inputs/inv_2x.json     # input file
-echo '{...}' | julia --project=. cli.jl              # input on stdin
+julia --project=. cli.jl test/inputs/inv_2x.json out.json   # file contract
+julia --project=. cli.jl test/inputs/inv_2x.json            # result on stdout
+echo '{...}' | julia --project=. cli.jl                     # input on stdin
 ```
 
 ---
