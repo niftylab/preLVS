@@ -12,16 +12,17 @@ end
 
 
 
-function connect_metals_from_via(mdata::MOData, vdata::VData, nmetals::Int)
+function connect_metals_from_via(mdata::MOData, vdata::VData, nmetals::Int;
+                                 probe_io=nothing)
     # println("Number of metals: $nmetals")
 
     cgraph = MGraph(Dict{MOVector, Vector{MOVector}}(), Dict{MOVector, Vector{VPoint}}())
 
-    # 계측 (2026-08-11, vtc_core M3/M4 섬 진단): PRELVS_DEBUG_FILE 이
-    # 설정되면 링크에 실패한 via (겹침 ≠ 2) 의 probe 상세를 기록.
-    # 미설정 시 완전 무동작 — 프로덕션 경로 불변.
-    _dbgpath = get(ENV, "PRELVS_DEBUG_FILE", "")
-    _dbg = _dbgpath == "" ? nothing : open(_dbgpath, "a")
+    # 계측 (2026-08-11, vtc_core M3/M4 섬 진단 → 2026-08-14 상시화,
+    # 출력 by default): 링크에 실패한 via (겹침 ≠ 2) 의 probe 상세를
+    # ``probe_io`` 에 기록. 핸들은 호출자 (cli.jl) 소유 — 파이프라인
+    # 경로는 항상 파일을 연다. 구 PRELVS_DEBUG_FILE env 게이트 폐기.
+    _dbg = probe_io
 
     for (vtype, vlist) in vdata.vlists
         for vp in vlist.vpoints
@@ -63,9 +64,6 @@ function connect_metals_from_via(mdata::MOData, vdata::VData, nmetals::Int)
                 push!(adj_list_v, vp)
             end
         end
-    end
-    if _dbg !== nothing
-        close(_dbg)
     end
     return cgraph
 end

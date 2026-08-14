@@ -41,6 +41,7 @@ function run_prelvs(
     grid_root::String = ".",
     detailed::Bool = true,
     emit_netmap::Bool = true,
+    probe_io = nothing,          # via 링크 probe 기록처 (cli.jl 이 상시 공급)
 )
     config_data = get_config(config_path)
     orientation_list = get_orientation_list(config_data)
@@ -73,7 +74,8 @@ function run_prelvs(
 
     # 4. merge -> 5. via connectivity -> 6. component BFS
     modata, nmetals, short_error_data = sort_n_merge_MData(mdata)
-    cgraph = connect_metals_from_via(modata, vdata, nmetals)
+    cgraph = connect_metals_from_via(modata, vdata, nmetals;
+                                     probe_io = probe_io)
     cinfo, error_info, error_cnt =
         check_and_report_connections_bfs(cgraph, equiv)
 
