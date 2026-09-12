@@ -86,7 +86,7 @@ export LaygoOrigin
 # Helper functions (used by PreLVSWrapper)
 export get_config, get_yaml, get_orientation_list
 export db_to_MData, db_to_VData, transform_MData, transform_VData
-export metal_to_int, affineMat, unify_netname
+export metal_to_int, int_to_metal, set_layer_order!, affineMat, unify_netname
 
 # ============================================================================
 # Precompilation Workload

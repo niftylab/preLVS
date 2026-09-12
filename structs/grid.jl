@@ -127,7 +127,7 @@ function get_grid(techname::String, config_data::Dict, dir_path::String)
         layer_num1 = parse(Int, match(r"routing_(\d)(\d)_cmos", routing_grid).captures[1])
         layer_num2 = parse(Int, match(r"routing_(\d)(\d)_cmos", routing_grid).captures[2])
         if !haskey(out_grid_data, layer_num1)
-            orientation = config_data["Metal"]["M$(string(layer_num1))"] == "|" ? "vertical" : "horizontal"
+            orientation = config_data["Metal"][int_to_metal(layer_num1)] == "|" ? "vertical" : "horizontal"
             out_grid_data[layer_num1] = Dict(
                 "orientation" => orientation,
                 "scope" => grid_data[orientation]["scope"],
@@ -137,7 +137,7 @@ function get_grid(techname::String, config_data::Dict, dir_path::String)
             )
         end
         if !haskey(out_grid_data, layer_num2)
-            orientation = config_data["Metal"]["M$(string(layer_num2))"] == "|" ? "vertical" : "horizontal"
+            orientation = config_data["Metal"][int_to_metal(layer_num2)] == "|" ? "vertical" : "horizontal"
             out_grid_data[layer_num2] = Dict(
                 "orientation" => orientation,
                 "scope" => grid_data[orientation]["scope"],

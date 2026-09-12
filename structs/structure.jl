@@ -23,9 +23,34 @@ function affineMat(trans::String, move::Vector{Int})::Matrix{Int}
     return affine
 end
 
-# "M2" / "Metal2" / "m2" -> 2
+# Layer name -> layer number, from the tech config's `Layer.order` (position, 1-based):
+# names are whatever the tech declares (M1, C4, K1 ...), never parsed for a digit.
+# Filled by get_config (utils/yaml.jl); an unknown name is an error, not a guess.
+const _LAYER_INDEX_ = Dict{String, Int}()
+const _LAYER_ORDER_ = String[]
+
+function set_layer_order!(order::Vector)
+    empty!(_LAYER_INDEX_)
+    empty!(_LAYER_ORDER_)
+    for (i, name) in enumerate(order)
+        _LAYER_INDEX_[String(name)] = i
+        push!(_LAYER_ORDER_, String(name))
+    end
+end
+
 function metal_to_int(layer::String)
-    return parse(Int, replace(lowercase(layer), r"(metal|m)" => "") |> strip)
+    if !haskey(_LAYER_INDEX_, layer)
+        error("layer '$(layer)' not in the tech config Layer.order $(_LAYER_ORDER_) (get_config not called, or a layer the tech does not declare)")
+    end
+    return _LAYER_INDEX_[layer]
+end
+
+# Layer number -> name (inverse of metal_to_int).
+function int_to_metal(layer_num::Int)
+    if layer_num < 1 || layer_num > length(_LAYER_ORDER_)
+        error("layer number $(layer_num) outside the tech config Layer.order $(_LAYER_ORDER_)")
+    end
+    return _LAYER_ORDER_[layer_num]
 end
 
 end # include guard

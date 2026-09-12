@@ -21,11 +21,12 @@ function get_config(file_path::String)
 
     config_data = Dict()
 
-    # Metal layer orientation
+    # Metal layer orientation; the order also defines the layer numbering (structure.jl).
     morien = Dict()
     for (i, m) in enumerate(data["Layer"]["order"])
         morien[m] = data["Layer"]["orientation"][i]
     end
+    set_layer_order!(data["Layer"]["order"])
 
     # Equivalent net sets
     eq_net_sets = Vector{Tuple{String, Set{String}}}()
@@ -42,12 +43,10 @@ end
 
 
 function get_orientation_list(config_data::Dict)
-
-    max_idx = maximum([parse(Int, replace(lowercase(layer), r"(metal|m)" => "") |> strip) for layer in keys(config_data["Metal"])])
-    orientation_list = Vector{String}(undef, max_idx)
+    # Indexed by layer number = position in Layer.order (metal_to_int).
+    orientation_list = Vector{String}(undef, length(config_data["Metal"]))
     for (layer, orient) in config_data["Metal"]
-        idx = parse(Int, replace(lowercase(layer), r"(metal|m)" => "") |> strip)
-        orientation_list[idx] = orient == "|" ? "VERTICAL" : "HORIZONTAL"
+        orientation_list[metal_to_int(layer)] = orient == "|" ? "VERTICAL" : "HORIZONTAL"
     end
     return orientation_list
 end
