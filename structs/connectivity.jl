@@ -312,13 +312,12 @@ function find_overlapping_metals(vpoint::VPoint, mdata::MOData)
 end
 
 function get_layer_from_via_type(via_type::String)
-    # Extract the layer numbers from the via type string
-    # Example: "via_M1_M2_0" -> (1, 2)
-    m = match(r"via_M(\d+)_M(\d+)_\d+", via_type)
+    # The two layer numbers of a via cell "via_<lower>_<upper>_<k>": the layer names are
+    # whatever the tech declares (M1_M2, M3_C4, C4_C5 ...) and are resolved through the config's
+    # Layer.order (metal_to_int), never parsed for a digit.
+    m = match(r"^via_([A-Za-z0-9]+)_([A-Za-z0-9]+)_\d+$", via_type)
     if m !== nothing
-        layer1 = parse(Int, m.captures[1])
-        layer2 = parse(Int, m.captures[2])
-        return (layer1, layer2)
+        return (metal_to_int(String(m.captures[1])), metal_to_int(String(m.captures[2])))
     else
         error("Invalid via type format: $via_type")
     end
