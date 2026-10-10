@@ -1,12 +1,13 @@
 db_filename: [comp_generated_db.json, tbadc_generated_db.json]
 Layer:
-  order: [M1, M2, M3, M4, M5]
-  orientation: ['|', '-', '|', '-', '|']
+  order: [M1, M2, M3, M4, M5, M6]
+  orientation: ['|', '-', '|', '-', '|', '-']
   viamap:
     - [via_M1_M2_0, via_M1_M2_1]
     - [via_M2_M3_0, via_M2_M3_1]
     - [via_M3_M4_0, via_M3_M4_1]
     - [via_M4_M5_0, via_M4_M5_1]
+    - [via_M5_M6_0, via_M5_M6_0]
 Via:
   via_M1_M2_0:
     map: [M1, M2]
@@ -47,6 +48,9 @@ Via:
   via_M4_M5_2:
     map: [M5, M4]
     extension: [5, 13]
+  via_M5_M6_0:
+    map: [M5, M6]
+    extension: [5, 5]
 
 Equivalent_net_sets:
   "VDD:":
